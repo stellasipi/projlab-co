@@ -1,4 +1,5 @@
+package shokoban;
 
-public class Coloumn {
+public class Coloumn extends TileElement {
 
 }

@@ -1,4 +1,5 @@
+package shokoban;
 
-public class Wall {
+public class Wall extends Coloumn {
 
 }

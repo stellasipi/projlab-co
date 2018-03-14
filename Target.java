@@ -1,4 +1,5 @@
+package shokoban;
 
-public class Target {
+public class Target extends TileElement {
 
 }
