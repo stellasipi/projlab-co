@@ -19,7 +19,7 @@ public class Main {
 				"	3.2. A mező, amiről toljuk cél legyen? (Y/N)\n" + 
 				"	3.3. A mező, amiről toljuk kapcsoló legyen? (Y/N)\n" + 
 				"	3.4. A mező, amiről toljuk sima mező legyen? (Y/N)\n" + 
-				"4. Munk�s lyukba lép\n" + 
+				"4. Munkás lyukba lép\n" + 
 				"5. Láda ládát tol\n" + 
 				"6. Munkás munkást tol\n" + 
 				"7. MLMF\n" + 
