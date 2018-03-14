@@ -1,4 +1,5 @@
+package shokoban;
 
-public class Tile {
+public class Tile extends TileElement {
 
 }

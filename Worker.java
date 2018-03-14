@@ -1,4 +1,5 @@
+package shokoban;
 
-public class Worker {
+public class Worker extends Object {
 
 }

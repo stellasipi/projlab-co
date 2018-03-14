@@ -1,4 +1,5 @@
+package shokoban;
 
-public class Trap {
+public class Trap extends Hole {
 
 }

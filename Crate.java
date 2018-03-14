@@ -1,4 +1,5 @@
+package shokoban;
 
-public class Crate {
+public class Crate extends Object {
 
 }
