@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 public class Main {
 
 	public static void main(String[] args) {
-		int[] szam=new int[2]; //beolvasott sorszáma
+		int szam; //beolvasott sorszáma
 		System.out.println("Menu:\n"+ 
 				"1.0 Pálya felépítése\n" + 
 				"2.0 Munkás eltol egy ládát egy üres mezőre\n" + 
@@ -44,13 +44,36 @@ public class Main {
 	        	}
 	        	else
 	        	{
-	        		
-		        	String split[]=input.split("\\.");
-		        	for(int i=0;i < split.length;i++)
-		        	{
-		        		szam[i] = Integer.parseInt(split[i]);
-		        	}
-		        	System.out.println(szam[0]+"."+szam[1]);
+	        		szam=Integer.parseInt(input);
+	        		System.out.println("-"+szam+".");
+	        		switch(szam)
+	        		{
+	        		case(1):
+	        			System.out.println("1.0 Pálya felépítése");
+	        			break;
+	        		case(2):
+	        			System.out.println("2.0 Munkás eltol egy ládát egy üres mezőre\n");
+	        			break;
+	        		case(3):
+	        			System.out.println("3.0 Munkás eltol egy ládát egy adott mezőről (és egy sima üres mezőre érkezik)\n");
+	        			break;
+	        		case(4):
+	        			System.out.println("4 Munkás lyukba lép\n");
+	        			break;
+	        		case(5):
+	        			System.out.println("5 Láda ládát tol\n");
+	        			break;
+	        		case(6):
+	        			System.out.println("6 Munkás munkást tol\n");
+	        			break;
+	        		case(7):
+	        			System.out.println("7 MLMF\n");
+	        			break;
+	        		case(8):
+	        			System.out.println("8 MLMMF\n");
+	        			break;
+	    
+	        		}
 	        	}
 
 	        	
@@ -65,3 +88,5 @@ public class Main {
 	}
 
 }
+
+
