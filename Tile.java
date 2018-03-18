@@ -1,7 +1,5 @@
 package shokoban;
 
-
-
 public class Tile extends TileElement {
 	public void Remove(Object o) {
       

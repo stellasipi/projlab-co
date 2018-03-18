@@ -1,8 +1,10 @@
 package shokoban;
 
+import java.util.ArrayList;
+
 public abstract class TileElement {
 
-    private TileElement neighbours; //ennek vmi tárolónak kéne lennie
+    private ArrayList<TileElement> neighbours;
     private Object object;
 
     public abstract void Accept (Object o, Direction d);

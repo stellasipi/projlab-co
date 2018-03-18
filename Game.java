@@ -1,7 +1,5 @@
 package shokoban;
 
-
-
 public class Game {
 	//Dia
 	Map map;
