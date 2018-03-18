@@ -1,6 +1,7 @@
-package shokoban;
+﻿package shokoban;
 
 public class Wall extends Coloumn {
+	//Kukucs
     public void Accept (Object o, Direction d){
         //bemegyünk a fgv-be
         System.out.println(">");
