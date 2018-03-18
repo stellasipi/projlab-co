@@ -20,7 +20,6 @@ public class Worker extends Object {
 	public void visit(Hole h, Direction d) {
 		//Eltávolítja magát arról a mezőről, mert meg fog halni, így tud oda lépni a következő
 		this.getTile().Remove(this);
-		//h.getGame().Die(this);
 		getGame().Die(this);
 	}
 	
@@ -46,7 +45,6 @@ public class Worker extends Object {
 		//ha aktív lyukként működik
 		if(t.getActive()== true) {
 			this.getTile().Remove(this);
-			//t.getGame().Die(this);
 			getGame().Die(this);
 		}
 		//ha sima mezőként működik ellenőrzi, hogy sikerült-e elmozdulni a másik objectnek, ha null akkor mozoghatnak, amúgy marad minden ugyanaz
@@ -61,7 +59,7 @@ public class Worker extends Object {
 	public void visit(Wall w, Direction d) {
 	}
 	
-	public void push(Crate c, Direction d) {
+	public void push(Object o, Direction d) {
 		
 	}
 	
@@ -76,11 +74,4 @@ public class Worker extends Object {
 		sumscore = s;
 	}
 
-	@Override
-	public void push(Object o, Direction d) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	
 }

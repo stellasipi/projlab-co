@@ -20,7 +20,7 @@ public class Trap extends Hole {
 		System.out.println("[:Trap].Accept(o,d):");
 	}
 
-	public boolean isActive() {
+	public boolean getActive() {
 		//bemegyünk a fgv-be
 		System.out.println(">");
 		System.out.println("	");//itt úgy kéne, hogy annyi tab, ahányaid fgv hívás az adott dialógusba és a visszatérésnél is, csak nem tudom, hogy lenne az...
