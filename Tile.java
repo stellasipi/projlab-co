@@ -9,10 +9,10 @@ public class Tile extends TileElement {
         System.out.println("  ");
         System.out.println("[:Tile].Remove(o):");
 
-        //függvény törzs
+        //fÃ¼ggvÃ©nytÃ¶rzs
         setObject(null);
 
-        //visszatérünk a függvénybõl
+        //visszatÃ©rÃ¼nk a fÃ¼ggvÃ©nybÅ‘l
         System.out.println("<");
         System.out.println("  ");
         System.out.println("[:Tile].Remove(o):");
@@ -25,13 +25,13 @@ public class Tile extends TileElement {
         System.out.println("  ");
         System.out.println("[:Tile].Accept(o,d):");
 
-        //függvény törzs
+      //fÃ¼ggvÃ©nytÃ¶rzs
         if(!this.getObject().equals(null))
 			o.push(o, d);
 		
 		o.visit(this, d);
 
-        //visszatérünk a függvénybõl
+		//visszatÃ©rÃ¼nk a fÃ¼ggvÃ©nybÅ‘l
         System.out.println("<");
         System.out.println("  ");
         System.out.println("[:Tile].Accept(o,d):");
