@@ -133,6 +133,8 @@ public class Worker extends Object {
         System.out.println("  ");
         System.out.println("[:Worker].push(o, d):");
         
+        
+        
         //visszatérünk
         System.out.println("<");
         System.out.println("  ");
