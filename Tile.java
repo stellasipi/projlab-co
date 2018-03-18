@@ -24,7 +24,7 @@ public class Tile extends TileElement {
         System.out.println("[:Tile].Accept(o,d):");
 
       //függvénytörzs
-        if(!this.getObject().equals(null))
+        if(this.getObject() != null)
 			o.push(o, d);
 		
 		o.visit(this, d);
