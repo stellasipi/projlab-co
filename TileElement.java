@@ -1,10 +1,10 @@
 package shokoban;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
 public abstract class TileElement {
 
-    private ArrayList<TileElement> neighbours;
+    private HashMap<Direction,TileElement> neighbours;
     private Object object;
 
     public abstract void Accept (Object o, Direction d);
@@ -35,7 +35,7 @@ public abstract class TileElement {
         System.out.println("  ");
         System.out.println("[:TileElement].getNeighbour(d):");
         
-        return neighbours; // ez nem jó, mert csak 
+        return neighbours.get(d);
     }
 
     public Object getObject() {
