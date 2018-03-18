@@ -1,21 +1,31 @@
 package shokoban;
 
 public class Target extends TileElement {
+	public void Accept(Object o, Direction d) {
+		//bemegyünk a fgv-be
+		System.out.println(">");
+		System.out.println("	");
+		System.out.println("[:Target].Accept(o,d):");
+		o.push(o, d);
+		o.visit(this, d);
+		
+	}
+	
 	public void Accept(Crate c, Direction d) {
 		//bemegyünk a fgv-be
 		System.out.println(">");
 		System.out.println("	");
-		System.out.println("[:Crate].Accept(c,d):");
+		System.out.println("[:Target].Accept(c,d):");
 		c.push(c, d);
 		c.visit(this, d);
-		//this.object.setObject(c); //ezt még meg kell írni a TileElements-be	
+		this.setObject(c); //ezt még meg kell írni a TileElements-be	
 	}
 	
 	public void Remove(Crate c) {
 		System.out.println(">");
 		System.out.println("	");
-		System.out.println("[:Crate].Accept(c,d):");
-		//this.object.setObject(NULL);
-		//c.game.CalculateScores(); //ez nem működik még, csak jelzés
+		System.out.println("[:Target].Remove(c,d):");
+		this.setObject(null);
+		c.getGame().CalculateScores(); //ez nem működik még, csak jelzés
 	}
 }

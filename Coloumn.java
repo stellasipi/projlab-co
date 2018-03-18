@@ -7,11 +7,10 @@ public class Coloumn extends TileElement {
         System.out.println("  ");
         System.out.println("[:Coloumn].Accept(object, dir):");
 
-        if (this.getObject() != null)
+        if (!this.getObject().equals(null))
         o.push(o, d);
 
         o.visit(this, d);
-        this.Remove(o);
 
         //visszatérünk a fgv-ből
         System.out.println("<");

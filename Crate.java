@@ -61,7 +61,7 @@ public class Crate extends Object {
 		//fgv törzs
 		trap.Remove(this);
 		this.setTile(trap);
-		if(trap.getActive())
+		if(trap.getActive()) //ha aktív a csapda
 			getGame().Die(this);//nem elérhető többé a láda
 		
 		//visszatérünk a fgv-ből
@@ -110,7 +110,6 @@ public class Crate extends Object {
 		
 		//üres függvény, az falra láda nem tud rálépni
 		
-		
 		//visszatérünk a fgv-ből
 		System.out.println("<");
 		System.out.println("	");
@@ -123,8 +122,7 @@ public class Crate extends Object {
 		System.out.println("	");
 		System.out.println("[:Crate].push(o,d):");
 		
-		//fgv törzs
-		
+		//üres fgv
 		
 		//visszatérünk a fgv-ből
 		System.out.println("<");

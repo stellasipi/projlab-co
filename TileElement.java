@@ -2,25 +2,10 @@ package shokoban;
 
 public abstract class TileElement {
 
-    private TileElement neighbours;
+    private TileElement neighbours; //ennek vmi tárolónak kéne lennie
     private Object object;
 
-    public void Accept (Object o, Direction d){
-        //bemegyünk a fgv-be
-        System.out.println(">");
-        System.out.println("  ");
-        System.out.println("[:TileElement].Accept(object, dir):");
-
-        if (!object.equals(null))
-            o.push(o, d);
-
-        o.visit(this, d);
-
-        //visszatérünk a fgv-ből
-        System.out.println("<");
-        System.out.println("  ");
-        System.out.println("[:TileElement].Accept(object, dir):");
-    }
+    public abstract void Accept (Object o, Direction d);
 
     public void Remove(Object o) {
         //bemegyünk a fgv-be
@@ -48,7 +33,7 @@ public abstract class TileElement {
         System.out.println("  ");
         System.out.println("[:TileElement].getNeighbour(d):");
         
-        return neighbours;
+        return neighbours; // ez nem jó, mert csak 
     }
 
     public Object getObject() {
