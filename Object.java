@@ -26,12 +26,11 @@ public abstract class Object {
         System.out.println("  ");
         System.out.println("[:Object].getTile():");
 
-        return tile;
-
         //visszatérünk a fgv-ből
         System.out.println("<");
         System.out.println("  ");
         System.out.println("[:Object].getTile():");
+        return tile;
     }
 
     public void setTile(TileElement tile) {
@@ -54,12 +53,12 @@ public abstract class Object {
     	System.out.println("  ");
     	System.out.println("[:Object].getGame():");
 
-    	return game;
-
     	//visszatérünk a fgv-ből
     	System.out.println("<");
     	System.out.println("  ");
     	System.out.println("[:Object].getGame():");
+    	
+    	return game;
     }
 
     public void setGame(Game game) {

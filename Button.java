@@ -9,9 +9,10 @@ public class Button extends TileElement {
 		System.out.println("	");//itt úgy kéne, hogy annyi tab, ahányaid fgv hívás az adott dialógusba és a visszatérésnél is, csak nem tudom, hogy lenne az...
 		System.out.println("[:Button].Accept(c,d):");
 		
-		c.push(c, d);
+		if(!this.getObject().equals(null))//amíg van a következő mezőn láda vagy munkás, addig hívjuk a push-t
+			c.push(c, d);
+		
 		c.visit(this, d);
-		this.Remove(c);
 		
 		//visszatérünk a fgv-ből
 		System.out.println("<");
@@ -26,6 +27,7 @@ public class Button extends TileElement {
 		System.out.println("[:Button].Remove(c):");
 		
 		//fgv törzs
+		Switch(trap);
 		c.setTile(null); //ebbe azért nem vagyok biztos
 		
 		//visszatérünk a fgv-ből
@@ -41,9 +43,9 @@ public class Button extends TileElement {
 		System.out.println("[:Button].Switch(t):");
 		
 		if(t.getActive())
-			setActive(true);
+			t.setActive(true); //aktívra állítjuk a csapdát
 		else
-			setActive(false);
+			t.setActive(false); //inaktívra állítjuk a csapdát
 		
 		//visszatérünk a fgv-ből
 		System.out.println("<");
@@ -57,12 +59,12 @@ public class Button extends TileElement {
 		System.out.println("	");
 		System.out.println("[:Button].getTrap():");
 		
-		return trap;
-		
 		//visszatérünk a fgv-ből
 		System.out.println("<");
 		System.out.println("	");
 		System.out.println("[:Button].getTrap():");
+		
+		return trap;
 	}
 
 	public void setTrap(Trap trap) {

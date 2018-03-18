@@ -11,11 +11,10 @@ public abstract class TileElement {
         System.out.println("  ");
         System.out.println("[:TileElement].Accept(object, dir):");
 
-        if this.getObject() != null)
+        if (!object.equals(null))
             o.push(o, d);
 
         o.visit(this, d);
-        this.Remove(o);
 
         //visszatérünk a fgv-ből
         System.out.println("<");
@@ -30,7 +29,7 @@ public abstract class TileElement {
         System.out.println("[:TileElement].Remove(o):");
 
         //fgv törzs
-        o.setObject(null);
+        setObject(null);
 
         //visszatérünk a fgv-ből
         System.out.println("<");
@@ -38,18 +37,18 @@ public abstract class TileElement {
         System.out.println("[:TileElement].Remove(o):");
     }
 
-    public TileElementaí getNeighbour(Direction d) {
+    public TileElement getNeighbour(Direction d) {
         //bemegyünk a fgv-be
         System.out.println(">");
         System.out.println("  ");
         System.out.println("[:TileElement].getNeighbour(d):");
 
-        return neighbour;
-
         //visszatérünk a fgv-ből
         System.out.println("<");
         System.out.println("  ");
         System.out.println("[:TileElement].getNeighbour(d):");
+        
+        return neighbours;
     }
 
     public Object getObject() {
@@ -57,13 +56,13 @@ public abstract class TileElement {
         System.out.println(">");
         System.out.println("  ");
         System.out.println("[:TileElement].getObject():");
-
-        return object;
-
+        
         //visszatérünk a fgv-ből
         System.out.println("<");
         System.out.println("  ");
         System.out.println("[:TileElement].getObject():");
+        
+        return object;
     }
 
     public void setObject(Object object) {

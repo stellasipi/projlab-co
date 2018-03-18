@@ -12,7 +12,6 @@ public class Crate extends Object {
 		
 		//üres függvény, az oszlopra láda nem tud rálépni
 		
-		
 		//visszatérünk a fgv-ből
 		System.out.println("<");
 		System.out.println("	");
@@ -26,6 +25,7 @@ public class Crate extends Object {
 		System.out.println("[:Crate].visit(target,d):");
 		
 		//fgv törzs
+		target.Remove(this);
 		//setPushedBy();
 		this.setTile(target);
 		
@@ -42,8 +42,9 @@ public class Crate extends Object {
 		System.out.println("[:Crate].visit(h,d):");
 		
 		//fgv törzs
+		h.Remove(this);
 		this.setTile(h);
-		Game.Die(this);//a nem elérhető a láda
+		getGame().Die(this);//a nem elérhető a láda
 		
 		//visszatérünk a fgv-ből
 		System.out.println("<");
@@ -58,9 +59,10 @@ public class Crate extends Object {
 		System.out.println("[:Crate].visit(trap,d):");
 		
 		//fgv törzs
+		trap.Remove(this);
 		this.setTile(trap);
 		if(trap.getActive())
-			Game.Die(this);//nem elérhető többé a láda
+			getGame().Die(this);//nem elérhető többé a láda
 		
 		//visszatérünk a fgv-ből
 		System.out.println("<");
@@ -75,8 +77,8 @@ public class Crate extends Object {
 		System.out.println("[:Crate].visit(b,d):");
 		
 		//fgv törzs
+		b.Remove(this);
 		this.setTile(b);
-		b.Switch(t);
 		
 		//visszatérünk a fgv-ből
 		System.out.println("<");
@@ -91,6 +93,7 @@ public class Crate extends Object {
 		System.out.println("[:Crate].visit(tile,d):");
 		
 		//fgv törzs
+		tile.Remove(this);
 		this.setTile(tile);
 		
 		//visszatérünk a fgv-ből
@@ -135,12 +138,12 @@ public class Crate extends Object {
 		System.out.println("	");
 		System.out.println("[:Crate].getScore():");
 		
-		return score;
-		
 		//visszatérünk a fgv-ből
 		System.out.println("<");
 		System.out.println("	");
 		System.out.println("[:Crate].getScore():");
+		
+		return score;
 	}
 
 	public void setScore(int score) {
@@ -163,12 +166,12 @@ public class Crate extends Object {
 		System.out.println("	");
 		System.out.println("[:Crate].getPushedBy():");
 		
-		return pushedBy;
-		
 		//visszatérünk a fgv-ből
 		System.out.println("<");
 		System.out.println("	");
 		System.out.println("[:Crate].getPushedBy():");
+		
+		return pushedBy;
 	}
 
 	public void setPushedBy(Worker pushedBy) {
