@@ -31,7 +31,13 @@ public class Game {
         System.out.println("[:Game].StartGame():");
 
         //fgv törzs
-        
+        Crate c=new Crate();
+        Worker w = new Worker();
+        map.CreateMap();
+        map.PlaceCrate(c);
+        AddCrate(c);
+        map.PlaceWorker(w);
+        AddWorker(w);
         //bemegyünk a fgv-be
         System.out.println("<");
         System.out.println("  ");
@@ -203,5 +209,4 @@ public class Game {
 	}
 	
 }
-
 
