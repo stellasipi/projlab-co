@@ -10,75 +10,196 @@ public class Game {
 	
 	public void EndGame()
 	{
-		System.out.println("[:Game].EndGame");
+        //bemegyünk a fgv-be
+        System.out.println(">");
+        System.out.println("  ");
+        System.out.println("[:Game].EndGame():");
+        
+        //fgv törzs
+        
+        //bemegyünk a fgv-be
+        System.out.println("<");
+        System.out.println("  ");
+        System.out.println("[:Game].EndGame():");
 	}
 	
 	public void StartGame()
 	{
-		System.out.println("[:Game].StartGame");
+        //bemegyünk a fgv-be
+        System.out.println(">");
+        System.out.println("  ");
+        System.out.println("[:Game].StartGame():");
+
+        //fgv törzs
+        
+        //bemegyünk a fgv-be
+        System.out.println("<");
+        System.out.println("  ");
+        System.out.println("[:Game].StartGame():");
 	}
 	
 	public void Move(Direction d)
 	{
-		System.out.println("[:Game].Move(d)");
+        //bemegyünk a fgv-be
+        System.out.println(">");
+        System.out.println("  ");
+        System.out.println("[:Game].Move(d):");
+
+        //fgv törzs
+        
+        //bemegyünk a fgv-be
+        System.out.println("<");
+        System.out.println("  ");
+        System.out.println("[:Game].Move(d):");
+
 	}
 	
 	public void Check()
 	{
-		System.out.println("[:Game].Check()");
+        //bemegyünk a fgv-be
+        System.out.println(">");
+        System.out.println("  ");
+        System.out.println("[:Game].Check():");
+
 		CheckCrateOnTarget();
 		CheckDeadWorker();
 		CheckMoveableCrate();
 		CheckPushable();
+        
+        //bemegyünk a fgv-be
+        System.out.println("<");
+        System.out.println("  ");
+        System.out.println("[:Game].Check():");
+
 	}
 	
 	public void AddWorker(Worker w)
 	{
-		System.out.println("[:Game].AddWorker(w)");
+        //bemegyünk a fgv-be
+        System.out.println(">");
+        System.out.println("  ");
+        System.out.println("[:Game].AddWorker(w):");
+
+        //fgv törzs
+        
+        //bemegyünk a fgv-be
+        System.out.println("<");
+        System.out.println("  ");
+        System.out.println("[:Game].AddWorker(w):");
 	}
 	
-	public void AddWorker(Crate c)
+	public void AddCrate(Crate c)
 	{
-		System.out.println("[:Game].AddCrate(c)");
+        //bemegyünk a fgv-be
+        System.out.println(">");
+        System.out.println("  ");
+        System.out.println("[:Game].AddCrate(c):");
+
+        //fgv törzs
+        
+        //bemegyünk a fgv-be
+        System.out.println("<");
+        System.out.println("  ");
+        System.out.println("[:Game].AddCrate(c):");
 	}
 	
 	public boolean CheckCrateOnTarget()
 	{
-		System.out.println("[:Game].CheckCrateOnTarget()");
+        //bemegyünk a fgv-be
+        System.out.println(">");
+        System.out.println("  ");
+        System.out.println("[:Game].CheckCrateOnTarget():");
+        
+        //bemegyünk a fgv-be
+        System.out.println("<");
+        System.out.println("  ");
+        System.out.println("[:Game].CheckCrateOnTarget():");
 		return false;
 	}
 	
 	public boolean CheckDeadWorker()
 	{
-		System.out.println("[:Game].CheckDeadWorker()");
+        //bemegyünk a fgv-be
+        System.out.println(">");
+        System.out.println("  ");
+        System.out.println("[:Game].CheckDeadWorker():");
+        
+        //bemegyünk a fgv-be
+        System.out.println("<");
+        System.out.println("  ");
+        System.out.println("[:Game].CheckDeadWorker():");
 		return false;
 	}
 	
 	public boolean CheckMoveableCrate()
 	{
-		System.out.println("[:Game].CheckMoveableCrate()");
+        //bemegyünk a fgv-be
+        System.out.println(">");
+        System.out.println("  ");
+        System.out.println("[:Game].CheckMoveableCrate():");
+        
+        //bemegyünk a fgv-be
+        System.out.println("<");
+        System.out.println("  ");
+        System.out.println("[:Game].CheckMoveableCrate():");
 		return false;
 	}
 	
 	public boolean CheckPushable()
 	{
-		System.out.println("[:Game].CheckPushable()");
+        //bemegyünk a fgv-be
+        System.out.println(">");
+        System.out.println("  ");
+        System.out.println("[:Game].CheckPushable():");
+        
+        //bemegyünk a fgv-be
+        System.out.println("<");
+        System.out.println("  ");
+        System.out.println("[:Game].CheckPushable():");
 		return false;
 	}
 	
 	public void CalculateScores()
 	{
-		System.out.println("[:Game].CalculateScores()");
+        //bemegyünk a fgv-be
+        System.out.println(">");
+        System.out.println("  ");
+        System.out.println("[:Game].CalculateScores():");
+        
+        //bemegyünk a fgv-be
+        System.out.println("<");
+        System.out.println("  ");
+        System.out.println("[:Game].CalculateScores():");
 	}
 	
 	public void Die(Worker w)
 	{
-		System.out.println("[:Game].Die(w)");
+        //bemegyünk a fgv-be
+        System.out.println(">");
+        System.out.println("  ");
+        System.out.println("[:Game].Die(w):");
+        
+        //fgv törzs
+        
+        //bemegyünk a fgv-be
+        System.out.println("<");
+        System.out.println("  ");
+        System.out.println("[:Game].Die(w):");
 	}
 	
 	public void Die(Crate c)
 	{
-		System.out.println("[:Game].Die(c)");
+	    //bemegyünk a fgv-be
+        System.out.println(">");
+        System.out.println("  ");
+        System.out.println("[:Game].Die(c):");
+        
+        //fgv törzs
+        
+        //bemegyünk a fgv-be
+        System.out.println("<");
+        System.out.println("  ");
+        System.out.println("[:Game].Die(c):");
 	}
 	
 }

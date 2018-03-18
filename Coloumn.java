@@ -5,7 +5,7 @@ public class Coloumn extends TileElement {
         //bemegyünk a fgv-be
         System.out.println(">");
         System.out.println("  ");
-        System.out.println("[:Coloumn].Accept(object, dir):");
+        System.out.println("[:Coloumn].Accept(o, d):");
 
         if (!this.getObject().equals(null))
         o.push(o, d);
@@ -15,6 +15,6 @@ public class Coloumn extends TileElement {
         //visszatérünk a fgv-ből
         System.out.println("<");
         System.out.println("  ");
-        System.out.println("[:Coloumn].Accept(object, dir):");
+        System.out.println("[:Coloumn].Accept(o, d):");
     }
 }
