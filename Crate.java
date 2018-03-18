@@ -24,11 +24,13 @@ public class Crate extends Object {
 		System.out.println("	");
 		System.out.println("[:Crate].visit(target,d):");
 		
-		//fgv törzs
-		target.Remove(this);
-		//setPushedBy();
-		this.setTile(target);
-		
+        //Ellenőrzi, hogy sikerült-e elmozdulni a másik objectnek, ha null akkor mozoghatnak, amúgy marad minden ugyanaz
+		if(target.getObject() == null) {
+			this.getTile().Remove(this); //eltávolítja magát a másikról
+			target.setObject(this);	//beállítja magát az új mezőnek
+			this.setTile(target);	//beállítj az új mezőt magának
+			//setPushedBy(); //ez még nem jó
+		}
 		
 		//visszatérünk a fgv-ből
 		System.out.println("<");
@@ -41,10 +43,9 @@ public class Crate extends Object {
 		System.out.println("	");
 		System.out.println("[:Crate].visit(h,d):");
 		
-		//fgv törzs
-		h.Remove(this);
-		this.setTile(h);
-		getGame().Die(this);//a nem elérhető a láda
+		//Eltávolítja magát arról a mezőről, mert meg fog halni, így tud oda lépni a következő
+		this.getTile().Remove(this);
+		getGame().Die(this);
 		
 		//visszatérünk a fgv-ből
 		System.out.println("<");
@@ -58,11 +59,17 @@ public class Crate extends Object {
 		System.out.println("	");
 		System.out.println("[:Crate].visit(trap,d):");
 		
-		//fgv törzs
-		trap.Remove(this);
-		this.setTile(trap);
-		if(trap.getActive()) //ha aktív a csapda
-			getGame().Die(this);//nem elérhető többé a láda
+		//ha aktív lyukként működik
+		if(trap.getActive()) {
+			this.getTile().Remove(this);
+			getGame().Die(this);
+		}
+		//ha sima mezőként működik ellenőrzi, hogy sikerült-e elmozdulni a másik objectnek, ha null akkor mozoghatnak, amúgy marad minden ugyanaz
+		else if(trap.getObject() == null){
+			this.getTile().Remove(this); //eltávolítja magát a másikról
+			trap.setObject(this);	//beállítja magát az új mezőnek
+			this.setTile(trap);	//beállítj az új mezőt magának
+		}
 		
 		//visszatérünk a fgv-ből
 		System.out.println("<");
@@ -76,9 +83,12 @@ public class Crate extends Object {
 		System.out.println("	");
 		System.out.println("[:Crate].visit(b,d):");
 		
-		//fgv törzs
-		b.Remove(this);
-		this.setTile(b);
+        //Ellenőrzi, hogy sikerült-e elmozdulni a másik objectnek, ha null akkor mozoghatnak, amúgy marad minden ugyanaz
+		if(b.getObject() == null) {
+			this.getTile().Remove(this); //eltávolítja magát a másikról
+			b.setObject(this);	//beállítja magát az új mezőnek
+			this.setTile(b);	//beállítj az új mezőt magának
+		}
 		
 		//visszatérünk a fgv-ből
 		System.out.println("<");
@@ -92,9 +102,12 @@ public class Crate extends Object {
 		System.out.println("	");
 		System.out.println("[:Crate].visit(tile,d):");
 		
-		//fgv törzs
-		tile.Remove(this);
-		this.setTile(tile);
+		//Ellenőrzi, hogy sikerült-e elmozdulni a másik objectnek, ha null akkor mozoghatnak, amúgy marad minden ugyanaz
+		if(tile.getObject() == null) {
+			this.getTile().Remove(this); //eltávolítja magát a másikról
+			tile.setObject(this);	//beállítja magát az új mezőnek
+			this.setTile(tile);	//beállítj az új mezőt magának
+		}
 		
 		//visszatérünk a fgv-ből
 		System.out.println("<");
@@ -122,7 +135,7 @@ public class Crate extends Object {
 		System.out.println("	");
 		System.out.println("[:Crate].push(o,d):");
 		
-		//üres fgv
+		
 		
 		//visszatérünk a fgv-ből
 		System.out.println("<");
