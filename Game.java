@@ -1,10 +1,12 @@
-package shokoban;
+﻿package shokoban;
+
+import java.util.ArrayList;
 
 public class Game {
 	//Dia
 	Map map;
-	Crate[] crates;
-	Worker[] workers;
+	ArrayList<Crate> crates= new ArrayList<>();
+	ArrayList<Worker> workers= new ArrayList<>();
 	
 	public void EndGame()
 	{
@@ -201,4 +203,5 @@ public class Game {
 	}
 	
 }
+
 
