@@ -1,4 +1,5 @@
-package shokoban;
+﻿package shokoban;
+
 
 public class Worker extends Object {
 	private int sumscore;
@@ -13,13 +14,14 @@ public class Worker extends Object {
 	}
 	
 	//Nem történik semmi, így üres
-	public void visit(Column c, Direction d) {
+	public void visit(Coloumn c, Direction d) {
 	}
 	
 	public void visit(Hole h, Direction d) {
 		//Eltávolítja magát arról a mezőről, mert meg fog halni, így tud oda lépni a következő
 		this.getTile().Remove(this);
-		h.getGame().Die(this);
+		//h.getGame().Die(this);
+		getGame().Die(this);
 	}
 	
 	public void visit(Target t, Direction d) {
@@ -44,7 +46,8 @@ public class Worker extends Object {
 		//ha aktív lyukként működik
 		if(t.getActive()== true) {
 			this.getTile().Remove(this);
-			t.getGame().Die(this);
+			//t.getGame().Die(this);
+			getGame().Die(this);
 		}
 		//ha sima mezőként működik ellenőrzi, hogy sikerült-e elmozdulni a másik objectnek, ha null akkor mozoghatnak, amúgy marad minden ugyanaz
 		else if(t.getObject()== null){
@@ -72,4 +75,12 @@ public class Worker extends Object {
 	public void setSumscore(int s) {
 		sumscore = s;
 	}
+
+	@Override
+	public void push(Object o, Direction d) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
 }
