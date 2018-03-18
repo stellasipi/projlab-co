@@ -1,5 +1,4 @@
 ﻿package shokoban;
-
 import java.util.ArrayList;
 
 public class Game {
@@ -186,6 +185,7 @@ public class Game {
         System.out.println("[:Game].Die(w):");
         
         //fgv törzs
+        workers.remove(w);
         
         //bemegyünk a fgv-be
         System.out.print("<");
@@ -201,6 +201,7 @@ public class Game {
         System.out.println("[:Game].Die(c):");
         
         //fgv törzs
+        crates.remove(c);
         
         //bemegyünk a fgv-be
         System.out.print("<");
@@ -209,4 +210,5 @@ public class Game {
 	}
 	
 }
+
 
