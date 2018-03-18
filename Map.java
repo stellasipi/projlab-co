@@ -1,85 +1,19 @@
 package shokoban;
 
+import java.util.ArrayList;
+
 public class Map {
-	private TileElement[] tiles;
+	ArrayList<TileElement> tiles=new ArrayList<>();
 	
-	public void AddTileElement(TileElement t){
-        //bemegyünk a fgv-be
-        System.out.println(">");
-        System.out.println("  ");
-        System.out.println("[:Map].AddTileElement(t):");
-
-        //fgv törzs
-
-        //visszatérünk a fgv-ből
-        System.out.println("<");
-        System.out.println("  ");
-        System.out.println("[:Map].AddTileElement(t):");
-	}
-	public void PlaceWorker(Worker w) {
-        //bemegyünk a fgv-be
-        System.out.println(">");
-        System.out.println("  ");
-        System.out.println("[:Map].PlaceWorker(t):");
-
-        //fgv törzs
-
-        //visszatérünk a fgv-ből
-        System.out.println("<");
-        System.out.println("  ");
-        System.out.println("[:Map].PlaceWorker(t):");
-	}
-	public void PlaceCrate(Crate c) {
-        //bemegyünk a fgv-be
-        System.out.println(">");
-        System.out.println("  ");
-        System.out.println("[:Map].PlaceCrate(c):");
-
-        //fgv törzs
-
-        //visszatérünk a fgv-ből
-        System.out.println("<");
-        System.out.println("  ");
-        System.out.println("[:Map].PlaceCrate(c):");
-	}
-	public void CreateMap() {
-        //bemegyünk a fgv-be
-        System.out.println(">");
-        System.out.println("  ");
-        System.out.println("[:Map].CreateMap():");
-
-        //fgv törzs
-
-        //visszatérünk a fgv-ből
-        System.out.println("<");
-        System.out.println("  ");
-        System.out.println("[:Map].CreateMap():");
-	}
+	public void AddTileElement(TileElement t){}
+	public void PlaceWorker(Worker w) {}
+	public void PlaceCrate(Crate c) {}
+	public void CreateMap() {}
 	
-	public TileElement[] getTiles() {
-        //bemegyünk a fgv-be
-        System.out.println(">");
-        System.out.println("  ");
-        System.out.println("[:Map].getTiles():");
-
-        //visszatérünk a fgv-ből
-        System.out.println("<");
-        System.out.println("  ");
-        System.out.println("[:Map].getTiles():");
-        
+	public ArrayList<TileElement> getTiles() {
 		return tiles;
 	}
-	public void setTiles(TileElement[] tiles) {
-        //bemegyünk a fgv-be
-        System.out.println(">");
-        System.out.println("  ");
-        System.out.println("[:Map].setTiles(tiles):");
-        
+	public void setTiles(ArrayList<TileElement> tiles) {
 		this.tiles = tiles;
-		
-        //visszatérünk a fgv-ből
-        System.out.println("<");
-        System.out.println("  ");
-        System.out.println("[:Map].setTiles(tiles):");
 	}
 }
