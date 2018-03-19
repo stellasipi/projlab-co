@@ -100,12 +100,6 @@ public class Crate extends Object {
 		System.out.print(">");
 		System.out.print("	");
 		System.out.println("[:Crate].visit(w,d):");
-		
-		//üres függvény, az falra láda nem tud rálépni
-				//visszatérünk a fgv-ből
-		System.out.print("<");
-		System.out.print("	");
-		System.out.println("[:Crate].visit(w,d):");
 	}
 	
 	public void push(Object o, Direction d) {
