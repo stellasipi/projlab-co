@@ -1,7 +1,7 @@
 ﻿package shokoban;
 
 public class Trap extends Hole {
-	private boolean active;
+	private boolean active = false;
 	
 	public void Accept (Object o,Direction d){
 		//bemegyünk a fgv-be

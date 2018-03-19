@@ -105,6 +105,7 @@ public class Main {
 	        			
 	        			break;
 	        		case(3):
+	        			Scene3 s3=new Scene3();
 	        			System.out.println("3.0 Munkás eltol egy ládát egy adott mezőről (és egy sima üres mezőre érkezik)\n");
 		        		input = bufferedReader.readLine();
 		        		almenu=Integer.parseInt(input);
@@ -112,11 +113,7 @@ public class Main {
 		        			{
 			        			case(1):
 			        				System.out.println("3.1 A mező, amiről toljuk csapda legyen.");
-				        			input = bufferedReader.readLine();
-				        			if(input.equals("y")||input.equals("Y"))
-				        			{
-				        				//forgatóköny 
-				        			}
+				        			s3.Scene3_1();
 			        				break;
 			        			case(2):
 			        				System.out.println("3.2 A mező, amiről toljuk cél legyen.");

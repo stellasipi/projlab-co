@@ -12,7 +12,6 @@ public class Crate extends Object {
 		System.out.println("[:Crate].visit(c,d):");
 		
 		//üres függvény, az oszlopra láda nem tud rálépni
-		
 
 	}
 	
@@ -23,9 +22,12 @@ public class Crate extends Object {
 		System.out.println("[:Crate].visit(target,d):");
 		
 		//fgv törzs
-		target.Remove(this);
-		//setPushedBy();
-		this.setTile(target);
+		if(target.getObject() == null) {
+			this.getTile().Remove(this);
+			this.setTile(target);
+			target.setObject(this);
+			//setPushedBy();
+		}
 	
 	}
 	public void visit(Hole h ,Direction d) {
@@ -35,9 +37,12 @@ public class Crate extends Object {
 		System.out.println("[:Crate].visit(h,d):");
 		
 		//fgv törzs
-		h.Remove(this);
-		this.setTile(h);
-		getGame().Die(this);//a nem elérhető a láda
+		if(h.getObject() == null) {
+			this.getTile().Remove(this);
+			this.setTile(h);
+			h.setObject(this);
+			getGame().Die(this);//a nem elérhető a láda
+		}
 
 	}
 	
@@ -48,10 +53,16 @@ public class Crate extends Object {
 		System.out.println("[:Crate].visit(trap,d):");
 		
 		//fgv törzs
-		trap.Remove(this);
-		this.setTile(trap);
-		if(trap.getActive()) //ha aktív a csapda
+		if(trap.getActive()) { //ha aktív a csapda
 			getGame().Die(this);//nem elérhető többé a láda
+		}else{
+			if(trap.getObject() == null) {
+				this.getTile().Remove(this);
+				this.setTile(trap);
+				trap.setObject(this);
+			}
+		}
+
 		
 	}
 	
@@ -62,8 +73,11 @@ public class Crate extends Object {
 		System.out.println("[:Crate].visit(b,d):");
 		
 		//fgv törzs
-		b.Remove(this);
-		this.setTile(b);
+		if(b.getObject() == null) {
+			this.getTile().Remove(this);
+			this.setTile(b);
+			b.setObject(this);
+		}
 
 	}
 	
@@ -74,10 +88,11 @@ public class Crate extends Object {
 		System.out.println("[:Crate].visit(tile,d):");
 		
 		//fgv törzs
-		tile.Remove(this);
-		this.setTile(tile);
-		
-
+		if(tile.getObject() == null) {
+			this.getTile().Remove(this);
+			this.setTile(tile);
+			tile.setObject(this);
+		}
 	}
 	
 	public void visit(Wall w ,Direction d) {

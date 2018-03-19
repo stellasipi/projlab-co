@@ -16,7 +16,7 @@ public abstract class TileElement {
         System.out.println("[:TileElement].Remove(o):");
 
         //fgv törzs
-        setObject(null);
+        this.setObject(null);
     }
 
     public TileElement getNeighbour(Direction d) {
