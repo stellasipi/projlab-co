@@ -37,6 +37,20 @@ public abstract class TileElement {
         
         return neighbours.get(d);
     }
+    
+    public void setNeighbour(TileElement t, Direction d) {
+    	//bemegyünk a fgv-be
+        System.out.print(">");
+        System.out.print("  ");
+        System.out.println("[:TileElement].setNeighbour(t,d):");
+        
+    	neighbours.put(d, t);
+    	
+    	//visszatérünk a fgv-ből
+        System.out.print("<");
+        System.out.print("  ");
+        System.out.println("[:TileElement].getNeighbour(t,d):");
+    }
 
     public Object getObject() {
         //bemegyünk a fgv-be
