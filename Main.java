@@ -55,11 +55,8 @@ public class Main {
 	        		case(1):
 	        			System.out.println("1.0 Pálya felépítése");
 		        		{
-		        			for(int i=0; i<20; i++) {
-		        				for(int j=0; j<15; j++) {
-		        					
-		        				}
-		        			}
+		        			Scene1 s1=new Scene1();
+		        			s1.Scene1_0();
 		        		}
 	        			break;
 	        		case(2):
@@ -133,35 +130,36 @@ public class Main {
 	        		case(4):
 	        			System.out.println("4 Munkás lyukba lép\n");
 		        		{
-		        			Scene3 s4=new Scene4();
-		        			s4.Scene4();
-		        			break;
+		        			Scene4 s4=new Scene4();
+		        			s4.Scene4_0();
 		        		}
 	        			break;
 	        		case(5):
 	        			System.out.println("5 Láda ládát tol\n");
 		        		{
-		        			Scene3 s5=new Scene5();
-		        			s5.Scene5();
-		        			break;
+		        			Scene5 s5= new Scene5();
+		        			s5.Scene5_0();
 		        		}
 	        			break;
 	        		case(6):
 	        			System.out.println("6 Munkás munkást tol\n");
 		        		{
-		        			//forgatókönyv
+		        			Scene6 s6=new Scene6();
+		        			s6.Scene6_0();
 		        		}
 	        			break;
 	        		case(7):
 	        			System.out.println("7 MLMF\n");
 		        		{
-		        			//forgatókönyv
+		        			Scene7 s7=new Scene7();
+		        			s7.Scene7_0();
 		        		}
 	        			break;
 	        		case(8):
 	        			System.out.println("8 MLMMF\n");
 		        		{
-		        			//forgatókönyv
+		        			Scene8 s8=new Scene8();
+		        			s8.Scene8_0();
 		        		}
 	        			break;
 	    
