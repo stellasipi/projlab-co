@@ -13,39 +13,13 @@ public class Trap extends Hole {
 			o.push(o, d);
 		
 		o.visit(this, d);
-		
-		//visszatérünk a fgv-ből
-		System.out.print("<");
-		System.out.print("	");
-		System.out.println("[:Trap].Accept(o,d):");
 	}
 
 	public boolean getActive() {
-		//bemegyünk a fgv-be
-		System.out.print(">");
-		System.out.print("	");//itt úgy kéne, hogy annyi tab, ahányaid fgv hívás az adott dialógusba és a visszatérésnél is, csak nem tudom, hogy lenne az...
-		System.out.println("[:Trap].isActive():");
-		
-		//visszatérünk a fgv-ből
-		System.out.print("<");
-		System.out.print("	");
-		System.out.println("[:Trap].isActive():");
-		
 		return active;
 	}
 
 	public void setActive(boolean active) {
-		//bemegyünk a fgv-be
-		System.out.print(">");
-		System.out.print("	");//itt úgy kéne, hogy annyi tab, ahányaid fgv hívás az adott dialógusba és a visszatérésnél is, csak nem tudom, hogy lenne az...
-		System.out.println("[:Trap].setActive(active):");
-		
 		this.active = active;
-		
-		//visszatérünk a fgv-ből
-		System.out.print("<");
-		System.out.print("	");
-		System.out.println("[:Trap].setActive(active):");
 	}
-
 }

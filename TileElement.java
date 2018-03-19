@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public abstract class TileElement {
 
-    private HashMap<Direction,TileElement> neighbours;
+    private HashMap<Direction,TileElement> neighbours=new HashMap<Direction,TileElement>();
     private Object object;
 
     public abstract void Accept (Object o, Direction d);
@@ -17,53 +17,22 @@ public abstract class TileElement {
 
         //fgv törzs
         setObject(null);
-
-        //visszatérünk a fgv-ből
-        System.out.print("<");
-        System.out.print("  ");
-        System.out.println("[:TileElement].Remove(o):");
     }
 
     public TileElement getNeighbour(Direction d) {
-        //bemegyünk a fgv-be
-        System.out.print(">");
-        System.out.print("  ");
-        System.out.println("[:TileElement].getNeighbour(d):");
-
-        //visszatérünk a fgv-ből
-        System.out.print("<");
-        System.out.print("  ");
-        System.out.println("[:TileElement].getNeighbour(d):");
-        
-        return neighbours.get(d);
+    	return neighbours.get(d);
+    }
+    
+    public void setNeighbour(TileElement t, Direction d) {
+    	neighbours.put(d, t);
     }
 
     public Object getObject() {
-        //bemegyünk a fgv-be
-        System.out.print(">");
-        System.out.print("  ");
-        System.out.println("[:TileElement].getObject():");
-        
-        //visszatérünk a fgv-ből
-        System.out.print("<");
-        System.out.print("  ");
-        System.out.println("[:TileElement].getObject():");
-        
-        return object;
+    	return object;
     }
 
     public void setObject(Object object) {
-        //bemegyünk a fgv-be
-        System.out.print(">");
-        System.out.print("  ");
-        System.out.println("[:TileElement].setObject(object):");
-
         this.object = object;
-
-        //visszatérünk a fgv-ből
-        System.out.print("<");
-        System.out.print("  ");
-        System.out.println("[:TileElement].setObject(object):");
     }
 
 }

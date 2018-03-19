@@ -14,23 +14,24 @@ public class Main {
 		System.out.println("Menu:\n"+ 
 				"1.0 Pálya felépítése\n" + 
 				"2.0 Munkás eltol egy ládát egy üres mezőre\n" + 
-				"	2.1 A mező, amire toljuk fal legyen? (Y/N)\n" + 
-				"	2.2 A mező, amire toljuk oszlop legyen? (Y/N)\n" + 
-				"	2.3 A mező, amire toljuk csapda legyen? (Y/N)\n" + 
-				"	2.4 A mező, amire toljuk lyuk legyen? (Y/N)\n" + 
-				"	2.5 A mező, amire toljuk cél legyen? (Y/N)\n" + 
-				"	2.6 A mező, amire toljuk kapcsoló legyen? (Y/N)\n" + 
-				"	2.7 A mező, amire toljuk sima mező legyen? (Y/N)\n" + 
+				"	2.1 A mező, amire toljuk fal legyen.\n" + 
+				"	2.2 A mező, amire toljuk oszlop legyen.\n" + 
+				"	2.3 A mező, amire toljuk csapda legyen.\n" + 
+				"	2.4 A mező, amire toljuk lyuk legyen.\n" + 
+				"	2.5 A mező, amire toljuk cél legyen.\n" + 
+				"	2.6 A mező, amire toljuk kapcsoló legyen.\n" + 
+				"	2.7 A mező, amire toljuk sima mező legyen.\n" + 
 				"3.0 Munkás eltol egy ládát egy adott mezőről (és egy sima üres mezőre érkezik)\n" + 
-				"	3.1 A mező, amiről toljuk csapda legyen? (Y/N)\n" + 
-				"	3.2 A mező, amiről toljuk cél legyen? (Y/N)\n" + 
-				"	3.3 A mező, amiről toljuk kapcsoló legyen? (Y/N)\n" + 
-				"	3.4 A mező, amiről toljuk sima mező legyen? (Y/N)\n" + 
+				"	3.1 A mező, amiről toljuk csapda legyen.\n" + 
+				"	3.2 A mező, amiről toljuk cél legyen.\n" + 
+				"	3.3 A mező, amiről toljuk kapcsoló legyen.\n" + 
+				"	3.4 A mező, amiről toljuk sima mező legyen.\n" + 
 				"4 Munkás lyukba lép\n" + 
 				"5 Láda ládát tol\n" + 
 				"6 Munkás munkást tol\n" + 
 				"7 MLMF\n" + 
 				"8 MLMMF\n" +
+				"9 Kilépés a tesztelő programból"+
 				"Használati útmutató: ...");
     	String input = null;
 		while(true){
@@ -41,7 +42,7 @@ public class Main {
 	    	try {
 	        	BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 	        	input = bufferedReader.readLine();
-	        	if(input.equals("e"))
+	        	if(input.equals("9"))
 	        	{
 	        		break;
 	        	}
@@ -54,11 +55,16 @@ public class Main {
 	        		case(1):
 	        			System.out.println("1.0 Pálya felépítése");
 		        		{
-		        			//forgatókönyv
+		        			for(int i=0; i<20; i++) {
+		        				for(int j=0; j<15; j++) {
+		        					
+		        				}
+		        			}
 		        		}
 	        			break;
 	        		case(2):
-	        			System.out.println("2.0 Munkás eltol egy ládát egy üres mezőre\n");
+	        			Scene2 s2=new Scene2();
+	        			System.out.println("2.0 Munkás eltol egy ládát egy üres mezőre\n"+ "Válaszd ki az almenüt");
 	        			//megnézem mi történik a check() meghívására- még formázni kell, de legalább már részben működik	
 	        			//g.Check();
 	        		input = bufferedReader.readLine();
@@ -66,60 +72,34 @@ public class Main {
 	        			switch(almenu)
 	        			{
 		        			case(1):
-		        				System.out.println("2.1 A mező, amire toljuk fal legyen? (Y/N)");
-			        			input = bufferedReader.readLine();
-			        			if(input.equals("y")||input.equals("Y"))
-			        			{
-			        				//forgatóköny 
-			        			}
+		        				System.out.println("2.1 A mező, amire toljuk fal legyen.");
+		        				s2.Scene2_1();
 		        				break;
 		        			case(2):
-		        				System.out.println("2.2 A mező, amire toljuk oszlop legyen? (Y/N)");
-			        			input = bufferedReader.readLine();
-			        			if(input.equals("y")||input.equals("Y"))
-			        			{
-			        				//forgatóköny 
-			        			}
+		        				System.out.println("2.2 A mező, amire toljuk oszlop legyen.");
+		        				s2.Scene2_2();
 		        				break;
 		        			case(3):
-		        				System.out.println("2.3 A mező, amire toljuk csapda legyen? (Y/N)");
-		        				input = bufferedReader.readLine();
-			        			if(input.equals("y")||input.equals("Y"))
-			        			{
-			        				//forgatóköny 
-			        			}
+		        				System.out.println("2.3 A mező, amire toljuk csapda legyen.");
+		        				s2.Scene2_3();
 		        				break;
 		        			case(4):
-		        				System.out.println("2.4 A mező, amire toljuk lyuk legyen? (Y/N)");
-			        			input = bufferedReader.readLine();
-			        			if(input.equals("y")||input.equals("Y"))
-			        			{
-			        				//forgatóköny 
-			        			}
+		        				System.out.println("2.4 A mező, amire toljuk lyuk legyen.");
+			        			s2.Scene2_4();
 		        				break;
 		        			case(5):
-		        				System.out.println("2.5 A mező, amire toljuk cél legyen? (Y/N)");
-			        			input = bufferedReader.readLine();
-			        			if(input.equals("y")||input.equals("Y"))
-			        			{
-			        				//forgatóköny 
-			        			}
+		        				System.out.println("2.5 A mező, amire toljuk cél legyen.");
+			        			s2.Scene2_5();
 		        				break;
 		        			case(6):
-		        				System.out.println("2.6 A mező, amire toljuk kapcsoló legyen? (Y/N)");
+		        				System.out.println("2.6 A mező, amire toljuk kapcsoló legyen.");
 			        			input = bufferedReader.readLine();
 			        			if(input.equals("y")||input.equals("Y"))
-			        			{
-			        				//forgatóköny 
-			        			}
+			        			s2.Scene2_6();
 		        				break;
 		        			case(7):
-		        				System.out.println("2.7 A mező, amire toljuk sima mező legyen? (Y/N)");
-			        			input = bufferedReader.readLine();
-			        			if(input.equals("y")||input.equals("Y"))
-			        			{
-			        				//forgatóköny 
-			        			}
+		        				System.out.println("2.7 A mező, amire toljuk sima mező legyen.");
+			        			s2.Scene2_7();
 		        				break;
 	        			}
 	        			
@@ -131,7 +111,7 @@ public class Main {
 		        			switch(almenu)
 		        			{
 			        			case(1):
-			        				System.out.println("3.1 A mező, amiről toljuk csapda legyen? (Y/N)");
+			        				System.out.println("3.1 A mező, amiről toljuk csapda legyen.");
 				        			input = bufferedReader.readLine();
 				        			if(input.equals("y")||input.equals("Y"))
 				        			{
@@ -139,7 +119,7 @@ public class Main {
 				        			}
 			        				break;
 			        			case(2):
-			        				System.out.println("3.2 A mező, amiről toljuk cél legyen? (Y/N)");
+			        				System.out.println("3.2 A mező, amiről toljuk cél legyen.");
 				        			input = bufferedReader.readLine();
 				        			if(input.equals("y")||input.equals("Y"))
 				        			{
@@ -147,7 +127,7 @@ public class Main {
 				        			}
 			        				break;
 			        			case(3):
-			        				System.out.println("3.3 A mező, amiről toljuk kapcsoló legyen? (Y/N)");
+			        				System.out.println("3.3 A mező, amiről toljuk kapcsoló legyen.");
 			        				input = bufferedReader.readLine();
 				        			if(input.equals("y")||input.equals("Y"))
 				        			{
@@ -155,7 +135,7 @@ public class Main {
 				        			}
 			        				break;
 			        			case(4):
-			        				{System.out.println("3.4 A mező, amiről toljuk sima mező legyen? (Y/N)");
+			        				{System.out.println("3.4 A mező, amiről toljuk sima mező legyen.");
 				        			input = bufferedReader.readLine();
 				        			if(input.equals("y")||input.equals("Y"))
 				        			{
