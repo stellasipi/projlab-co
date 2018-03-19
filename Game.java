@@ -86,7 +86,8 @@ public class Game {
         System.out.print("  ");
         System.out.println("[:Game].AddWorker(w):");
 
-        //fgv törzs
+        workers.add(w);
+        w.setGame(this);
         
         //bemegyünk a fgv-be
         System.out.print("<");
@@ -101,7 +102,8 @@ public class Game {
         System.out.print("  ");
         System.out.println("[:Game].AddCrate(c):");
 
-        //fgv törzs
+        crates.add(c);
+        c.setGame(this);
         
         //bemegyünk a fgv-be
         System.out.print("<");
