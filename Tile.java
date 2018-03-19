@@ -18,7 +18,7 @@ public class Tile extends TileElement {
 
       //függvénytörzs
         if(this.getObject() != null)
-			o.push(o, d);
+			o.getTile().getNeighbour(d).getObject().push(o, d);
 		
 		o.visit(this, d);		
 	}

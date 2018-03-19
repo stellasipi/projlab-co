@@ -12,9 +12,5 @@ public class Hole extends TileElement {
 			
 			o.visit(this, d);
 			
-			//visszatérünk a fgv-ből
-			System.out.print("<");
-			System.out.print("	");
-			System.out.println("[:Hole].Accept(o,d):");
 		}
 	}
