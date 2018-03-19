@@ -133,17 +133,15 @@ public class Main {
 	        		case(4):
 	        			System.out.println("4 Munkás lyukba lép\n");
 		        		{
-		        			Scene3 s4=new Scene4();
-		        			s4.Scene4();
-		        			break;
+		        			Scene4 s4=new Scene4();
+		        			s4.Scene4_0();
 		        		}
 	        			break;
 	        		case(5):
 	        			System.out.println("5 Láda ládát tol\n");
 		        		{
-		        			Scene3 s5=new Scene5();
-		        			s5.Scene5();
-		        			break;
+		        			Scene5 s5= new Scene5();
+		        			s5.Scene5_0();
 		        		}
 	        			break;
 	        		case(6):
