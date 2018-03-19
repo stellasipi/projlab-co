@@ -12,7 +12,6 @@ public class Coloumn extends TileElement {
 			o.getTile().getNeighbour(d).getObject().push(o, d);
 
         o.visit(this, d);
-        this.Remove(o);
 
     }
     

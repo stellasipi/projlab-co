@@ -41,11 +41,22 @@ public class Scene2 {
 		
 		t2.Accept(worker, Direction.RIGHT);
 	}
-	public void Scene2_3() {
+	public void Scene2_3_active() {
 		this.Scene2set();
 		Trap tr = new Trap();
 		t2.setNeighbour(tr, Direction.RIGHT);
 		tr.setNeighbour(t2, Direction.LEFT);
+		tr.setActive(true);
+		m.AddTileElement(tr);
+		
+		t2.Accept(worker, Direction.RIGHT);
+	}
+	public void Scene2_3_inactive() {
+		this.Scene2set();
+		Trap tr = new Trap();
+		t2.setNeighbour(tr, Direction.RIGHT);
+		tr.setNeighbour(t2, Direction.LEFT);
+		tr.setActive(false);
 		m.AddTileElement(tr);
 		
 		t2.Accept(worker, Direction.RIGHT);
