@@ -43,5 +43,6 @@ public class Target extends TileElement {
 
         //fgv törzs
         this.setObject(null);
+        o.getGame().CalculateScores();
     }
 }
