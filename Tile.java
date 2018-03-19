@@ -9,16 +9,9 @@ public class Tile extends TileElement {
 
         //függvénytörzs
         setObject(null);
-
-        //visszatérünk a függvényből
-        System.out.print("<");
-        System.out.print("  ");
-        System.out.println("[:Tile].Remove(o):");
     }
 
-	@Override
 	public void Accept(Object o, Direction d) {
-		
 		System.out.print(">");
         System.out.print("  ");
         System.out.println("[:Tile].Accept(o,d):");
@@ -27,13 +20,7 @@ public class Tile extends TileElement {
         if(this.getObject() != null)
 			o.push(o, d);
 		
-		o.visit(this, d);
-
-		//visszatérünk a függvényből
-        System.out.print("<");
-        System.out.print("  ");
-        System.out.println("[:Tile].Accept(o,d):");
-		
+		o.visit(this, d);		
 	}
 
 }

@@ -9,11 +9,6 @@ public class Target extends TileElement {
 		o.push(o, d);
 		o.visit(this, d);
 		
-		//visszatérünk a fgv-ből
-		System.out.print("<");
-		System.out.print("	");
-		System.out.println("[:Target].Accept(o,d):");
-		
 	}
 	
 	public void Accept(Crate c, Direction d) {
@@ -25,11 +20,6 @@ public class Target extends TileElement {
 		c.push(c, d);
 		c.visit(this, d);
 		this.setObject(c); //ezt még meg kell írni a TileElements-be
-		
-		//visszatérünk a fgv-ből
-		System.out.print("<");
-		System.out.print("	");
-		System.out.println("[:Target].Accept(c,d):");
 	}
 	
 	public void Remove(Crate c) {
@@ -39,10 +29,5 @@ public class Target extends TileElement {
 		
 		this.setObject(null);
 		c.getGame().CalculateScores(); //ez nem működik még, csak jelzés
-		
-		//visszatérünk a fgv-ből
-		System.out.print("<");
-		System.out.print("	");
-		System.out.println("[:Target].Remove(c,d):");
 	}
 }

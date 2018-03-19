@@ -91,6 +91,7 @@ public class Worker extends Object {
         System.out.print("[:Worker].visit(w, d):");
 	}
 	
+	//Nem történik semmi, így üres
 	public void push(Object o, Direction d) {
         //bemegyünk a fgv-be
         System.out.print(">");
@@ -116,20 +117,10 @@ public class Worker extends Object {
 	}
 	
 	public int getSumscore() {
-        //bemegyünk a fgv-be
-        System.out.print(">");
-        System.out.print("  ");
-        System.out.println("[:Worker].getSumscore():");
-        
 		return sumscore;
 	}
 	
 	public void setSumscore(int s) {
-        //bemegyünk a fgv-be
-        System.out.print(">");
-        System.out.print("  ");
-        System.out.println("[:Worker].setSumscore(s):");
-        
-		sumscore = s;
+        sumscore = s;
 	}
 }
