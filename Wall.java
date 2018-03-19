@@ -6,7 +6,7 @@ public class Wall extends Coloumn {
         //bemegyünk a fgv-be
         System.out.print(">");
         System.out.print("  ");
-        System.out.println("[:Wall].Accept(object, dir):");
+        System.out.println("[:Wall].Accept(object, d):");
 
         if(this.getObject() != null)
 			o.getTile().getNeighbour(d).getObject().push(o, d);

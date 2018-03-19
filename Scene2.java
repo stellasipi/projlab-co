@@ -29,7 +29,7 @@ public class Scene2 {
 		w.setNeighbour(t2, Direction.LEFT);
 		m.AddTileElement(w);
 		
-		t2.Accept(worker, Direction.RIGHT);
+		game.Move(worker, Direction.RIGHT);
 		
 	}
 	public void Scene2_2() {
@@ -39,16 +39,27 @@ public class Scene2 {
 		co.setNeighbour(t2, Direction.LEFT);
 		m.AddTileElement(co);
 		
-		t2.Accept(worker, Direction.RIGHT);
+		game.Move(worker, Direction.RIGHT);
 	}
-	public void Scene2_3() {
+	public void Scene2_3_active() {
 		this.Scene2set();
 		Trap tr = new Trap();
 		t2.setNeighbour(tr, Direction.RIGHT);
 		tr.setNeighbour(t2, Direction.LEFT);
+		tr.setActive(true);
 		m.AddTileElement(tr);
 		
-		t2.Accept(worker, Direction.RIGHT);
+		game.Move(worker, Direction.RIGHT);
+	}
+	public void Scene2_3_inactive() {
+		this.Scene2set();
+		Trap tr = new Trap();
+		t2.setNeighbour(tr, Direction.RIGHT);
+		tr.setNeighbour(t2, Direction.LEFT);
+		tr.setActive(false);
+		m.AddTileElement(tr);
+		
+		game.Move(worker, Direction.RIGHT);
 	}
 	public void Scene2_4() {
 		
@@ -58,7 +69,7 @@ public class Scene2 {
 		ho.setNeighbour(t2, Direction.LEFT);
 		m.AddTileElement(ho);
 		
-		t2.Accept(worker, Direction.RIGHT);
+		game.Move(worker, Direction.RIGHT);
 		
 	}
 	public void Scene2_5() {
@@ -69,7 +80,7 @@ public class Scene2 {
 		ta.setNeighbour(t2, Direction.LEFT);
 		m.AddTileElement(ta);
 		
-		t2.Accept(worker, Direction.RIGHT);
+		game.Move(worker, Direction.RIGHT);
 		
 	}
 	public void Scene2_6() {
@@ -80,7 +91,7 @@ public class Scene2 {
 		bu.setNeighbour(t2, Direction.LEFT);
 		m.AddTileElement(bu);
 		
-		t2.Accept(worker, Direction.RIGHT);
+		game.Move(worker, Direction.RIGHT);
 		
 	}
 	public void Scene2_7() {
@@ -92,7 +103,7 @@ public class Scene2 {
 		ti.setNeighbour(t2, Direction.LEFT);
 		m.AddTileElement(ti);
 		
-		t2.Accept(worker, Direction.RIGHT);
+		game.Move(worker, Direction.RIGHT);
 		
 	}
 

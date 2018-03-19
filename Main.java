@@ -78,7 +78,12 @@ public class Main {
 		        				break;
 		        			case(3):
 		        				System.out.println("2.3 A mező, amire toljuk csapda legyen.");
-		        				s2.Scene2_3();
+		        				System.out.println("A csapda aktív legyen? yes-Y/no-N");
+		        				input = bufferedReader.readLine();
+			        			if(input.equals("y")||input.equals("Y"))
+			        				s2.Scene2_3_active();
+			        			if(input.equals("n")||input.equals("N"))
+			        				s2.Scene2_3_inactive();
 		        				break;
 		        			case(4):
 		        				System.out.println("2.4 A mező, amire toljuk lyuk legyen.");
@@ -90,8 +95,6 @@ public class Main {
 		        				break;
 		        			case(6):
 		        				System.out.println("2.6 A mező, amire toljuk kapcsoló legyen.");
-			        			input = bufferedReader.readLine();
-			        			if(input.equals("y")||input.equals("Y"))
 			        			s2.Scene2_6();
 		        				break;
 		        			case(7):

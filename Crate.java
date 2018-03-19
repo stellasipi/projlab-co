@@ -26,6 +26,7 @@ public class Crate extends Object {
 			this.getTile().Remove(this);
 			this.setTile(target);
 			target.setObject(this);
+			this.getGame().CalculateScores();
 			//setPushedBy();
 		}
 	
@@ -77,6 +78,7 @@ public class Crate extends Object {
 			this.getTile().Remove(this);
 			this.setTile(b);
 			b.setObject(this);
+			b.Switch(b.getTrap());
 		}
 
 	}
@@ -98,12 +100,6 @@ public class Crate extends Object {
 	public void visit(Wall w ,Direction d) {
 		//bemegyünk a fgv-be
 		System.out.print(">");
-		System.out.print("	");
-		System.out.println("[:Crate].visit(w,d):");
-		
-		//üres függvény, az falra láda nem tud rálépni
-				//visszatérünk a fgv-ből
-		System.out.print("<");
 		System.out.print("	");
 		System.out.println("[:Crate].visit(w,d):");
 	}

@@ -37,6 +37,6 @@ public class Scene7 {
 		m.AddTileElement(t3);
 		m.AddTileElement(w);
 		
-		t2.Accept(worker1, Direction.RIGHT);
+		game.Move(worker, Direction.RIGHT);
 	}
 }
