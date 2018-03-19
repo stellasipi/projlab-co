@@ -11,6 +11,7 @@ public class Tile extends TileElement {
         setObject(null);
     }
 
+	@Override
 	public void Accept(Object o, Direction d) {
 		System.out.print(">");
         System.out.print("  ");

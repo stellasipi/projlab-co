@@ -105,6 +105,7 @@ public class Main {
 	        			
 	        			break;
 	        		case(3):
+	        			Scene3 s3=new Scene3();
 	        			System.out.println("3.0 Munkás eltol egy ládát egy adott mezőről (és egy sima üres mezőre érkezik)\n");
 		        		input = bufferedReader.readLine();
 		        		almenu=Integer.parseInt(input);
@@ -112,50 +113,37 @@ public class Main {
 		        			{
 			        			case(1):
 			        				System.out.println("3.1 A mező, amiről toljuk csapda legyen.");
-				        			input = bufferedReader.readLine();
-				        			if(input.equals("y")||input.equals("Y"))
-				        			{
-				        				//forgatóköny 
-				        			}
+				        			s3.Scene3_1();
 			        				break;
 			        			case(2):
 			        				System.out.println("3.2 A mező, amiről toljuk cél legyen.");
-				        			input = bufferedReader.readLine();
-				        			if(input.equals("y")||input.equals("Y"))
-				        			{
-				        				//forgatóköny 
-				        			}
+				        			s3.Scene3_2();
 			        				break;
 			        			case(3):
 			        				System.out.println("3.3 A mező, amiről toljuk kapcsoló legyen.");
-			        				input = bufferedReader.readLine();
-				        			if(input.equals("y")||input.equals("Y"))
-				        			{
-				        				//forgatóköny 
-				        			}
+			        				s3.Scene3_3();
 			        				break;
 			        			case(4):
-			        				{System.out.println("3.4 A mező, amiről toljuk sima mező legyen.");
-				        			input = bufferedReader.readLine();
-				        			if(input.equals("y")||input.equals("Y"))
-				        			{
-				        				//forgatóköny 
-				        			}
+			        				System.out.println("3.4 A mező, amiről toljuk sima mező legyen.");
+				        			s3.Scene3_4();
 			        				break;
-			        				}
 		        			}
 			        				
 	        			break;
 	        		case(4):
 	        			System.out.println("4 Munkás lyukba lép\n");
 		        		{
-		        			//forgatókönyv
+		        			Scene3 s4=new Scene4();
+		        			s4.Scene4();
+		        			break;
 		        		}
 	        			break;
 	        		case(5):
 	        			System.out.println("5 Láda ládát tol\n");
 		        		{
-		        			//forgatókönyv
+		        			Scene3 s5=new Scene5();
+		        			s5.Scene5();
+		        			break;
 		        		}
 	        			break;
 	        		case(6):

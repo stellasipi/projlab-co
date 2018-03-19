@@ -9,15 +9,7 @@ public abstract class TileElement {
 
     public abstract void Accept (Object o, Direction d);
 
-    public void Remove(Object o) {
-        //bemegyünk a fgv-be
-        System.out.print(">");
-        System.out.print("  ");
-        System.out.println("[:TileElement].Remove(o):");
-
-        //fgv törzs
-        setObject(null);
-    }
+    public abstract void Remove(Object o);
 
     public TileElement getNeighbour(Direction d) {
     	return neighbours.get(d);

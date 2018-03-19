@@ -1,12 +1,14 @@
 ﻿package shokoban;
 
 public class Target extends TileElement {
+	@Override
 	public void Accept(Object o, Direction d) {
 		//bemegyünk a fgv-be
 		System.out.print(">");
 		System.out.print("	");
 		System.out.println("[:Target].Accept(o,d):");
-		o.push(o, d);
+		if(this.getObject() != null)
+			o.getTile().getNeighbour(d).getObject().push(o, d);
 		o.visit(this, d);
 		
 	}
@@ -17,7 +19,8 @@ public class Target extends TileElement {
 		System.out.print("	");
 		System.out.println("[:Target].Accept(c,d):");
 		
-		c.push(c, d);
+		if(this.getObject() != null)
+			c.getTile().getNeighbour(d).getObject().push(c, d);
 		c.visit(this, d);
 		this.setObject(c); //ezt még meg kell írni a TileElements-be
 	}
@@ -30,4 +33,15 @@ public class Target extends TileElement {
 		this.setObject(null);
 		c.getGame().CalculateScores(); //ez nem működik még, csak jelzés
 	}
+	
+	@Override
+    public void Remove(Object o) {
+        //bemegyünk a fgv-be
+        System.out.print(">");
+        System.out.print("  ");
+        System.out.println("[:Target].Remove(o):");
+
+        //fgv törzs
+        this.setObject(null);
+    }
 }

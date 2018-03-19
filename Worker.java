@@ -40,7 +40,7 @@ public class Worker extends Object {
         //bemegyünk a fgv-be
         System.out.print(">");
         System.out.print("  ");
-        System.out.println("[:Worker].visit(t, d):");
+        System.out.println("[:Worker].visit(target, d):");
 		
         //Ellenőrzi, hogy sikerült-e elmozdulni a másik objectnek, ha null akkor mozoghatnak, amúgy marad minden ugyanaz
 		if(t.getObject() == null) {
@@ -54,7 +54,7 @@ public class Worker extends Object {
         //bemegyünk a fgv-be
         System.out.print(">");
         System.out.print("  ");
-        System.out.println("[:Worker].visit(t, d):");
+        System.out.println("[:Worker].visit(tile, d):");
 		
 		//Ellenőrzi, hogy sikerült-e elmozdulni a másik objectnek, ha null akkor mozoghatnak, amúgy marad minden ugyanaz
 		if(t.getObject() == null) {
@@ -68,16 +68,17 @@ public class Worker extends Object {
         //bemegyünk a fgv-be
         System.out.print(">");
         System.out.print("  ");
-        System.out.println("[:Worker].visit(t, d):");
+        System.out.println("[:Worker].visit(trap, d):");
 		
 		//ha aktív lyukként működik
-		if(t.getActive()== true) {
+		if(t.getActive()) {
 			this.getTile().Remove(this);
 			getGame().Die(this);
 		}
 		//ha sima mezőként működik ellenőrzi, hogy sikerült-e elmozdulni a másik objectnek, ha null akkor mozoghatnak, amúgy marad minden ugyanaz
 		else if(t.getObject() == null){
 			this.getTile().Remove(this); //eltávolítja magát a másikról
+			System.out.println(" Worker Remove trap után és setObject előtt");
 			t.setObject(this);	//beállítja magát az új mezőnek
 			this.setTile(t);	//beállítj az új mezőt magának
 		}	
