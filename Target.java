@@ -1,6 +1,7 @@
 ﻿package shokoban;
 
 public class Target extends TileElement {
+	@Override
 	public void Accept(Object o, Direction d) {
 		//bemegyünk a fgv-be
 		System.out.print(">");
@@ -32,4 +33,15 @@ public class Target extends TileElement {
 		this.setObject(null);
 		c.getGame().CalculateScores(); //ez nem működik még, csak jelzés
 	}
+	
+	@Override
+    public void Remove(Object o) {
+        //bemegyünk a fgv-be
+        System.out.print(">");
+        System.out.print("  ");
+        System.out.println("[:Target].Remove(o):");
+
+        //fgv törzs
+        this.setObject(null);
+    }
 }

@@ -4,6 +4,7 @@
 public class Button extends TileElement {
 	private Trap trap;
 	
+	@Override
 	public void Accept(Object o, Direction d) {
 		//bemegyünk a fgv-be
 		System.out.print(">");
@@ -40,6 +41,17 @@ public class Button extends TileElement {
 		
 
 	}
+	
+	@Override
+    public void Remove(Object o) {
+        //bemegyünk a fgv-be
+        System.out.print(">");
+        System.out.print("  ");
+        System.out.println("[:Button].Remove(o):");
+
+        //fgv törzs
+        this.setObject(null);
+    }
 	
 	public void Switch(Trap t) {
 		//bemegyünk a fgv-be

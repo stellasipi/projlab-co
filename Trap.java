@@ -15,6 +15,17 @@ public class Trap extends Hole {
 		
 		o.visit(this, d);
 	}
+	
+	@Override
+    public void Remove(Object o) {
+        //bemegyünk a fgv-be
+        System.out.print(">");
+        System.out.print("  ");
+        System.out.println("[:Trap].Remove(o):");
+
+        //fgv törzs
+        this.setObject(null);
+    }
 
 	public boolean getActive() {
 		return active;

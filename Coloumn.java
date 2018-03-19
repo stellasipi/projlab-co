@@ -1,6 +1,7 @@
 ﻿package shokoban;
 
 public class Coloumn extends TileElement {
+	@Override
     public void Accept (Object o, Direction d){
         //bemegyünk a fgv-be
         System.out.print(">");
@@ -13,5 +14,16 @@ public class Coloumn extends TileElement {
         o.visit(this, d);
         this.Remove(o);
 
+    }
+    
+	@Override
+    public void Remove(Object o) {
+        //bemegyünk a fgv-be
+        System.out.print(">");
+        System.out.print("  ");
+        System.out.println("[:Coloumn].Remove(o):");
+
+        //fgv törzs
+        this.setObject(null);
     }
 }
