@@ -25,6 +25,7 @@ public class Scene4 {
 		m.AddTileElement(h);
 		
 		t2.Accept(worker, Direction.RIGHT);
+		game.Check();
 	}
 
 }
