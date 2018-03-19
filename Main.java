@@ -31,6 +31,7 @@ public class Main {
 				"6 Munkás munkást tol\n" + 
 				"7 MLMF\n" + 
 				"8 MLMMF\n" +
+				"9 Kilépés a tesztelő programból"+
 				"Használati útmutató: ...");
     	String input = null;
 		while(true){
@@ -41,7 +42,7 @@ public class Main {
 	    	try {
 	        	BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 	        	input = bufferedReader.readLine();
-	        	if(input.equals("e"))
+	        	if(input.equals("9"))
 	        	{
 	        		break;
 	        	}
@@ -54,11 +55,15 @@ public class Main {
 	        		case(1):
 	        			System.out.println("1.0 Pálya felépítése");
 		        		{
-		        			//forgatókönyv
+		        			for(int i=0; i<20; i++) {
+		        				for(int j=0; j<15; j++) {
+		        					
+		        				}
+		        			}
 		        		}
 	        			break;
 	        		case(2):
-	        			System.out.println("2.0 Munkás eltol egy ládát egy üres mezőre\n");
+	        			System.out.println("2.0 Munkás eltol egy ládát egy üres mezőre\n"+ "Válaszd ki az almenüt");
 	        			//megnézem mi történik a check() meghívására- még formázni kell, de legalább már részben működik	
 	        			//g.Check();
 	        		input = bufferedReader.readLine();

@@ -1,8 +1,5 @@
 ﻿package shokoban;
 
-//ez egy próba
-//ez egy próba válasz
-
 public class Tile extends TileElement {
 	public void Remove(Object o) {
       

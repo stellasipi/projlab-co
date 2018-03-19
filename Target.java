@@ -1,5 +1,4 @@
 ﻿package shokoban;
-//proba
 
 public class Target extends TileElement {
 	public void Accept(Object o, Direction d) {
