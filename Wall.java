@@ -1,7 +1,7 @@
 ﻿package shokoban;
 
 public class Wall extends Coloumn {
-	//Kukucs
+	@Override
     public void Accept (Object o, Direction d){
         //bemegyünk a fgv-be
         System.out.print(">");
@@ -13,5 +13,16 @@ public class Wall extends Coloumn {
 
         o.visit(this, d);
         this.Remove(o);
+    }
+	
+	@Override
+    public void Remove(Object o) {
+        //bemegyünk a fgv-be
+        System.out.print(">");
+        System.out.print("  ");
+        System.out.println("[:Wall].Remove(o):");
+
+        //fgv törzs
+        this.setObject(null);
     }
 }

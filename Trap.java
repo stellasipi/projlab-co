@@ -3,6 +3,7 @@
 public class Trap extends Hole {
 	private boolean active = false;
 	
+	@Override
 	public void Accept (Object o,Direction d){
 		//bemegyünk a fgv-be
 		System.out.print(">");
