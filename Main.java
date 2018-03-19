@@ -117,29 +117,16 @@ public class Main {
 			        				break;
 			        			case(2):
 			        				System.out.println("3.2 A mező, amiről toljuk cél legyen.");
-				        			input = bufferedReader.readLine();
-				        			if(input.equals("y")||input.equals("Y"))
-				        			{
-				        				//forgatóköny 
-				        			}
+				        			s3.Scene3_2();
 			        				break;
 			        			case(3):
 			        				System.out.println("3.3 A mező, amiről toljuk kapcsoló legyen.");
-			        				input = bufferedReader.readLine();
-				        			if(input.equals("y")||input.equals("Y"))
-				        			{
-				        				//forgatóköny 
-				        			}
+			        				s3.Scene3_3();
 			        				break;
 			        			case(4):
-			        				{System.out.println("3.4 A mező, amiről toljuk sima mező legyen.");
-				        			input = bufferedReader.readLine();
-				        			if(input.equals("y")||input.equals("Y"))
-				        			{
-				        				//forgatóköny 
-				        			}
+			        				System.out.println("3.4 A mező, amiről toljuk sima mező legyen.");
+				        			s3.Scene3_4();
 			        				break;
-			        				}
 		        			}
 			        				
 	        			break;
