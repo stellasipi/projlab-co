@@ -1,12 +1,7 @@
 package shokoban;
 
 public class Scene7 {
-<<<<<<< HEAD
-public void Scene7_0() {
-	
-}
 
-=======
 	Game game = new Game();
 	Worker worker1 = new Worker();
 	Worker worker2 = new Worker();
@@ -44,5 +39,4 @@ public void Scene7_0() {
 		
 		t2.Accept(worker1, Direction.RIGHT);
 	}
->>>>>>> 0f9821f6af75f0019575cde438371002eb5826a1
 }
