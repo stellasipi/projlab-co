@@ -78,6 +78,7 @@ public class Crate extends Object {
 			this.getTile().Remove(this);
 			this.setTile(b);
 			b.setObject(this);
+			b.Switch(b.getTrap());
 		}
 
 	}
