@@ -24,7 +24,8 @@ public class Scene4 {
 		h.setNeighbour(t2, Direction.LEFT);
 		m.AddTileElement(h);
 		
-		h.Accept(worker, Direction.RIGHT);
+		t2.Accept(worker, Direction.RIGHT);
+		game.Check();
 	}
 
 }
