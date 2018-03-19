@@ -18,12 +18,5 @@ public class Coloumn extends TileElement {
     
 	@Override
     public void Remove(Object o) {
-        //bemegyünk a fgv-be
-        System.out.print(">");
-        System.out.print("  ");
-        System.out.println("[:Coloumn].Remove(o):");
-
-        //fgv törzs
-        this.setObject(null);
     }
 }
