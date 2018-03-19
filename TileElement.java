@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public abstract class TileElement {
 
-    private HashMap<Direction,TileElement> neighbours;
+    private HashMap<Direction,TileElement> neighbours=new HashMap<Direction,TileElement>();
     private Object object;
 
     public abstract void Accept (Object o, Direction d);
