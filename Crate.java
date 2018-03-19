@@ -123,12 +123,12 @@ public class Crate extends Object {
 		System.out.print("	");
 		System.out.println("[:Crate].push(o,d):");
 		
-		//üres fgv
+		this.getTile().getNeighbour(d).Accept(this, d); //következő tile accept-jét hívjuk be
 		
-		//visszatérünk a fgv-ből
+		/*//visszatérünk a fgv-ből
 		System.out.print("<");
 		System.out.print("	");
-		System.out.println("[:Crate].push(o,d):");
+		System.out.println("[:Crate].push(o,d):");*/
 	}
 
 	public int getScore() {
