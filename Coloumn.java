@@ -13,9 +13,5 @@ public class Coloumn extends TileElement {
         o.visit(this, d);
         this.Remove(o);
 
-        //visszatérünk a fgv-ből
-        System.out.print("<");
-        System.out.print("  ");
-        System.out.println("[:Coloumn].Accept(object, dir):");
     }
 }

@@ -17,10 +17,7 @@ public class Game {
         
         //fgv törzs
         
-        //bemegyünk a fgv-be
-        System.out.print("<");
-        System.out.print("  ");
-        System.out.println("[:Game].EndGame():");
+
 	}
 	
 	public void StartGame()
@@ -38,10 +35,6 @@ public class Game {
         AddCrate(c);
         map.PlaceWorker(w);
         AddWorker(w);
-        //bemegyünk a fgv-be
-        System.out.print("<");
-        System.out.print("  ");
-        System.out.println("[:Game].StartGame():");
 	}
 	
 	public void Move(Direction d)
@@ -52,11 +45,7 @@ public class Game {
         System.out.println("[:Game].Move(d):");
 
         //fgv törzs
-        
-        //bemegyünk a fgv-be
-        System.out.print("<");
-        System.out.print("  ");
-        System.out.println("[:Game].Move(d):");
+
 
 	}
 	
@@ -71,11 +60,7 @@ public class Game {
 		CheckDeadWorker();
 		CheckMoveableCrate();
 		CheckPushable();
-        
-        //bemegyünk a fgv-be
-        System.out.print("<");
-        System.out.print("  ");
-        System.out.println("[:Game].Check():");
+
 
 	}
 	
@@ -89,10 +74,7 @@ public class Game {
         workers.add(w);
         w.setGame(this);
         
-        //bemegyünk a fgv-be
-        System.out.print("<");
-        System.out.print("  ");
-        System.out.println("[:Game].AddWorker(w):");
+
 	}
 	
 	public void AddCrate(Crate c)
@@ -105,10 +87,7 @@ public class Game {
         crates.add(c);
         c.setGame(this);
         
-        //bemegyünk a fgv-be
-        System.out.print("<");
-        System.out.print("  ");
-        System.out.println("[:Game].AddCrate(c):");
+ 
 	}
 	
 	public boolean CheckCrateOnTarget()
@@ -118,10 +97,6 @@ public class Game {
         System.out.print("  ");
         System.out.println("[:Game].CheckCrateOnTarget():");
         
-        //bemegyünk a fgv-be
-        System.out.print("<");
-        System.out.print("  ");
-        System.out.println("[:Game].CheckCrateOnTarget():");
 		return false;
 	}
 	
@@ -132,10 +107,7 @@ public class Game {
         System.out.print("  ");
         System.out.println("[:Game].CheckDeadWorker():");
         
-        //bemegyünk a fgv-be
-        System.out.print("<");
-        System.out.print("  ");
-        System.out.println("[:Game].CheckDeadWorker():");
+
 		return false;
 	}
 	
@@ -146,10 +118,6 @@ public class Game {
         System.out.print("  ");
         System.out.println("[:Game].CheckMoveableCrate():");
         
-        //bemegyünk a fgv-be
-        System.out.print("<");
-        System.out.print("  ");
-        System.out.println("[:Game].CheckMoveableCrate():");
 		return false;
 	}
 	
@@ -160,10 +128,6 @@ public class Game {
         System.out.print("  ");
         System.out.println("[:Game].CheckPushable():");
         
-        //bemegyünk a fgv-be
-        System.out.print("<");
-        System.out.print("  ");
-        System.out.println("[:Game].CheckPushable():");
 		return false;
 	}
 	
@@ -174,10 +138,7 @@ public class Game {
         System.out.print("  ");
         System.out.println("[:Game].CalculateScores():");
         
-        //bemegyünk a fgv-be
-        System.out.print("<");
-        System.out.print("  ");
-        System.out.println("[:Game].CalculateScores():");
+  
 	}
 	
 	public void Die(Worker w)
@@ -189,10 +150,7 @@ public class Game {
         
         //fgv törzs
         
-        //bemegyünk a fgv-be
-        System.out.print("<");
-        System.out.print("  ");
-        System.out.println("[:Game].Die(w):");
+  
 	}
 	
 	public void Die(Crate c)
@@ -203,11 +161,6 @@ public class Game {
         System.out.println("[:Game].Die(c):");
         
         //fgv törzs
-        
-        //bemegyünk a fgv-be
-        System.out.print("<");
-        System.out.print("  ");
-        System.out.println("[:Game].Die(c):");
 	}
 	
 }

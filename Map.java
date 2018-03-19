@@ -34,10 +34,7 @@ public class Map {
 
         //fgv t�rzs
         
-        //bemegy�nk a fgv-be
-        System.out.print("<");
-        System.out.print("  ");
-        System.out.println("[:Map].PlaceCrate(c):");
+       
 	}
 	public void CreateMap() 
 	{
@@ -130,10 +127,6 @@ public class Map {
         	this.AddTileElement(t);
         }
         
-        //bemegy�nk a fgv-be
-        System.out.print("<");
-        System.out.print("  ");
-        System.out.println("[:Map].CreateMap():");
 	}
 	
 

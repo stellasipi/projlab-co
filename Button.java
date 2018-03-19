@@ -13,12 +13,7 @@ public class Button extends TileElement {
 		if(this.getObject() != null)//amíg van a következő mezőn láda vagy munkás, addig hívjuk a push-t
 			o.push(o, d);
 		
-		o.visit(this, d);
-		
-		//visszatérünk a fgv-ből
-		System.out.print("<");
-		System.out.print("	");
-		System.out.println("[:Button].Accept(o,d):");		
+		o.visit(this, d);		
 	}
 	
 	public void Accept(Crate c, Direction d) {
@@ -30,12 +25,7 @@ public class Button extends TileElement {
 		if(this.getObject() != null)//amíg van a következő mezőn láda vagy munkás, addig hívjuk a push-t
 			c.push(c, d);
 		
-		c.visit(this, d);
-		
-		//visszatérünk a fgv-ből
-		System.out.print("<");
-		System.out.print("	");
-		System.out.println("[:Button].Accept(c,d):");		
+		c.visit(this, d);	
 	}
 	
 	public void Remove(Crate c) {
@@ -48,10 +38,7 @@ public class Button extends TileElement {
 		Switch(trap);
 		c.setTile(null); //ebbe azért nem vagyok biztos
 		
-		//visszatérünk a fgv-ből
-		System.out.print("<");
-		System.out.print("	");
-		System.out.println("[:Button].Remove(c):");
+
 	}
 	
 	public void Switch(Trap t) {
@@ -65,38 +52,16 @@ public class Button extends TileElement {
 		else
 			t.setActive(false); //inaktívra állítjuk a csapdát
 		
-		//visszatérünk a fgv-ből
-		System.out.print("<");
-		System.out.print("	");
-		System.out.println("[:Button].Switch(c):");
 	}
 
 	public Trap getTrap() {
-		//bemegyünk a fgv-be
-		System.out.print(">");
-		System.out.print("	");
-		System.out.println("[:Button].getTrap():");
-		
-		//visszatérünk a fgv-ből
-		System.out.print("<");
-		System.out.print("	");
-		System.out.println("[:Button].getTrap():");
+
 		
 		return trap;
 	}
 
 	public void setTrap(Trap trap) {
-		//bemegyünk a fgv-be
-		System.out.print(">");
-		System.out.print("	");
-		System.out.println("[:Button].setTrap(trap):");
-		
-		this.trap = trap;
-		
-		//visszatérünk a fgv-ből
-		System.out.print("<");
-		System.out.print("	");
-		System.out.println("[:Button].setTrap(trap):");		
+
 	}
 	
 }
