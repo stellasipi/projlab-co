@@ -10,8 +10,8 @@ public class Button extends TileElement {
 		System.out.print("	");//itt úgy kéne, hogy annyi tab, ahányaid fgv hívás az adott dialógusba és a visszatérésnél is, csak nem tudom, hogy lenne az...
 		System.out.println("[:Button].Accept(o,d):");
 		
-		if(this.getObject() != null)//amíg van a következő mezőn láda vagy munkás, addig hívjuk a push-t
-			o.push(o, d);
+		if(this.getObject() != null)
+			o.getTile().getNeighbour(d).getObject().push(o, d);
 		
 		o.visit(this, d);		
 	}
@@ -22,8 +22,8 @@ public class Button extends TileElement {
 		System.out.print("	");//itt úgy kéne, hogy annyi tab, ahányaid fgv hívás az adott dialógusba és a visszatérésnél is, csak nem tudom, hogy lenne az...
 		System.out.println("[:Button].Accept(c,d):");
 		
-		if(this.getObject() != null)//amíg van a következő mezőn láda vagy munkás, addig hívjuk a push-t
-			c.push(c, d);
+		if(this.getObject() != null)
+			c.getTile().getNeighbour(d).getObject().push(c, d);
 		
 		c.visit(this, d);	
 	}

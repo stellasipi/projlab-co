@@ -6,7 +6,8 @@ public class Target extends TileElement {
 		System.out.print(">");
 		System.out.print("	");
 		System.out.println("[:Target].Accept(o,d):");
-		o.push(o, d);
+		if(this.getObject() != null)
+			o.getTile().getNeighbour(d).getObject().push(o, d);
 		o.visit(this, d);
 		
 	}
@@ -17,7 +18,8 @@ public class Target extends TileElement {
 		System.out.print("	");
 		System.out.println("[:Target].Accept(c,d):");
 		
-		c.push(c, d);
+		if(this.getObject() != null)
+			c.getTile().getNeighbour(d).getObject().push(c, d);
 		c.visit(this, d);
 		this.setObject(c); //ezt még meg kell írni a TileElements-be
 	}

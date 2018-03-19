@@ -8,8 +8,8 @@ public class Wall extends Coloumn {
         System.out.print("  ");
         System.out.println("[:Wall].Accept(object, dir):");
 
-        if (this.getObject() != null)
-        o.push(o, d);
+        if(this.getObject() != null)
+			o.getTile().getNeighbour(d).getObject().push(o, d);
 
         o.visit(this, d);
         this.Remove(o);
