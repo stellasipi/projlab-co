@@ -147,19 +147,22 @@ public class Main {
 	        		case(6):
 	        			System.out.println("6 Munkás munkást tol\n");
 		        		{
-		        			//forgatókönyv
+		        			Scene6 s6=new Scene6();
+		        			s6.Scene6_0();
 		        		}
 	        			break;
 	        		case(7):
 	        			System.out.println("7 MLMF\n");
 		        		{
-		        			//forgatókönyv
+		        			Scene7 s7=new Scene7();
+		        			s7.Scene7_0();
 		        		}
 	        			break;
 	        		case(8):
 	        			System.out.println("8 MLMMF\n");
 		        		{
-		        			//forgatókönyv
+		        			Scene8 s8=new Scene8();
+		        			s8.Scene8_0();
 		        		}
 	        			break;
 	    
