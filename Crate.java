@@ -1,4 +1,5 @@
-package shokoban;
+﻿package shokoban;
+
 
 public class Crate extends Object {
 	private int score;
@@ -6,183 +7,143 @@ public class Crate extends Object {
 	
 	public void visit(Coloumn c ,Direction d) {
 		//bemegyünk a fgv-be
-		System.out.println(">");
-		System.out.println("	");
+		System.out.print(">");
+		System.out.print("	");
 		System.out.println("[:Crate].visit(c,d):");
 		
 		//üres függvény, az oszlopra láda nem tud rálépni
-		
-		
-		//visszatérünk a fgv-ből
-		System.out.println("<");
-		System.out.println("	");
-		System.out.println("[:Crate].visit(c,d):");
+
 	}
 	
 	public void visit(Target target ,Direction d) {
 		//bemegyünk a fgv-be
-		System.out.println(">");
-		System.out.println("	");
+		System.out.print(">");
+		System.out.print("	");
 		System.out.println("[:Crate].visit(target,d):");
 		
 		//fgv törzs
-		//setPushedBy();
-		this.setTile(target);
-		
-		
-		//visszatérünk a fgv-ből
-		System.out.println("<");
-		System.out.println("	");
-		System.out.println("[:Crate].visit(target,d):");		
+		if(target.getObject() == null) {
+			this.getTile().Remove(this);
+			this.setTile(target);
+			target.setObject(this);
+			//setPushedBy();
+		}
+	
 	}
 	public void visit(Hole h ,Direction d) {
 		//bemegyünk a fgv-be
-		System.out.println(">");
-		System.out.println("	");
+		System.out.print(">");
+		System.out.print("	");
 		System.out.println("[:Crate].visit(h,d):");
 		
 		//fgv törzs
-		this.setTile(h);
-		Game.Die(this);//a nem elérhető a láda
-		
-		//visszatérünk a fgv-ből
-		System.out.println("<");
-		System.out.println("	");
-		System.out.println("[:Crate].visit(h,d):");
+		if(h.getObject() == null) {
+			this.getTile().Remove(this);
+			this.setTile(h);
+			h.setObject(this);
+			getGame().Die(this);//a nem elérhető a láda
+		}
+
 	}
 	
 	public void visit(Trap trap ,Direction d) {
 		//bemegyünk a fgv-be
-		System.out.println(">");
-		System.out.println("	");
+		System.out.print(">");
+		System.out.print("	");
 		System.out.println("[:Crate].visit(trap,d):");
 		
 		//fgv törzs
-		this.setTile(trap);
-		if(trap.getActive())
-			Game.Die(this);//nem elérhető többé a láda
+		if(trap.getActive()) { //ha aktív a csapda
+			getGame().Die(this);//nem elérhető többé a láda
+		}else{
+			if(trap.getObject() == null) {
+				this.getTile().Remove(this);
+				this.setTile(trap);
+				trap.setObject(this);
+			}
+		}
+
 		
-		//visszatérünk a fgv-ből
-		System.out.println("<");
-		System.out.println("	");
-		System.out.println("[:Crate].visit(trap,d):");
 	}
 	
 	public void visit(Button b ,Direction d) {
 		//bemegyünk a fgv-be
-		System.out.println(">");
-		System.out.println("	");
+		System.out.print(">");
+		System.out.print("	");
 		System.out.println("[:Crate].visit(b,d):");
 		
 		//fgv törzs
-		this.setTile(b);
-		b.Switch(t);
-		
-		//visszatérünk a fgv-ből
-		System.out.println("<");
-		System.out.println("	");
-		System.out.println("[:Crate].visit(b,d):");
+		if(b.getObject() == null) {
+			this.getTile().Remove(this);
+			this.setTile(b);
+			b.setObject(this);
+		}
+
 	}
 	
 	public void visit(Tile tile ,Direction d) {
 		//bemegyünk a fgv-be
-		System.out.println(">");
-		System.out.println("	");
+		System.out.print(">");
+		System.out.print("	");
 		System.out.println("[:Crate].visit(tile,d):");
 		
 		//fgv törzs
-		this.setTile(tile);
-		
-		//visszatérünk a fgv-ből
-		System.out.println("<");
-		System.out.println("	");
-		System.out.println("[:Crate].visit(tile,d):");
+		if(tile.getObject() == null) {
+			this.getTile().Remove(this);
+			this.setTile(tile);
+			tile.setObject(this);
+		}
 	}
 	
 	public void visit(Wall w ,Direction d) {
 		//bemegyünk a fgv-be
-		System.out.println(">");
-		System.out.println("	");
+		System.out.print(">");
+		System.out.print("	");
 		System.out.println("[:Crate].visit(w,d):");
 		
 		//üres függvény, az falra láda nem tud rálépni
-		
-		
-		//visszatérünk a fgv-ből
-		System.out.println("<");
-		System.out.println("	");
+				//visszatérünk a fgv-ből
+		System.out.print("<");
+		System.out.print("	");
 		System.out.println("[:Crate].visit(w,d):");
 	}
 	
 	public void push(Object o, Direction d) {
 		//bemegyünk a fgv-be
-		System.out.println(">");
-		System.out.println("	");
+		System.out.print(">");
+		System.out.print("	");
 		System.out.println("[:Crate].push(o,d):");
 		
-		//fgv törzs
+		this.getTile().getNeighbour(d).Accept(this, d); //következő tile accept-jét hívjuk be
 		
-		
-		//visszatérünk a fgv-ből
-		System.out.println("<");
-		System.out.println("	");
-		System.out.println("[:Crate].push(o,d):");
+
 	}
 
 	public int getScore() {
-		//bemegyünk a fgv-be
-		System.out.println(">");
-		System.out.println("	");
-		System.out.println("[:Crate].getScore():");
+
 		
 		return score;
-		
-		//visszatérünk a fgv-ből
-		System.out.println("<");
-		System.out.println("	");
-		System.out.println("[:Crate].getScore():");
 	}
 
 	public void setScore(int score) {
-		//bemegyünk a fgv-be
-		System.out.println(">");
-		System.out.println("	");
-		System.out.println("[:Crate].setScore(score):");
+
 		
 		this.score = score;
-		
-		//visszatérünk a fgv-ből
-		System.out.println("<");
-		System.out.println("	");
-		System.out.println("[:Crate].setScore(score):");
+
 	}
 
 	public Worker getPushedBy() {
-		//bemegyünk a fgv-be
-		System.out.println(">");
-		System.out.println("	");
-		System.out.println("[:Crate].getPushedBy():");
+
 		
 		return pushedBy;
-		
-		//visszatérünk a fgv-ből
-		System.out.println("<");
-		System.out.println("	");
-		System.out.println("[:Crate].getPushedBy():");
 	}
 
 	public void setPushedBy(Worker pushedBy) {
-		//bemegyünk a fgv-be
-		System.out.println(">");
-		System.out.println("	");
-		System.out.println("[:Crate].setPushedBy(pushedBy):");
+
 		
 		this.pushedBy = pushedBy;
-		
-		//visszatérünk a fgv-ből
-		System.out.println("<");
-		System.out.println("	");
-		System.out.println("[:Crate].setPushedBy(pushedBy):");
+
 	}
 
 }
+
