@@ -17,12 +17,5 @@ public class Wall extends Coloumn {
 	
 	@Override
     public void Remove(Object o) {
-        //bemegyünk a fgv-be
-        System.out.print(">");
-        System.out.print("  ");
-        System.out.println("[:Wall].Remove(o):");
-
-        //fgv törzs
-        this.setObject(null);
     }
 }
