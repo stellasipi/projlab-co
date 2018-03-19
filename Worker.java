@@ -115,6 +115,10 @@ public class Worker extends Object {
         System.out.println("[:Worker].push(w, d):");
         
        this.getTile().getNeighbour(d).Accept(this, d);
+       if(this.getTile().getNeighbour(d).getObject() == null)
+    	   getGame().Die(this);
+    	   
+    	   
 	}
 	
 	public int getSumscore() {
