@@ -56,6 +56,7 @@ public class Main {
 	        			System.out.println("1.0 Pálya felépítése");
 		        		{
 		        			Scene1 s1=new Scene1();
+		        			s1.Scene1_0();
 		        		}
 	        			break;
 	        		case(2):
