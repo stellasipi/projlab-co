@@ -40,7 +40,7 @@ public class Game {
         
 	}
 	
-	public void Move(Direction d)
+	public void Move(Worker w, Direction d)
 	{
         //bemegyünk a fgv-be
         System.out.print(">");
@@ -48,6 +48,8 @@ public class Game {
         System.out.println("[:Game].Move(d):");
 
         //fgv törzs
+        w.getTile().getNeighbour(d).Accept(w, d);
+        Check();
 	}
 	
 	public void Check()
