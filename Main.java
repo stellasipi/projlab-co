@@ -55,11 +55,7 @@ public class Main {
 	        		case(1):
 	        			System.out.println("1.0 Pálya felépítése");
 		        		{
-		        			for(int i=0; i<20; i++) {
-		        				for(int j=0; j<15; j++) {
-		        					
-		        				}
-		        			}
+		        			Scene1 s1=new Scene1();
 		        		}
 	        			break;
 	        		case(2):
