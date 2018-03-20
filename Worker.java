@@ -89,7 +89,6 @@ public class Worker extends Object {
 		//ha sima mezőként működik ellenőrzi, hogy sikerült-e elmozdulni a másik objectnek, ha null akkor mozoghatnak, amúgy marad minden ugyanaz
 		else if(t.getObject() == null){
 			this.getTile().Remove(this); //eltávolítja magát a másikról
-			System.out.println(" Worker Remove trap után és setObject előtt");
 			t.setObject(this);	//beállítja magát az új mezőnek
 			this.setTile(t);	//beállítj az új mezőt magának
 			System.out.println("  	Lépes megtörtént");
@@ -130,8 +129,10 @@ public class Worker extends Object {
         System.out.println("[:Worker].push(w, d):");
         
        this.getTile().getNeighbour(d).Accept(this, d); //a következő tile Accept-jét hívjuk
-       if(this.getTile().getNeighbour(d).getObject() == null) 
+       if(this.getTile().getNeighbour(d).getObject() == null) {
     	   getGame().Die(this);
+    	   this.getTile().Remove(this);
+       }
     	   
     	   
 	}

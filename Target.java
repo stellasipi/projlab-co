@@ -9,7 +9,7 @@ public class Target extends TileElement {
 	public void Accept(Object o, Direction d) {
 		//bemegyünk a fgv-be
 		System.out.print(">");
-		System.out.print("	");
+		System.out.print("  ");
 		System.out.println("[:Target].Accept(o,d):");
 		if(this.getObject() != null)
 			o.getTile().getNeighbour(d).getObject().push(o, d);
@@ -32,7 +32,7 @@ public class Target extends TileElement {
 	public void Remove(Crate c) {
 		System.out.print(">");
 		System.out.print("	");
-		System.out.println("[:Target].Remove(c,d):");
+		System.out.println("[:Target].Remove(c):");
 		
 		this.setObject(null); //Törli a beállított objektumot a mezőről
 		c.getGame().CalculateScores(); //ez nem működik még, csak jelzés

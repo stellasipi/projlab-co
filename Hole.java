@@ -6,7 +6,7 @@ public class Hole extends TileElement {
 		public void Accept(Object o, Direction d) {
 			//Dialógus kiíratása
 			System.out.print(">");
-			System.out.print("	");
+			System.out.print("  ");
 			System.out.println("[:Hole].Accept(o,d):");
 			
 			//Meghívja object push függvényét, hogy el tudja tolni a rajta levő elemet
