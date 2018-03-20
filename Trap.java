@@ -3,25 +3,45 @@
 public class Trap extends Hole {
 	private boolean active = false;
 	
-	@Override
-	public void Accept (Object o,Direction d){
+		public void Accept (Crate c,Direction d){
 		//bemegyünk a fgv-be
 		System.out.print(">");
 		System.out.print("  ");
-		System.out.println("[:Trap].Accept(o,d):");
+		System.out.println("[:Trap].Accept(c,d):");
 		
 		if(this.getObject() != null)
-			o.getTile().getNeighbour(d).getObject().push(o, d);
+			c.getTile().getNeighbour(d).getObject().push(c, d);
 		
-		o.visit(this, d);
+		c.visit(this, d);
 	}
 	
-	@Override
-    public void Remove(Object o) {
+	public void Accept (Worker w,Direction d){
+		//bemegyünk a fgv-be
+		System.out.print(">");
+		System.out.print("  ");
+		System.out.println("[:Trap].Accept(w,d):");
+		
+		if(this.getObject() != null)
+			w.getTile().getNeighbour(d).getObject().push(w, d);
+		
+		w.visit(this, d);
+	}
+	
+	public void Remove(Crate c) {
         //bemegyünk a fgv-be
         System.out.print(">");
         System.out.print("  ");
-        System.out.println("[:Trap].Remove(o):");
+        System.out.println("[:Trap].Remove(c):");
+
+        //fgv törzs
+        this.setObject(null); //eltünteti a rajta lévő objektumot
+    }
+	
+	public void Remove(Worker w) {
+        //bemegyünk a fgv-be
+        System.out.print(">");
+        System.out.print("  ");
+        System.out.println("[:Trap].Remove(w):");
 
         //fgv törzs
         this.setObject(null); //eltünteti a rajta lévő objektumot
