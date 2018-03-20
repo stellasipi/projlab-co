@@ -114,8 +114,8 @@ public class Worker extends Object {
         System.out.print("  ");
         System.out.println("[:Worker].push(w, d):");
         
-       this.getTile().getNeighbour(d).Accept(this, d);
-       if(this.getTile().getNeighbour(d).getObject() == null)
+       this.getTile().getNeighbour(d).Accept(this, d); //a következő tile Accept-jét hívjuk
+       if(this.getTile().getNeighbour(d).getObject() == null) 
     	   getGame().Die(this);
     	   
     	   

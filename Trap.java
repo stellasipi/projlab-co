@@ -7,7 +7,7 @@ public class Trap extends Hole {
 	public void Accept (Object o,Direction d){
 		//bemegyünk a fgv-be
 		System.out.print(">");
-		System.out.print("	");//itt úgy kéne, hogy annyi tab, ahányaid fgv hívás az adott dialógusba és a visszatérésnél is, csak nem tudom, hogy lenne az...
+		System.out.print("	");
 		System.out.println("[:Trap].Accept(o,d):");
 		
 		if(this.getObject() != null)
@@ -24,14 +24,14 @@ public class Trap extends Hole {
         System.out.println("[:Trap].Remove(o):");
 
         //fgv törzs
-        this.setObject(null);
+        this.setObject(null); //eltünteti a rajta lévő objektumot
     }
 
 	public boolean getActive() {
-		return active;
+		return active; //ha a csapda aktív (tehát lyukként viselkedik), akkor igaz értékkel tér vissza
 	}
 
 	public void setActive(boolean active) {
-		this.active = active;
+		this.active = active; //a paraméterként kapott logikai értékre állítja a csapda aktivitását
 	}
 }
