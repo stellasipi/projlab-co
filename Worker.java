@@ -131,8 +131,9 @@ public class Worker extends Object {
         
        this.getTile().getNeighbour(d).Accept(this, d); //a következő tile Accept-jét hívjuk
        if(this.getTile().getNeighbour(d).getObject() == null) {
-    	   getGame().Die(this);
     	   this.getTile().Remove(this);
+    	   getGame().Die(this);
+    	   
        }
     	   
     	   
