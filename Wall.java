@@ -8,9 +8,13 @@ public class Wall extends Coloumn {
         System.out.print("  ");
         System.out.println("[:Wall].Accept(object, d):");
 
-        if(this.getObject() != null)
+        if(this.getObject() != null) 
+        {	
+        	System.out.print("  ");
 			o.getTile().getNeighbour(d).getObject().push(o, d);
+        }
 
+        System.out.print("  ");
         o.visit(this, d);
         this.Remove(o);
     }

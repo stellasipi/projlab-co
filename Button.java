@@ -6,58 +6,64 @@ public class Button extends TileElement {
 	
 	@Override
 	public void Accept(Object o, Direction d) {
-		//bemegyünk a fgv-be
+		//Dialógus kiíratása
 		System.out.print(">");
-		System.out.print("	");//itt úgy kéne, hogy annyi tab, ahányaid fgv hívás az adott dialógusba és a visszatérésnél is, csak nem tudom, hogy lenne az...
+		System.out.print("	");
 		System.out.println("[:Button].Accept(o,d):");
 		
-		if(this.getObject() != null)
+		//Meghívja object push függvényét, hogy el tudja tolni a rajta levő elemet
+		if(this.getObject() != null) 
+		{
 			o.getTile().getNeighbour(d).getObject().push(o, d);
+		}
 		
+		//Meghívja az object visit függvényét, hogy rá tudjon lépni 
 		o.visit(this, d);		
 	}
 	
 	public void Accept(Crate c, Direction d) {
-		//bemegyünk a fgv-be
+		//Dialógus kiíratása
 		System.out.print(">");
-		System.out.print("	");//itt úgy kéne, hogy annyi tab, ahányaid fgv hívás az adott dialógusba és a visszatérésnél is, csak nem tudom, hogy lenne az...
+		System.out.print("	");
 		System.out.println("[:Button].Accept(c,d):");
 		
+		//Meghívja crate push függvényét, hogy el tudja tolni a rajta levő elemet
 		if(this.getObject() != null)
 			c.getTile().getNeighbour(d).getObject().push(c, d);
 		
+		//Meghívja az object visit függvényét, hogy rá tudjon lépni 
 		c.visit(this, d);	
 	}
 	
 	public void Remove(Crate c) {
-		//bemegyünk a fgv-be
+		//Dialógus kiíratása
 		System.out.print(">");
 		System.out.print("	");
 		System.out.println("[:Button].Remove(c):");
 		
-		//fgv törzs
+		//Csapda állpotváltozását indító függyény
 		Switch(trap);
-		c.setTile(null); //ebbe azért nem vagyok biztos
-
+		c.setTile(null);
 	}
 	
 	@Override
     public void Remove(Object o) {
-        //bemegyünk a fgv-be
+		//Dialógus kiíratása
         System.out.print(">");
         System.out.print("  ");
         System.out.println("[:Button].Remove(o):");
 
-        //fgv törzs
+        //Üres mezőnek állítja be magát
         this.setObject(null);
     }
 	
 	public void Switch(Trap t) {
-		//bemegyünk a fgv-be
+		//Dialógus kiíratása
 		System.out.print(">");
 		System.out.print("	");
 		System.out.println("[:Button].Switch(t):");
 		
+		//Csapda állapotának változtatása, ha aktív -> inkatív, ha inaktív -> aktív
 		if(t.getActive())
 			t.setActive(true); //aktívra állítjuk a csapdát
 		else
