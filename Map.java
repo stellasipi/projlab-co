@@ -183,11 +183,11 @@ public class Map {
         			}else if(j==14) {
         				tiles.get(i*20+j).setNeighbour(tiles.get((i-1)*20+j), Direction.UP);
             			tiles.get(i*20+j).setNeighbour(null, Direction.RIGHT);
-            			tiles.get(i*20+j).setNeighbour(null, Direction.DOWN);
+            			tiles.get(i*20+j).setNeighbour(null, Direction.DOWN); //indexOutOfBoundsException
             			tiles.get(i*20+j).setNeighbour(tiles.get((i)*20+j-1), Direction.LEFT);
         			}else {
         				tiles.get(i*20+j).setNeighbour(tiles.get((i-1)*20+j), Direction.UP);
-        				tiles.get(i*20+j).setNeighbour(tiles.get((i)*20+j+1), Direction.RIGHT);
+        				tiles.get(i*20+j).setNeighbour(tiles.get((i)*20+j+1), Direction.RIGHT); //indexOutOfBoundsException
         				tiles.get(i*20+j).setNeighbour(null, Direction.DOWN);
         				tiles.get(i*20+j).setNeighbour(tiles.get((i)*20+j-1), Direction.LEFT);
         			}
