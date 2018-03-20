@@ -41,6 +41,6 @@ public class Wall extends Coloumn {
     }
 	
 	@Override
-    public void Remove(Object o) {
+    public void Remove(Crate c) {
     }
 }
