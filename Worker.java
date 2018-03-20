@@ -112,6 +112,7 @@ public class Worker extends Object {
         System.out.print(">");
         System.out.print("  ");
         System.out.println("[:Worker].push(o, d):");
+        this.getTile().getNeighbour(d).Accept(this, d); //a következő tile Accept-jét hívjuk
 	}
 	
 	//Nem történik semmi, így üres
