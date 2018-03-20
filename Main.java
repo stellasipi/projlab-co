@@ -180,9 +180,12 @@ public class Main {
 	}
 	public static void UserGuide() {
 		System.out.print("Használati utasítás:\n\n"
-						+ "A kívánt dialógust a billentyűzet számaival tudod kiválasztani.\n"
-						+ "Először a fő dialógust válaszd ki, majd az Enter lenyomása után kiválaszthatod a kívánt forgatókönyvet az almenüben.\n"
-						+ "Ekkor lefut a kívánt forgatókönyv. A meghívott függvények a következő formátumban lesznek kiírva:\n"
+						+ "A kívánt dialógust a billentyűzet számaival tudod kiválasztani.\n\n"
+						+ "Először a fő dialógust válaszd ki, majd az Enter lenyomása\n"
+						+ "után kiválaszthatod a kívánt forgatókönyvet az almenüben.\n"
+						+ "Ekkor lefut a kívánt forgatókönyv. \n\n"
+						+ "A meghívott függvények a \n"
+						+ "következő formátumban lesznek kiírva:\n"
 						+ " [:Osztálynév].függvénynév(paraméterek):\n\n"
 						);
 	}
