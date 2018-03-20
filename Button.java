@@ -44,7 +44,7 @@ public class Button extends TileElement {
 		
 		//Csapda állpotváltozását indító függyény
 		Switch(trap);
-		c.setTile(null);
+		this.setObject(null);
 	}
 	
 	@Override
