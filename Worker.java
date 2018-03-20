@@ -16,6 +16,8 @@ public class Worker extends Object {
 			this.setTile(b);	//beállítj az új mezőt magának
 			System.out.println("  	Lépes megtörtént");
 		}
+		else 
+			System.out.println("  	Lépes nem történt meg");
 	}
 	
 	//Nem történik semmi, így üres
@@ -24,6 +26,7 @@ public class Worker extends Object {
         System.out.print(">");
         System.out.print("  ");
         System.out.println("[:Worker].visit(c, d):");
+        System.out.println("  	Lépes nem történt meg");
 	}
 	
 	public void visit(Hole h, Direction d) {
@@ -51,6 +54,8 @@ public class Worker extends Object {
 			this.setTile(t);	//beállítj az új mezőt magának
 			System.out.println("  	Lépes megtörtént");
 		}
+		else 
+			System.out.println("  	Lépes nem történt meg");
 	}
 	
 	public void visit(Tile t, Direction d) {
@@ -65,7 +70,9 @@ public class Worker extends Object {
 			t.setObject(this);	//beállítja magát az új mezőnek
 			this.setTile(t);	//beállítj az új mezőt magának
 			System.out.println("  	Lépes megtörtént");
-		}	
+		}
+		else 
+			System.out.println("  	Lépes nem történt meg");
 	}
 
 	public void visit(Trap t, Direction d) {
@@ -87,6 +94,8 @@ public class Worker extends Object {
 			this.setTile(t);	//beállítj az új mezőt magának
 			System.out.println("  	Lépes megtörtént");
 		}	
+		else 
+			System.out.println("  	Lépes nem történt meg");
 	}
 	
 	//Nem történik semmi, így üres
@@ -94,7 +103,8 @@ public class Worker extends Object {
         //bemegyünk a fgv-be
         System.out.print(">");
         System.out.print("  ");
-        System.out.print("[:Worker].visit(w, d):");
+        System.out.println("[:Worker].visit(w, d):");
+		System.out.println("  	Lépes nem történt meg");
 	}
 	
 	//Nem történik semmi, így üres
