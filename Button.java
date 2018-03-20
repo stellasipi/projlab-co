@@ -2,13 +2,13 @@
 
 
 public class Button extends TileElement {
-	private Trap trap;
+	private Trap trap = new Trap();
 	
 	@Override
 	public void Accept(Object o, Direction d) {
 		//Dialógus kiíratása
 		System.out.print(">");
-		System.out.print("	");
+		System.out.print("  ");
 		System.out.println("[:Button].Accept(o,d):");
 		
 		//Meghívja object push függvényét, hogy el tudja tolni a rajta levő elemet
@@ -24,7 +24,7 @@ public class Button extends TileElement {
 	public void Accept(Crate c, Direction d) {
 		//Dialógus kiíratása
 		System.out.print(">");
-		System.out.print("	");
+		System.out.print("  ");
 		System.out.println("[:Button].Accept(c,d):");
 		
 		//Meghívja crate push függvényét, hogy el tudja tolni a rajta levő elemet
@@ -38,7 +38,7 @@ public class Button extends TileElement {
 	public void Remove(Crate c) {
 		//Dialógus kiíratása
 		System.out.print(">");
-		System.out.print("	");
+		System.out.print("  ");
 		System.out.println("[:Button].Remove(c):");
 		
 		//Csapda állpotváltozását indító függyény
@@ -60,7 +60,7 @@ public class Button extends TileElement {
 	public void Switch(Trap t) {
 		//Dialógus kiíratása
 		System.out.print(">");
-		System.out.print("	");
+		System.out.print("  ");
 		System.out.println("[:Button].Switch(t):");
 		
 		//Csapda állapotának változtatása, ha aktív -> inkatív, ha inaktív -> aktív
