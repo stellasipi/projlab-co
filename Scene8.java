@@ -44,6 +44,6 @@ public class Scene8 {
 		m.AddTileElement(t4);
 		m.AddTileElement(w);
 		
-		game.Move(worker, Direction.RIGHT);
+		game.Move(worker1, Direction.RIGHT);
 	}
 }
