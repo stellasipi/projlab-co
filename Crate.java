@@ -123,8 +123,9 @@ public class Crate extends Object {
 		System.out.print(">");
 		System.out.print("  ");
 		System.out.println("[:Crate].push(w,d):");
+		TileElement seged = this.getTile();
 		this.getTile().getNeighbour(d).Accept(this, d); //következő tile accept-jét hívjuk be
-		if(this.getTile().getNeighbour(d).getObject() == null)
+		if(seged!=this.getTile())
 			this.setPushedBy(w);
 	}
 
