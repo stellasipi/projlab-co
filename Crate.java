@@ -136,14 +136,6 @@ public class Crate extends Object {
 		this.getTile().getNeighbour(d).Accept(this, d); //következő tile accept-jét hívjuk be
 	}
 	
-	public void push(Object o, Direction d) {
-		//bemegyünk a fgv-be
-		System.out.print(">");
-		System.out.print("  ");
-		System.out.println("[:Crate].push(o,d):");
-		this.getTile().getNeighbour(d).Accept(this, d); //következő tile accept-jét hívjuk be
-	}
-	
 	public int getScore() {
 
 		
