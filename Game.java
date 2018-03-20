@@ -1,4 +1,5 @@
 ﻿package shokoban;
+
 import java.util.ArrayList;
 
 public class Game {
@@ -44,7 +45,7 @@ public class Game {
 		//Dialógus kiíratása
         System.out.print(">");
         System.out.print("  ");
-        System.out.println("[:Game].Move(d):");
+        System.out.println("[:Game].Move(w,d):");
 
         //Elindítja a mozgást (majd a külső input alapján)
         w.getTile().getNeighbour(d).Accept(w, d);
