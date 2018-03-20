@@ -17,8 +17,8 @@ public class Scene7 {
 		t1.setNeighbour(t2, Direction.RIGHT);
 		t2.setNeighbour(t1, Direction.LEFT);
 		t2.setNeighbour(t3, Direction.RIGHT);
-		t3.setNeighbour(t3, Direction.LEFT);
-		t3.setNeighbour(w, Direction.LEFT);
+		t3.setNeighbour(t2, Direction.LEFT);
+		t3.setNeighbour(w, Direction.RIGHT);
 		w.setNeighbour(t3, Direction.LEFT);
 		
 		t1.setObject(worker1);
