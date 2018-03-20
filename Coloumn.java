@@ -1,12 +1,13 @@
 ﻿package shokoban;
 
+
 public class Coloumn extends TileElement {
 	
     public void Accept (Worker w, Direction d){
 		//Dialógus kiíratása
         System.out.print(">");
         System.out.print("  ");
-        System.out.println("[:Coloumn].Accept(object, dir):");
+        System.out.println("[:Coloumn].Accept(w, d):");
 
         //Meghívja object push függvényét, hogy el tudja tolni a rajta levő elemet
         if(this.getObject() != null)
