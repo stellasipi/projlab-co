@@ -176,6 +176,13 @@ public class Game {
         //meghal a láda , kivesszük a game-ből
 	}
 	
+	public Map getMap() {
+		return map;
+	}
+	
+	public void setMap(Map m) {
+		map = m;
+	}
 }
 
 
