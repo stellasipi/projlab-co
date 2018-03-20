@@ -122,7 +122,7 @@ public class Crate extends Object {
 		//bemegyünk a fgv-be
 		System.out.print(">");
 		System.out.print("  ");
-		System.out.println("[:Crate].push(o,d):");
+		System.out.println("[:Crate].push(w,d):");
 		this.getTile().getNeighbour(d).Accept(this, d); //következő tile accept-jét hívjuk be
 		if(this.getTile().getNeighbour(d).getObject() == null)
 			this.setPushedBy(w);
