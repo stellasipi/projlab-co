@@ -43,6 +43,7 @@ public class Crate extends Object {
 		
 		//fgv törzs
 		System.out.println("  	Lépes megtörtént");
+		this.getTile().Remove(this);
 		getGame().Die(this);//a nem elérhető a láda
 			
 		}
@@ -57,6 +58,7 @@ public class Crate extends Object {
 		//fgv törzs
 		if(trap.getActive()) { //ha aktív a csapda
 			System.out.println("  	Lépes megtörtént");
+			this.getTile().Remove(this);
 			getGame().Die(this);//nem elérhető többé a láda
 		}else{
 			if(trap.getObject() == null) {
@@ -116,16 +118,32 @@ public class Crate extends Object {
 		System.out.println("  	Lépes nem történt meg");
 	}
 	
+	public void push(Worker w, Direction d) {
+		//bemegyünk a fgv-be
+		System.out.print(">");
+		System.out.print("  ");
+		System.out.println("[:Crate].push(o,d):");
+		this.getTile().getNeighbour(d).Accept(this, d); //következő tile accept-jét hívjuk be
+		if(this.getTile().getNeighbour(d).getObject() == null)
+			this.setPushedBy(w);
+	}
+
+	public void push(Crate c, Direction d) {
+		//bemegyünk a fgv-be
+		System.out.print(">");
+		System.out.print("  ");
+		System.out.println("[:Crate].push(o,d):");
+		this.getTile().getNeighbour(d).Accept(this, d); //következő tile accept-jét hívjuk be
+	}
+	
 	public void push(Object o, Direction d) {
 		//bemegyünk a fgv-be
 		System.out.print(">");
 		System.out.print("  ");
 		System.out.println("[:Crate].push(o,d):");
 		this.getTile().getNeighbour(d).Accept(this, d); //következő tile accept-jét hívjuk be
-		
-
 	}
-
+	
 	public int getScore() {
 
 		
