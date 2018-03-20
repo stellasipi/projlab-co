@@ -1,11 +1,12 @@
 ﻿package shokoban;
 
 
+
 public class Button extends TileElement {
 	private Trap trap = new Trap();
 	
-	@Override
-	public void Accept(Object o, Direction d) {
+	
+	public void Accept(Worker w, Direction d) {
 		//Dialógus kiíratása
 		System.out.print(">");
 		System.out.print("  ");
@@ -14,11 +15,11 @@ public class Button extends TileElement {
 		//Meghívja object push függvényét, hogy el tudja tolni a rajta levő elemet
 		if(this.getObject() != null) 
 		{
-			o.getTile().getNeighbour(d).getObject().push(o, d);
+			w.getTile().getNeighbour(d).getObject().push(w, d);
 		}
 		
 		//Meghívja az object visit függvényét, hogy rá tudjon lépni 
-		o.visit(this, d);		
+		w.visit(this, d);		
 	}
 	
 	public void Accept(Crate c, Direction d) {
@@ -47,11 +48,11 @@ public class Button extends TileElement {
 	}
 	
 	@Override
-    public void Remove(Object o) {
+    public void Remove(Worker w) {
 		//Dialógus kiíratása
         System.out.print(">");
         System.out.print("  ");
-        System.out.println("[:Button].Remove(o):");
+        System.out.println("[:Button].Remove(w):");
 
         //Üres mezőnek állítja be magát
         this.setObject(null);
@@ -82,3 +83,4 @@ public class Button extends TileElement {
 	}
 	
 }
+
