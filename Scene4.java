@@ -8,6 +8,7 @@ public class Scene4 {
 	Tile t2 = new Tile();
 	
 	public void Scene4set() {
+		System.out.println("Dialógus előkészítése:");
 		t1.setNeighbour(t2, Direction.RIGHT);
 		t2.setNeighbour(t1, Direction.LEFT);
 		t1.setObject(worker);
@@ -24,8 +25,8 @@ public class Scene4 {
 		h.setNeighbour(t2, Direction.LEFT);
 		m.AddTileElement(h);
 		
+		System.out.println("Dialógus:");
 		game.Move(worker, Direction.RIGHT);
-		game.Check();
 	}
 
 }

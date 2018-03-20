@@ -13,6 +13,7 @@ public class Scene7 {
 	Wall w=new Wall();
 	
 	public void Scene7_0() {
+		System.out.println("Dialógus előkészítése:");
 		t1.setNeighbour(t2, Direction.RIGHT);
 		t2.setNeighbour(t1, Direction.LEFT);
 		t2.setNeighbour(t3, Direction.RIGHT);
@@ -37,6 +38,7 @@ public class Scene7 {
 		m.AddTileElement(t3);
 		m.AddTileElement(w);
 		
+		System.out.println("Dialógus:");
 		game.Move(worker1, Direction.RIGHT);
 	}
 }
