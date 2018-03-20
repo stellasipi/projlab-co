@@ -9,6 +9,7 @@ public class Scene2 {
 	Tile t2 = new Tile();
 
 	public void Scene2set() {
+		System.out.println("Dialógus előkészítése:");
 		t1.setNeighbour(t2, Direction.RIGHT);
 		t2.setNeighbour(t1, Direction.LEFT);
 		t1.setObject(worker);
@@ -29,6 +30,7 @@ public class Scene2 {
 		w.setNeighbour(t2, Direction.LEFT);
 		m.AddTileElement(w);
 		
+		System.out.println("Dialógus:");
 		game.Move(worker, Direction.RIGHT);
 		
 	}
@@ -39,6 +41,7 @@ public class Scene2 {
 		co.setNeighbour(t2, Direction.LEFT);
 		m.AddTileElement(co);
 		
+		System.out.println("Dialógus:");
 		game.Move(worker, Direction.RIGHT);
 	}
 	public void Scene2_3_active() {
@@ -49,6 +52,7 @@ public class Scene2 {
 		tr.setActive(true);
 		m.AddTileElement(tr);
 		
+		System.out.println("Dialógus:");
 		game.Move(worker, Direction.RIGHT);
 	}
 	public void Scene2_3_inactive() {
@@ -59,6 +63,7 @@ public class Scene2 {
 		tr.setActive(false);
 		m.AddTileElement(tr);
 		
+		System.out.println("Dialógus:");
 		game.Move(worker, Direction.RIGHT);
 	}
 	public void Scene2_4() {
@@ -69,6 +74,7 @@ public class Scene2 {
 		ho.setNeighbour(t2, Direction.LEFT);
 		m.AddTileElement(ho);
 		
+		System.out.println("Dialógus:");
 		game.Move(worker, Direction.RIGHT);
 		
 	}
@@ -80,6 +86,7 @@ public class Scene2 {
 		ta.setNeighbour(t2, Direction.LEFT);
 		m.AddTileElement(ta);
 		
+		System.out.println("Dialógus:");
 		game.Move(worker, Direction.RIGHT);
 		
 	}
@@ -91,6 +98,7 @@ public class Scene2 {
 		bu.setNeighbour(t2, Direction.LEFT);
 		m.AddTileElement(bu);
 		
+		System.out.println("Dialógus:");
 		game.Move(worker, Direction.RIGHT);
 		
 	}
@@ -103,6 +111,7 @@ public class Scene2 {
 		ti.setNeighbour(t2, Direction.LEFT);
 		m.AddTileElement(ti);
 		
+		System.out.println("Dialógus:");
 		game.Move(worker, Direction.RIGHT);
 		
 	}

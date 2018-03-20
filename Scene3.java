@@ -9,6 +9,8 @@ public class Scene3 {
 	Tile t2 = new Tile();
 
 	public void Scene3set() {
+		
+		System.out.println("Dialógus előkészítése:");
 		t1.setObject(worker);
 		t2.setObject(null);
 		worker.setTile(t1);
@@ -32,6 +34,7 @@ public class Scene3 {
 		crate.setTile(trap);
 		m.AddTileElement(trap);
 		
+		System.out.println("Dialógus:");
 		game.Move(worker, Direction.RIGHT);
 	}
 	public void Scene3_2() {
@@ -45,6 +48,7 @@ public class Scene3 {
 		crate.setTile(target);
 		m.AddTileElement(target);
 		
+		System.out.println("Dialógus:");
 		game.Move(worker, Direction.RIGHT);
 	}
 	public void Scene3_3() {
@@ -58,6 +62,7 @@ public class Scene3 {
 		crate.setTile(button);
 		m.AddTileElement(button);
 		
+		System.out.println("Dialógus:");
 		game.Move(worker, Direction.RIGHT);
 	}
 	public void Scene3_4() {
@@ -71,6 +76,7 @@ public class Scene3 {
 		crate.setTile(tile);
 		m.AddTileElement(tile);
 		
+		System.out.println("Dialógus:");
 		game.Move(worker, Direction.RIGHT);
 	}
 }

@@ -2,6 +2,7 @@ package shokoban;
 
 public class Scene6 {
 	public void Scene6_0() {
+		System.out.println("Dialógus előkészítése:");
 		Game game = new Game();
 		Worker worker1 = new Worker();
 		Worker worker2 = new Worker();
@@ -23,7 +24,8 @@ public class Scene6 {
 		m.AddTileElement(t2);
 		m.AddTileElement(t3);
 		
-		t1.Accept(worker1, Direction.RIGHT);
-		game.Check();
+		System.out.println("Dialógus:");
+		game.Move(worker1, Direction.RIGHT);
+
 	}
 }

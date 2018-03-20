@@ -10,6 +10,7 @@ public class Scene5 {
 	Tile t3 = new Tile();
 	
 	public void Scene5set() {
+		System.out.println("Dialógus előkészítése:");
 		t1.setObject(crate1);
 		t2.setObject(crate2);
 		t3.setObject(null);
@@ -32,6 +33,7 @@ public class Scene5 {
 		crate1.setTile(t1);
 		crate2.setTile(t2);
 		
+		System.out.println("Dialógus:");
 		t2.Accept(crate1, Direction.RIGHT);
 	}
 		
