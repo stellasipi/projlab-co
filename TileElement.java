@@ -26,6 +26,10 @@ public abstract class TileElement {
     	return neighbours.get(d);
     }
     
+    /* Beállítja a szomszédos mezőt
+     * @param1 a mező, amelyet be akaraunk állítani szomszédosnak
+     * @param2 az irány, ahova beállítjuk a szomszédot
+     */
     public void setNeighbour(TileElement t, Direction d) {
     	neighbours.put(d, t);
     }
@@ -33,7 +37,10 @@ public abstract class TileElement {
     public Object getObject() {
     	return object;
     }
-
+    
+    /* Beállítja, hogy melyik objektum található a mezőn
+     * @param a beállítani kívánt objektum
+     */
     public void setObject(Object object) {
         this.object = object;
     }
