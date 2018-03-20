@@ -14,7 +14,6 @@ public class Crate extends Object {
 		//üres függvény, az oszlopra láda nem tud rálépni
 
 	}
-	
 	public void visit(Target target ,Direction d) {
 		//bemegyünk a fgv-be
 		System.out.print(">");
@@ -107,9 +106,9 @@ public class Crate extends Object {
 	public void push(Object o, Direction d) {
 		//bemegyünk a fgv-be
 		System.out.print(">");
-		System.out.print("	");
+		System.out.print("");
 		System.out.println("[:Crate].push(o,d):");
-		
+		System.out.print("	");
 		this.getTile().getNeighbour(d).Accept(this, d); //következő tile accept-jét hívjuk be
 		
 
