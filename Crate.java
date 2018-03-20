@@ -8,7 +8,7 @@ public class Crate extends Object {
 	public void visit(Coloumn c ,Direction d) {
 		//bemegyünk a fgv-be
 		System.out.print(">");
-		System.out.print("	");
+		System.out.print("  ");
 		System.out.println("[:Crate].visit(c,d):");
 		
 		//üres függvény, az oszlopra láda nem tud rálépni
@@ -17,7 +17,7 @@ public class Crate extends Object {
 	public void visit(Target target ,Direction d) {
 		//bemegyünk a fgv-be
 		System.out.print(">");
-		System.out.print("	");
+		System.out.print("  ");
 		System.out.println("[:Crate].visit(target,d):");
 		
 		//fgv törzs
@@ -33,7 +33,7 @@ public class Crate extends Object {
 	public void visit(Hole h ,Direction d) {
 		//bemegyünk a fgv-be
 		System.out.print(">");
-		System.out.print("	");
+		System.out.print("  ");
 		System.out.println("[:Crate].visit(h,d):");
 		
 		//fgv törzs
@@ -42,6 +42,7 @@ public class Crate extends Object {
 			this.setTile(h);
 			h.setObject(this);
 			getGame().Die(this);//a nem elérhető a láda
+			System.out.print("  	Lépes megtörtént");
 		}
 
 	}
@@ -49,7 +50,7 @@ public class Crate extends Object {
 	public void visit(Trap trap ,Direction d) {
 		//bemegyünk a fgv-be
 		System.out.print(">");
-		System.out.print("	");
+		System.out.print("  ");
 		System.out.println("[:Crate].visit(trap,d):");
 		
 		//fgv törzs
@@ -60,6 +61,7 @@ public class Crate extends Object {
 				this.getTile().Remove(this);
 				this.setTile(trap);
 				trap.setObject(this);
+				System.out.print("  	Lépes megtörtént");
 			}
 		}
 
@@ -69,8 +71,8 @@ public class Crate extends Object {
 	public void visit(Button b ,Direction d) {
 		//bemegyünk a fgv-be
 		System.out.print(">");
-		System.out.print("	");
-		System.out.println("[:Crate].visit(b,d):");
+		 System.out.print("  ");		
+		 System.out.println("[:Crate].visit(b,d):");
 		
 		//fgv törzs
 		if(b.getObject() == null) {
@@ -78,6 +80,7 @@ public class Crate extends Object {
 			this.setTile(b);
 			b.setObject(this);
 			b.Switch(b.getTrap());
+			System.out.print("  	Lépes megtörtént");
 		}
 
 	}
@@ -85,7 +88,7 @@ public class Crate extends Object {
 	public void visit(Tile tile ,Direction d) {
 		//bemegyünk a fgv-be
 		System.out.print(">");
-		System.out.print("	");
+		 System.out.print("  ");
 		System.out.println("[:Crate].visit(tile,d):");
 		
 		//fgv törzs
@@ -93,22 +96,22 @@ public class Crate extends Object {
 			this.getTile().Remove(this);
 			this.setTile(tile);
 			tile.setObject(this);
+			System.out.print("  	Lépes megtörtént");
 		}
 	}
 	
 	public void visit(Wall w ,Direction d) {
 		//bemegyünk a fgv-be
 		System.out.print(">");
-		System.out.print("	");
+		 System.out.print("  ");
 		System.out.println("[:Crate].visit(w,d):");
 	}
 	
 	public void push(Object o, Direction d) {
 		//bemegyünk a fgv-be
 		System.out.print(">");
-		System.out.print("");
+		 System.out.print("  ");
 		System.out.println("[:Crate].push(o,d):");
-		System.out.print("	");
 		this.getTile().getNeighbour(d).Accept(this, d); //következő tile accept-jét hívjuk be
 		
 

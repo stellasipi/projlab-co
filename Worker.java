@@ -14,6 +14,7 @@ public class Worker extends Object {
 			this.getTile().Remove(this); //eltávolítja magát a másikról
 			b.setObject(this);	//beállítja magát az új mezőnek
 			this.setTile(b);	//beállítj az új mezőt magának
+			System.out.println("  	Lépes megtörtént");
 		}
 	}
 	
@@ -34,6 +35,7 @@ public class Worker extends Object {
 		//Eltávolítja magát arról a mezőről, mert meg fog halni, így tud oda lépni a következő
 		this.getTile().Remove(this);
 		getGame().Die(this);
+		System.out.println("  	Lépes megtörtént");
 	}
 	
 	public void visit(Target t, Direction d) {
@@ -47,6 +49,7 @@ public class Worker extends Object {
 			this.getTile().Remove(this); //eltávolítja magát a másikról
 			t.setObject(this);	//beállítja magát az új mezőnek
 			this.setTile(t);	//beállítj az új mezőt magának
+			System.out.println("  	Lépes megtörtént");
 		}
 	}
 	
@@ -61,6 +64,7 @@ public class Worker extends Object {
 			this.getTile().Remove(this); //eltávolítja magát a másikról
 			t.setObject(this);	//beállítja magát az új mezőnek
 			this.setTile(t);	//beállítj az új mezőt magának
+			System.out.println("  	Lépes megtörtént");
 		}	
 	}
 
@@ -81,6 +85,7 @@ public class Worker extends Object {
 			System.out.println(" Worker Remove trap után és setObject előtt");
 			t.setObject(this);	//beállítja magát az új mezőnek
 			this.setTile(t);	//beállítj az új mezőt magának
+			System.out.println("  	Lépes megtörtént");
 		}	
 	}
 	
