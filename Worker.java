@@ -1,5 +1,6 @@
 ﻿package shokoban;
 
+
 public class Worker extends Object {
 	private int sumscore;
 	
@@ -107,13 +108,7 @@ public class Worker extends Object {
 	}
 	
 	//Nem történik semmi, így üres
-	public void push(Object o, Direction d) {
-        //bemegyünk a fgv-be
-        System.out.print(">");
-        System.out.print("  ");
-        System.out.println("[:Worker].push(o, d):");
-        this.getTile().getNeighbour(d).Accept(this, d); //a következő tile Accept-jét hívjuk
-	}
+	
 	
 	//Nem történik semmi, így üres
 	public void push(Worker w, Direction d) {
