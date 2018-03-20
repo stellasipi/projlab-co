@@ -38,7 +38,6 @@ public class Button extends TileElement {
 		//fgv törzs
 		Switch(trap);
 		c.setTile(null); //ebbe azért nem vagyok biztos
-		
 
 	}
 	

@@ -12,27 +12,16 @@ public class Main {
 		int szam;
 		int almenu;//beolvasott sorszáma és almenüje
 		System.out.println("Menu:\n"+ 
-				"1.0 Pálya felépítése\n" + 
-				"2.0 Munkás eltol egy ládát egy üres mezőre\n" + 
-				"	2.1 A mező, amire toljuk fal legyen.\n" + 
-				"	2.2 A mező, amire toljuk oszlop legyen.\n" + 
-				"	2.3 A mező, amire toljuk csapda legyen.\n" + 
-				"	2.4 A mező, amire toljuk lyuk legyen.\n" + 
-				"	2.5 A mező, amire toljuk cél legyen.\n" + 
-				"	2.6 A mező, amire toljuk kapcsoló legyen.\n" + 
-				"	2.7 A mező, amire toljuk sima mező legyen.\n" + 
-				"3.0 Munkás eltol egy ládát egy adott mezőről (és egy sima üres mezőre érkezik)\n" + 
-				"	3.1 A mező, amiről toljuk csapda legyen.\n" + 
-				"	3.2 A mező, amiről toljuk cél legyen.\n" + 
-				"	3.3 A mező, amiről toljuk kapcsoló legyen.\n" + 
-				"	3.4 A mező, amiről toljuk sima mező legyen.\n" + 
+				"1 Pálya felépítése\n" + 
+				"2.0 Munkás adott mezőre tol egy ládát\n" + 
+				"3.0 Munkás eltol egy ládát egy adott mezőről\n" + 
 				"4 Munkás lyukba lép\n" + 
 				"5 Láda ládát tol\n" + 
 				"6 Munkás munkást tol\n" + 
 				"7 MLMF\n" + 
 				"8 MLMMF\n" +
-				"9 Kilépés a tesztelő programból"+
-				"Használati útmutató: ...");
+				"10 Használati útmutató\n" +
+				"9 Kilépés a tesztelő programból\n");
     	String input = null;
 		while(true){
 			System.out.println("? Válassz egy dialógust: ");
@@ -49,7 +38,6 @@ public class Main {
 	        	else
 	        	{
 	        		szam=Integer.parseInt(input);
-	        		System.out.println("-"+szam+".");
 	        		switch(szam)
 	        		{
 	        		case(1):
@@ -61,7 +49,14 @@ public class Main {
 	        			break;
 	        		case(2):
 	        			Scene2 s2=new Scene2();
-	        			System.out.println("2.0 Munkás eltol egy ládát egy üres mezőre\n"+ "Válaszd ki az almenüt");
+	        			System.out.println("2.0 Almenü:\n"+
+	        					"	1 Munkás fal mezőre tol egy ládát.\n" + 
+	        					"	2 Munkás oszlop mezőre tol egy ládát.\n" + 
+	        					"	3 Munkás csapda mezőre tol egy ládát.\n" + 
+	        					"	4 Munkás lyuk mezőre tol egy ládát.\n" + 
+	        					"	5 Munkás cél mezőre tol egy ládát.\n" + 
+	        					"	6 Munkás kapcsoló mezőre tol egy ládát.\n" + 
+	        					"	7 Munkás sima mezőre tol egy ládát.\n" );
 	        			//megnézem mi történik a check() meghívására- még formázni kell, de legalább már részben működik	
 	        			//g.Check();
 	        		input = bufferedReader.readLine();
@@ -69,15 +64,15 @@ public class Main {
 	        			switch(almenu)
 	        			{
 		        			case(1):
-		        				System.out.println("2.1 A mező, amire toljuk fal legyen.");
+		        				System.out.println("2.1 Munkás fal mezőre tol egy ládát.");
 		        				s2.Scene2_1();
 		        				break;
 		        			case(2):
-		        				System.out.println("2.2 A mező, amire toljuk oszlop legyen.");
+		        				System.out.println("2.2 Munkás oszlop mezőre tol egy ládát.");
 		        				s2.Scene2_2();
 		        				break;
 		        			case(3):
-		        				System.out.println("2.3 A mező, amire toljuk csapda legyen.");
+		        				System.out.println("2.3 Munkás csapda mezőre tol egy ládát.");
 		        				System.out.println("A csapda aktív legyen? yes-Y/no-N");
 		        				input = bufferedReader.readLine();
 			        			if(input.equals("y")||input.equals("Y"))
@@ -86,19 +81,19 @@ public class Main {
 			        				s2.Scene2_3_inactive();
 		        				break;
 		        			case(4):
-		        				System.out.println("2.4 A mező, amire toljuk lyuk legyen.");
+		        				System.out.println("2.4 Munkás lyuk mezőre tol egy ládát.");
 			        			s2.Scene2_4();
 		        				break;
 		        			case(5):
-		        				System.out.println("2.5 A mező, amire toljuk cél legyen.");
+		        				System.out.println("2.5 Munkás cél mezőre tol egy ládát.");
 			        			s2.Scene2_5();
 		        				break;
 		        			case(6):
-		        				System.out.println("2.6 A mező, amire toljuk kapcsoló legyen.");
+		        				System.out.println("2.6 Munkás kapcsoló mezőre tol egy ládát.");
 			        			s2.Scene2_6();
 		        				break;
 		        			case(7):
-		        				System.out.println("2.7 A mező, amire toljuk sima mező legyen.");
+		        				System.out.println("2.7 Munkás sima mezőre tol egy ládát.");
 			        			s2.Scene2_7();
 		        				break;
 	        			}
@@ -106,21 +101,25 @@ public class Main {
 	        			break;
 	        		case(3):
 	        			Scene3 s3=new Scene3();
-	        			System.out.println("3.0 Munkás eltol egy ládát egy adott mezőről (és egy sima üres mezőre érkezik)\n");
+	        			System.out.println("3.0 Alemnü:\n"+
+	        					" 	1 Munkás eltol egy ládát egy csapda mezőről\n" + 
+	        					"	2 Munkás eltol egy ládát egy cél mezőről.\n" + 
+	        					"	3 Munkás eltol egy ládát egy kapcsoló mezőről.\n" + 
+	        					"	4 A mező, amiről toljuk sima mező legyen.\n");
 		        		input = bufferedReader.readLine();
 		        		almenu=Integer.parseInt(input);
 		        			switch(almenu)
 		        			{
 			        			case(1):
-			        				System.out.println("3.1 A mező, amiről toljuk csapda legyen.");
+			        				System.out.println("3.1 Munkás eltol egy ládát egy csapda mezőről");
 				        			s3.Scene3_1();
 			        				break;
 			        			case(2):
-			        				System.out.println("3.2 A mező, amiről toljuk cél legyen.");
+			        				System.out.println("3.2 Munkás eltol egy ládát egy cél mezőről.");
 				        			s3.Scene3_2();
 			        				break;
 			        			case(3):
-			        				System.out.println("3.3 A mező, amiről toljuk kapcsoló legyen.");
+			        				System.out.println("3.3 Munkás eltol egy ládát egy kapcsoló mezőről.");
 			        				s3.Scene3_3();
 			        				break;
 			        			case(4):

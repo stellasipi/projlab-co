@@ -15,8 +15,6 @@ public class Game {
         System.out.println("[:Game].EndGame():");
         
         //fgv törzs
-        
-
 	}
 	
 	public void StartGame()
@@ -27,16 +25,22 @@ public class Game {
         System.out.println("[:Game].StartGame():");
 
         //fgv törzs
-        Crate c=new Crate();
-        Worker w = new Worker();
+        
         map.CreateMap();
-        map.PlaceCrate(c);
-        AddCrate(c);
-        map.PlaceWorker(w);
-        AddWorker(w);
+        for(int i=0; i<10; i++) {
+        	Crate c=new Crate();
+        	map.PlaceCrate(c);
+            AddCrate(c);
+        }
+        for(int i=0; i<2; i++) {
+        	Worker w = new Worker();
+            map.PlaceWorker(w);
+            AddWorker(w);
+        }
+        
 	}
 	
-	public void Move(Direction d)
+	public void Move(Worker w, Direction d)
 	{
         //bemegyünk a fgv-be
         System.out.print(">");
@@ -44,8 +48,8 @@ public class Game {
         System.out.println("[:Game].Move(d):");
 
         //fgv törzs
-
-
+        w.getTile().getNeighbour(d).Accept(w, d);
+        Check();
 	}
 	
 	public void Check()
@@ -54,11 +58,10 @@ public class Game {
         System.out.print(">");
         System.out.print("  ");
         System.out.println("[:Game].Check():");
+        
 
-		CheckCrateOnTarget();
-		CheckDeadWorker();
-		CheckMoveableCrate();
-		CheckPushable();
+        if(CheckCrateOnTarget()||CheckDeadWorker()||CheckMoveableCrate()||CheckPushable())
+        	this.EndGame();
 
 
 	}

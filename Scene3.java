@@ -32,7 +32,7 @@ public class Scene3 {
 		crate.setTile(trap);
 		m.AddTileElement(trap);
 		
-		trap.Accept(worker, Direction.RIGHT);
+		game.Move(worker, Direction.RIGHT);
 	}
 	public void Scene3_2() {
 		this.Scene3set();
@@ -45,7 +45,7 @@ public class Scene3 {
 		crate.setTile(target);
 		m.AddTileElement(target);
 		
-		target.Accept(worker, Direction.RIGHT);
+		game.Move(worker, Direction.RIGHT);
 	}
 	public void Scene3_3() {
 		this.Scene3set();
@@ -58,7 +58,7 @@ public class Scene3 {
 		crate.setTile(button);
 		m.AddTileElement(button);
 		
-		button.Accept(worker, Direction.RIGHT);
+		game.Move(worker, Direction.RIGHT);
 	}
 	public void Scene3_4() {
 		this.Scene3set();
@@ -71,6 +71,6 @@ public class Scene3 {
 		crate.setTile(tile);
 		m.AddTileElement(tile);
 		
-		tile.Accept(worker, Direction.RIGHT);
+		game.Move(worker, Direction.RIGHT);
 	}
 }
