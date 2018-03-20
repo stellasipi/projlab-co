@@ -1,6 +1,6 @@
 ﻿package shokoban;
 
-
+//absztrakt minden függvény a leszármazottakban kommentelve
 public abstract class Object {
     private TileElement tile;
     private Game game;

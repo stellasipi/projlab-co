@@ -6,8 +6,6 @@ import java.io.InputStreamReader;
 public class Main {
 
 	public static void main(String[] args) {
-		//létrehozok egy játékot
-		//Game g=new Game();
 		
 		int szam;
 		int almenu;//beolvasott sorszáma és almenüje

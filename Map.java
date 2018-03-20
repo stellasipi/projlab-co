@@ -8,43 +8,46 @@ public class Map {
 	
 	public void AddTileElement(TileElement t)
 	{
+		//Dialógus kiíratása
 		System.out.print(">");
         System.out.print("  ");
         System.out.println("[:Map].AddTileElement(t):");
 
-        //fgv t�rzs
+        //hozzáad egy tileelement-et a tileshoz
         tiles.add(t);
 	}
 	public void PlaceWorker(Worker w) 
 	{
-		  //bemegy�nk a fgv-be
+		//Dialógus kiíratása
         System.out.print(">");
         System.out.print("  ");
         System.out.println("[:Map].PlaceWorker(w):");
 
-        //fgv t�rzs
+        //elhelyezi a workereket a pályán
 
 	}
 	public void PlaceCrate(Crate c) 
 	{
-		  //bemegy�nk a fgv-be
+		//Dialógus kiíratása
         System.out.print(">");
         System.out.print("  ");
         System.out.println("[:Map].PlaceCrate(c):");
 
-        //fgv t�rzs
+        //elhelyezi a ládákat a pályán
         
        
 	}
 	public void CreateMap() 
 	{
-		  //bemegy�nk a fgv-be
+		//Dialógus kiíratása
         System.out.print(">");
         System.out.print("  ");
         System.out.println("[:Map].CreateMap():");
 
-        //fgv t�rzs
+        //randomizáláshoz
         Random rand = new Random();
+        
+        //miből mennyinek kell lenni
         int co=19;
         int h=4;
         int ta=10;
@@ -52,6 +55,7 @@ public class Map {
         int b = 3;
         int ti=178;
         
+        //pálya széle, hossza
         int width = 20;
         int height = 15;
         

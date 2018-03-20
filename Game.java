@@ -8,7 +8,7 @@ public class Game {
 	
 	public void EndGame()
 	{
-        //bemegyünk a fgv-be
+		//Dialógus kiíratása
         System.out.print(">");
         System.out.print("  ");
         System.out.println("[:Game].EndGame():");
@@ -18,7 +18,7 @@ public class Game {
 	
 	public void StartGame()
 	{
-        //bemegyünk a fgv-be
+		//Dialógus kiíratása
         System.out.print(">");
         System.out.print("  ");
         System.out.println("[:Game].StartGame():");
@@ -41,7 +41,7 @@ public class Game {
 	
 	public void Move(Worker w, Direction d)
 	{
-        //bemegyünk a fgv-be
+		//Dialógus kiíratása
         System.out.print(">");
         System.out.print("  ");
         System.out.println("[:Game].Move(d):");
@@ -55,7 +55,7 @@ public class Game {
 	
 	public void Check()
 	{
-        //bemegyünk a fgv-be
+		//Dialógus kiíratása
         System.out.print(">");
         System.out.print("  ");
         System.out.println("[:Game].Check():");
@@ -69,7 +69,7 @@ public class Game {
 	
 	public void AddWorker(Worker w)
 	{
-        //bemegyünk a fgv-be
+		//Dialógus kiíratása
         System.out.print(">");
         System.out.print("  ");
         System.out.println("[:Game].AddWorker(w):");
@@ -84,7 +84,7 @@ public class Game {
 	
 	public void AddCrate(Crate c)
 	{
-        //bemegyünk a fgv-be
+		//Dialógus kiíratása
         System.out.print(">");
         System.out.print("  ");
         System.out.println("[:Game].AddCrate(c):");
@@ -99,7 +99,7 @@ public class Game {
 	
 	public boolean CheckCrateOnTarget()
 	{
-        //bemegyünk a fgv-be
+		//Dialógus kiíratása
         System.out.print(">");
         System.out.print("  ");
         System.out.println("[:Game].CheckCrateOnTarget():");
@@ -111,7 +111,7 @@ public class Game {
 	
 	public boolean CheckDeadWorker()
 	{
-        //bemegyünk a fgv-be
+		//Dialógus kiíratása
         System.out.print(">");
         System.out.print("  ");
         System.out.println("[:Game].CheckDeadWorker():");
@@ -123,7 +123,7 @@ public class Game {
 	
 	public boolean CheckMoveableCrate()
 	{
-        //bemegyünk a fgv-be
+		//Dialógus kiíratása
         System.out.print(">");
         System.out.print("  ");
         System.out.println("[:Game].CheckMoveableCrate():");
@@ -134,7 +134,7 @@ public class Game {
 	
 	public boolean CheckPushable()
 	{
-        //bemegyünk a fgv-be
+		//Dialógus kiíratása
         System.out.print(">");
         System.out.print("  ");
         System.out.println("[:Game].CheckPushable():");
@@ -145,22 +145,22 @@ public class Game {
 	
 	public void CalculateScores()
 	{
-        //bemegyünk a fgv-be
-        System.out.print(">");
+		//Dialógus kiíratása        
+		System.out.print(">");
         System.out.print("  ");
         System.out.println("[:Game].CalculateScores():");
         
-  
+        //Összeszámolja a pontokat, az alapján, hogy hány láda van célon és ki tolta oda.
 	}
 	
 	public void Die(Worker w)
 	{
-        //bemegyünk a fgv-be
+		//Dialógus kiíratása
         System.out.print(">");
         System.out.print("  ");
         System.out.println("[:Game].Die(w):");
         
-        //fgv törzs
+        //meghal a munkás, kivesszük a game-ből
         workers.remove(w);
         
   
@@ -168,17 +168,12 @@ public class Game {
 	
 	public void Die(Crate c)
 	{
-	    //bemegyünk a fgv-be
+		//Dialógus kiíratása
         System.out.print(">");
         System.out.print("  ");
         System.out.println("[:Game].Die(c):");
         
-        //fgv törzs
-        
-        //bemegyünk a fgv-be
-        System.out.print("<");
-        System.out.print("  ");
-        System.out.println("[:Game].Die(c):");
+        //meghal a láda , kivesszük a game-ből
 	}
 	
 }
