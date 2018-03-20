@@ -1,5 +1,5 @@
 ﻿package shokoban;
-
+//
 import java.util.HashMap;
 
 public abstract class TileElement {
