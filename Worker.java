@@ -123,9 +123,9 @@ public class Worker extends Object {
         System.out.print(">");
         System.out.print("  ");
         System.out.println("[:Worker].push(w, d):");
-        
+        TileElement seged = this.getTile();
        this.getTile().getNeighbour(d).Accept(this, d); //a következő tile Accept-jét hívjuk
-       if(this.getTile().getNeighbour(d).getObject() == null) {
+       if(seged!=this.getTile()) {
     	   this.getTile().Remove(this);
     	   getGame().Die(this);
     	   
