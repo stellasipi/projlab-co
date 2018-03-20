@@ -19,7 +19,9 @@ public abstract class Object {
 
     abstract public void visit(Wall w ,Direction d);
 
-    abstract public void push(Object o, Direction d);
+    abstract public void push(Worker w, Direction d);
+    
+    abstract public void push(Crate c, Direction d);
 
     public TileElement getTile() {
         return tile;
