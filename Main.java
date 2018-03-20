@@ -18,8 +18,8 @@ public class Main {
 				"6 Munkás munkást tol\n" + 
 				"7 MLMF\n" + 
 				"8 MLMMF\n" +
-				"10 Használati útmutató\n" +
-				"9 Kilépés a tesztelő programból\n");
+				"9 Kilépés a tesztelő programból\n" +
+				"10 Használati útmutató\n");
     	String input = null;
 		while(true){
 			System.out.println("? Válassz egy dialógust: ");
