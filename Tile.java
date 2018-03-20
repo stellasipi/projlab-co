@@ -21,9 +21,7 @@ public class Tile extends TileElement {
         if(this.getObject() != null) 
         {
         	o.getTile().getNeighbour(d).getObject().push(o, d); //Meghívja object push függvényét, hogy el tudja tolni a rajta levő elemet
-        	System.out.print("<");
-            System.out.print("  ");
-        	System.out.println("[].Push(o,d):");
+
         }
 		o.visit(this, d); //Meghívja az object visit függvényét, hogy ráléphessen a mezőre	
 	}

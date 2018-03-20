@@ -7,7 +7,7 @@ public class Trap extends Hole {
 	public void Accept (Object o,Direction d){
 		//bemegyünk a fgv-be
 		System.out.print(">");
-		System.out.print("	");
+		System.out.print("  ");
 		System.out.println("[:Trap].Accept(o,d):");
 		
 		if(this.getObject() != null)

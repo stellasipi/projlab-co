@@ -11,11 +11,9 @@ public class Wall extends Coloumn {
       //Meghívja object push függvényét, hogy el tudja tolni a rajta levő elemet
         if(this.getObject() != null)  
         {	
-        	System.out.print("  ");
 			o.getTile().getNeighbour(d).getObject().push(o, d);
         }
 
-        System.out.print("  ");
         o.visit(this, d);
         this.Remove(o);
     }
