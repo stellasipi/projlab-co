@@ -158,56 +158,56 @@ public class Map {
         		if(i==0) {
         			if(j==0) {
         				tiles.get(i*20+j).setNeighbour(null, Direction.UP);
-            			tiles.get(i*20+j).setNeighbour(tiles.get((i)*20+j+1), Direction.RIGHT);
-            			tiles.get(i*20+j).setNeighbour(tiles.get((i+1)*20+j), Direction.DOWN);
+            			tiles.get(i*20+j).setNeighbour(tiles.get((i)*width+j+1), Direction.RIGHT);
+            			tiles.get(i*20+j).setNeighbour(tiles.get((i+1)*width+j), Direction.DOWN);
             			tiles.get(i*20+j).setNeighbour(null, Direction.LEFT);
         			}else if(j==width-1) {
         				tiles.get(i*20+j).setNeighbour(null, Direction.UP);
             			tiles.get(i*20+j).setNeighbour(null, Direction.RIGHT);
-            			tiles.get(i*20+j).setNeighbour(tiles.get((i+1)*20+j), Direction.DOWN);
-            			tiles.get(i*20+j).setNeighbour(tiles.get((i)*20+j-1), Direction.LEFT);
+            			tiles.get(i*20+j).setNeighbour(tiles.get((i+1)*width+j), Direction.DOWN);
+            			tiles.get(i*20+j).setNeighbour(tiles.get((i)*width+j-1), Direction.LEFT);
         			}else {
         				tiles.get(i*20+j).setNeighbour(null, Direction.UP);
-        				tiles.get(i*20+j).setNeighbour(tiles.get((i)*20+j+1), Direction.RIGHT);
-        				tiles.get(i*20+j).setNeighbour(tiles.get((i+1)*20+j), Direction.DOWN);
-        				tiles.get(i*20+j).setNeighbour(tiles.get((i)*20+j-1), Direction.LEFT);
+        				tiles.get(i*20+j).setNeighbour(tiles.get((i)*width+j+1), Direction.RIGHT);
+        				tiles.get(i*20+j).setNeighbour(tiles.get((i+1)*width+j), Direction.DOWN);
+        				tiles.get(i*20+j).setNeighbour(tiles.get((i)*width+j-1), Direction.LEFT);
         			}
         			
         		//utolsó sor
         		}else if(i==height-1) {
         			if(j==0) {
-        				tiles.get(i*20+j).setNeighbour(tiles.get((i-1)*20+j), Direction.UP);
-            			tiles.get(i*20+j).setNeighbour(tiles.get((i)*20+j+1), Direction.RIGHT);
+        				tiles.get(i*20+j).setNeighbour(tiles.get((i-1)*width+j), Direction.UP);
+            			tiles.get(i*20+j).setNeighbour(tiles.get((i)*width+j+1), Direction.RIGHT);
             			tiles.get(i*20+j).setNeighbour(null, Direction.DOWN);
             			tiles.get(i*20+j).setNeighbour(null, Direction.LEFT);
-        			}else if(j==14) {
-        				tiles.get(i*20+j).setNeighbour(tiles.get((i-1)*20+j), Direction.UP);
+        			}else if(j==width-1) {
+        				tiles.get(i*20+j).setNeighbour(tiles.get((i-1)*width+j), Direction.UP);
             			tiles.get(i*20+j).setNeighbour(null, Direction.RIGHT);
             			tiles.get(i*20+j).setNeighbour(null, Direction.DOWN);
-            			tiles.get(i*20+j).setNeighbour(tiles.get((i)*20+j-1), Direction.LEFT);
+            			tiles.get(i*20+j).setNeighbour(tiles.get((i)*width+j-1), Direction.LEFT);
         			}else {
-        				tiles.get(i*20+j).setNeighbour(tiles.get((i-1)*20+j), Direction.UP);
-        				tiles.get(i*20+j).setNeighbour(tiles.get((i)*20+j+1), Direction.RIGHT);
+        				tiles.get(i*20+j).setNeighbour(tiles.get((i-1)*width+j), Direction.UP);
+        				tiles.get(i*20+j).setNeighbour(tiles.get((i)*width+j+1), Direction.RIGHT);
         				tiles.get(i*20+j).setNeighbour(null, Direction.DOWN);
-        				tiles.get(i*20+j).setNeighbour(tiles.get((i)*20+j-1), Direction.LEFT);
+        				tiles.get(i*20+j).setNeighbour(tiles.get((i)*width+j-1), Direction.LEFT);
         			}
         			
         		//többi sor
         		}else if(j==0) {
-        			tiles.get(i*20+j).setNeighbour(tiles.get((i-1)*20+j), Direction.UP);
-        			tiles.get(i*20+j).setNeighbour(tiles.get((i)*20+j+1), Direction.RIGHT);
-        			tiles.get(i*20+j).setNeighbour(tiles.get((i+1)*20+j), Direction.DOWN);
+        			tiles.get(i*20+j).setNeighbour(tiles.get((i-1)*width+j), Direction.UP);
+        			tiles.get(i*20+j).setNeighbour(tiles.get((i)*width+j+1), Direction.RIGHT);
+        			tiles.get(i*20+j).setNeighbour(tiles.get((i+1)*width+j), Direction.DOWN);
         			tiles.get(i*20+j).setNeighbour(null, Direction.LEFT);
         		}else if(j==width-1) {
-        			tiles.get(i*20+j).setNeighbour(tiles.get((i-1)*20+j), Direction.UP);
+        			tiles.get(i*20+j).setNeighbour(tiles.get((i-1)*width+j), Direction.UP);
         			tiles.get(i*20+j).setNeighbour(null, Direction.RIGHT);
-        			tiles.get(i*20+j).setNeighbour(tiles.get((i+1)*20+j), Direction.DOWN);
-        			tiles.get(i*20+j).setNeighbour(tiles.get((i)*20+j-1), Direction.LEFT);
+        			tiles.get(i*20+j).setNeighbour(tiles.get((i+1)*width+j), Direction.DOWN);
+        			tiles.get(i*20+j).setNeighbour(tiles.get((i)*width+j-1), Direction.LEFT);
         		}else {
-        			tiles.get(i*20+j).setNeighbour(tiles.get((i-1)*20+j), Direction.UP);
-        			tiles.get(i*20+j).setNeighbour(tiles.get((i)*20+j+1), Direction.RIGHT);
-        			tiles.get(i*20+j).setNeighbour(tiles.get((i+1)*20+j), Direction.DOWN);
-        			tiles.get(i*20+j).setNeighbour(tiles.get((i)*20+j-1), Direction.LEFT);
+        			tiles.get(i*20+j).setNeighbour(tiles.get((i-1)*width+j), Direction.UP);
+        			tiles.get(i*20+j).setNeighbour(tiles.get((i)*width+j+1), Direction.RIGHT);
+        			tiles.get(i*20+j).setNeighbour(tiles.get((i+1)*width+j), Direction.DOWN);
+        			tiles.get(i*20+j).setNeighbour(tiles.get((i)*width+j-1), Direction.LEFT);
         		}
         	}
         } //setDirection-ök vége
