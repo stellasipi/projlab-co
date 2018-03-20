@@ -1,19 +1,15 @@
 ﻿package shokoban;
 
 public class Target extends TileElement {
-	
-	/*
-	 * @see shokoban.TileElement#Accept(shokoban.Object, shokoban.Direction)
-	 */
-	@Override
-	public void Accept(Object o, Direction d) {
+
+	public void Accept(Worker w, Direction d) {
 		//bemegyünk a fgv-be
 		System.out.print(">");
 		System.out.print("  ");
 		System.out.println("[:Target].Accept(o,d):");
 		if(this.getObject() != null)
-			o.getTile().getNeighbour(d).getObject().push(o, d);
-		o.visit(this, d);
+			w.getTile().getNeighbour(d).getObject().push(w, d);
+		w.visit(this, d);
 		
 	}
 	
@@ -38,11 +34,7 @@ public class Target extends TileElement {
 		c.getGame().CalculateScores(); //ez nem működik még, csak jelzés
 	}
 	
-	/*
-	 * @see shokoban.TileElement#Remove(shokoban.Object)
-	 */
-	@Override
-    public void Remove(Object o) {
+    public void Remove(Worker w) {
         //bemegyünk a fgv-be
         System.out.print(">");
         System.out.print("  ");
