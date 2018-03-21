@@ -1,4 +1,4 @@
-﻿package shokoban;
+package shokoban;
 
 public class Trap extends Hole {
 	private boolean active = false;

@@ -1,4 +1,4 @@
-﻿package shokoban;
+package shokoban;
 
 //absztrakt minden függvény a leszármazottakban kommentelve
 public abstract class Object {
