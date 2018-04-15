@@ -72,6 +72,15 @@ public class TestLanguage {
 				/*
 				 * 0 parameter:
 				 */
+				
+				int counter = 0;
+				for(Crate c : game.crates) {
+					counter++;
+					Results.add(counter+". Coordinates: "+/*valahogy a koordinátát visszanyerni*/ "X,Y" + 
+					" Friction: " + "ezt is egy getterrel ki kell szerezni" + 
+					" OnTarget: "+"ezt is valahogy ellenőrizni");
+				}
+				
 			case "ListPlacedCrates":
 				/*
 				 * 0 parameter:
