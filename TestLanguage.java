@@ -73,10 +73,10 @@ public class TestLanguage {
 				 * 0 parameter:
 				 */
 				
-				int counter = 0;
+				int crateCount = 0;
 				for(Crate c : game.crates) {
-					counter++;
-					Results.add(counter+". Coordinates: "+/*valahogy a koordinátát visszanyerni*/ "X,Y" + 
+					crateCount++;
+					Results.add(crateCount+". Coordinates: "+/*valahogy a koordinátát visszanyerni*/ "X,Y" + 
 					" Friction: " + "ezt is egy getterrel ki kell szerezni" + 
 					" OnTarget: "+"ezt is valahogy ellenőrizni");
 				}
@@ -129,11 +129,11 @@ public class TestLanguage {
 				/*
 				 * 0 parameter:
 				 */
-				int counter = 0;
+				int wallCount = 0;
 				for(TileElement te : game.getMap().tiles) {
 					if (te.getClass()==Wall.class) {
-						counter++;
-						Results.add(counter+". Coordinates: "+ /*valahogy a koordinátákat megszerezni*/ "");
+						wallCount++;
+						Results.add(wallCount+". Coordinates: "+ /*valahogy a koordinátákat megszerezni*/ "");
 					}
 				}				
 			case "ListColumns":
