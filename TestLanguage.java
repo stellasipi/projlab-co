@@ -8,13 +8,14 @@ import java.util.ArrayList;
 public class TestLanguage {
 	
 	Game game;
+	ArrayList<String> Results = new ArrayList<String>();
 	
 	TestLanguage(){		
 	}
 	
 	public void RecieveCommands() throws IOException {
 		ArrayList<String> Commands = new ArrayList<String>();
-		ArrayList<String> Results = new ArrayList<String>();
+		Results = new ArrayList<String>();
 		
 		InputStreamReader isr = new InputStreamReader(System.in);
 		BufferedReader br = new BufferedReader(isr);
@@ -45,10 +46,12 @@ public class TestLanguage {
 				//game.getMap().loadMap(command[1]);
 			case "PlaceWorker":
 				/*
-			 	 * 2 parameter:
+			 	 * 3 parameter:
+			 	 * 		name	- String
 			 	 * 		height	- int
 			 	 * 		width	- int
 			 	 */
+				
 			case "PlaceCrate":
 				/*
 			 	 * 2 parameter:
@@ -117,6 +120,13 @@ public class TestLanguage {
 				/*
 				 * 0 parameter:
 				 */
+				int counter = 0;
+				for(TileElement te : game.getMap().tiles) {
+					if (te.getClass()==Wall.class) {
+						counter++;
+						Results.add(counter+". Coordinates: "+ /*valahogy a koordinátákat megszerezni*/ "");
+					}
+				}				
 			case "ListColumns":
 				/*
 				 * 0 parameter:
