@@ -6,7 +6,7 @@ public class Button extends TileElement {
 	private Trap trap = new Trap();
 	
 	
-	public void Accept(Worker w, Direction d) {
+	public void Accept(Worker w, Direction d, int acts) {
 		//Dialógus kiíratása
 		System.out.print(">");
 		System.out.print("  ");
@@ -22,7 +22,7 @@ public class Button extends TileElement {
 		w.visit(this, d);		
 	}
 	
-	public void Accept(Crate c, Direction d) {
+	public void Accept(Crate c, Direction d, int acts) {
 		//Dialógus kiíratása
 		System.out.print(">");
 		System.out.print("  ");

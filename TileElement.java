@@ -12,13 +12,13 @@ public abstract class TileElement {
      * @param1 a mezőre lépő munkás
      * @param2 az irány, amerre a munkás mozog
      */
-    public abstract void Accept (Worker w, Direction d);
+    public abstract void Accept (Worker w, Direction d, int acts);
     
     /* Az objektum mezőre lépését kezelő függvény
      * @param1 a mezőre lépő láda
      * @param2 az irány, amerre a láda mozog
      */
-    public abstract void Accept (Crate c, Direction d);
+    public abstract void Accept (Crate c, Direction d, int acts);
     
     /* Az objektumot a mezőről eltávolító függvény
      * @param az eltávolítandó munkás

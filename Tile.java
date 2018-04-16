@@ -21,7 +21,7 @@ public class Tile extends TileElement {
         setObject(null);
     }
 
-	public void Accept(Worker w, Direction d) {
+	public void Accept(Worker w, Direction d, int acts) {
 		System.out.print(">");
         System.out.print("  ");
         System.out.println("[:Tile].Accept(w,d):");
@@ -35,7 +35,7 @@ public class Tile extends TileElement {
 		w.visit(this, d); //Meghívja az object visit függvényét, hogy ráléphessen a mezőre	
 	}
 	
-	public void Accept(Crate c, Direction d) {
+	public void Accept(Crate c, Direction d, int acts) {
 		System.out.print(">");
         System.out.print("  ");
         System.out.println("[:Tile].Accept(c,d):");

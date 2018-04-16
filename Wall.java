@@ -3,7 +3,7 @@ package shokoban;
 public class Wall extends Coloumn {
 	
 	@Override
-    public void Accept (Worker w, Direction d){
+    public void Accept (Worker w, Direction d, int acts){
         //bemegyünk a fgv-be
         System.out.print(">");
         System.out.print("  ");
@@ -24,7 +24,7 @@ public class Wall extends Coloumn {
     }
 	
 	@Override
-    public void Accept (Crate c, Direction d){
+    public void Accept (Crate c, Direction d, int acts){
         //bemegyünk a fgv-be
         System.out.print(">");
         System.out.print("  ");
