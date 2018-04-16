@@ -4,6 +4,7 @@ package shokoban;
 public class Crate extends Object {
 	private int score;
 	private Worker pushedBy;
+	private int mu;
 	
 	public void visit(Coloumn c ,Direction d) {
 		//bemegyünk a fgv-be
@@ -118,23 +119,29 @@ public class Crate extends Object {
 		System.out.println("  	Lépes nem történt meg");
 	}
 	
-	public void push(Worker w, Direction d) {
+	public void push(Worker w, Direction d, int acts) {
 		//bemegyünk a fgv-be
 		System.out.print(">");
 		System.out.print("  ");
 		System.out.println("[:Crate].push(w,d):");
-		TileElement seged = this.getTile();
-		this.getTile().getNeighbour(d).Accept(this, d); //következő tile accept-jét hívjuk be
-		if(seged!=this.getTile())
-			this.setPushedBy(w);
+		if(acts>mu) {
+			acts=acts-mu;
+			TileElement seged = this.getTile();
+			this.getTile().getNeighbour(d).Accept(this, d, acts); //következő tile accept-jét hívjuk be
+			if(seged!=this.getTile())
+				this.setPushedBy(w);
+		}
 	}
 
-	public void push(Crate c, Direction d) {
+	public void push(Crate c, Direction d, int acts) {
 		//bemegyünk a fgv-be
 		System.out.print(">");
 		System.out.print("  ");
 		System.out.println("[:Crate].push(c,d):");
-		this.getTile().getNeighbour(d).Accept(this, d); //következő tile accept-jét hívjuk be
+		if(acts>mu) {
+			acts=acts-mu;
+			this.getTile().getNeighbour(d).Accept(this, d, acts); //következő tile accept-jét hívjuk be
+		}	
 	}
 	
 	public int getScore() {
@@ -161,6 +168,12 @@ public class Crate extends Object {
 		
 		this.pushedBy = pushedBy;
 
+	}
+	public int getMu() {
+		return mu;
+	}
+	public void setMu(int mu) {
+		this.mu = mu;
 	}
 
 }
