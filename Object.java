@@ -4,6 +4,7 @@ package shokoban;
 public abstract class Object {
     private TileElement tile;
     private Game game;
+    private String name;
 
     abstract public void visit(Coloumn c , Direction d);
 
@@ -38,5 +39,13 @@ public abstract class Object {
 
     public void setGame(Game game) {
     	this.game = game;
+    }
+    
+    public void setName(String n) {
+    	this.name = n;
+    }
+    
+    public String getName() {
+    	return name;
     }
 }

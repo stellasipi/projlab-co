@@ -6,6 +6,7 @@ public abstract class TileElement {
 
     private HashMap<Direction,TileElement> neighbours=new HashMap<Direction,TileElement>();
     private Object object;
+    private Integer[] coords = new Integer[2];
     
     /* Az objektum mezőre lépését kezelő függvény
      * @param1 a mezőre lépő munkás
@@ -55,5 +56,17 @@ public abstract class TileElement {
     public void setObject(Object object) {
         this.object = object;
     }
-
+    
+    public Integer[] getCoords() {
+    	return coords;
+    }
+    
+    /* Beállítja a koordinátákat
+     * @param1 szélesség
+     * @param2 magasság
+     */
+    public void setCoords(int width, int height) {
+    	this.coords[0] = width;
+    	this.coords[1] = height;
+    }
 }
