@@ -48,7 +48,7 @@ public class Game {
         System.out.println("[:Game].Move(w,d):");
 
         //Elindítja a mozgást (majd a külső input alapján)
-        w.getTile().getNeighbour(d).Accept(w, d);
+        w.getTile().getNeighbour(d).Accept(w, d, w.getStrenght());
         
         //Ellenőrzi a játék folytatásának feltételeit
         Check();
