@@ -11,7 +11,7 @@ public class Coloumn extends TileElement {
 
         //Meghívja object push függvényét, hogy el tudja tolni a rajta levő elemet
         if(this.getObject() != null)
-			w.getTile().getNeighbour(d).getObject().push(w, d);
+			w.getTile().getNeighbour(d).getObject().push(w, d, acts);
         
         //Meghívja az object visit függvényét, hogy rá tudjon lépni
         w.visit(this, d);
@@ -26,7 +26,7 @@ public class Coloumn extends TileElement {
 
         //Meghívja object push függvényét, hogy el tudja tolni a rajta levő elemet
         if(this.getObject() != null)
-			c.getTile().getNeighbour(d).getObject().push(c, d);
+			c.getTile().getNeighbour(d).getObject().push(c, d, acts);
         
         //Meghívja az object visit függvényét, hogy rá tudjon lépni
         c.visit(this, d);

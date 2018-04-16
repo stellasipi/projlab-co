@@ -34,7 +34,7 @@ public class Scene5 {
 		crate2.setTile(t2);
 		
 		System.out.println("Dialógus:");
-		t2.Accept(crate1, Direction.RIGHT);
+		t2.Accept(crate1, Direction.RIGHT, 0);
 	}
 		
 	

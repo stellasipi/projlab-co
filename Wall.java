@@ -12,7 +12,7 @@ public class Wall extends Coloumn {
       //Meghívja object push függvényét, hogy el tudja tolni a rajta levő elemet
         if(this.getObject() != null)  
         {	
-			w.getTile().getNeighbour(d).getObject().push(w, d);
+			w.getTile().getNeighbour(d).getObject().push(w, d, acts);
         }
 
         w.visit(this, d);
@@ -33,7 +33,7 @@ public class Wall extends Coloumn {
       //Meghívja object push függvényét, hogy el tudja tolni a rajta levő elemet
         if(this.getObject() != null)  
         {	
-			c.getTile().getNeighbour(d).getObject().push(c, d);
+			c.getTile().getNeighbour(d).getObject().push(c, d, acts);
         }
 
         c.visit(this, d);

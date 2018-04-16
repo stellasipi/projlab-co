@@ -10,7 +10,7 @@ public class Trap extends Hole {
 		System.out.println("[:Trap].Accept(c,d):");
 		
 		if(this.getObject() != null)
-			c.getTile().getNeighbour(d).getObject().push(c, d);
+			c.getTile().getNeighbour(d).getObject().push(c, d, acts);
 		
 		c.visit(this, d);
 	}
@@ -22,7 +22,7 @@ public class Trap extends Hole {
 		System.out.println("[:Trap].Accept(w,d):");
 		
 		if(this.getObject() != null)
-			w.getTile().getNeighbour(d).getObject().push(w, d);
+			w.getTile().getNeighbour(d).getObject().push(w, d, acts);
 		
 		w.visit(this, d);
 	}
