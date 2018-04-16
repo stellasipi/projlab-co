@@ -159,7 +159,7 @@ public class TestLanguage {
 						if(beforeCoord != w.getTile().getCoords()) {
 							Results.add("Moved " + command[1] + ", " + command[2]);
 						}else {
-							Results.add("Failed move " + command[1] + ", " + command[2]);
+							Results.add("Failed" + command[1] + "could not step on the given coordinates");
 						}
 						break;
 					}
