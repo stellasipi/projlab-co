@@ -3,6 +3,7 @@ package shokoban;
 
 public class Worker extends Object {
 	private int sumscore;
+	private int strenght;
 	
 	public void visit(Button b, Direction d) {
         //bemegyünk a fgv-be
@@ -111,27 +112,32 @@ public class Worker extends Object {
 	
 	
 	//Nem történik semmi, így üres
-	public void push(Worker w, Direction d) {
+	public void push(Worker w, Direction d, int acts) {
         //bemegyünk a fgv-be
         System.out.print(">");
         System.out.print("  ");
         System.out.println("[:Worker].push(w, d):");
 	}
 	
-	public void push(Crate c, Direction d) {
+	public void push(Crate c, Direction d, int acts) {
         //bemegyünk a fgv-be
         System.out.print(">");
         System.out.print("  ");
         System.out.println("[:Worker].push(w, d):");
         TileElement seged = this.getTile();
-       this.getTile().getNeighbour(d).Accept(this, d); //a következő tile Accept-jét hívjuk
+       this.getTile().getNeighbour(d).Accept(this, d, acts); //a következő tile Accept-jét hívjuk
        if(seged==this.getTile()) {
     	   this.getTile().Remove(this);
-    	   getGame().Die(this);
-    	   
-       }
-    	   
-    	   
+    	   getGame().Die(this);  
+       }   
+	}
+	
+	void PlaceOil(Grease g) {
+		
+	}
+	
+	void PlaceHoney(Grease g) {
+		
 	}
 	
 	public int getSumscore() {
@@ -140,5 +146,13 @@ public class Worker extends Object {
 	
 	public void setSumscore(int s) {
         sumscore = s;
+	}
+
+	public int getStrenght() {
+		return strenght;
+	}
+
+	public void setStrenght(int strenght) {
+		this.strenght = strenght;
 	}
 }
