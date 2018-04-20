@@ -7,10 +7,6 @@ public class Button extends TileElement {
 	
 	
 	public void Accept(Worker w, Direction d, int acts) {
-		//Dialógus kiíratása
-		System.out.print(">");
-		System.out.print("  ");
-		System.out.println("[:Button].Accept(o,d):");
 		
 		//Meghívja object push függvényét, hogy el tudja tolni a rajta levő elemet
 		if(this.getObject() != null) 
@@ -23,10 +19,6 @@ public class Button extends TileElement {
 	}
 	
 	public void Accept(Crate c, Direction d, int acts) {
-		//Dialógus kiíratása
-		System.out.print(">");
-		System.out.print("  ");
-		System.out.println("[:Button].Accept(c,d):");
 		
 		//Meghívja crate push függvényét, hogy el tudja tolni a rajta levő elemet
 		if(this.getObject() != null)
@@ -37,10 +29,6 @@ public class Button extends TileElement {
 	}
 	
 	public void Remove(Crate c) {
-		//Dialógus kiíratása
-		System.out.print(">");
-		System.out.print("  ");
-		System.out.println("[:Button].Remove(c):");
 		
 		//Csapda állpotváltozását indító függyény
 		Switch(trap);
@@ -49,20 +37,12 @@ public class Button extends TileElement {
 	
 	@Override
     public void Remove(Worker w) {
-		//Dialógus kiíratása
-        System.out.print(">");
-        System.out.print("  ");
-        System.out.println("[:Button].Remove(w):");
 
         //Üres mezőnek állítja be magát
         this.setObject(null);
     }
 	
 	public void Switch(Trap t) {
-		//Dialógus kiíratása
-		System.out.print(">");
-		System.out.print("  ");
-		System.out.println("[:Button].Switch(t):");
 		
 		//Csapda állapotának változtatása, ha aktív -> inkatív, ha inaktív -> aktív
 		if(t.getActive())
