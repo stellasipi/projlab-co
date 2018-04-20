@@ -1,0 +1,7 @@
+create Tile t0
+create Tile t1
+create Hole h
+create Tile t2
+setNeighbour t0 right t1
+setNeighbour t1 right h
+setNeighbour h right t2

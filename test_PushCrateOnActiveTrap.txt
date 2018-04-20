@@ -1,0 +1,8 @@
+create Tile t0
+create Tile t1
+create Button b
+create Trap tr
+setNeighbour t0 right t1
+setNeighbour t1 right b
+setNeighbour b right tr
+setButton b tr

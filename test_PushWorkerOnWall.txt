@@ -1,0 +1,3 @@
+create Tile t
+create Coloumn c
+setNeighbour t right c

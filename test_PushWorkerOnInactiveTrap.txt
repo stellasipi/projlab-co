@@ -1,0 +1,4 @@
+create Button b
+create Trap tr
+setNeighbour b right tr
+setButton b tr
