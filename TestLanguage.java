@@ -10,10 +10,57 @@ public class TestLanguage {
 	Game game;
 	ArrayList<String> Results = new ArrayList<String>();
 	
-	TestLanguage(){		
+	TestLanguage(){	}
+	
+	public void Run() {
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+		Boolean asd = true;
+		
+		System.out.println("Üdv a test-testkörnyezetben \n"
+				+ "Elbeszélgetés jézussal 1-es gomb \n"
+				+ "Biblia átadás 2-es gomb \n"
+				+ "Pokolba menekülés 3-as gomb");
+		
+		while (asd) {
+			String input;
+			try {
+				input = br.readLine();
+				int option = Integer.parseInt(input);
+				
+				switch(option) {
+				case 1:
+					try {
+						ManualInputHandler();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				case 2:
+					String name;
+					try {
+						name = br.readLine();
+						TextIputHandler(name);
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				case 3:
+					asd = false;
+				default:
+					System.out.println("oawnhi");
+				}
+				
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			
+			
+		}
 	}
 	
-	public void RecieveCommands() throws IOException {
+	public void ManualInputHandler() throws IOException {
 		ArrayList<String> Commands = new ArrayList<String>();
 		Results = new ArrayList<String>();
 		
@@ -28,6 +75,10 @@ public class TestLanguage {
 		for(int i=0; i<commands.size(); i++) {
 			ExecuteCommand(commands.get(i));
 		}
+	}
+	
+	public void TextIputHandler(String name) {
+		ArrayList<String> Commands = new ArrayList<String>();
 	}
 	
 	private void Init() {
@@ -165,42 +216,6 @@ public class TestLanguage {
 					}
 				}
 			case "ListWorkers":
-				/*
-				 * 0 parameter:
-				 */
-			case "ListTraps":
-				/*
-				 * 0 parameter:
-				 */
-				// ez csak úgy ittvan, nem boztos hogy kell, ha kell akkor megvalósítjuk, ha nem akkor delete minden ami ez alatt van
-			case "ListTiles":
-				/*
-				 * 0 parameter:
-				 */
-			case "ListHoles":
-				/*
-				 * 0 parameters:
-				 */
-			case "ListButtons":
-				/*
-				 * 0 parameter:
-				 */
-			case "ListTargets":
-				/*
-				 * 0 parameter:
-				 */
-			case "ListWalls":
-				/*
-				 * 0 parameter:
-				 */
-				int wallCount = 0;
-				for(TileElement te : game.getMap().tiles) {
-					if (te.getClass()==Wall.class) {
-						wallCount++;
-						Results.add(wallCount+". Coordinates: "+ /*valahogy a koordinátákat megszerezni*/ "");
-					}
-				}				
-			case "ListColumns":
 				/*
 				 * 0 parameter:
 				 */
