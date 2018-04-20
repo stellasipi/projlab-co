@@ -61,27 +61,16 @@ public class Worker extends Object {
 	}
 	
 	public void visit(Tile t, Direction d) {
-        //bemegyünk a fgv-be
-        System.out.print(">");
-        System.out.print("  ");
-        System.out.println("[:Worker].visit(tile, d):");
 		
 		//Ellenőrzi, hogy sikerült-e elmozdulni a másik objectnek, ha null akkor mozoghatnak, amúgy marad minden ugyanaz
 		if(t.getObject() == null) {
 			this.getTile().Remove(this); //eltávolítja magát a másikról
 			t.setObject(this);	//beállítja magát az új mezőnek
 			this.setTile(t);	//beállítj az új mezőt magának
-			System.out.println("  	Lépes megtörtént");
-		}
-		else 
-			System.out.println("  	Lépes nem történt meg");
+
 	}
 
 	public void visit(Trap t, Direction d) {
-        //bemegyünk a fgv-be
-        System.out.print(">");
-        System.out.print("  ");
-        System.out.println("[:Worker].visit(trap, d):");
 		
 		//ha aktív lyukként működik
 		if(t.getActive()) {
@@ -93,20 +82,9 @@ public class Worker extends Object {
 			this.getTile().Remove(this); //eltávolítja magát a másikról
 			t.setObject(this);	//beállítja magát az új mezőnek
 			this.setTile(t);	//beállítj az új mezőt magának
-			System.out.println("  	Lépes megtörtént");
-		}	
-		else 
-			System.out.println("  	Lépes nem történt meg");
+			
 	}
 	
-	//Nem történik semmi, így üres
-	public void visit(Wall w, Direction d) {
-        //bemegyünk a fgv-be
-        System.out.print(">");
-        System.out.print("  ");
-        System.out.println("[:Worker].visit(w, d):");
-		System.out.println("  	Lépes nem történt meg");
-	}
 	
 	//Nem történik semmi, így üres
 	

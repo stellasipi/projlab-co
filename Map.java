@@ -8,30 +8,18 @@ public class Map {
 	
 	public void AddTileElement(TileElement t)
 	{
-		//Dialógus kiíratása
-		System.out.print(">");
-        System.out.print("  ");
-        System.out.println("[:Map].AddTileElement(t):");
 
         //hozzáad egy tileelement-et a tileshoz
         tiles.add(t);
 	}
 	public void PlaceWorker(Worker w) 
 	{
-		//Dialógus kiíratása
-        System.out.print(">");
-        System.out.print("  ");
-        System.out.println("[:Map].PlaceWorker(w):");
 
         //elhelyezi a workereket a pályán
 
 	}
 	public void PlaceCrate(Crate c) 
 	{
-		//Dialógus kiíratása
-        System.out.print(">");
-        System.out.print("  ");
-        System.out.println("[:Map].PlaceCrate(c):");
 
         //elhelyezi a ládákat a pályán
         
@@ -39,10 +27,6 @@ public class Map {
 	}
 	public void CreateMap() 
 	{
-		//Dialógus kiíratása
-        System.out.print(">");
-        System.out.print("  ");
-        System.out.println("[:Map].CreateMap():");
 
         //randomizáláshoz
         Random rand = new Random();

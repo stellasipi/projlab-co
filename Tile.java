@@ -6,10 +6,6 @@ public class Tile extends TileElement {
 	private ArrayList<Grease> grease = new ArrayList<Grease>();
 	
 	public void Remove(Worker w) {
-      
-        System.out.print(">");
-        System.out.print("  ");
-        System.out.println("[:Tile].Remove(w):");
 
         //függvénytörzs
         setObject(null);
@@ -17,18 +13,12 @@ public class Tile extends TileElement {
 	
 	public void Remove(Crate c) {
 	      
-        System.out.print(">");
-        System.out.print("  ");
-        System.out.println("[:Tile].Remove(c):");
 
         //függvénytörzs
         setObject(null);
     }
 
 	public void Accept(Worker w, Direction d, int acts) {
-		System.out.print(">");
-        System.out.print("  ");
-        System.out.println("[:Tile].Accept(w,d):");
 
       //függvénytörzs
         if(this.getObject() != null) 
@@ -40,9 +30,6 @@ public class Tile extends TileElement {
 	}
 	
 	public void Accept(Crate c, Direction d, int acts) {
-		System.out.print(">");
-        System.out.print("  ");
-        System.out.println("[:Tile].Accept(c,d):");
 
       //függvénytörzs
         if(this.getObject() != null) 

@@ -79,21 +79,6 @@ public class Crate extends Object {
 		}
 	}
 	
-	public void visit(Wall w ,Direction d) {
-		
-	}
-	
-	public void push(Worker w, Direction d, int acts) {
-		//bemegyünk a fgv-be
-		if(acts>mu) {
-			acts=acts-mu;
-			TileElement seged = this.getTile();
-			this.getTile().getNeighbour(d).Accept(this, d, acts); //következő tile accept-jét hívjuk be
-			if(seged!=this.getTile())
-				this.setPushedBy(w);
-		}
-	}
-
 	public void push(Crate c, Direction d, int acts) {
 	
 		if(acts>mu) {

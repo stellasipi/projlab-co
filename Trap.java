@@ -4,10 +4,6 @@ public class Trap extends Hole {
 	private boolean active = false;
 	
 		public void Accept (Crate c,Direction d, int acts){
-		//bemegyünk a fgv-be
-		System.out.print(">");
-		System.out.print("  ");
-		System.out.println("[:Trap].Accept(c,d):");
 		
 		if(this.getObject() != null)
 			c.getTile().getNeighbour(d).getObject().push(c, d, acts);
@@ -16,10 +12,6 @@ public class Trap extends Hole {
 	}
 	
 	public void Accept (Worker w,Direction d, int acts){
-		//bemegyünk a fgv-be
-		System.out.print(">");
-		System.out.print("  ");
-		System.out.println("[:Trap].Accept(w,d):");
 		
 		if(this.getObject() != null)
 			w.getTile().getNeighbour(d).getObject().push(w, d, acts);
@@ -28,21 +20,13 @@ public class Trap extends Hole {
 	}
 	
 	public void Remove(Crate c) {
-        //bemegyünk a fgv-be
-        System.out.print(">");
-        System.out.print("  ");
-        System.out.println("[:Trap].Remove(c):");
 
         //fgv törzs
         this.setObject(null); //eltünteti a rajta lévő objektumot
     }
 	
 	public void Remove(Worker w) {
-        //bemegyünk a fgv-be
-        System.out.print(">");
-        System.out.print("  ");
-        System.out.println("[:Trap].Remove(w):");
-
+		
         //fgv törzs
         this.setObject(null); //eltünteti a rajta lévő objektumot
     }
