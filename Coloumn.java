@@ -4,10 +4,6 @@ package shokoban;
 public class Coloumn extends TileElement {
 	
     public void Accept (Worker w, Direction d, int acts){
-		//Dialógus kiíratása
-        System.out.print(">");
-        System.out.print("  ");
-        System.out.println("[:Coloumn].Accept(w, d):");
 
         //Meghívja object push függvényét, hogy el tudja tolni a rajta levő elemet
         if(this.getObject() != null)
@@ -19,11 +15,7 @@ public class Coloumn extends TileElement {
     }
     
     public void Accept (Crate c, Direction d, int acts){
-		//Dialógus kiíratása
-        System.out.print(">");
-        System.out.print("  ");
-        System.out.println("[:Coloumn].Accept(object, dir):");
-
+		
         //Meghívja object push függvényét, hogy el tudja tolni a rajta levő elemet
         if(this.getObject() != null)
 			c.getTile().getNeighbour(d).getObject().push(c, d, acts);
