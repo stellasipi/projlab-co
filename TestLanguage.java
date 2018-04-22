@@ -95,7 +95,7 @@ public class TestLanguage {
 			 	 * 		mapName	- string
 			 	 */
 				//game.getMap().loadMap(command[1]);
-				string[] mapCommand;
+				String[] mapCommand;
 				// be kell olvasni egy sort a mapCommandba a megadott txt-ből, space-ek mentén splitelve
 				
 				switch (mapCommand[0]){
