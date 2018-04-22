@@ -7,13 +7,10 @@ public class Crate extends Object {
 	private int mu;
 	
 	public void visit(Coloumn c ,Direction d) {
-	
-		
 		//üres függvény, az oszlopra láda nem tud rálépni
-
 	}
-	public void visit(Target target ,Direction d) {
-		
+	
+	public void visit(Target target ,Direction d) {		
 		//fgv törzs
 		if(target.getObject() == null) 
 		{
@@ -22,18 +19,14 @@ public class Crate extends Object {
 			target.setObject(this);
 			this.getGame().CalculateScores();
 			//setPushedBy();
-		}
-		
-	
+		}	
 	}
+	
 	public void visit(Hole h ,Direction d) {
-
-		
 		//fgv törzs
 		this.getTile().Remove(this);
 		getGame().Die(this);//a nem elérhető a láda
-			
-		}
+	}
 
 	
 	public void visit(Trap trap ,Direction d) {
@@ -51,9 +44,7 @@ public class Crate extends Object {
 				trap.setObject(this);
 
 			}
-		}
-
-		
+		}		
 	}
 	
 	public void visit(Button b ,Direction d) {
@@ -65,8 +56,6 @@ public class Crate extends Object {
 			b.setObject(this);
 			b.Switch(b.getTrap());
 		}
-
-
 	}
 	
 	public void visit(Tile tile ,Direction d) {
@@ -80,37 +69,33 @@ public class Crate extends Object {
 	}
 	
 	public void push(Crate c, Direction d, int acts) {
-	
 		if(acts>mu) {
 			acts=acts-mu;
 			this.getTile().getNeighbour(d).Accept(this, d, acts); //következő tile accept-jét hívjuk be
 		}	
 	}
 	
-	public int getScore() {
-
-		
+	public void push(Worker w, Direction d, int acts) {
+		TileElement seged = this.getTile();
+		this.getTile().getNeighbour(d).Accept(this, d, acts); //következő tile accept-jét hívjuk be
+		if(seged!=this.getTile())
+			this.setPushedBy(w);
+	}
+	
+	public int getScore() {		
 		return score;
 	}
 
-	public void setScore(int score) {
-
-		
+	public void setScore(int score) {		
 		this.score = score;
-
 	}
 
-	public Worker getPushedBy() {
-
-		
+	public Worker getPushedBy() {		
 		return pushedBy;
 	}
 
-	public void setPushedBy(Worker pushedBy) {
-
-		
+	public void setPushedBy(Worker pushedBy) {		
 		this.pushedBy = pushedBy;
-
 	}
 	public int getMu() {
 		return mu;
@@ -118,6 +103,5 @@ public class Crate extends Object {
 	public void setMu(int mu) {
 		this.mu = mu;
 	}
-
 }
 

@@ -45,13 +45,13 @@ public class Map {
         
         //első sor
         for(int i=0; i<width; i++) {
-        	TileElement t = new Wall();
+        	TileElement t = new Coloumn();
         	this.AddTileElement(t);
         }
         //2-14 sor
         for(int j=1;j<height-1;j++) {
         	//első fal
-        	this.AddTileElement(new Wall());
+        	this.AddTileElement(new Coloumn());
         	//random tile-ok
         	int i=0;
         	while(i!=18) {
@@ -114,12 +114,12 @@ public class Map {
         		}	
         	}
         	//utolsó fal
-        	this.AddTileElement(new Wall());
+        	this.AddTileElement(new Coloumn());
         }
         
         //utolsó sor
         for(int i=0; i<width; i++) {
-        	TileElement t = new Wall();
+        	TileElement t = new Coloumn();
         	this.AddTileElement(t);
         }        
         //set direction

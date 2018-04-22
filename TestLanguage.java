@@ -105,19 +105,19 @@ public class TestLanguage {
 						case "Tile":
 							
 							break;
-						case: "Target":
+						case "Target":
 							
 							break;
-						case: "Trap":
+						case "Trap":
 							
 							break;
-						case: "Button":
+						case "Button":
 							
 							break;
-						case: "Coloumn":
+						case "Coloumn":
 							
 							break;
-						case: "Hole":
+						case "Hole":
 							
 							break;
 						default:
