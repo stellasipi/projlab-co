@@ -76,14 +76,16 @@ public class Worker extends Object {
 	
 	void PlaceOil(Grease g) {
 		if(this.getTile().getClass().getSimpleName().equals("Tile")) { //ha az osztályneve Tile
+			Tile tile=(Tile)this.getTile(); //azért kell a castolás, mert csak így tudjuk meghívni a setGrease fgv-t, de igazából nem történik valós castolás
 			g.setMu(g.getMu()*(-1)); //létrehozza az olajat, ami mínusz előjelű
-			this.getTile().setGrease(g); //rápakoljuk az olajat
+			tile.setGrease(g); //rápakoljuk az olajat
 		}		
 	}
 	
 	void PlaceHoney(Grease g) {
 		if(this.getTile().getClass().getSimpleName().equals("Tile")) { //ha az osztályneve Tile
-			this.getTile().setGrease(g); //rápakoljuk a mézet
+			Tile tile=(Tile)this.getTile();
+			tile.setGrease(g); //rápakoljuk a mézet
 		}
 	}
 	
