@@ -75,11 +75,16 @@ public class Worker extends Object {
 	}
 	
 	void PlaceOil(Grease g) {
-		
+		if(this.getTile().getClass().getSimpleName().equals("Tile")) { //ha az osztályneve Tile
+			g.setMu(g.getMu()*(-1)); //létrehozza az olajat, ami mínusz előjelű
+			this.getTile().setGrease(g); //rápakoljuk az olajat
+		}		
 	}
 	
 	void PlaceHoney(Grease g) {
-		
+		if(this.getTile().getClass().getSimpleName().equals("Tile")) { //ha az osztályneve Tile
+			this.getTile().setGrease(g); //rápakoljuk a mézet
+		}
 	}
 	
 	public int getSumscore() {

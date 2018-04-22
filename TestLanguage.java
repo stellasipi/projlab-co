@@ -95,13 +95,13 @@ public class TestLanguage {
 			 	 * 		mapName	- string
 			 	 */
 				//game.getMap().loadMap(command[1]);
-				String[] mapCommand;
+				ArrayList<String> mapCommand=new ArrayList<>();
 				// be kell olvasni egy sort a mapCommandba a megadott txt-ből, space-ek mentén splitelve
 				
-				switch (mapCommand[0]){
+				switch (mapCommand.get(0)){
 				case "create":
 					//Itt dől el milyen elemet kell csinálni a mapCommand[1] alapján
-					switch(mapCommand[1]){
+					switch(mapCommand.get(1)){
 						case "Tile":
 							
 							break;

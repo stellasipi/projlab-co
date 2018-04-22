@@ -6,20 +6,16 @@ public class Tile extends TileElement {
 	private ArrayList<Grease> grease = new ArrayList<Grease>();
 	
 	public void Remove(Worker w) {
-
         //függvénytörzs
         setObject(null);
     }
 	
-	public void Remove(Crate c) {
-	      
-
+	public void Remove(Crate c) { 
         //függvénytörzs
         setObject(null);
     }
 
 	public void Accept(Worker w, Direction d, int acts) {
-
       //függvénytörzs
         if(this.getObject() != null) 
         {
@@ -30,7 +26,6 @@ public class Tile extends TileElement {
 	}
 	
 	public void Accept(Crate c, Direction d, int acts) {
-
       //függvénytörzs
         if(this.getObject() != null) 
         {
