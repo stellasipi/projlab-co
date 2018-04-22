@@ -8,26 +8,19 @@ public class Map {
 	
 	public void AddTileElement(TileElement t)
 	{
-
         //hozzáad egy tileelement-et a tileshoz
         tiles.add(t);
 	}
 	public void PlaceWorker(Worker w) 
 	{
-
         //elhelyezi a workereket a pályán
-
 	}
 	public void PlaceCrate(Crate c) 
 	{
-
-        //elhelyezi a ládákat a pályán
-        
-       
+        //elhelyezi a ládákat a pályán 
 	}
 	public void CreateMap() 
 	{
-
         //randomizáláshoz
         Random rand = new Random();
         
