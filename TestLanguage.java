@@ -95,6 +95,50 @@ public class TestLanguage {
 			 	 * 		mapName	- string
 			 	 */
 				//game.getMap().loadMap(command[1]);
+				string[] mapCommand;
+				// be kell olvasni egy sort a mapCommandba a megadott txt-ből, space-ek mentén splitelve
+				
+				switch (mapCommand[0]){
+				case "create":
+					//Itt dől el milyen elemet kell csinálni a mapCommand[1] alapján
+					switch(mapCommand[1]){
+						case "Tile":
+							
+							break;
+						case: "Target":
+							
+							break;
+						case: "Trap":
+							
+							break;
+						case: "Button":
+							
+							break;
+						case: "Coloumn":
+							
+							break;
+						case: "Hole":
+							
+							break;
+						default:
+							
+							break;
+					}
+					break;
+				
+				case "setNeighbour":
+					// Itt kell szomszédoknak beállítani a mapCommand[1]-t és a mapCommand[3]-t a mapCommand[2]-ban megadott irányba
+					break;
+					
+				case "setButton":
+					// Itt kell összekötni a mapCommand[1] ben megadott buttont és a mapCommand[2]-ben megadott trapet
+					break;
+					
+				default: 	
+				
+				}
+				
+				
 			case "PlaceWorker":
 				/*
 			 	 * 3 parameter:
