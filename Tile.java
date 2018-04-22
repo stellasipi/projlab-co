@@ -38,7 +38,7 @@ public class Tile extends TileElement {
 	public int SumGreaseMu() {
 		int sum=0;
 		for(int i =0; i<grease.size(); i++) {
-			sum=sum+grease.get(i).getMu();
+			sum+=grease.get(i).getMu();
 		}
 		return sum;
 	}

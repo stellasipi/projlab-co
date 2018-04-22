@@ -76,10 +76,13 @@ public class Crate extends Object {
 	}
 	
 	public void push(Worker w, Direction d, int acts) {
-		TileElement seged = this.getTile();
-		this.getTile().getNeighbour(d).Accept(this, d, acts); //következő tile accept-jét hívjuk be
-		if(seged!=this.getTile())
-			this.setPushedBy(w);
+		if(acts>mu) {
+			TileElement seged = this.getTile();
+			acts=acts-mu;
+			this.getTile().getNeighbour(d).Accept(this, d, acts); //következő tile accept-jét hívjuk be
+			if(seged!=this.getTile())
+				this.setPushedBy(w);
+		}
 	}
 	
 	public int getScore() {		

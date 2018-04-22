@@ -65,13 +65,13 @@ public class Worker extends Object {
     
 	}
 	
-	public void push(Crate c, Direction d, int acts) {  
-       TileElement seged = this.getTile();
-       this.getTile().getNeighbour(d).Accept(this, d, acts); //a következő tile Accept-jét hívjuk
-       if(seged==this.getTile()) {
-    	   this.getTile().Remove(this);
-    	   getGame().Die(this);  
-       }   
+	public void push(Crate c, Direction d, int acts) {
+		TileElement seged = this.getTile();
+		this.getTile().getNeighbour(d).Accept(this, d, acts); //a következő tile Accept-jét hívjuk
+		if(seged==this.getTile()) {
+			this.getTile().Remove(this);
+			getGame().Die(this);
+		}
 	}
 	
 	void PlaceOil(Grease g) {
