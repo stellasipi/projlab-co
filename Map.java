@@ -1,5 +1,10 @@
 package shokoban;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -19,6 +24,53 @@ public class Map {
 	{
         //elhelyezi a ládákat a pályán 
 	}
+	public void LoadMap(String filename) throws FileNotFoundException, IOException {
+		try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+			String line;
+			while ((line = br.readLine()) != null) {
+				String[] cmd=line.split(" ");
+				switch(cmd[0]) {
+					case "create":
+						switch(cmd[1]){
+						case "Tile":
+							Tile tile = new Tile(); //létrehozzuk
+							tiles.add(tile); //hozzáadjuk a pályához
+							break;
+						case "Target":
+							Target target=new Target();
+							tiles.add(target);
+							break;
+						case "Trap":
+							Trap trap = new Trap();
+							tiles.add(trap);
+							break;
+						case "Button":
+							Button b = new Button();
+							
+							break;
+						case "Coloumn":
+							
+							break;
+						case "Hole":
+							
+							break;
+						default:
+							
+							break;
+					}
+						break;
+					case "setNeighbour": 
+						break;
+					case "setButton": 
+						break;
+					default:
+						System.out.println("Nem tudtunk beolvasni semmit.");
+						break;
+				}
+		    }
+		}
+	}
+	
 	public void CreateMap() 
 	{
         //randomizáláshoz
