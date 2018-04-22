@@ -18,8 +18,6 @@ public abstract class Object {
 
     abstract public void visit(Tile tile, Direction d);
 
-    abstract public void visit(Wall w, Direction d);
-
     abstract public void push(Worker w, Direction d, int acts);
     
     abstract public void push(Crate c, Direction d, int acts);
