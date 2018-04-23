@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -93,12 +94,11 @@ public class TestLanguage {
 		while((line = br.readLine()) != null) {
 			commands.add(line);
 		}
-		
 		for(String str: commands) {
 			ExecuteCommand(str);
 		}
-		
-		//fájlba kiírás ami még nincs meg
+		File out = new File(System.getProperty("user.dir") + File.separatorChar + "Test" + File.separatorChar + path + ".txt");
+		FileWriter fw = new FileWriter(out, false);
 	}
 	
 	private void Init() {
@@ -281,9 +281,14 @@ public class TestLanguage {
 		for(Crate c : game.crates) {
 			crateCount++;
 			Integer[] coords = c.getTile().getCoords();
+			String bool;
+			if(c.getTile().getClass().getCanonicalName().equals("Target")) {
+				bool = "true";
+			}else {
+				bool = "false";
+			}
 			Results.add(crateCount+". Coordinates: "+ coords[0] + "," + coords[1] + 
-			" Friction: " + c.getMu() + 
-			" OnTarget: " + ".|..");
+			" Friction: " + c.getMu() + " OnTarget: " + bool);
 		}
 	}
 	
