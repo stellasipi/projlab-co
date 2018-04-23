@@ -87,7 +87,7 @@ public class TestLanguage {
 	}
 	
 	public void TextIputHandler(String path) throws IOException {
-		File file = new File(System.getProperty("user.dir") + File.separatorChar + "Input" + File.separatorChar + path);
+		File file = new File(System.getProperty("user.dir") + File.separatorChar + "Input" + File.separatorChar + path + ".txt");
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		ArrayList<String> commands = new ArrayList<String>();
 		String line;
