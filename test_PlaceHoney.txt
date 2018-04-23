@@ -1,1 +1,2 @@
+mapsize 1 1
 create Tile t

@@ -1,3 +1,4 @@
+mapsize 1 2
 create Button b
 create Trap tr
 setNeighbour b right tr

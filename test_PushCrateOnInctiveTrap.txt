@@ -1,3 +1,4 @@
+mapsize 2 3
 create Tile t0
 create Tile t1
 create Trap tr

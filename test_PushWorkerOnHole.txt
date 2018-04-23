@@ -1,3 +1,4 @@
+mapsize 1 2
 create Tile t
 create Hole h
 setNeighbour t0 right h
