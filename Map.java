@@ -40,32 +40,24 @@ public class Map {
         //elhelyezi a ládákat a pályán 
 	}
 	
-	private void AddTile(String type, int height, int width) {
+	private void AddTile(String type, int height, int width, String id) {
 		switch(type) {
-		case "t":
+		case "Tile":
 			Tile t = new Tile();
 			t.setCoords(width, height);
 			Tiles[height][width] = t;
 			break;
-		case "tr":
-			Trap tr = new Trap();
-			t.setCoords(width, height);
-			Tiles[height][width] = t;
+		case "Trap":
+			
 			break;
-		case "c":
-			Tile t = new Tile();
-			t.setCoords(width, height);
-			Tiles[height][width] = t;
+		case "Coloumn":
+			
 			break;
-		case "ta":
-			Tile t = new Tile();
-			t.setCoords(width, height);
-			Tiles[height][width] = t;
+		case "Target":
+			
 			break;
-		case "b":
-			Tile t = new Tile();
-			t.setCoords(width, height);
-			Tiles[height][width] = t;
+		case "Button":
+			
 			break;
 		}
 	}
@@ -94,18 +86,12 @@ public class Map {
 		
 		Tiles = new TileElement[height][width];
 		
-		//TileElementek feltöltése
-		/*for(int i=0; i<height; i++) {
-			String[] mapLine = input.get(i+1).split(" ");
-			for(int j=0; j<width; j++) {
-				String type = mapLine[j];
-				AddTile(type, i+1, j+1);
+		//TileElementek feltöltése		
+		for(int j=0;j<height;j++) {
+			for(int i=0; i<width; i++) {
+				String[] mapLine = input.get(i+1).split(" ");
+				AddTile(mapLine[1], j+1, i+1, mapLine[2]);
 			}
-		}*/
-		
-		for(int i=0; i<width; i++) {
-			String[] mapLine = input.get(i+1).split(" ");
-			AddTile(mapLine[1], v, i+1);
 		}
 		
 		//szomszédok beállítása
