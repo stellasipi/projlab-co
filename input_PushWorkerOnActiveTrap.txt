@@ -1,0 +1,10 @@
+LoadMap,test_PushWorkerOnActiveTrap
+PlaceWorker,w1,1,1
+ListTraps
+SetActive,tr1,0 
+ListTraps
+ListWorkers
+Move,w1,RIGHT
+ListWorkers
+
+
