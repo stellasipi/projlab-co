@@ -10,6 +10,7 @@ import java.util.Random;
 
 public class Map {
 	ArrayList<TileElement> tiles=new ArrayList<>();
+	ArrayList<ArrayList<TileElement>> map=new ArrayList<>();
 	
 	public void AddTileElement(TileElement t)
 	{
@@ -26,42 +27,166 @@ public class Map {
 	}
 	public void LoadMap(String filename) throws FileNotFoundException, IOException {
 		try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+			int width, w, height, h, counter;
 			String line;
 			while ((line = br.readLine()) != null) {
 				String[] cmd=line.split(" ");
+				width=Integer.parseInt(cmd[2]); //szélesség=hanyadik elem
+				w=1; //a koordinátákat ez alapján fogjuk beállítani
+				height=Integer.parseInt(cmd[1]);//magasság=hanyadik sor
+				h=1;//a koordinátákat ez alapján fogjuk beállítani
+				counter=1;
 				switch(cmd[0]) {
+					case "mapsize":
+						for(int i=0;i<height;i++) //létrehozzuk a pályát aka mátrixot
+							map.add(new ArrayList<TileElement>(width));						
+						break;
 					case "create":
 						switch(cmd[1]){
 						case "Tile":
 							Tile tile = new Tile(); //létrehozzuk
-							tiles.add(tile); //hozzáadjuk a pályához
+							
+							//hozzáadjuk a pályához, koordináták csekkolgatása
+							if(w==width){
+								tile.setCoords(w, h);
+								map.get(h-1).add(tile);
+								h++;
+								w=1;
+							}else{
+								tile.setCoords(w, h);
+								map.get(h-1).add(tile);
+								w++;
+							}
 							break;
 						case "Target":
 							Target target=new Target();
-							tiles.add(target);
+							//hozzáadjuk a pályához, koordináták csekkolgatása
+							if(w==width){
+								target.setCoords(w, h);
+								map.get(h-1).add(target);
+								h++;
+								w=1;
+							}else{
+								target.setCoords(w, h);
+								map.get(h-1).add(target);
+								w++;
+							}
 							break;
 						case "Trap":
 							Trap trap = new Trap();
-							tiles.add(trap);
+							//hozzáadjuk a pályához, koordináták csekkolgatása
+							if(w==width){
+								trap.setCoords(w, h);
+								map.get(h-1).add(trap);
+								h++;
+								w=1;
+							}else{
+								trap.setCoords(w, h);
+								map.get(h-1).add(trap);
+								w++;
+							}
 							break;
 						case "Button":
 							Button b = new Button();
-							
+							//hozzáadjuk a pályához, koordináták csekkolgatása
+							if(w==width){
+								b.setCoords(w, h);
+								map.get(h-1).add(b);
+								h++;
+								w=1;
+							}else{
+								b.setCoords(w, h);
+								map.get(h-1).add(b);
+								w++;
+							}
 							break;
 						case "Coloumn":
-							
+							Coloumn c=new Coloumn();
+							//hozzáadjuk a pályához, koordináták csekkolgatása
+							if(w==width){
+								c.setCoords(w, h);
+								map.get(h-1).add(c);
+								h++;
+								w=1;
+							}else{
+								c.setCoords(w, h);
+								map.get(h-1).add(c);
+								w++;
+							}
 							break;
 						case "Hole":
-							
+							Hole hole=new Hole();
+							//hozzáadjuk a pályához, koordináták csekkolgatása
+							if(w==width){
+								hole.setCoords(w, h);
+								map.get(h-1).add(hole);
+								h++;
+								w=1;
+							}else{
+								hole.setCoords(w, h);
+								map.get(h-1).add(hole);
+								w++;
+							}
 							break;
 						default:
-							
+							System.out.println("Nem tudtunk beolvasni semmit.");
 							break;
 					}
 						break;
-					case "setNeighbour": 
+					case "setNeighbour":
+						if(map.get(height).get(width).equals(null)) {
+							
+							map.get(0).get(0).setNeighbour(map.get(0).get(1), Direction.RIGHT); // elsők és utolsók beállítása
+							map.get(0).get(0).setNeighbour(map.get(1).get(0), Direction.DOWN);
+							map.get(0).get(width-1).setNeighbour(map.get(0).get(width-2), Direction.LEFT);
+							map.get(0).get(width-1).setNeighbour(map.get(1).get(width-1), Direction.DOWN);
+							if(height>1) {
+								map.get(1).get(0).setNeighbour(map.get(1).get(1), Direction.RIGHT);
+								map.get(1).get(0).setNeighbour(map.get(0).get(0), Direction.UP);
+								map.get(1).get(width-1).setNeighbour(map.get(1).get(width-2), Direction.LEFT);
+								map.get(1).get(width-1).setNeighbour(map.get(0).get(width-1), Direction.UP);
+							}
+							
+							//belső részek beállítása
+							for(int i=0;i<height-1;i++) {
+								for(int j=1;i<width-2;j++) {
+									map.get(i).get(j).setNeighbour(map.get(i).get(j+1), Direction.RIGHT);
+									map.get(i).get(j).setNeighbour(map.get(i).get(j-1), Direction.LEFT);
+									if(i==0)
+										map.get(i).get(j).setNeighbour(map.get(i+1).get(j), Direction.DOWN);
+									if(i>0)
+										map.get(i).get(j).setNeighbour(map.get(i-1).get(j), Direction.UP);
+								}
+							}
+						}
 						break;
-					case "setButton": 
+					case "setButton":
+						int bw=0,bh=0, trw=0,trh=0, count=1;
+						Button b=new Button();
+						Trap tr=new Trap();
+						
+						for(int i=0;i<height-1;i++) {
+							for(int j=0;i<width-1;j++) {
+								if(count==counter) {
+									if(map.get(i).get(j).getClass().getSimpleName().equals("Button")) {
+										bw=j; bh=i;
+										b=(Button)map.get(bh).get(bw);
+									}
+									if(map.get(i).get(j).getClass().getSimpleName().equals("Trap")) {
+										trw=j; trh=i;
+										tr=(Trap)map.get(trh).get(trw);										
+									}	
+								}else{
+									count++;
+								}
+							}
+						}
+						
+						b.setTrap(tr);
+						map.get(bh).set(bw,b);
+						map.get(trh).set(trw,tr);
+						counter++;
+						
 						break;
 					default:
 						System.out.println("Nem tudtunk beolvasni semmit.");
@@ -176,6 +301,13 @@ public class Map {
 	}
 	public void setTiles(ArrayList<TileElement> tiles) {
 		this.tiles = tiles;
+	}
+	
+	public ArrayList<ArrayList<TileElement>> getMap() {
+		return map;
+	}
+	public void setMap(ArrayList<ArrayList<TileElement>> map) {
+		this.map = map;
 	}
 	
 	private void setAllDirections(int width, int height) {
