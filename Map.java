@@ -12,6 +12,10 @@ public class Map {
 	ArrayList<TileElement> tiles=new ArrayList<>();
 	ArrayList<ArrayList<TileElement>> map=new ArrayList<>();
 	
+	public TileElement getTile(int height, int width) {
+		return map.get(height).get(width);
+	}
+	
 	public void AddTileElement(TileElement t)
 	{
         //hozzáad egy tileelement-et a tileshoz

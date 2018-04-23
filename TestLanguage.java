@@ -230,27 +230,26 @@ public class TestLanguage {
 		Worker w = new Worker();
 		w.setGame(game);
 		w.setName(name);
-		//w.setTile(game.map.getTile(height, width));
+		w.setTile(game.map.getTile(height, width));
 		// Sikeres illetve sikertelen elhelyezés esetén a kimenet
-		/*
 		if(game.map.getTile(height, width).getObject().getName() == name) {
 			Results.add("Worker placed  ID: " + name + " Coordinates: " + height + "," + width);
 		}else {
 			Results.add("WorkerID: " + name + " could not be placed");
-		}*/
+		}
 	}
 	
 	private void PlaceCrate(String name, int height, int width) {
 		Crate c = new Crate();
 		c.setGame(game);
 		c.setName(name);
-		//c.setTile(game.map.getTile(height, width);
+		c.setTile(game.map.getTile(height, width));
 		// Sikeres illetve sikertelen elhelyezés esetén a kimenet
-		/*if(game.map.getTile(height, width).getObject().getName() == name) {
+		if(game.map.getTile(height, width).getObject().getName() == name) {
 			Results.add("Crate placed  ID: " + name + " Coordinates: " + height + "," + width);
 		}else {
 			Results.add("CrateID: " + name + "could not be placed");
-		}*/
+		}
 	}
 	
 	private void PlaceOil(String workerName) {
