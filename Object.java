@@ -25,6 +25,13 @@ public abstract class Object {
     public TileElement getTile() {
         return tile;
     }
+    
+    public Tile getTileType() {
+		if(this.getTile().getClass().getSimpleName().equals("Tile")) { //ha az osztályneve Tile
+			return (Tile)this.getTile();
+		}
+		return null;
+	}
 
     public void setTile(TileElement tile) {
     	this.tile = tile;

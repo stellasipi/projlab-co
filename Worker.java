@@ -77,9 +77,8 @@ public class Worker extends Object {
 	void PlaceOil() {
 		if(this.getTile().getClass().getSimpleName().equals("Tile")) { //ha az osztályneve Tile
 			Grease g=new Grease();
-			Tile tile=(Tile)this.getTile(); //azért kell a castolás, mert csak így tudjuk meghívni a setGrease fgv-t, de igazából nem történik valós castolás
 			g.setMu(g.getMu()*(-1)); //létrehozza az olajat, ami mínusz előjelű
-			tile.setGrease(g); //rápakoljuk az olajat
+			this.getTileType().setGrease(g); //rápakoljuk az olajat
 		}		
 	}
 	
@@ -87,15 +86,8 @@ public class Worker extends Object {
 		if(this.getTile().getClass().getSimpleName().equals("Tile")) { //ha az osztályneve Tile
 			Grease g=new Grease();
 			Tile tile=(Tile)this.getTile();
-			tile.setGrease(g); //rápakoljuk a mézet
+			this.getTileType().setGrease(g); //rápakoljuk a mézet
 		}
-	}
-	
-	public Tile getTileType() {
-		if(this.getTile().getClass().getSimpleName().equals("Tile")) { //ha az osztályneve Tile
-			return (Tile)this.getTile();
-		}
-		return null;
 	}
 	
 	public int getSumscore() {

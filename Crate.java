@@ -65,6 +65,7 @@ public class Crate extends Object {
 			this.getTile().Remove(this);
 			this.setTile(tile);
 			tile.setObject(this);
+			mu = mu + this.getTileType().SumGreaseMu();
 		}
 	}
 	
