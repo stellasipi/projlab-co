@@ -66,7 +66,7 @@ public abstract class TileElement {
      * @param2 magasság
      */
     public void setCoords(int width, int height) {
-    	this.coords[0] = width;
-    	this.coords[1] = height;
+    	this.coords[0] = width; //szélesség=hanyadik elem
+    	this.coords[1] = height; //magasság=hanyadik sor
     }
 }
