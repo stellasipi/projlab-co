@@ -152,7 +152,7 @@ public class Map {
 							for(int l=0; l<height ; l++) {
 								for(int m=0; m<width; m++) {
 									if(Tiles[l][m].getId()==cmd[2]) {
-										(Trap)(Tiles[l][m]).(setTrap(Tiles[j][k]));
+										((Button)Tiles[l][m]).setTrap((Trap)Tiles[j][k]);
 									}
 								}
 							}
