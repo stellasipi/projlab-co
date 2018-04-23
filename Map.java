@@ -21,7 +21,7 @@ public class Map {
 		return height;
 	}
 	
-	
+	//magasság szélesség alapján visszaad TileElement-et
 	public TileElement getTile(int height, int width) {
 		return Tiles[height][width];
 	}
@@ -39,12 +39,69 @@ public class Map {
 	{
         //elhelyezi a ládákat a pályán 
 	}
+	
+	private void AddTile(String type, int height, int width) {
+		switch(type) {
+		case "t":
+			Tile t = new Tile();
+			t.setCoords(width, height);
+			Tiles[height][width] = t;
+			break;
+		case "így tovább":
+			
+			break;
+		}
+	}
+	
+	private void SetNeighbours(TileElement t) {
+		/*
+		 * 4 irányban megnézi hogy milyen elem van mellette, az lesz a szomszéd
+		 * ahol nincs szomszédja dobni fog egy nullptr-t, de ezt elkapva állíthatjuk be nullra azt
+		 * és akkor nem száll el a picsába
+		 */
+	}
 	public void LoadMap(String filename) throws FileNotFoundException, IOException {
 		File file = new File(System.getProperty("user.dir") + File.separatorChar + filename + ".txt");
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		
-		int width, w, height, h, counter;
+		ArrayList<String> input = new ArrayList<String>();
 		String line;
+		while((line=br.readLine())!=null) {
+			input.add(line);
+		}
+		
+		//széle és hossza
+		String[] size = input.get(0).split(",");
+		height = Integer.parseInt(size[0]);
+		width = Integer.parseInt(size[1]);
+		
+		Tiles = new TileElement[height][width];
+		
+		//TileElementek feltöltése
+		for(int i=0; i<height; i++) {
+			String[] mapLine = input.get(i+1).split(" ");
+			for(int j=0; j<width; j++) {
+				String type = mapLine[j];
+				AddTile(type, i+1, j+1);
+			}
+		}
+		
+		//szomszédok beállítása
+		for(TileElement[] sor : Tiles) {
+			for(TileElement tElement : sor) {
+				SetNeighbours(tElement);
+			}
+		}
+		
+		//csapdák beállítása
+		/*
+		 * valahogy a gombok és csapdák összekötése, 
+		 * szerintem egyszerűen gomb coord és csapda coord alapján mehetne,
+		 * pl: 	1,1 1,2
+		 * 		1,3 2,1
+		 * szóval soronként koordináták
+		 * és ennek egy segédfv ami mondjuk 4 int segítségével összeköti a kettőt (getTile(koordináta))
+		 */
 		
 		
 			/*
@@ -322,13 +379,6 @@ public class Map {
 	}
 	public void setTiles(ArrayList<TileElement> tiles) {
 		this.tiles = tiles;
-	}
-	
-	public ArrayList<ArrayList<TileElement>> getMap() {
-		return map;
-	}
-	public void setMap(ArrayList<ArrayList<TileElement>> map) {
-		this.map = map;
 	}
 	
 	private void setAllDirections(int width, int height) {
