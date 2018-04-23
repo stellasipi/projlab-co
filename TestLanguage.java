@@ -107,7 +107,7 @@ public class TestLanguage {
 	}
 
 	private void ExecuteCommand(String line) throws FileNotFoundException, IOException {
-		String[] command = line.split(", ");
+		String[] command = line.split(",");
 		switch (command[0]){
 			case "LoadMap":
 				game.getMap().LoadMap(command[1]);
