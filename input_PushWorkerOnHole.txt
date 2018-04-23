@@ -1,7 +1,7 @@
 LoadMap,test_PushWorkerOnHole
 PlaceWorker,w1,1,1
 ListWorker
-Move,w1,,RIGHT
+Move,w1,RIGHT
 ListWorker
 
 
