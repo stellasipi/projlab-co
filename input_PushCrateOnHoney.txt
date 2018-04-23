@@ -1,0 +1,17 @@
+LoadMap,test_PushCrateOnHoney
+PlaceWorker,w1,3,1
+SetStrength,w1,8
+PlaceHoney,w1
+PlaceHoney,w1
+PlaceHoney,w1
+PlaceHoney,w1
+PlaceCrate,c1,2,1
+Move,w1,DOWN
+Move,w1,LEFT
+Move,w1,LEFT
+Move,w1,UP
+Move,w1,RIGHT
+Move,w1,RIGHT
+ListWorkers
+ListCrates
+

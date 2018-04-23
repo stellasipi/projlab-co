@@ -1,0 +1,7 @@
+LoadMap,test_PlaceOil
+PlaceWorker,w1,1,1
+PlaceOil,w1
+PlaceOil,w1
+PlaceOil,w1
+PlaceOil,w1
+PlaceOil,w1

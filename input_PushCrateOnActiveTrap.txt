@@ -1,0 +1,14 @@
+LoadMap,test_PushCrateOnActiveTrap
+PlaceWorker,w1,1,1
+PlaceCrate,c1,2,1
+PlaceCrate,c2,3,1
+ListCrates
+ListTraps
+Move,w1,RIGHT
+ListCrates
+ListTraps
+
+
+
+
+
