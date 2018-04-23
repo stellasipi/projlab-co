@@ -8,6 +8,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.List;
 
 public class TestLanguage {
 	
@@ -51,7 +52,21 @@ public class TestLanguage {
 						Init();
 						System.out.println("Teszteset kiválasztása, írd be a teszt nevét");
 						name = br.readLine();
-						TextIputHandler(name);
+						if(!name.equals("Mindet")) {
+							TextIputHandler(name);
+						}else {
+							//minden Inpt mappában lévő tesztet megcsinál
+							List<String> tests = new ArrayList<String>();
+							File[] inputfiles = new File(System.getProperty("user.dir") + File.separatorChar + "Input").listFiles();
+							for (File file : inputfiles) {
+							    if (file.isFile()) {
+							        tests.add(file.getName());
+							    }
+							}
+							for(String str : tests) {
+								TextIputHandler(str);
+							}
+						}
 					} catch (IOException e) {
 						System.out.println("Hibás nevet adtál meg, próbáld újra!");
 						System.out.println("1 - Manuális bemenet \n"
@@ -238,7 +253,11 @@ public class TestLanguage {
 		try {
 			game.map.LoadMap(mapName);
 			Results.add("Map loaded");
-			
+			ArrayList<String> mapText = new ArrayList<String>();
+			mapText = GetDrawnMap(game.map);
+			for(String s : mapText) {
+				Results.add(s);
+			}
 		}catch(IOException e) {
 			e.printStackTrace();
 			System.out.println("Rossz fájlnevet adtál meg!");
@@ -248,8 +267,35 @@ public class TestLanguage {
 	
 	private ArrayList<String> GetDrawnMap(Map map) {
 		ArrayList<String> result = new ArrayList<String>();
+		int height = map.getHeight();
+		int width = map.getWidth();
 		
-		
+		for(int i=0; i<height; i++) {
+			String line = "";
+			for(int j=0; j<width; j++) {
+				switch(map.getTile(i, j).getClass().getCanonicalName()){
+				case "Tile":
+					line += "t ";
+					break;
+				case "Target":
+					line += "ta ";
+					break;
+				case "Trap":
+					line += "tr ";
+					break;
+				case "Hole":
+					line += "h ";
+					break;
+				case "Button":
+					line += "b ";
+					break;
+				case "Coloumn":
+					line += "c ";
+					break;
+				}
+			}
+			result.add(line);
+		}
 		return result;
 	}
 	
