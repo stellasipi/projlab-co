@@ -19,76 +19,73 @@ public class TestLanguage {
 		Boolean asd = true;
 		
 		System.out.println("Üdv a test-testkörnyezetben \n"
-				+ "Elbeszélgetés jézussal 1-es gomb \n"
-				+ "Biblia átadás 2-es gomb \n"
-				+ "Pokolba menekülés 3-as gomb");
-		
+				+ "1 - Manuális bemenet \n"
+				+ "2 - Előre elkészített tesztek \n"
+				+ "3 - Kilépés");
+		String input;
 		while (asd) {
-			String input;
+			// reseteljük a kimeneti tömböt és a játékot, 
+			// hogy minden tesztet ugyanabból az állapotból tudjunk indítani
+			Init();
 			try {
-				input = br.readLine();
-				int option = Integer.parseInt(input);
-				
-				switch(option) {
-				case 1:
+				input = br.readLine();				
+				switch(input) {
+				case "1":
 					try {
+						Init();
 						ManualInputHandler();
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-				case 2:
+					break;
+				case "2":
 					String name;
 					try {
+						Init();
 						name = br.readLine();
 						TextIputHandler(name);
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-				case 3:
+					break;
+				case "3":
 					asd = false;
+					break;
 				default:
-					System.out.println("oawnhi");
+					System.out.println("Rossz bemenet! \n"
+							+ "1 - Manuális bemenet \n"
+							+ "2 - Előre elkészített tesztek \n"
+							+ "3 - Kilépés");
+					break;
 				}
 				
 			} catch (IOException e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
-			}
-			
-			
+			}						
 		}
 	}
 	
-	public void ManualInputHandler() throws IOException {
-		ArrayList<String> Commands = new ArrayList<String>();
-		Results = new ArrayList<String>();
-		
+	public void ManualInputHandler() throws IOException {		
 		InputStreamReader isr = new InputStreamReader(System.in);
 		BufferedReader br = new BufferedReader(isr);
-		ArrayList<String> commands = new ArrayList<String>();
 		String line;
-		while ((line = br.readLine())!=null) {
-			commands.add(line);
-		}
-		
-		for(int i=0; i<commands.size(); i++) {
-			ExecuteCommand(commands.get(i));
+		while (!(line = br.readLine()).equals("")) {
+			ExecuteCommand(line);
 		}
 	}
 	
 	public void TextIputHandler(String name) {
-		ArrayList<String> Commands = new ArrayList<String>();
+		//in progress
+		ArrayList<String> commands = new ArrayList<String>();
 	}
 	
 	private void Init() {
 		game= new Game();
+		Results = new ArrayList<String>();
 	}
 
 	private void ExecuteCommand(String line) throws FileNotFoundException, IOException {
 		String[] command = line.split(",");
-		Init();
 		switch (command[0]){
 			case "LoadMap":
 				game.getMap().LoadMap(command[1]);
@@ -100,136 +97,241 @@ public class TestLanguage {
 			 	 * 		height	- int
 			 	 * 		width	- int
 			 	 */
-				for(Worker w : game.workers) {
-					if(w.getName() == command[1]) {
-						//w.setTile(game.map.getTile(Integer.parseInt(command[2])), Integer.parseInt(command[3]));
-						break;
-					}
-				}
+				String PlaceWorkerName = command[1];
+				int PlaceWorkerHeight = Integer.parseInt(command[2]);
+				int PlaceWorkerWidth = Integer.parseInt(command[3]);
 				
-				/*if(game.map.getTile(Integer.parseInt(command[2])), Integer.parseInt(command[3]).getObject().getName() == command[1]) {
-					Results.add("Worker placed  ID: " + command[1] + " Coordinates: " + command[2] + "," + command[3]);
-				}else {
-					Results.add("Worker not placed  ID: " + command[1]);
-				}*/
+				PlaceWorker(PlaceWorkerName, PlaceWorkerHeight, PlaceWorkerWidth);
+				break;
 					
 			case "PlaceCrate":
 				/*
-			 	 * 2 parameter:
+			 	 * 3 parameter:
+			 	 * 		name	- String
 			 	 * 		height	- int
 			 	 * 		width	- int
 			 	 */
-				for(Crate c : game.crates) {
-					if(c.getName() == command[1]) {
-						//c.setTile(game.map.getTile(Integer.parseInt(command[2])), Integer.parseInt(command[3]));
-						break;
-					}
-				}
+				String PlaceCrateName = command[1];
+				int PlaceCrateHeight = Integer.parseInt(command[2]);
+				int PlaceCrateWidth = Integer.parseInt(command[3]);
 				
-				/*if(game.map.getTile(Integer.parseInt(command[2])), Integer.parseInt(command[3]).getObject().getName() == command[1]) {
-					Results.add("Crate placed  ID: " + command[1] + " Coordinates: " + command[2] + "," + command[3]);
-				}else {
-					Results.add("Crate not placed  ID: " + command[1]);
-				}*/
+				PlaceCrate(PlaceCrateName, PlaceCrateHeight, PlaceCrateWidth);
+				break;
+				
 			case "PlaceOil":
 				/*
 			 	 * 1 parameter:
 			 	 * 		worker	- Worker
 			 	 */
-				for(Worker w : game.workers) {
-					if(w.getName() == command[1]) {
-						//w.PlaceOil();
-						Integer[] coords = w.getTile().getCoords();
-						Results.add("Oil placed  Coordinates: " + coords[0] + "," + coords[1] + " Friction: " /*+ w.getTile().getFriction()*/);
-						break;
-					}
-				}
+				String PlaceOilWorker = command[1];
+				
+				PlaceOil(PlaceOilWorker);
+				break;
+				
 			case "PlaceHoney":
 				/*
 			 	 * 1 parameter:
 			 	 * 		worker	- Worker
 			 	 */
-				for(Worker w : game.workers) {
-					if(w.getName() == command[1]) {
-						//w.PlaceHoney();
-						Integer[] coords = w.getTile().getCoords();
-						Results.add("Honey placed  Coordinates: " + coords[0] + "," + coords[1] + " Friction: " /*+ w.getTile().getFriction()*/);
-						break;
-					}
-				}
+				String PlaceHoneyWorker = command[1];
+				
+				PlaceHoney(PlaceHoneyWorker);
+				break;
+				
 			case "ListCrates":
 				/*
 				 * 0 parameter:
 				 */				
-				int crateCount = 0;							//nagyon erős gyanú hogy nem fog menni xD a friction nem crate specifikus, lehet hogy olyan mezőn van ahol nincs mu nem?
-				for(Crate c : game.crates) {
-					crateCount++;
-					Integer[] coords = c.getTile().getCoords();
-					Results.add(crateCount+". Coordinates: "+ coords[0] + "," + coords[1] + 
-					" Friction: " + /*c.getTile().SumGreaseMu() +*/ 
-					" OnTarget: " + "ezt is valahogy ellenőrizni");
-				}
+				ListCrates();
+				break;
 				
 			case "ListPlacedCrates":
 				/*
 				 * 0 parameter:
 				 */
-				// majd ha írok vagy ír valaki egy ellenőrző fv-t OnTarget ellenőrzésére
+				ListPlacedCrates();
+				Results.add("TESZT KÖCSÖG");
+				break;
+				
 			case "ListFreeCrates":
 				/*
 				 * 0 parameter:
 				 */
-				// dettó
+				ListFreeCrates();
+				break;
+				
 			case "SetStrenght":
 				/*
 				 * 2 parameter:
 				 * 		targetWorker	- worker
 				 * 		value			- int
 				 */
-				for(Worker w : game.workers) {
-					if(w.getName() == command[1]) {
-						//w.setStrenght(Integer.parseInt(command[1]));
-						Results.add("Success  WorkerID:" + command[1] + " Strength: " + command[2]);
-						break;
-					}
-				}
+				String SetStrenghtWorker = command[1];
+				int SetStrenghtValue = Integer.parseInt(command[2]);
+				
+				SetStrenght(SetStrenghtWorker, SetStrenghtValue);
+				break;
+				
 			case "Move":
 				/*
 				 * 2 parameter:
 				 * 		targetWorker	- Worker
 				 * 		direction		- Direction
 				 */
-				for(Worker w : game.workers) {
-					if(w.getName() == command[1]) {
-						Direction d = Direction.valueOf(command[2]);
-						Integer[] beforeCoord = w.getTile().getCoords();
-						game.Move(w, d);
-						//leelenőrizni hogy mozgott-e, az alapján válasz
-						if(beforeCoord != w.getTile().getCoords()) {
-							Results.add("Moved " + command[1] + ", " + command[2]);
-						}else {
-							Results.add("Failed" + command[1] + "could not step on the given coordinates");
-						}
-						break;
-					}
-				}
+				String MoveWorker = command[1];
+				Direction MoveDirection = Direction.valueOf(command[2]);
+				
+				Move(MoveWorker, MoveDirection);
+				break;
+				
 			case "ListWorkers":
 				/*
 				 * 0 parameter:
 				 */
+				ListWorkers();
+				break;
+				
+			case "Exit":
+				for(String lines : Results) {
+					System.out.println(lines);
+				}
+				return;
 			default:
-				/*
-				 * valami generikus hibauzenet, 
-				 * hogy tudja a felhasznalo, 
-				 * hogy elbaszta a stringet
-				 */
+				System.out.println("Rossz parancsot adtál meg...");
+				break;
 		}
+	}
+	private void LoadMap(String mapName) {
+		
+	}
+	
+	private void PlaceWorker(String name, int height, int width) {
+		for(Worker w : game.workers) {
+			if(w.getName().equals(name)) {
+				//w.setTile(game.map.getTile(height, width);
+				break;
+			}
+		}
+		// Sikeres illetve sikertelen elhelyezés esetén a kimenet
 		/*
-		 * kiprintelni meg fajlba beirni a kimenetet,
-		 * de ha elbasztuk akkor lehetne ujrakezdeni
-		 * mielott kiirja (marmint a bemenetet basztuk el)
-		 */
-	}		
+		if(game.map.getTile(height, width).getObject().getName() == name) {
+			Results.add("Worker placed  ID: " + name + " Coordinates: " + height + "," + width);
+		}else {
+			Results.add("Worker not placed  ID: " + name);
+		}*/
+	}
+	
+	private void PlaceCrate(String name, int height, int width) {
+		for(Crate c : game.crates) {
+			if(c.getName().equals(name)) {
+				//c.setTile(game.map.getTile(height, width);
+				break;
+			}
+		}
+		// Sikeres illetve sikertelen elhelyezés esetén a kimenet
+		/*if(game.map.getTile(height, width).getObject().getName() == name) {
+			Results.add("Crate placed  ID: " + name + " Coordinates: " + height + "," + width);
+		}else {
+			Results.add("Crate not placed  ID: " + name);
+		}*/
+	}
+	
+	private void PlaceOil(String workerName) {
+		for(Worker w : game.workers) {
+			if(w.getName().equals(workerName)) {
+				w.PlaceOil();
+				Integer[] coords = w.getTile().getCoords();
+				Results.add("Oil placed  Coordinates: " + coords[0] + "," + coords[1] + " Friction: " +  ((Tile) w.getTile()).SumGreaseMu());
+				return;
+			}
+		}
+		Results.add("Worker not found, oil not placed");
+	}
+	
+	private void PlaceHoney(String workerName) {
+		for(Worker w : game.workers) {
+			if(w.getName().equals(workerName)) {
+				w.PlaceHoney();
+				Integer[] coords = w.getTile().getCoords();
+				Results.add("Oil placed  Coordinates: " + coords[0] + "," + coords[1] + " Friction: " + ((Tile) w.getTile()).SumGreaseMu());
+				return;
+			}
+		}
+		Results.add("Worker not found, oil not placed");
+	}
+	
+	private void ListCrates() {
+		int crateCount = 0;
+		for(Crate c : game.crates) {
+			crateCount++;
+			Integer[] coords = c.getTile().getCoords();
+			Results.add(crateCount+". Coordinates: "+ coords[0] + "," + coords[1] + 
+			" Friction: " + c.getMu() + 
+			" OnTarget: " + ".|..");
+		}
+	}
+	
+	private void ListPlacedCrates() {
+		for(Crate c : game.crates) {
+			if(c.getTile().getClass().getCanonicalName().equals("Target")) {
+				Integer[] coords = c.getTile().getCoords();
+				Results.add("Placed Crate ID: " + c.getName() 
+						+ " Coordinates: " + coords[0] + "," + coords[1]
+						+ " Friction: " + c.getMu()
+						+ " Last pushed by: " + c.getPushedBy().getName());
+			}
+		}
+	}
+	
+	private void ListFreeCrates() {
+		for(Crate c : game.crates) {
+			if(!c.getTile().getClass().getCanonicalName().equals("Target")) {
+				Integer[] coords = c.getTile().getCoords();
+				Results.add("Free Crate ID: " + c.getName() 
+						+ " Coordinates: " + coords[0] + "," + coords[1] 
+						+ " Friction: " + c.getMu());
+			}
+		}
+	}
+	
+	private void SetStrenght(String workerName, int value) {
+		for(Worker w : game.workers) {
+			if(w.getName().equals(workerName)) {
+				w.setStrenght(value);
+				Results.add("Success  WorkerID:" + workerName + " Strength: " + value);
+				return;
+			}
+		}
+		Results.add("Worker not found!");
+	}
+	
+	private void Move(String workerName, Direction d) {
+		for(Worker w : game.workers) {
+			if(w.getName().equals(workerName)) {
+				Integer[] beforeCoord = w.getTile().getCoords();
+				game.Move(w, d);
+				//leelenőrizni hogy mozgott-e, az alapján válasz
+				if(beforeCoord != w.getTile().getCoords()) {
+					Results.add("Moved " + workerName + ", " + d);
+				}else {
+					Results.add("Failed" + workerName + "could not step on the given coordinates");
+				}
+				return;
+			}
+		}
+		Results.add("Worker not found!");
+	}
+	
+	private void ListWorkers() {
+		int workercount = 0;
+		for(Worker w : game.workers) {
+			workercount++;
+			Integer[] coords = w.getTile().getCoords();
+			Results.add(workercount + ". " + w.getName() 
+				+ " Coordinates: " + coords[0] + "," + coords[1] + " Score: " 
+				+ w.getSumscore() + " Strenght: " + w.getStrenght());
+		}
+	}
 }
 	
 

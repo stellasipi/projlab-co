@@ -2,7 +2,7 @@ package shokoban;
 
 public class Grease {
 	
-	private int mu;
+	private int mu = 1;
 
 	public int getMu() {
 		return mu;

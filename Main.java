@@ -8,9 +8,11 @@ import java.io.InputStreamReader;
 public class Main {
 
 	public static void main(String[] args) throws FileNotFoundException {
-
+		TestLanguage t = new TestLanguage();
+		
 		System.out.println("Menu:\n");
 		//Itt hívja meg Dávid a tesztelő részt
+		t.Run();
 	}
 }
 	
