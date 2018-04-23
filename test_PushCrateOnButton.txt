@@ -11,4 +11,4 @@ setNeighbour b0 right tr0
 setNeighbour tr0 right tr1
 setNeighbour tr1 right b1
 setButton b0 tr0
-setButton b1 t1
+setButton b1 tr1
