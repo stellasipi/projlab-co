@@ -47,8 +47,25 @@ public class Map {
 			t.setCoords(width, height);
 			Tiles[height][width] = t;
 			break;
-		case "így tovább":
-			
+		case "tr":
+			Trap tr = new Trap();
+			t.setCoords(width, height);
+			Tiles[height][width] = t;
+			break;
+		case "c":
+			Tile t = new Tile();
+			t.setCoords(width, height);
+			Tiles[height][width] = t;
+			break;
+		case "ta":
+			Tile t = new Tile();
+			t.setCoords(width, height);
+			Tiles[height][width] = t;
+			break;
+		case "b":
+			Tile t = new Tile();
+			t.setCoords(width, height);
+			Tiles[height][width] = t;
 			break;
 		}
 	}
@@ -71,19 +88,24 @@ public class Map {
 		}
 		
 		//széle és hossza
-		String[] size = input.get(0).split(",");
-		height = Integer.parseInt(size[0]);
-		width = Integer.parseInt(size[1]);
+		String[] size = input.get(0).split(" ");
+		height = Integer.parseInt(size[1]);
+		width = Integer.parseInt(size[2]);
 		
 		Tiles = new TileElement[height][width];
 		
 		//TileElementek feltöltése
-		for(int i=0; i<height; i++) {
+		/*for(int i=0; i<height; i++) {
 			String[] mapLine = input.get(i+1).split(" ");
 			for(int j=0; j<width; j++) {
 				String type = mapLine[j];
 				AddTile(type, i+1, j+1);
 			}
+		}*/
+		
+		for(int i=0; i<width; i++) {
+			String[] mapLine = input.get(i+1).split(" ");
+			AddTile(mapLine[1], v, i+1);
 		}
 		
 		//szomszédok beállítása
