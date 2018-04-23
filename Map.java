@@ -82,12 +82,30 @@ public class Map {
 	}
 	
 	private void SetNeighbours(TileElement t) {
-		/*
-		 * 4 irányban megnézi hogy milyen elem van mellette, az lesz a szomszéd
-		 * ahol nincs szomszédja dobni fog egy nullptr-t, de ezt elkapva állíthatjuk be nullra azt
-		 * és akkor nem száll el a picsába
-		 */
+		for(int i=0; i<height ; i++) {
+			for(int j=0; j<width; j++) {
+				if(t==Tiles[i][j]) {
+					if(Tiles[i-1][j] != null) {
+						t.setNeighbour(Tiles[i-1][j], Direction.UP );
+						Tiles[i-1][j].setNeighbour(t, Direction.DOWN);
+					}
+					if(Tiles[i+1][j] != null) {
+						t.setNeighbour(Tiles[i+1][j], Direction.DOWN );
+						Tiles[i+1][j].setNeighbour(t, Direction.UP);
+					}
+					if(Tiles[i][j-1] != null) {
+						t.setNeighbour(Tiles[i][j-1], Direction.LEFT );
+						Tiles[i-1][j].setNeighbour(t, Direction.RIGHT);
+					}
+					if(Tiles[i+1][j] != null) {
+						t.setNeighbour(Tiles[i-1][j], Direction.RIGHT );
+						Tiles[i+1][j].setNeighbour(t, Direction.LEFT);
+					}
+				}
+			}
+		}
 	}
+	
 	public void LoadMap(String filename) throws FileNotFoundException, IOException {
 		File file = new File(System.getProperty("user.dir") + File.separatorChar + filename + ".txt");
 		BufferedReader br = new BufferedReader(new FileReader(file));
