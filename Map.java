@@ -1,6 +1,7 @@
 package shokoban;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -30,7 +31,9 @@ public class Map {
         //elhelyezi a ládákat a pályán 
 	}
 	public void LoadMap(String filename) throws FileNotFoundException, IOException {
-		try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+		try {
+			File file = new File(System.getProperty("user.dir") + File.separatorChar + filename + ".txt");
+			BufferedReader br = new BufferedReader(new FileReader(file));
 			int width, w, height, h, counter;
 			String line;
 			while ((line = br.readLine()) != null) {
@@ -197,6 +200,8 @@ public class Map {
 						break;
 				}
 		    }
+		}catch(Exception e) {
+			e.printStackTrace();
 		}
 	}
 	
