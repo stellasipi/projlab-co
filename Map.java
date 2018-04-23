@@ -11,10 +11,19 @@ import java.util.Random;
 
 public class Map {
 	ArrayList<TileElement> tiles=new ArrayList<>();
-	ArrayList<ArrayList<TileElement>> map=new ArrayList<>();
+	private int width;
+	private int height;
+	TileElement[][] Tiles;
+	public int getWidth() {
+		return width;
+	}
+	public int getHeight() {
+		return height;
+	}
+	
 	
 	public TileElement getTile(int height, int width) {
-		return map.get(height).get(width);
+		return Tiles[height][width];
 	}
 	
 	public void AddTileElement(TileElement t)
@@ -31,11 +40,14 @@ public class Map {
         //elhelyezi a ládákat a pályán 
 	}
 	public void LoadMap(String filename) throws FileNotFoundException, IOException {
-		try {
-			File file = new File(System.getProperty("user.dir") + File.separatorChar + filename + ".txt");
-			BufferedReader br = new BufferedReader(new FileReader(file));
-			int width, w, height, h, counter;
-			String line;
+		File file = new File(System.getProperty("user.dir") + File.separatorChar + filename + ".txt");
+		BufferedReader br = new BufferedReader(new FileReader(file));
+		
+		int width, w, height, h, counter;
+		String line;
+		
+		
+			/*
 			while ((line = br.readLine()) != null) {
 				String[] cmd=line.split(" ");
 				width=Integer.parseInt(cmd[2]); //szélesség=hanyadik elem
@@ -202,7 +214,7 @@ public class Map {
 		    }
 		}catch(Exception e) {
 			e.printStackTrace();
-		}
+		}*/
 	}
 	
 	public void CreateMap() 
