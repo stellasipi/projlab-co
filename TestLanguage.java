@@ -110,7 +110,13 @@ public class TestLanguage {
 		String[] command = line.split(",");
 		switch (command[0]){
 			case "LoadMap":
-				game.getMap().LoadMap(command[1]);
+				/*
+				 * 1 parameter:
+				 * 		name	- String
+				 */
+				String LoadMapName = command[1];
+				
+				LoadMap(LoadMapName);
 				break;
 			case "PlaceWorker":
 				/*
@@ -223,7 +229,22 @@ public class TestLanguage {
 		}
 	}
 	private void LoadMap(String mapName) {
+		try {
+			game.map.LoadMap(mapName);
+			Results.add("Map loaded");
+			
+		}catch(IOException e) {
+			e.printStackTrace();
+			System.out.println("Rossz fájlnevet adtál meg!");
+		}
 		
+	}
+	
+	private ArrayList<String> GetDrawnMap(Map map) {
+		ArrayList<String> result = new ArrayList<String>();
+		
+		
+		return result;
 	}
 	
 	private void PlaceWorker(String name, int height, int width) {
