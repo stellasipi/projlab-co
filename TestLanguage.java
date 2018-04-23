@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class TestLanguage {
 	
-	Game game;
+	Game game = new Game();
 	ArrayList<String> Results = new ArrayList<String>();
 	
 	TestLanguage(){	}
@@ -29,7 +29,6 @@ public class TestLanguage {
 		while (asd) {
 			// reseteljük a kimeneti tömböt és a játékot, 
 			// hogy minden tesztet ugyanabból az állapotból tudjunk indítani
-			Init();
 			try {
 				input = br.readLine();				
 				switch(input) {
@@ -39,6 +38,7 @@ public class TestLanguage {
 						System.out.println("Manuális bemenet kiválasztva!");
 						ManualInputHandler();
 					} catch (Exception e) {
+						e.printStackTrace();
 						System.out.println("Hibásan paramétereztél, vissza a startra!");
 						System.out.println("1 - Manuális bemenet \n"
 								+ "2 - Előre elkészített tesztek \n"
@@ -97,7 +97,7 @@ public class TestLanguage {
 		for(String str: commands) {
 			ExecuteCommand(str);
 		}
-		File out = new File(System.getProperty("user.dir") + File.separatorChar + "Test" + File.separatorChar + path + ".txt");
+		File out = new File(System.getProperty("user.dir") + File.separatorChar + "Tests" + File.separatorChar + path + ".txt");
 		FileWriter fw = new FileWriter(out, false);
 	}
 	
@@ -255,9 +255,14 @@ public class TestLanguage {
 	private void PlaceOil(String workerName) {
 		for(Worker w : game.workers) {
 			if(w.getName().equals(workerName)) {
+				int oilCompare = ((Tile)w.getTile()).SumGreaseMu();
 				w.PlaceOil();
 				Integer[] coords = w.getTile().getCoords();
-				Results.add("Oil placed  Coordinates: " + coords[0] + "," + coords[1] + " Friction: " +  ((Tile) w.getTile()).SumGreaseMu());
+				if(((Tile)w.getTile()).SumGreaseMu() != oilCompare) {
+					Results.add("Oil placed  Coordinates: " + coords[0] + "," + coords[1] + " Friction: " + ((Tile) w.getTile()).SumGreaseMu());
+				}else {
+					Results.add("Oil not placed  Coordinates: " + coords[0] + "," + coords[1]);
+				}
 				return;
 			}
 		}
@@ -267,9 +272,14 @@ public class TestLanguage {
 	private void PlaceHoney(String workerName) {
 		for(Worker w : game.workers) {
 			if(w.getName().equals(workerName)) {
+				int honeyCompare = ((Tile)w.getTile()).SumGreaseMu();
 				w.PlaceHoney();
 				Integer[] coords = w.getTile().getCoords();
-				Results.add("Oil placed  Coordinates: " + coords[0] + "," + coords[1] + " Friction: " + ((Tile) w.getTile()).SumGreaseMu());
+				if(((Tile)w.getTile()).SumGreaseMu() != honeyCompare) {
+					Results.add("Honey placed  Coordinates: " + coords[0] + "," + coords[1] + " Friction: " + ((Tile) w.getTile()).SumGreaseMu());
+				}else {
+					Results.add("Honey not placed  Coordinates: " + coords[0] + "," + coords[1]);
+				}
 				return;
 			}
 		}
