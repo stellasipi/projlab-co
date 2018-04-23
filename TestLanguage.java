@@ -1,7 +1,9 @@
 package shokoban;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -33,22 +35,31 @@ public class TestLanguage {
 				case "1":
 					try {
 						Init();
+						System.out.println("Manuális bemenet kiválasztva!");
 						ManualInputHandler();
-					} catch (IOException e) {
-						e.printStackTrace();
+					} catch (Exception e) {
+						System.out.println("Hibásan paramétereztél, vissza a startra!");
+						System.out.println("1 - Manuális bemenet \n"
+								+ "2 - Előre elkészített tesztek \n"
+								+ "3 - Kilépés");
 					}
 					break;
 				case "2":
 					String name;
 					try {
 						Init();
+						System.out.println("Teszteset kiválasztása, írd be a teszt nevét");
 						name = br.readLine();
 						TextIputHandler(name);
 					} catch (IOException e) {
-						e.printStackTrace();
+						System.out.println("Hibás nevet adtál meg, próbáld újra!");
+						System.out.println("1 - Manuális bemenet \n"
+								+ "2 - Előre elkészített tesztek \n"
+								+ "3 - Kilépés");
 					}
 					break;
 				case "3":
+					System.out.println("Kilépés!");
 					asd = false;
 					break;
 				default:
@@ -74,9 +85,20 @@ public class TestLanguage {
 		}
 	}
 	
-	public void TextIputHandler(String name) {
-		//in progress
+	public void TextIputHandler(String path) throws IOException {
+		File file = new File(System.getProperty("user.dir") + File.separatorChar + "Input" + File.separatorChar + path);
+		BufferedReader br = new BufferedReader(new FileReader(file));
 		ArrayList<String> commands = new ArrayList<String>();
+		String line;
+		while((line = br.readLine()) != null) {
+			commands.add(line);
+		}
+		
+		for(String str: commands) {
+			ExecuteCommand(str);
+		}
+		
+		//fájlba kiírás ami még nincs meg
 	}
 	
 	private void Init() {
@@ -85,7 +107,7 @@ public class TestLanguage {
 	}
 
 	private void ExecuteCommand(String line) throws FileNotFoundException, IOException {
-		String[] command = line.split(",");
+		String[] command = line.split(", ");
 		switch (command[0]){
 			case "LoadMap":
 				game.getMap().LoadMap(command[1]);
@@ -150,7 +172,6 @@ public class TestLanguage {
 				 * 0 parameter:
 				 */
 				ListPlacedCrates();
-				Results.add("TESZT KÖCSÖG");
 				break;
 				
 			case "ListFreeCrates":
@@ -206,33 +227,29 @@ public class TestLanguage {
 	}
 	
 	private void PlaceWorker(String name, int height, int width) {
-		for(Worker w : game.workers) {
-			if(w.getName().equals(name)) {
-				//w.setTile(game.map.getTile(height, width);
-				break;
-			}
-		}
+		Worker w = new Worker();
+		w.setGame(game);
+		w.setName(name);
+		//w.setTile(game.map.getTile(height, width));
 		// Sikeres illetve sikertelen elhelyezés esetén a kimenet
 		/*
 		if(game.map.getTile(height, width).getObject().getName() == name) {
 			Results.add("Worker placed  ID: " + name + " Coordinates: " + height + "," + width);
 		}else {
-			Results.add("Worker not placed  ID: " + name);
+			Results.add("WorkerID: " + name + " could not be placed");
 		}*/
 	}
 	
 	private void PlaceCrate(String name, int height, int width) {
-		for(Crate c : game.crates) {
-			if(c.getName().equals(name)) {
-				//c.setTile(game.map.getTile(height, width);
-				break;
-			}
-		}
+		Crate c = new Crate();
+		c.setGame(game);
+		c.setName(name);
+		//c.setTile(game.map.getTile(height, width);
 		// Sikeres illetve sikertelen elhelyezés esetén a kimenet
 		/*if(game.map.getTile(height, width).getObject().getName() == name) {
 			Results.add("Crate placed  ID: " + name + " Coordinates: " + height + "," + width);
 		}else {
-			Results.add("Crate not placed  ID: " + name);
+			Results.add("CrateID: " + name + "could not be placed");
 		}*/
 	}
 	
