@@ -44,20 +44,39 @@ public class Map {
 		switch(type) {
 		case "Tile":
 			Tile t = new Tile();
-			t.setCoords(width, height);
+			t.setCoords(width, height); //koordináták beállítása
+			t.setId(id); //név beállítása
 			Tiles[height][width] = t;
 			break;
 		case "Trap":
-			
+			Trap trap = new Trap();
+			trap.setCoords(width, height); //koordináták beállítása
+			trap.setId(id); //név beállítása
+			Tiles[height][width] = trap;
 			break;
 		case "Coloumn":
-			
+			Coloumn c = new Coloumn();
+			c.setCoords(width, height); //koordináták beállítása
+			c.setId(id); //név beállítása
+			Tiles[height][width] = c;
 			break;
 		case "Target":
-			
+			Target ta = new Target();
+			ta.setCoords(width, height); //koordináták beállítása
+			ta.setId(id); //név beállítása
+			Tiles[height][width] = ta;
 			break;
 		case "Button":
-			
+			Button b = new Button();
+			b.setCoords(width, height); //koordináták beállítása
+			b.setId(id); //név beállítása
+			Tiles[height][width] = b;
+			break;
+		case "Hole":
+			Hole h = new Hole();
+			h.setCoords(width, height); //koordináták beállítása
+			h.setId(id); //név beállítása
+			Tiles[height][width] = h;
 			break;
 		}
 	}
