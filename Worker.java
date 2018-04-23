@@ -91,6 +91,13 @@ public class Worker extends Object {
 		}
 	}
 	
+	public Tile getTileType() {
+		if(this.getTile().getClass().getSimpleName().equals("Tile")) { //ha az osztályneve Tile
+			return (Tile)this.getTile();
+		}
+		return null;
+	}
+	
 	public int getSumscore() {
 		return sumscore;
 	}
