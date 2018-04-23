@@ -218,6 +218,12 @@ public class TestLanguage {
 				ListWorkers();
 				break;
 				
+			case "ListTraps":
+				/*
+				 * 0 parameter:
+				 */
+				ListTraps();
+				break;
 			case "Exit":
 				for(String lines : Results) {
 					System.out.println(lines);
@@ -256,7 +262,7 @@ public class TestLanguage {
 		if(game.map.getTile(height, width).getObject().getName() == name) {
 			Results.add("Worker placed  ID: " + name + " Coordinates: " + height + "," + width);
 		}else {
-			Results.add("WorkerID: " + name + " could not be placed");
+			Results.add("Error- " + name + " not placed");
 		}
 	}
 	
@@ -269,7 +275,7 @@ public class TestLanguage {
 		if(game.map.getTile(height, width).getObject().getName() == name) {
 			Results.add("Crate placed  ID: " + name + " Coordinates: " + height + "," + width);
 		}else {
-			Results.add("CrateID: " + name + "could not be placed");
+			Results.add("Error- " + name + " not placed");
 		}
 	}
 	
@@ -282,7 +288,7 @@ public class TestLanguage {
 				if(((Tile)w.getTile()).SumGreaseMu() != oilCompare) {
 					Results.add("Oil placed  Coordinates: " + coords[0] + "," + coords[1] + " Friction: " + ((Tile) w.getTile()).SumGreaseMu());
 				}else {
-					Results.add("Oil not placed  Coordinates: " + coords[0] + "," + coords[1]);
+					Results.add("Error- Oil not placed");
 				}
 				return;
 			}
@@ -299,7 +305,7 @@ public class TestLanguage {
 				if(((Tile)w.getTile()).SumGreaseMu() != honeyCompare) {
 					Results.add("Honey placed  Coordinates: " + coords[0] + "," + coords[1] + " Friction: " + ((Tile) w.getTile()).SumGreaseMu());
 				}else {
-					Results.add("Honey not placed  Coordinates: " + coords[0] + "," + coords[1]);
+					Results.add("Error- Honey not placed");
 				}
 				return;
 			}
@@ -363,10 +369,14 @@ public class TestLanguage {
 				Integer[] beforeCoord = w.getTile().getCoords();
 				game.Move(w, d);
 				//leelenőrizni hogy mozgott-e, az alapján válasz
+				try {
 				if(beforeCoord != w.getTile().getCoords()) {
 					Results.add("Moved " + workerName + ", " + d);
 				}else {
-					Results.add("Failed" + workerName + "could not step on the given coordinates");
+					Results.add("Failed- " + workerName + " could not step on gicen coordinates");
+				}
+				}catch(Exception e) {
+					Results.add("Moved " + workerName + ", " + d);
 				}
 				return;
 			}
@@ -382,6 +392,23 @@ public class TestLanguage {
 			Results.add(workercount + ". " + w.getName() 
 				+ " Coordinates: " + coords[0] + "," + coords[1] + " Score: " 
 				+ w.getSumscore() + " Strenght: " + w.getStrenght());
+		}
+	}
+	
+	private void ListTraps() {
+		int trapcount = 0;
+		String status;
+		for(TileElement[] line : game.map.Tiles) {
+			for(TileElement tElement : line) {
+				if(tElement.getClass().getCanonicalName().equals("Trap")) {
+					trapcount++;
+					Integer[] coords = tElement.getCoords();
+					if(((Trap)tElement).getActive()) {
+						status = "active";
+					}else status = "inactive";
+					Results.add(trapcount + ". Coordinates: " + coords[0] + "," + coords[1] + " Status: " + status);
+				}
+			}
 		}
 	}
 }
