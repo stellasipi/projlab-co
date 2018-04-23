@@ -87,19 +87,15 @@ public class Map {
 				if(t==Tiles[i][j]) {
 					if(Tiles[i-1][j] != null) {
 						t.setNeighbour(Tiles[i-1][j], Direction.UP );
-						Tiles[i-1][j].setNeighbour(t, Direction.DOWN);
 					}
 					if(Tiles[i+1][j] != null) {
-						t.setNeighbour(Tiles[i+1][j], Direction.DOWN );
-						Tiles[i+1][j].setNeighbour(t, Direction.UP);
+						t.setNeighbour(Tiles[i+1][j], Direction.DOWN);
 					}
 					if(Tiles[i][j-1] != null) {
-						t.setNeighbour(Tiles[i][j-1], Direction.LEFT );
-						Tiles[i-1][j].setNeighbour(t, Direction.RIGHT);
+						t.setNeighbour(Tiles[i][j-1], Direction.LEFT);
 					}
 					if(Tiles[i+1][j] != null) {
-						t.setNeighbour(Tiles[i-1][j], Direction.RIGHT );
-						Tiles[i+1][j].setNeighbour(t, Direction.LEFT);
+						t.setNeighbour(Tiles[i-1][j], Direction.RIGHT);
 					}
 				}
 			}
