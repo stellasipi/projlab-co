@@ -436,13 +436,8 @@ public class TestLanguage {
 						if(!beforeCoord.equals(game.workers.get(k).getTile().getCoords()))
 							Results.add("Moved " + workerName + ", " + d);
 						else
-<<<<<<< HEAD
-							Results.add("Worker did not move Original Coordinates:" + beforeCoord[0]+ "," + beforeCoord[1] + 
-									" New Coordinates: " + game.workers.get(k).getTile().getCoords()[0]+ ", " + game.workers.get(k).getTile().getCoords()[1]);
-=======
 							Results.add("Worker did not move Original Coordinates:" + (beforeCoord[0]+1)+ "," + (beforeCoord[1]+1) + 
 									"New Coordinates: " + (game.workers.get(k).getTile().getCoords()[0]+1)+ ", " + (game.workers.get(k).getTile().getCoords()[1]+1));
->>>>>>> f0415fb8d2da51699b7558b6d1fa51f79bfc9cfd
 					}
 				}
 				
