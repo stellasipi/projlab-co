@@ -304,8 +304,10 @@ public class TestLanguage {
 		w.setGame(game);
 		w.setName(name);
 		w.setTile(game.map.getTile(height-1, width-1));
+		System.out.println("Tiles["+height+"]["+width+"]");
+		System.out.println("Tiles["+(height-1)+"]["+(width-1)+"]");
 		// Sikeres illetve sikertelen elhelyezés esetén a kimenet
-		if(game.map.getTile(height, width).getObject().getName() == name) {
+		if(game.getMap().getTile(height-1, width-1).getObject().getName() == name) {
 			Results.add("Worker placed  ID: " + name + " Coordinates: " + height + "," + width);
 		}else {
 			Results.add("Error- " + name + " not placed");
@@ -316,9 +318,9 @@ public class TestLanguage {
 		Crate c = new Crate();
 		c.setGame(game);
 		c.setName(name);
-		c.setTile(game.map.getTile(height, width));
+		c.setTile(game.map.getTile(height-1, width-1));
 		// Sikeres illetve sikertelen elhelyezés esetén a kimenet
-		if(game.map.getTile(height, width).getObject().getName() == name) {
+		if(game.getMap().getTile(height-1, width-1).getObject().getName() == name) {
 			Results.add("Crate placed  ID: " + name + " Coordinates: " + height + "," + width);
 		}else {
 			Results.add("Error- " + name + " not placed");
