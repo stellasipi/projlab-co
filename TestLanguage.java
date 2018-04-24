@@ -57,7 +57,7 @@ public class TestLanguage {
 						}else {
 							//minden Inpt mappában lévő tesztet megcsinál
 							List<String> tests = new ArrayList<String>();
-							File[] inputfiles = new File(System.getProperty("user.dir") + File.separatorChar + "input").listFiles();
+							File[] inputfiles = new File(System.getProperty("user.dir") + File.separatorChar + "Input").listFiles();
 							for (File file : inputfiles) {
 							    if (file.isFile()) {
 							        tests.add(file.getName());
@@ -102,7 +102,7 @@ public class TestLanguage {
 	}
 	
 	public void TextIputHandler(String path) throws IOException {
-		File file = new File(System.getProperty("user.dir") + File.separatorChar + "input" + File.separatorChar + path + ".txt");
+		File file = new File(System.getProperty("user.dir") + File.separatorChar + "Input" + File.separatorChar + path + ".txt");
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		ArrayList<String> commands = new ArrayList<String>();
 		String line;
@@ -112,7 +112,7 @@ public class TestLanguage {
 		for(String str: commands) {
 			ExecuteCommand(str);
 		}
-		File out = new File(System.getProperty("user.dir") + File.separatorChar + "tests" + File.separatorChar + path + ".txt");
+		File out = new File(System.getProperty("user.dir") + File.separatorChar + "Tests" + File.separatorChar + path + ".txt");
 		FileWriter fw = new FileWriter(out, false);
 	}
 	
@@ -301,9 +301,12 @@ public class TestLanguage {
 	
 	private void PlaceWorker(String name, int height, int width) {
 		Worker w = new Worker();
+		
 		w.setGame(game);
+		w.setTile(game.getMap().getTile(height-1, width-1));
+		game.getMap().getTile(height-1, width-1).setObject(w);
 		w.setName(name);
-		w.setTile(game.map.getTile(height-1, width-1));
+		
 		// Sikeres illetve sikertelen elhelyezés esetén a kimenet
 		if(game.getMap().getTile(height-1, width-1).getObject().getName() == name) {
 			game.workers.add(w);
@@ -315,11 +318,13 @@ public class TestLanguage {
 	
 	private void PlaceCrate(String name, int height, int width) {
 		Crate c = new Crate();
+		
 		c.setGame(game);
+		c.setTile(game.getMap().getTile(height-1, width-1));
+		game.getMap().getTile(height-1, width-1).setObject(c);
 		c.setName(name);
-		c.setTile(game.map.getTile(height, width));
+		
 		// Sikeres illetve sikertelen elhelyezés esetén a kimenet
-
 		if(game.getMap().getTile(height-1, width-1).getObject().getName() == name) {
 			game.crates.add(c);
 			Results.add("Crate placed  ID: " + name + " Coordinates: " + height + "," + width);
