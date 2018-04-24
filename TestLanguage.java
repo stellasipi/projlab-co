@@ -449,6 +449,7 @@ public class TestLanguage {
 		}
 	}
 	
+	
 	private void ListWorkers() {
 		int workercount = 0;
 		for(int i=0; i< game.workers.size();i++) {
@@ -456,7 +457,7 @@ public class TestLanguage {
 			Worker w= game.workers.get(i);
 			Integer[] coords = w.getTile().getCoords();
 			Results.add(workercount + ". " + w.getName() 
-				+ " Coordinates: " + coords[0] + "," + coords[1] + " Score: " 
+				+ " Coordinates: " + (coords[1]+1) + "," + (coords[0]+1) + " Score: " 
 				+ w.getSumscore() + " Strenght: " + w.getStrenght());
 		}
 	}
