@@ -301,11 +301,12 @@ public class TestLanguage {
 	
 	private void PlaceWorker(String name, int height, int width) {
 		Worker w = new Worker();
+		
 		w.setGame(game);
+		w.setTile(game.getMap().getTile(height-1, width-1));
+		game.getMap().getTile(height-1, width-1).setObject(w);
 		w.setName(name);
-		w.setTile(game.map.getTile(height-1, width-1));
-		System.out.println("Tiles["+height+"]["+width+"]");
-		System.out.println("Tiles["+(height-1)+"]["+(width-1)+"]");
+		
 		// Sikeres illetve sikertelen elhelyezés esetén a kimenet
 		if(game.getMap().getTile(height-1, width-1).getObject().getName() == name) {
 			Results.add("Worker placed  ID: " + name + " Coordinates: " + height + "," + width);
@@ -316,9 +317,12 @@ public class TestLanguage {
 	
 	private void PlaceCrate(String name, int height, int width) {
 		Crate c = new Crate();
+		
 		c.setGame(game);
+		c.setTile(game.getMap().getTile(height-1, width-1));
+		game.getMap().getTile(height-1, width-1).setObject(c);
 		c.setName(name);
-		c.setTile(game.map.getTile(height-1, width-1));
+		
 		// Sikeres illetve sikertelen elhelyezés esetén a kimenet
 		if(game.getMap().getTile(height-1, width-1).getObject().getName() == name) {
 			Results.add("Crate placed  ID: " + name + " Coordinates: " + height + "," + width);

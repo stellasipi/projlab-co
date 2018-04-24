@@ -23,7 +23,6 @@ public class Map {
 	
 	//magasság szélesség alapján visszaad TileElement-et
 	public TileElement getTile(int height, int width) {
-		System.out.println("getTile");
 		return Tiles[height][width];
 	}
 	

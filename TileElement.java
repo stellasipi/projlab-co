@@ -48,7 +48,6 @@ public abstract class TileElement {
     }
 
     public Object getObject() {
-    	System.out.println("getObject");
     	return object;
     }
     

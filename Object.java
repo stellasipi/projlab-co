@@ -47,12 +47,10 @@ public abstract class Object {
     }
     
     public void setName(String n) {
-    	this.name = n;
+    	name = n;
     }
     
     public String getName() {
-    	System.out.println("getname: ");
-    	System.out.println(name);
     	return name;
     }
 }
