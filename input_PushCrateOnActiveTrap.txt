@@ -2,6 +2,7 @@ LoadMap,test_PushCrateOnActiveTrap
 PlaceWorker,w1,1,1
 PlaceCrate,c1,1,2
 PlaceCrate,c2,1,3
+SetActive tr 1
 ListCrates
 ListTraps
 Move,w1,RIGHT
