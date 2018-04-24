@@ -153,7 +153,7 @@ public class Map {
 								for(int m=0; m<width; m++) {
 									if(Tiles[l][m].getId()==cmd[2]) {
 										if((Tiles[l][m].getClass().getSimpleName().equals("Button"))&&(Tiles[j][k].getClass().getSimpleName().equals("Trap"))){
-										((Button)Tiles[l][m]).setTrap((Trap)Tiles[j][k]);
+											((Button)Tiles[l][m]).setTrap((Trap)Tiles[j][k]);
 										}
 									}
 								}
