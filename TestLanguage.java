@@ -303,7 +303,7 @@ public class TestLanguage {
 		Worker w = new Worker();
 		w.setGame(game);
 		w.setName(name);
-		w.setTile(game.map.getTile(height, width));
+		w.setTile(game.map.getTile(height-1, width-1));
 		// Sikeres illetve sikertelen elhelyezés esetén a kimenet
 		if(game.map.getTile(height, width).getObject().getName() == name) {
 			Results.add("Worker placed  ID: " + name + " Coordinates: " + height + "," + width);
