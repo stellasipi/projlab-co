@@ -1,4 +1,4 @@
-package shokoban;
+﻿package shokoban;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -13,6 +13,7 @@ public class Main {
 		System.out.println("Menu:\n");
 		//Itt hívja meg Dávid a tesztelő részt
 		try {
+
 		t.Run();
 		} catch(Exception e) {
 			e.printStackTrace();
