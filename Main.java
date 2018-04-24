@@ -12,7 +12,11 @@ public class Main {
 		
 		System.out.println("Menu:\n");
 		//Itt hívja meg Dávid a tesztelő részt
+		try {
 		t.Run();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
 	
