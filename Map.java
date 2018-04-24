@@ -85,16 +85,16 @@ public class Map {
 		for(int i=0; i<height ; i++) {
 			for(int j=0; j<width; j++) {
 				if(t==Tiles[i][j]) {
-					if(Tiles[i-1][j] != null) {
+					if(Tiles[i-1][j] != null || (i-1)<0) {
 						t.setNeighbour(Tiles[i-1][j], Direction.UP );
 					}
-					if(Tiles[i+1][j] != null) {
+					if(Tiles[i+1][j] != null || (i+1)>(height-1)) {
 						t.setNeighbour(Tiles[i+1][j], Direction.DOWN);
 					}
-					if(Tiles[i][j-1] != null) {
+					if(Tiles[i][j-1] != null || (j-1)<0) {
 						t.setNeighbour(Tiles[i][j-1], Direction.LEFT);
 					}
-					if(Tiles[i+1][j] != null) {
+					if(Tiles[i][j+1] != null || (j+1)>(width-1)) {
 						t.setNeighbour(Tiles[i-1][j], Direction.RIGHT);
 					}
 				}
