@@ -141,6 +141,7 @@ public class TestLanguage {
 				int SetActiveState = Integer.parseInt(command[2]);
 				
 				SetActive(SetActiveName, SetActiveState);
+				break;
 			case "LoadMap":
 				/*
 				 * 1 parameter:
