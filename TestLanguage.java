@@ -136,6 +136,16 @@ public class TestLanguage {
 				String LoadMapName = command[1];
 				
 				LoadMap(LoadMapName);
+				for(int i=0; i<game.getMap().getHeight();i++) {
+					String line1=new String();
+					for(int j=0; j<game.getMap().getWidth();j++) {
+						//Results.add(game.getMap().getTile(i,j).getId());
+						if(j==0) line1+=game.getMap().getTile(i,j).getId();
+						else line1+=" "+game.getMap().getTile(i,j).getId();
+					}
+					Results.add(line1);
+				}
+				
 				System.out.println("LoadMapOK");
 				break;
 			case "PlaceWorker":
