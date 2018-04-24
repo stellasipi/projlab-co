@@ -68,7 +68,7 @@ public class TestLanguage {
 							}
 						}
 					} catch (IOException e) {
-						System.out.println("Hibás nevet adtál meg, próbáld újra!");
+						System.out.println("Run: Hibás nevet adtál meg, próbáld újra!");
 						System.out.println("1 - Manuális bemenet \n"
 								+ "2 - Előre elkészített tesztek \n"
 								+ "3 - Kilépés");
@@ -102,13 +102,17 @@ public class TestLanguage {
 	}
 	
 	public void TextIputHandler(String path) throws IOException {
+		System.out.println(path);
 		File file = new File(System.getProperty("user.dir") + File.separatorChar + "Input" + File.separatorChar + path + ".txt");
+		System.out.println(file.getPath());
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		ArrayList<String> commands = new ArrayList<String>();
 		String line;
 		while((line = br.readLine()) != null) {
 			commands.add(line);
+			System.out.println(line);
 		}
+		
 		for(String str: commands) {
 			ExecuteCommand(str);
 		}
@@ -132,6 +136,7 @@ public class TestLanguage {
 				String LoadMapName = command[1];
 				
 				LoadMap(LoadMapName);
+				System.out.println("LoadMapOK");
 				break;
 			case "PlaceWorker":
 				/*
@@ -145,6 +150,7 @@ public class TestLanguage {
 				int PlaceWorkerWidth = Integer.parseInt(command[3]);
 				
 				PlaceWorker(PlaceWorkerName, PlaceWorkerHeight, PlaceWorkerWidth);
+				System.out.println("PlaceWorkerOK");
 				break;
 					
 			case "PlaceCrate":
@@ -159,6 +165,7 @@ public class TestLanguage {
 				int PlaceCrateWidth = Integer.parseInt(command[3]);
 				
 				PlaceCrate(PlaceCrateName, PlaceCrateHeight, PlaceCrateWidth);
+				System.out.println("PlaceCrateOK");
 				break;
 				
 			case "PlaceOil":
@@ -224,6 +231,7 @@ public class TestLanguage {
 				Direction MoveDirection = Direction.valueOf(command[2]);
 				
 				Move(MoveWorker, MoveDirection);
+				System.out.println("MoveOK");
 				break;
 				
 			case "ListWorkers":
@@ -231,6 +239,7 @@ public class TestLanguage {
 				 * 0 parameter:
 				 */
 				ListWorkers();
+				System.out.println("ListWorkersOK");
 				break;
 				
 			case "ListTraps":
@@ -245,7 +254,7 @@ public class TestLanguage {
 				}
 				return;
 			default:
-				System.out.println("Rossz parancsot adtál meg...");
+				System.out.println("default: Rossz parancsot adtál meg...");
 				break;
 		}
 	}
