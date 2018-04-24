@@ -349,7 +349,7 @@ public class TestLanguage {
 				w.PlaceOil();
 				Integer[] coords = w.getTile().getCoords();
 				
-				Results.add("Oil placed  Coordinates: " + (coords[1]+1) + "," + (coords[0]+1) + " Friction: " + ((Tile) w.getTile()).SumGreaseMu());
+				Results.add("Oil placed  Coordinates: " + (coords[0]+1) + "," + (coords[1]+1) + " Friction: " + ((Tile) w.getTile()).SumGreaseMu());
 				
 				return;
 			}
@@ -363,7 +363,7 @@ public class TestLanguage {
 				int honeyCompare = ((Tile)w.getTile()).SumGreaseMu();
 				w.PlaceHoney();
 				Integer[] coords = w.getTile().getCoords();
-					Results.add("Honey placed  Coordinates: " + (coords[1]+1) + "," + (coords[0]+1) + " Friction: " + ((Tile) w.getTile()).SumGreaseMu());				
+					Results.add("Honey placed  Coordinates: " + (coords[0]+1) + "," + (coords[1]+1) + " Friction: " + ((Tile) w.getTile()).SumGreaseMu());				
 				return;
 			}
 		}
@@ -447,7 +447,7 @@ public class TestLanguage {
 			Worker w= game.workers.get(i);
 			Integer[] coords = w.getTile().getCoords();
 			Results.add(workercount + ". " + w.getName() 
-				+ " Coordinates: " + (coords[1]+1) + "," + (coords[0]+1) + " Score: " 
+				+ " Coordinates: " + (coords[0]+1) + "," + (coords[1]+1) + " Score: " 
 				+ w.getSumscore() + " Strenght: " + w.getStrenght());
 		}
 	}
