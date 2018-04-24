@@ -463,8 +463,8 @@ public class TestLanguage {
 							Results.add("Moved " + workerName + ", " + d);
 						return;
 						}else {
-							Results.add("Worker did not move Original Coordinates:" + (beforeCoord[0]+1)+ "," + (beforeCoord[1]+1) + 
-									" New Coordinates: " + (game.workers.get(k).getTile().getCoords()[0]+1)+ ", " + (game.workers.get(k).getTile().getCoords()[1]+1));
+							Results.add("Worker did not move Original Coordinates: " + (beforeCoord[0]+1)+ "," + (beforeCoord[1]+1) + 
+									" New Coordinates: " + (game.workers.get(k).getTile().getCoords()[0]+1)+ "," + (game.workers.get(k).getTile().getCoords()[1]+1));
 						return;
 						}
 					}
