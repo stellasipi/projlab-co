@@ -5,5 +5,4 @@ PlaceCrate,c2,4,1
 ListCrates
 Move,w1,RIGHT
 ListCrates
-
-
+Exit

@@ -3,7 +3,7 @@ package shokoban;
 
 public class Worker extends Object {
 	private int sumscore;
-	private int strenght;
+	private int strenght=15;
 	
 	public void visit(Button b, Direction d) {
         //Ellenőrzi, hogy sikerült-e elmozdulni a másik objectnek, ha null akkor mozoghatnak, amúgy marad minden ugyanaz
@@ -70,7 +70,7 @@ public class Worker extends Object {
 		this.getTile().getNeighbour(d).Accept(this, d, acts); //a következő tile Accept-jét hívjuk
 		if(seged==this.getTile()) {
 			this.getTile().Remove(this);
-			getGame().Die(this);
+			this.getGame().Die(this);
 		}
 	}
 	

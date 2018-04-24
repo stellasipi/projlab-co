@@ -7,8 +7,4 @@ ListTraps
 Move,w1,RIGHT
 ListCrates
 ListTraps
-
-
-
-
-
+Exit

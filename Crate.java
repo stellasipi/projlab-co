@@ -4,7 +4,7 @@ package shokoban;
 public class Crate extends Object {
 	private int score;
 	private Worker pushedBy;
-	private int mu;
+	private int mu=0;
 	
 	public void visit(Coloumn c ,Direction d) {
 		//üres függvény, az oszlopra láda nem tud rálépni

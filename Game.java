@@ -32,6 +32,7 @@ public class Game {
 	{
         //Elindítja a mozgást (majd a külső input alapján)
         w.getTile().getNeighbour(d).Accept(w, d, w.getStrenght());
+        
         //Ellenőrzi a játék folytatásának feltételeit
         Check();
 	}
@@ -92,7 +93,7 @@ public class Game {
 	public void Die(Worker w)
 	{        
         //meghal a munkás, kivesszük a game-ből
-        workers.remove(w);     
+        workers.remove(w);
 	}
 	
 	public void Die(Crate c)

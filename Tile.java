@@ -19,8 +19,8 @@ public class Tile extends TileElement {
       //függvénytörzs
         if(this.getObject() != null) 
         {
-        	w.getTile().getNeighbour(d).getObject().push(w, d, acts); //Meghívja object push függvényét, hogy el tudja tolni a rajta levő elemet
-
+        	w.getTile().getNeighbour(d).getObject().push(w, d, acts); 
+        	//Meghívja object push függvényét, hogy el tudja tolni a rajta levő elemet
         }
 		w.visit(this, d); //Meghívja az object visit függvényét, hogy ráléphessen a mezőre	
 	}

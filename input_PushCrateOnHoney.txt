@@ -14,4 +14,4 @@ Move,w1,RIGHT
 Move,w1,RIGHT
 ListWorkers
 ListCrates
-
+Exit

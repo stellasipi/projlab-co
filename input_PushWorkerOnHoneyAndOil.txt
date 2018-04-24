@@ -9,11 +9,4 @@ Move,w1,LEFT
 Move,w1,LEFT
 Move,w1,LEFT
 ListWorkers
-
-
-
-
-
-
-
-
+Exit

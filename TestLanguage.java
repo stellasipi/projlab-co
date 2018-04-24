@@ -68,7 +68,7 @@ public class TestLanguage {
 							}
 						}
 					} catch (IOException e) {
-						System.out.println("Hibás nevet adtál meg, próbáld újra!");
+						System.out.println("Run: Hibás nevet adtál meg, próbáld újra!");
 						System.out.println("1 - Manuális bemenet \n"
 								+ "2 - Előre elkészített tesztek \n"
 								+ "3 - Kilépés");
@@ -109,6 +109,7 @@ public class TestLanguage {
 		while((line = br.readLine()) != null) {
 			commands.add(line);
 		}
+		
 		for(String str: commands) {
 			ExecuteCommand(str);
 		}
@@ -135,7 +136,7 @@ public class TestLanguage {
 				 */
 				String LoadMapName = command[1];
 				
-				LoadMap(LoadMapName);
+				LoadMap(LoadMapName);				
 				break;
 			case "PlaceWorker":
 				/*
@@ -277,8 +278,12 @@ public class TestLanguage {
 		for(int i=0; i<height; i++) {
 			String line = "";
 			for(int j=0; j<width; j++) {
+<<<<<<< HEAD
 				String mezo = map.getTile(i, j).getClass().getSimpleName();
 				switch(mezo){
+=======
+				switch(map.getTile(i, j).getClass().getSimpleName()){
+>>>>>>> rand
 				case "Tile":
 					line += "t ";
 					break;
@@ -423,24 +428,25 @@ public class TestLanguage {
 	}
 	
 	private void Move(String workerName, Direction d) {
-		for(Worker w : game.workers) {
-			if(w.getName().equals(workerName)) {
-				Integer[] beforeCoord = w.getTile().getCoords();
-				game.Move(w, d);
-				//leelenőrizni hogy mozgott-e, az alapján válasz
-				try {
-				if(beforeCoord != w.getTile().getCoords()) {
-					Results.add("Moved " + workerName + ", " + d);
-				}else {
-					Results.add("Failed- " + workerName + " could not step on gicen coordinates");
+		for(int i=0; i< game.workers.size();i++) {
+			if(game.workers.get(i).getName().equals(workerName)) {
+				Integer[] beforeCoord = game.workers.get(i).getTile().getCoords();
+				game.Move(game.workers.get(i), d);
+				for(int k=0; k< game.workers.size();k++) {
+					if(game.workers.get(k).getName().equals(workerName)) {
+						if(!beforeCoord.equals(game.workers.get(k).getTile().getCoords()))
+							Results.add("Moved " + workerName + ", " + d);
+						else
+							Results.add("Worker did not move Original Coordinates:" + beforeCoord[0]+ "," + beforeCoord[1] + 
+									"New Coordinates: " + game.workers.get(k).getTile().getCoords()[0]+ ", " + game.workers.get(k).getTile().getCoords()[1]);
+					}
+					else
+						System.out.println("Meghalt");
 				}
-				}catch(Exception e) {
-					Results.add("Moved " + workerName + ", " + d);
-				}
-				return;
+				
 			}
+			
 		}
-		Results.add("Worker not found!");
 	}
 	
 	private void ListWorkers() {
