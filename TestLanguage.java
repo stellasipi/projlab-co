@@ -267,15 +267,6 @@ public class TestLanguage {
 			for(String s : mapText) {
 				Results.add(s);
 			}
-			/*for(int i=0; i<game.getMap().getHeight();i++) {
-				String line1=new String();
-				for(int j=0; j<game.getMap().getWidth();j++) {
-					//Results.add(game.getMap().getTile(i,j).getId());
-					if(j==0) line1+=game.getMap().getTile(i,j).getId();
-					else line1+=" "+game.getMap().getTile(i,j).getId();
-				}
-				Results.add(line1);
-			}*/
 		}catch(IOException e) {
 			e.printStackTrace();
 			System.out.println("Rossz fájlnevet adtál meg!");
