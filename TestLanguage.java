@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,7 +54,7 @@ public class TestLanguage {
 						System.out.println("Teszteset kiválasztása, írd be a teszt nevét");
 						name = br.readLine();
 						if(!name.equals("Mindet")) {
-							TextIputHandler(name);
+							TextIputHandler(name + ".txt");
 						}else {
 							//minden Inpt mappában lévő tesztet megcsinál
 							List<String> tests = new ArrayList<String>();
@@ -64,6 +65,7 @@ public class TestLanguage {
 							    }
 							}
 							for(String str : tests) {
+								Init();
 								TextIputHandler(str);
 							}
 						}
@@ -102,7 +104,7 @@ public class TestLanguage {
 	}
 	
 	public void TextIputHandler(String path) throws IOException {
-		File file = new File(System.getProperty("user.dir") + File.separatorChar + "Input" + File.separatorChar + path + ".txt");
+		File file = new File(System.getProperty("user.dir") + File.separatorChar + "Input" + File.separatorChar + path);
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		ArrayList<String> commands = new ArrayList<String>();
 		String line;
@@ -112,9 +114,13 @@ public class TestLanguage {
 		
 		for(String str: commands) {
 			ExecuteCommand(str);
+		}		
+		PrintWriter writer = new PrintWriter("Tests" + File.separatorChar + path, "UTF-8");
+		
+		for(String str : Results) {
+			writer.println(str);
 		}
-		File out = new File(System.getProperty("user.dir") + File.separatorChar + "Tests" + File.separatorChar + path + ".txt");
-		FileWriter fw = new FileWriter(out, false);
+		writer.close();
 	}
 	
 	private void Init() {
@@ -274,7 +280,9 @@ public class TestLanguage {
 		for(int i=0; i<height; i++) {
 			String line = "";
 			for(int j=0; j<width; j++) {
-				switch(map.getTile(i, j).getClass().getSimpleName()){
+
+				String mezo = map.getTile(i, j).getClass().getSimpleName();
+				switch(mezo){
 				case "Tile":
 					line += "t ";
 					break;
@@ -379,7 +387,7 @@ public class TestLanguage {
 			}else {
 				bool = "false";
 			}
-			Results.add(crateCount+". Coordinates: "+ coords[0] + "," + coords[1] + 
+			Results.add(crateCount+". Coordinates: "+ (coords[0]+1) + "," + (coords[1]+1) + 
 			" Friction: " + c.getMu() + " OnTarget: " + bool);
 		}
 	}
@@ -389,7 +397,7 @@ public class TestLanguage {
 			if(c.getTile().getClass().getCanonicalName().equals("Target")) {
 				Integer[] coords = c.getTile().getCoords();
 				Results.add("Placed Crate ID: " + c.getName() 
-						+ " Coordinates: " + coords[0] + "," + coords[1]
+						+ " Coordinates: " + (coords[0]+1) + "," + (coords[1]+1)
 						+ " Friction: " + c.getMu()
 						+ " Last pushed by: " + c.getPushedBy().getName());
 			}
@@ -401,7 +409,7 @@ public class TestLanguage {
 			if(!c.getTile().getClass().getCanonicalName().equals("Target")) {
 				Integer[] coords = c.getTile().getCoords();
 				Results.add("Free Crate ID: " + c.getName() 
-						+ " Coordinates: " + coords[0] + "," + coords[1] 
+						+ " Coordinates: " + (coords[0]+1) + "," + (coords[1]+1) 
 						+ " Friction: " + c.getMu());
 			}
 		}
@@ -428,8 +436,13 @@ public class TestLanguage {
 						if(!beforeCoord.equals(game.workers.get(k).getTile().getCoords()))
 							Results.add("Moved " + workerName + ", " + d);
 						else
+<<<<<<< HEAD
 							Results.add("Worker did not move Original Coordinates:" + beforeCoord[0]+ "," + beforeCoord[1] + 
 									" New Coordinates: " + game.workers.get(k).getTile().getCoords()[0]+ ", " + game.workers.get(k).getTile().getCoords()[1]);
+=======
+							Results.add("Worker did not move Original Coordinates:" + (beforeCoord[0]+1)+ "," + (beforeCoord[1]+1) + 
+									"New Coordinates: " + (game.workers.get(k).getTile().getCoords()[0]+1)+ ", " + (game.workers.get(k).getTile().getCoords()[1]+1));
+>>>>>>> f0415fb8d2da51699b7558b6d1fa51f79bfc9cfd
 					}
 				}
 				
@@ -455,13 +468,13 @@ public class TestLanguage {
 		String status;
 		for(TileElement[] line : game.map.Tiles) {
 			for(TileElement tElement : line) {
-				if(tElement.getClass().getCanonicalName().equals("Trap")) {
+				if(tElement.getClass().getSimpleName().equals("Trap")) {
 					trapcount++;
 					Integer[] coords = tElement.getCoords();
 					if(((Trap)tElement).getActive()) {
 						status = "active";
 					}else status = "inactive";
-					Results.add(trapcount + ". Coordinates: " + coords[0] + "," + coords[1] + " Status: " + status);
+					Results.add(trapcount + ". Coordinates: " + (coords[0]+1) + "," + (coords[1]+1) + " Status: " + status);
 				}
 			}
 		}
