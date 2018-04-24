@@ -112,8 +112,12 @@ public class TestLanguage {
 		for(String str: commands) {
 			ExecuteCommand(str);
 		}
+		
 		File out = new File(System.getProperty("user.dir") + File.separatorChar + "Tests" + File.separatorChar + path + ".txt");
 		FileWriter fw = new FileWriter(out, false);
+		for(String str : Results) {
+			System.out.println(str);
+		}
 	}
 	
 	private void Init() {
@@ -273,7 +277,8 @@ public class TestLanguage {
 		for(int i=0; i<height; i++) {
 			String line = "";
 			for(int j=0; j<width; j++) {
-				switch(map.getTile(i, j).getClass().getCanonicalName()){
+				String mezo = map.getTile(i, j).getClass().getSimpleName();
+				switch(mezo){
 				case "Tile":
 					line += "t ";
 					break;
