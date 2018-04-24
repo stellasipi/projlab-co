@@ -1,7 +1,7 @@
 LoadMap,test_PushWorkerOnButton
 PlaceWorker,w1,1,1
 ListTraps
-SetActive,tr1,0 
+SetActive,tr1,0
 ListTraps
 Move,w1,RIGHT
 ListTraps
