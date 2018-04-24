@@ -5,14 +5,4 @@ SetActive,tr1,0
 ListTraps
 Move,w1,RIGHT
 ListTraps
-
-
-
-
-
-
-
-
-
-
-
+Exit

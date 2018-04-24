@@ -6,5 +6,4 @@ ListTraps
 ListWorkers
 Move,w1,RIGHT
 ListWorkers
-
-
+Exit

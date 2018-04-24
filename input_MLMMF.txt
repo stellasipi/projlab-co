@@ -5,7 +5,4 @@ PlaceWorker,w2,1,3
 PlaceWorker,w3,1,4
 Move,w1,RIGHT
 ListWorkers
-
-
-
-
+Exit

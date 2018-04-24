@@ -4,6 +4,4 @@ PlaceCrate,c1,2,1
 ListTraps
 Move,w1,RIGHT
 ListTraps
-
-
-
+Exit

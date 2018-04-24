@@ -3,12 +3,4 @@ PlaceWorker,w1,1,1
 ListWorker
 Move,w1,RIGHT
 ListWorker
-
-
-
-
-
-
-
-
-
+Exit

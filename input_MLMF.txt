@@ -5,6 +5,4 @@ PlaceCrate,c1,1,2
 ListWorkers
 Move,w1,RIGHT
 ListWorkers
-
-
-
+Exit
