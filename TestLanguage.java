@@ -305,7 +305,8 @@ public class TestLanguage {
 		w.setName(name);
 		w.setTile(game.map.getTile(height-1, width-1));
 		// Sikeres illetve sikertelen elhelyezés esetén a kimenet
-		if(game.map.getTile(height, width).getObject().getName() == name) {
+		if(game.getMap().getTile(height-1, width-1).getObject().getName() == name) {
+			game.workers.add(w);
 			Results.add("Worker placed  ID: " + name + " Coordinates: " + height + "," + width);
 		}else {
 			Results.add("Error- " + name + " not placed");
@@ -318,7 +319,9 @@ public class TestLanguage {
 		c.setName(name);
 		c.setTile(game.map.getTile(height, width));
 		// Sikeres illetve sikertelen elhelyezés esetén a kimenet
-		if(game.map.getTile(height, width).getObject().getName() == name) {
+
+		if(game.getMap().getTile(height-1, width-1).getObject().getName() == name) {
+			game.crates.add(c);
 			Results.add("Crate placed  ID: " + name + " Coordinates: " + height + "," + width);
 		}else {
 			Results.add("Error- " + name + " not placed");
@@ -432,8 +435,9 @@ public class TestLanguage {
 	
 	private void ListWorkers() {
 		int workercount = 0;
-		for(Worker w : game.workers) {
+		for(int i=0; i< game.workers.size();i++) {
 			workercount++;
+			Worker w= game.workers.get(i);
 			Integer[] coords = w.getTile().getCoords();
 			Results.add(workercount + ". " + w.getName() 
 				+ " Coordinates: " + coords[0] + "," + coords[1] + " Score: " 
