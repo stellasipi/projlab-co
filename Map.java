@@ -133,9 +133,9 @@ public class Map {
 		
 		//szomszédok beállítása
 		System.out.println("szomszédok");
-		for(TileElement[] sor : Tiles) {
-			for(TileElement tElement : sor) {
-				SetNeighbours(tElement);
+		for(int i=0; i<height ; i++) {
+			for(int j=0; j<width; j++) {
+				SetNeighbours(Tiles[i][j]);
 			}
 		}
 		
