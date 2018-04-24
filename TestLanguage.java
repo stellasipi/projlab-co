@@ -348,11 +348,9 @@ public class TestLanguage {
 				int oilCompare = ((Tile)w.getTile()).SumGreaseMu();
 				w.PlaceOil();
 				Integer[] coords = w.getTile().getCoords();
-				if(((Tile)w.getTile()).SumGreaseMu() != oilCompare) {
-					Results.add("Oil placed  Coordinates: " + (coords[1]+1) + "," + (coords[0]+1) + " Friction: " + ((Tile) w.getTile()).SumGreaseMu());
-				}else {
-					Results.add("Oil not placed  Coordinates: " + (coords[1]+1) + "," + (coords[0]+1) + " Friction: " + ((Tile) w.getTile()).SumGreaseMu());
-				}
+				
+				Results.add("Oil placed  Coordinates: " + (coords[1]+1) + "," + (coords[0]+1) + " Friction: " + ((Tile) w.getTile()).SumGreaseMu());
+				
 				return;
 			}
 		}
@@ -365,11 +363,7 @@ public class TestLanguage {
 				int honeyCompare = ((Tile)w.getTile()).SumGreaseMu();
 				w.PlaceHoney();
 				Integer[] coords = w.getTile().getCoords();
-				if(((Tile)w.getTile()).SumGreaseMu() != honeyCompare) {
-					Results.add("Honey placed  Coordinates: " + (coords[1]+1) + "," + (coords[0]+1) + " Friction: " + ((Tile) w.getTile()).SumGreaseMu());
-				}else {
-					Results.add("Honey not placed  Coordinates: " + (coords[1]+1) + "," + (coords[0]+1) + " Friction: " + ((Tile) w.getTile()).SumGreaseMu());
-				}
+					Results.add("Honey placed  Coordinates: " + (coords[1]+1) + "," + (coords[0]+1) + " Friction: " + ((Tile) w.getTile()).SumGreaseMu());				
 				return;
 			}
 		}
