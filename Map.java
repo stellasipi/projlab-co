@@ -103,9 +103,11 @@ public class Map {
 	}
 	
 	public void LoadMap(String filename) throws FileNotFoundException, IOException {
+		System.out.println("Loadmap-ben");
 		File file = new File(System.getProperty("user.dir") + File.separatorChar + filename + ".txt");
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		
+		System.out.println("input");
 		ArrayList<String> input = new ArrayList<String>();
 		String line;
 		while((line=br.readLine())!=null) {
@@ -113,13 +115,15 @@ public class Map {
 		}
 		
 		//széle és hossza
+		System.out.println("széle és hossza");
 		String[] size = input.get(0).split(" ");
 		height = Integer.parseInt(size[1]);
 		width = Integer.parseInt(size[2]);
 		
 		Tiles = new TileElement[height][width];
 		
-		//TileElementek feltöltése		
+		//TileElementek feltöltése	
+		System.out.println("tileelementek föltöltése");
 		for(int j=0;j<height;j++) {
 			for(int i=0; i<width; i++) {
 				String[] mapLine = input.get(i+1).split(" ");
@@ -128,6 +132,7 @@ public class Map {
 		}
 		
 		//szomszédok beállítása
+		System.out.println("szomszédok");
 		for(TileElement[] sor : Tiles) {
 			for(TileElement tElement : sor) {
 				SetNeighbours(tElement);
@@ -143,6 +148,7 @@ public class Map {
 		 * szóval soronként koordináták
 		 * és ennek egy segédfv ami mondjuk 4 int segítségével összeköti a kettőt (getTile(koordináta))
 		 */
+		System.out.println("csapdák");
 		for(int i=0;i<input.size();i++) {
 			String[] cmd=input.get(i).split(" ");
 			if(cmd[0].equals("SetButton")) {
