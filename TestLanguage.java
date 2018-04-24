@@ -115,7 +115,7 @@ public class TestLanguage {
 		for(String str: commands) {
 			ExecuteCommand(str);
 		}		
-		PrintWriter writer = new PrintWriter("Tests" + File.separatorChar + path + ".txt", "UTF-8");
+		PrintWriter writer = new PrintWriter("Tests" + File.separatorChar + path, "UTF-8");
 		
 		for(String str : Results) {
 			writer.println(str);
@@ -349,7 +349,7 @@ public class TestLanguage {
 				w.PlaceOil();
 				Integer[] coords = w.getTile().getCoords();
 				if(((Tile)w.getTile()).SumGreaseMu() != oilCompare) {
-					Results.add("Oil placed  Coordinates: " + (coords[1])+1 + "," + (coords[0])+1 + " Friction: " + ((Tile) w.getTile()).SumGreaseMu());
+					Results.add("Oil placed  Coordinates: " + (coords[1]+1) + "," + (coords[0]+1) + " Friction: " + ((Tile) w.getTile()).SumGreaseMu());
 				}else {
 					Results.add("Error- Oil not placed");
 				}
@@ -366,7 +366,7 @@ public class TestLanguage {
 				w.PlaceHoney();
 				Integer[] coords = w.getTile().getCoords();
 				if(((Tile)w.getTile()).SumGreaseMu() != honeyCompare) {
-					Results.add("Honey placed  Coordinates: " + (coords[1])+1 + "," + (coords[0])+1 + " Friction: " + ((Tile) w.getTile()).SumGreaseMu());
+					Results.add("Honey placed  Coordinates: " + (coords[1]+1) + "," + (coords[0]+1) + " Friction: " + ((Tile) w.getTile()).SumGreaseMu());
 				}else {
 					Results.add("Error- Honey not placed");
 				}
@@ -387,7 +387,7 @@ public class TestLanguage {
 			}else {
 				bool = "false";
 			}
-			Results.add(crateCount+". Coordinates: "+ coords[0] + "," + coords[1] + 
+			Results.add(crateCount+". Coordinates: "+ (coords[0]+1) + "," + (coords[1]+1) + 
 			" Friction: " + c.getMu() + " OnTarget: " + bool);
 		}
 	}
@@ -397,7 +397,7 @@ public class TestLanguage {
 			if(c.getTile().getClass().getCanonicalName().equals("Target")) {
 				Integer[] coords = c.getTile().getCoords();
 				Results.add("Placed Crate ID: " + c.getName() 
-						+ " Coordinates: " + coords[0] + "," + coords[1]
+						+ " Coordinates: " + (coords[0]+1) + "," + (coords[1]+1)
 						+ " Friction: " + c.getMu()
 						+ " Last pushed by: " + c.getPushedBy().getName());
 			}
@@ -409,7 +409,7 @@ public class TestLanguage {
 			if(!c.getTile().getClass().getCanonicalName().equals("Target")) {
 				Integer[] coords = c.getTile().getCoords();
 				Results.add("Free Crate ID: " + c.getName() 
-						+ " Coordinates: " + coords[0] + "," + coords[1] 
+						+ " Coordinates: " + (coords[0]+1) + "," + (coords[1]+1) 
 						+ " Friction: " + c.getMu());
 			}
 		}
@@ -436,8 +436,8 @@ public class TestLanguage {
 						if(!beforeCoord.equals(game.workers.get(k).getTile().getCoords()))
 							Results.add("Moved " + workerName + ", " + d);
 						else
-							Results.add("Worker did not move Original Coordinates:" + beforeCoord[0]+ "," + beforeCoord[1] + 
-									"New Coordinates: " + game.workers.get(k).getTile().getCoords()[0]+ ", " + game.workers.get(k).getTile().getCoords()[1]);
+							Results.add("Worker did not move Original Coordinates:" + (beforeCoord[0]+1)+ "," + (beforeCoord[1]+1) + 
+									"New Coordinates: " + (game.workers.get(k).getTile().getCoords()[0]+1)+ ", " + (game.workers.get(k).getTile().getCoords()[1]+1));
 					}
 					else
 						System.out.println("Meghalt");
@@ -466,13 +466,13 @@ public class TestLanguage {
 		String status;
 		for(TileElement[] line : game.map.Tiles) {
 			for(TileElement tElement : line) {
-				if(tElement.getClass().getCanonicalName().equals("Trap")) {
+				if(tElement.getClass().getSimpleName().equals("Trap")) {
 					trapcount++;
 					Integer[] coords = tElement.getCoords();
 					if(((Trap)tElement).getActive()) {
 						status = "active";
 					}else status = "inactive";
-					Results.add(trapcount + ". Coordinates: " + coords[0] + "," + coords[1] + " Status: " + status);
+					Results.add(trapcount + ". Coordinates: " + (coords[0]+1) + "," + (coords[1]+1) + " Status: " + status);
 				}
 			}
 		}
