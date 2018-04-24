@@ -17,12 +17,10 @@ public class Tile extends TileElement {
 
 	public void Accept(Worker w, Direction d, int acts) {
       //függvénytörzs
-		System.out.println("Belépett a Tile:acceptworker-be "+w.getName());
         if(this.getObject() != null) 
         {
         	w.getTile().getNeighbour(d).getObject().push(w, d, acts); 
         	//Meghívja object push függvényét, hogy el tudja tolni a rajta levő elemet
-        	System.out.println("Lefutottpush");
         }
 		w.visit(this, d); //Meghívja az object visit függvényét, hogy ráléphessen a mezőre	
 	}
