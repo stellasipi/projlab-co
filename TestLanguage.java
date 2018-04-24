@@ -452,20 +452,24 @@ public class TestLanguage {
 	}
 	
 	private void Move(String workerName, Direction d) {
+		
 		for(int i=0; i< game.workers.size();i++) {
 			if(game.workers.get(i).getName().equals(workerName)) {
 				Integer[] beforeCoord = game.workers.get(i).getTile().getCoords();
 				game.Move(game.workers.get(i), d);
 				for(int k=0; k< game.workers.size();k++) {
 					if(game.workers.get(k).getName().equals(workerName)) {
-						if(!beforeCoord.equals(game.workers.get(k).getTile().getCoords()))
+						if(!beforeCoord.equals(game.workers.get(k).getTile().getCoords())) {
 							Results.add("Moved " + workerName + ", " + d);
-						else
+						return;
+						}else {
 							Results.add("Worker did not move Original Coordinates:" + (beforeCoord[0]+1)+ "," + (beforeCoord[1]+1) + 
 									"New Coordinates: " + (game.workers.get(k).getTile().getCoords()[0]+1)+ ", " + (game.workers.get(k).getTile().getCoords()[1]+1));
+						return;
+						}
 					}
 				}
-				
+				Results.add("Moved " + workerName + ", " + d);
 			}
 			
 		}
