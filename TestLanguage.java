@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -112,13 +113,14 @@ public class TestLanguage {
 		
 		for(String str: commands) {
 			ExecuteCommand(str);
-		}
+		}		
+		PrintWriter writer = new PrintWriter("Tests" + File.separatorChar + path + ".txt", "UTF-8");
 		
-		File out = new File(System.getProperty("user.dir") + File.separatorChar + "Tests" + File.separatorChar + path + ".txt");
-		FileWriter fw = new FileWriter(out, false);
 		for(String str : Results) {
 			System.out.println(str);
+			writer.println(str);
 		}
+		writer.close();
 	}
 	
 	private void Init() {
@@ -278,12 +280,9 @@ public class TestLanguage {
 		for(int i=0; i<height; i++) {
 			String line = "";
 			for(int j=0; j<width; j++) {
-<<<<<<< HEAD
+
 				String mezo = map.getTile(i, j).getClass().getSimpleName();
 				switch(mezo){
-=======
-				switch(map.getTile(i, j).getClass().getSimpleName()){
->>>>>>> rand
 				case "Tile":
 					line += "t ";
 					break;
