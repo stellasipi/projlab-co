@@ -135,17 +135,7 @@ public class TestLanguage {
 				 */
 				String LoadMapName = command[1];
 				
-				LoadMap(LoadMapName);
-				for(int i=0; i<game.getMap().getHeight();i++) {
-					String line1=new String();
-					for(int j=0; j<game.getMap().getWidth();j++) {
-						//Results.add(game.getMap().getTile(i,j).getId());
-						if(j==0) line1+=game.getMap().getTile(i,j).getId();
-						else line1+=" "+game.getMap().getTile(i,j).getId();
-					}
-					Results.add(line1);
-				}
-				
+				LoadMap(LoadMapName);				
 				System.out.println("LoadMapOK");
 				break;
 			case "PlaceWorker":
@@ -277,6 +267,15 @@ public class TestLanguage {
 			for(String s : mapText) {
 				Results.add(s);
 			}
+			/*for(int i=0; i<game.getMap().getHeight();i++) {
+				String line1=new String();
+				for(int j=0; j<game.getMap().getWidth();j++) {
+					//Results.add(game.getMap().getTile(i,j).getId());
+					if(j==0) line1+=game.getMap().getTile(i,j).getId();
+					else line1+=" "+game.getMap().getTile(i,j).getId();
+				}
+				Results.add(line1);
+			}*/
 		}catch(IOException e) {
 			e.printStackTrace();
 			System.out.println("Rossz fájlnevet adtál meg!");
@@ -292,7 +291,7 @@ public class TestLanguage {
 		for(int i=0; i<height; i++) {
 			String line = "";
 			for(int j=0; j<width; j++) {
-				switch(map.getTile(i, j).getClass().getCanonicalName()){
+				switch(map.getTile(i, j).getClass().getSimpleName()){
 				case "Tile":
 					line += "t ";
 					break;
