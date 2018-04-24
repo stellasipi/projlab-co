@@ -41,9 +41,7 @@ public class Tile extends TileElement {
 		for(int i =0; i<grease.size(); i++) {
 			sum+=grease.get(i).getMu();
 		}
-		if(Math.abs(sum)<5)
-			return sum;
-		return 5;
+		return Math.min(5, Math.max(-5, sum));
 	}
 	
 	public void setGrease(Grease g) {
