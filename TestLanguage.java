@@ -118,7 +118,6 @@ public class TestLanguage {
 		PrintWriter writer = new PrintWriter("Tests" + File.separatorChar + path + ".txt", "UTF-8");
 		
 		for(String str : Results) {
-			System.out.println(str);
 			writer.println(str);
 		}
 		writer.close();
