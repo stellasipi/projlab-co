@@ -102,15 +102,12 @@ public class TestLanguage {
 	}
 	
 	public void TextIputHandler(String path) throws IOException {
-		System.out.println(path);
 		File file = new File(System.getProperty("user.dir") + File.separatorChar + "Input" + File.separatorChar + path + ".txt");
-		System.out.println(file.getPath());
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		ArrayList<String> commands = new ArrayList<String>();
 		String line;
 		while((line = br.readLine()) != null) {
 			commands.add(line);
-			System.out.println(line);
 		}
 		
 		for(String str: commands) {
@@ -136,7 +133,6 @@ public class TestLanguage {
 				String LoadMapName = command[1];
 				
 				LoadMap(LoadMapName);				
-				System.out.println("LoadMapOK");
 				break;
 			case "PlaceWorker":
 				/*
@@ -150,7 +146,6 @@ public class TestLanguage {
 				int PlaceWorkerWidth = Integer.parseInt(command[3]);
 				
 				PlaceWorker(PlaceWorkerName, PlaceWorkerHeight, PlaceWorkerWidth);
-				System.out.println("PlaceWorkerOK");
 				break;
 					
 			case "PlaceCrate":
@@ -165,7 +160,6 @@ public class TestLanguage {
 				int PlaceCrateWidth = Integer.parseInt(command[3]);
 				
 				PlaceCrate(PlaceCrateName, PlaceCrateHeight, PlaceCrateWidth);
-				System.out.println("PlaceCrateOK");
 				break;
 				
 			case "PlaceOil":
@@ -231,7 +225,6 @@ public class TestLanguage {
 				Direction MoveDirection = Direction.valueOf(command[2]);
 				
 				Move(MoveWorker, MoveDirection);
-				System.out.println("MoveOK");
 				break;
 				
 			case "ListWorkers":
@@ -239,7 +232,6 @@ public class TestLanguage {
 				 * 0 parameter:
 				 */
 				ListWorkers();
-				System.out.println("ListWorkersOK");
 				break;
 				
 			case "ListTraps":
@@ -434,9 +426,10 @@ public class TestLanguage {
 				for(int k=0; k< game.workers.size();k++) {
 					if(game.workers.get(k).getName().equals(workerName)) {
 						if(!beforeCoord.equals(game.workers.get(k).getTile().getCoords()))
-							System.out.println("Mozgott");
+							Results.add("Moved " + workerName + ", " + d);
 						else
-							System.out.println("Nem mozgott");
+							Results.add("Worker did not move Original Coordinates:" + beforeCoord[0]+ "," + beforeCoord[1] + 
+									"New Coordinates: " + game.workers.get(k).getTile().getCoords()[0]+ ", " + game.workers.get(k).getTile().getCoords()[1]);
 					}
 					else
 						System.out.println("Meghalt");
@@ -445,28 +438,6 @@ public class TestLanguage {
 			}
 			
 		}
-		/*for(Worker w : game.workers) {
-			if(w.getName().equals(workerName)) {
-				Integer[] beforeCoord = w.getTile().getCoords();
-				game.Move(w, d);
-				if(!beforeCoord.equals(w.getTile().getCoords()))
-					System.out.println("Mozgott");
-				else
-					System.out.println("Nem mozgott");
-				//leelenőrizni hogy mozgott-e, az alapján válasz
-				/*try {
-				if(beforeCoord != w.getTile().getCoords()) {
-					Results.add("Moved " + workerName + ", " + d);
-				}else {
-					Results.add("Failed- " + workerName + " could not step on gicen coordinates");
-				}
-				}catch(Exception e) {
-					Results.add("Moved " + workerName + ", " + d);
-				}
-				return;
-			}
-		}
-		Results.add("Worker not found!");*/
 	}
 	
 	private void ListWorkers() {

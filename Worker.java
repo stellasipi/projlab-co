@@ -66,12 +66,10 @@ public class Worker extends Object {
 	}
 	
 	public void push(Crate c, Direction d, int acts) {
-		System.out.println("Belépett a Worker:push,crate "+ this.getName());
 		TileElement seged = this.getTile();
 		this.getTile().getNeighbour(d).Accept(this, d, acts); //a következő tile Accept-jét hívjuk
 		if(seged==this.getTile()) {
 			this.getTile().Remove(this);
-			System.out.println("Munkás összenyomódik");
 			this.getGame().Die(this);
 		}
 	}
