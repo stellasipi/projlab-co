@@ -45,7 +45,7 @@ public class Button extends TileElement {
 	public void Switch(Trap t) {
 		
 		//Csapda állapotának változtatása, ha aktív -> inkatív, ha inaktív -> aktív
-		if(t.getActive())
+		if(!t.getActive())
 			t.setActive(true); //aktívra állítjuk a csapdát
 		else
 			t.setActive(false); //inaktívra állítjuk a csapdát
@@ -53,13 +53,11 @@ public class Button extends TileElement {
 	}
 
 	public Trap getTrap() {
-
-		
 		return trap;
 	}
 
 	public void setTrap(Trap trap) {
-
+		this.trap=trap;
 	}
 	
 }
