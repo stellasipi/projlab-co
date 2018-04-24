@@ -127,7 +127,7 @@ public class Map {
 		for(int j=0;j<height;j++) {
 			for(int i=0; i<width; i++) {
 				String[] mapLine = input.get(i+1).split(" ");
-				AddTile(mapLine[1], j+1, i+1, mapLine[2]);
+				AddTile(mapLine[1], j, i, mapLine[2]);
 			}
 		}
 		
