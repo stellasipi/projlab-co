@@ -1,7 +1,7 @@
 LoadMap,test_PushCrateIntoHole
 PlaceWorker,w1,1,1
-PlaceCrate,c1,2,1
-PlaceCrate,c2,4,1
+PlaceCrate,c1,1,2
+PlaceCrate,c2,1,4
 ListCrates
 Move,w1,RIGHT
 ListCrates

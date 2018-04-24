@@ -1,6 +1,6 @@
 LoadMap,test_PushCrateOnButton
 PlaceWorker,w1,1,1
-PlaceCrate,c1,2,1
+PlaceCrate,c1,1,2
 ListTraps
 Move,w1,RIGHT
 ListTraps
