@@ -1,6 +1,7 @@
 package shokoban;
 
 import java.util.ArrayList;
+import java.lang.*;
 
 public class Tile extends TileElement {
 	private ArrayList<Grease> grease = new ArrayList<Grease>();
@@ -40,7 +41,9 @@ public class Tile extends TileElement {
 		for(int i =0; i<grease.size(); i++) {
 			sum+=grease.get(i).getMu();
 		}
-		return sum;
+		if(Math.abs(sum)<5)
+			return sum;
+		return 5;
 	}
 	
 	public void setGrease(Grease g) {
