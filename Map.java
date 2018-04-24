@@ -1,4 +1,4 @@
-package shokoban;
+﻿package shokoban;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -134,26 +134,21 @@ public class Map {
 			}
 		}
 		
-		//csapdák beállítása
-		/*
-		 * valahogy a gombok és csapdák összekötése, 
-		 * szerintem egyszerűen gomb coord és csapda coord alapján mehetne,
-		 * pl: 	1,1 1,2
-		 * 		1,3 2,1
-		 * szóval soronként koordináták
-		 * és ennek egy segédfv ami mondjuk 4 int segítségével összeköti a kettőt (getTile(koordináta))
-		 */
+		
 		for(int i=0;i<input.size();i++) {
 			String[] cmd=input.get(i).split(" ");
-			if(cmd[0].equals("SetButton")) {
+			if(cmd[0].equals("setButton")) {
 				for(int j=0; j<height ; j++) {
 					for(int k=0; k<width; k++) {
-						if(Tiles[j][k].getId()==cmd[1]) {
+						if(Tiles[j][k].getId().equals(cmd[1])) {
 							for(int l=0; l<height ; l++) {
 								for(int m=0; m<width; m++) {
-									if(Tiles[l][m].getId()==cmd[2]) {
-										if((Tiles[l][m].getClass().getSimpleName().equals("Button"))&&(Tiles[j][k].getClass().getSimpleName().equals("Trap"))){
-											((Button)Tiles[l][m]).setTrap((Trap)Tiles[j][k]);
+									if(Tiles[l][m].getId().equals(cmd[2])) {
+										if((Tiles[j][k].getClass().getSimpleName().equals("Button"))&&(Tiles[l][m].getClass().getSimpleName().equals("Trap"))){
+											{
+												((Button)Tiles[j][k]).setTrap((Trap)Tiles[l][m]);
+											}
+											
 										}
 									}
 								}
