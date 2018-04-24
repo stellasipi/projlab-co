@@ -31,7 +31,10 @@ public class Game {
 	public void Move(Worker w, Direction d)
 	{
         //Elindítja a mozgást (majd a külső input alapján)
+		System.out.println("Belépett a Game:move-ba "+ w.getName());
         w.getTile().getNeighbour(d).Accept(w, d, w.getStrenght());
+        System.out.println("Belépett a Game:move-ból " +w.getName());
+        
         //Ellenőrzi a játék folytatásának feltételeit
         Check();
 	}

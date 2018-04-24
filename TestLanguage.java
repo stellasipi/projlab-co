@@ -427,13 +427,34 @@ public class TestLanguage {
 	}
 	
 	private void Move(String workerName, Direction d) {
-		for(Worker w : game.workers) {
+		for(int i=0; i< game.workers.size();i++) {
+			if(game.workers.get(i).getName().equals(workerName)) {
+				Integer[] beforeCoord = game.workers.get(i).getTile().getCoords();
+				game.Move(game.workers.get(i), d);
+				for(int k=0; k< game.workers.size();k++) {
+					if(game.workers.get(k).getName().equals(workerName)) {
+						if(!beforeCoord.equals(game.workers.get(k).getTile().getCoords()))
+							System.out.println("Mozgott");
+						else
+							System.out.println("Nem mozgott");
+					}
+					else
+						System.out.println("Meghalt");
+				}
+				
+			}
+			
+		}
+		/*for(Worker w : game.workers) {
 			if(w.getName().equals(workerName)) {
 				Integer[] beforeCoord = w.getTile().getCoords();
 				game.Move(w, d);
-				
+				if(!beforeCoord.equals(w.getTile().getCoords()))
+					System.out.println("Mozgott");
+				else
+					System.out.println("Nem mozgott");
 				//leelenőrizni hogy mozgott-e, az alapján válasz
-				try {
+				/*try {
 				if(beforeCoord != w.getTile().getCoords()) {
 					Results.add("Moved " + workerName + ", " + d);
 				}else {
@@ -445,7 +466,7 @@ public class TestLanguage {
 				return;
 			}
 		}
-		Results.add("Worker not found!");
+		Results.add("Worker not found!");*/
 	}
 	
 	private void ListWorkers() {
