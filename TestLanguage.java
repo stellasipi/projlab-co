@@ -54,7 +54,7 @@ public class TestLanguage {
 						System.out.println("Teszteset kiválasztása, írd be a teszt nevét");
 						name = br.readLine();
 						if(!name.equals("Mindet")) {
-							TextIputHandler(name);
+							TextIputHandler(name + ".txt");
 						}else {
 							//minden Inpt mappában lévő tesztet megcsinál
 							List<String> tests = new ArrayList<String>();
@@ -65,6 +65,7 @@ public class TestLanguage {
 							    }
 							}
 							for(String str : tests) {
+								Init();
 								TextIputHandler(str);
 							}
 						}
@@ -103,7 +104,7 @@ public class TestLanguage {
 	}
 	
 	public void TextIputHandler(String path) throws IOException {
-		File file = new File(System.getProperty("user.dir") + File.separatorChar + "Input" + File.separatorChar + path + ".txt");
+		File file = new File(System.getProperty("user.dir") + File.separatorChar + "Input" + File.separatorChar + path);
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		ArrayList<String> commands = new ArrayList<String>();
 		String line;
