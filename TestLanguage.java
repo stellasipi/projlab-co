@@ -131,6 +131,16 @@ public class TestLanguage {
 	private void ExecuteCommand(String line) throws FileNotFoundException, IOException {
 		String[] command = line.split(",");
 		switch (command[0]){
+			case "SetActive":
+				/*
+				 * 2 parameters:
+				 * 		trap	- String
+				 * 		active	- int
+				 */
+				String SetActiveName = command[1];
+				int SetActiveState = Integer.parseInt(command[2]);
+				
+				SetActive(SetActiveName, SetActiveState);
 			case "LoadMap":
 				/*
 				 * 1 parameter:
@@ -256,6 +266,26 @@ public class TestLanguage {
 				break;
 		}
 	}
+	private void SetActive(String name, int state) {
+		Boolean ts;
+		if(state==0) {
+			ts = false;
+		}else {
+			ts = true;
+		}
+		
+		for(TileElement[] line : game.map.Tiles) {
+			for(TileElement tElement : line) {
+				if(tElement.getId().equals(name)) {
+					((Trap)tElement).setActive(ts);
+					Results.add("TrapID: " + name + " State changed to: " + ts.toString());
+					return;
+				}
+			}
+		}
+		Results.add("Error- Trap not found");
+	}
+
 	private void LoadMap(String mapName) {
 		try {
 			game.map.LoadMap(mapName);
