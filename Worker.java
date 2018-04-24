@@ -70,7 +70,7 @@ public class Worker extends Object {
 		this.getTile().getNeighbour(d).Accept(this, d, acts); //a következő tile Accept-jét hívjuk
 		if(seged==this.getTile()) {
 			this.getTile().Remove(this);
-			getGame().Die(this);
+			this.getGame().Die(this);
 		}
 	}
 	

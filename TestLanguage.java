@@ -254,7 +254,7 @@ public class TestLanguage {
 				}
 				return;
 			default:
-				System.out.println("default: Rossz parancsot adtál meg...");
+				System.out.println("Rossz parancsot adtál meg...");
 				break;
 		}
 	}
@@ -431,6 +431,7 @@ public class TestLanguage {
 			if(w.getName().equals(workerName)) {
 				Integer[] beforeCoord = w.getTile().getCoords();
 				game.Move(w, d);
+				
 				//leelenőrizni hogy mozgott-e, az alapján válasz
 				try {
 				if(beforeCoord != w.getTile().getCoords()) {

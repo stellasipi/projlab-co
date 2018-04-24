@@ -92,7 +92,8 @@ public class Game {
 	public void Die(Worker w)
 	{        
         //meghal a munkás, kivesszük a game-ből
-        workers.remove(w);     
+        workers.remove(w);  
+        System.out.println("Munkás meghal");
 	}
 	
 	public void Die(Crate c)
