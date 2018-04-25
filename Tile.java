@@ -1,7 +1,6 @@
 package shokoban;
 
 import java.util.ArrayList;
-import java.lang.*;
 
 public class Tile extends TileElement {
 	private ArrayList<Grease> grease = new ArrayList<Grease>();

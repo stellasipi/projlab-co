@@ -3,7 +3,7 @@ package shokoban;
 public class Trap extends Hole {
 	private boolean active = false;
 	
-		public void Accept (Crate c,Direction d, int acts){
+	public void Accept (Crate c,Direction d, int acts){
 		
 		if(this.getObject() != null)
 			c.getTile().getNeighbour(d).getObject().push(c, d, acts);

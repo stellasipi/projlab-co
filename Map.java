@@ -1,30 +1,11 @@
 package shokoban;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+
 import java.util.ArrayList;
 import java.util.Random;
 
 public class Map {
 	ArrayList<TileElement> tiles=new ArrayList<>();
-	private int width;
-	private int height;
-	TileElement[][] Tiles;
-	public int getWidth() {
-		return width;
-	}
-	public int getHeight() {
-		return height;
-	}
-	
-	//magasság szélesség alapján visszaad TileElement-et
-	public TileElement getTile(int height, int width) {
-		return Tiles[height][width];
-	}
 	
 	public void AddTileElement(TileElement t)
 	{
@@ -38,126 +19,6 @@ public class Map {
 	public void PlaceCrate(Crate c) 
 	{
         //elhelyezi a ládákat a pályán 
-	}
-	
-	private void AddTile(String type, int height, int width, String id) {
-		switch(type) {
-		case "Tile":
-			Tile t = new Tile();
-			t.setCoords(height, width); //koordináták beállítása
-			t.setId(id); //név beállítása
-			Tiles[height][width] = t;
-			break;
-		case "Trap":
-			Trap trap = new Trap();
-			trap.setCoords(height, width); //koordináták beállítása
-			trap.setId(id); //név beállítása
-			Tiles[height][width] = trap;
-			break;
-		case "Coloumn":
-			Coloumn c = new Coloumn();
-			c.setCoords(height, width); //koordináták beállítása
-			c.setId(id); //név beállítása
-			Tiles[height][width] = c;
-			break;
-		case "Target":
-			Target ta = new Target();
-			ta.setCoords(height, width); //koordináták beállítása
-			ta.setId(id); //név beállítása
-			Tiles[height][width] = ta;
-			break;
-		case "Button":
-			Button b = new Button();
-			b.setCoords(height, width); //koordináták beállítása
-			b.setId(id); //név beállítása
-			Tiles[height][width] = b;
-			break;
-		case "Hole":
-			Hole h = new Hole();
-			h.setCoords(height, width); //koordináták beállítása
-			h.setId(id); //név beállítása
-			Tiles[height][width] = h;
-			break;
-		}
-	}
-	
-	private void SetNeighbours(TileElement t) {
-		for(int i=0; i<height ; i++) {
-			for(int j=0; j<width; j++) {
-				if(t==Tiles[i][j]) {
-					if((i-1)!=-1 ) {
-						t.setNeighbour(Tiles[i-1][j], Direction.UP );
-					}
-					if((i+1)!=height ) {
-						t.setNeighbour(Tiles[i+1][j], Direction.DOWN);
-					}
-					if((j-1)!=-1 ) {
-						t.setNeighbour(Tiles[i][j-1], Direction.LEFT);
-					}
-					if((j+1)!=width ) {
-						t.setNeighbour(Tiles[i][j+1], Direction.RIGHT);
-					}
-				}
-			}
-		}
-	}
-	
-	public void LoadMap(String filename) throws FileNotFoundException, IOException {
-		File file = new File(System.getProperty("user.dir") + File.separatorChar + filename + ".txt");
-		BufferedReader br = new BufferedReader(new FileReader(file));
-		
-		ArrayList<String> input = new ArrayList<String>();
-		String line;
-		while((line=br.readLine())!=null) {
-			input.add(line);
-		}
-		
-		//széle és hossza
-		String[] size = input.get(0).split(" ");
-		height = Integer.parseInt(size[1]);
-		width = Integer.parseInt(size[2]);
-		
-		Tiles = new TileElement[height][width];
-		
-		//TileElementek feltöltése	
-		for(int j=0;j<height;j++) {
-			for(int i=0; i<width; i++) {
-				String[] mapLine = input.get(i+1).split(" ");
-				AddTile(mapLine[1], j, i, mapLine[2]);
-			}
-		}
-		
-		//szomszédok beállítása
-		for(int i=0; i<height ; i++) {
-			for(int j=0; j<width; j++) {
-				SetNeighbours(Tiles[i][j]);
-			}
-		}
-		
-		
-		for(int i=0;i<input.size();i++) {
-			String[] cmd=input.get(i).split(" ");
-			if(cmd[0].equals("setButton")) {
-				for(int j=0; j<height ; j++) {
-					for(int k=0; k<width; k++) {
-						if(Tiles[j][k].getId().equals(cmd[1])) {
-							for(int l=0; l<height ; l++) {
-								for(int m=0; m<width; m++) {
-									if(Tiles[l][m].getId().equals(cmd[2])) {
-										if((Tiles[j][k].getClass().getSimpleName().equals("Button"))&&(Tiles[l][m].getClass().getSimpleName().equals("Trap"))){
-											{
-												((Button)Tiles[j][k]).setTrap((Trap)Tiles[l][m]);
-											}
-											
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
 	}
 	
 	public void CreateMap() 

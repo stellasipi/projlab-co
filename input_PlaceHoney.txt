@@ -1,9 +1,0 @@
-LoadMap,test_PlaceHoney
-PlaceWorker,w1,1,1
-PlaceHoney,w1
-PlaceHoney,w1
-PlaceHoney,w1
-PlaceHoney,w1
-PlaceHoney,w1
-PlaceHoney,w1
-Exit

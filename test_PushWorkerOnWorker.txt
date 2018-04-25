@@ -1,6 +1,0 @@
-mapsize 1 3
-create Tile t0
-create Tile t1
-create Tile t2
-setNeighbour t0 right t1
-setNeighbour t1 right t2

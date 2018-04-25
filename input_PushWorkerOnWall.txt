@@ -1,6 +1,0 @@
-LoadMap,test_PushWorkerOnWall
-PlaceWorker,w1,1,1
-ListWorkers
-Move,w1,RIGHT
-ListWorkers
-Exit

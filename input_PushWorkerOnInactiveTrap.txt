@@ -1,9 +1,0 @@
-LoadMap,test_PushWorkerOnInactiveTrap
-PlaceWorker,w1,1,1
-ListTraps
-SetActive,tr,0
-ListTraps
-ListWorkers
-Move,w1,RIGHT
-ListWorkers
-Exit

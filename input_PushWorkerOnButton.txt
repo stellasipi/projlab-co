@@ -1,8 +1,0 @@
-LoadMap,test_PushWorkerOnButton
-PlaceWorker,w1,1,1
-ListTraps
-SetActive,tr,0
-ListTraps
-Move,w1,RIGHT
-ListTraps
-Exit

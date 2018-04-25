@@ -1,6 +1,0 @@
-mapsize 1 3
-create Tile t
-create Button b
-create Trap tr
-setNeighbour t right b
-setNeighbour b right tr

@@ -1,8 +1,0 @@
-LoadMap,test_MLMF
-PlaceWorker,w1,1,1
-PlaceWorker,w2,1,3
-PlaceCrate,c1,1,2
-ListWorkers
-Move,w1,RIGHT
-ListWorkers
-Exit

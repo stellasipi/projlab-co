@@ -1,7 +1,0 @@
-LoadMap,test_PushWorkerOnWorker
-PlaceWorker,w1,1,1
-PlaceWorker,w2,1,2
-ListWorkers
-Move,w1,RIGHT
-ListWorkers
-Exit

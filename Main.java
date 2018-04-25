@@ -1,24 +1,10 @@
 package shokoban;
 
-import java.io.FileNotFoundException;
-
-
 public class Main {
 
-	public static void main(String[] args) throws FileNotFoundException {
-		TestLanguage t = new TestLanguage();
+	public static void main(String[] args) {
+				
+		System.out.println("Shokoban - co");
 		
-		System.out.println("Menu:\n");
-		//Itt hívja meg Dávid a tesztelő részt
-		try {
-
-		t.Run();
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
 	}
 }
-	
-		
-
-

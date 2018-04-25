@@ -56,9 +56,7 @@ public class Worker extends Object {
 			t.setObject(this);	//beállítja magát az új mezőnek
 			this.setTile(t);	//beállítj az új mezőt magának
 		}
-	}
-	
-	
+	}	
 	
 	//Nem történik semmi, így üres
 	public void push(Worker w, Direction d, int acts) {

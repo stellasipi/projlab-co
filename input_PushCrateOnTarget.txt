@@ -1,8 +1,0 @@
-LoadMap,test_PushCrateOnTarget
-PlaceWorker,w1,1,1
-PlaceCrate,c1,1,2
-PlaceCrate,c2,1,3
-ListCrates
-ListPlacedCrates
-ListFreeCrates
-Exit
