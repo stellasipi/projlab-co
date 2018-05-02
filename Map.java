@@ -6,7 +6,97 @@ import java.util.Random;
 
 public class Map {
 	ArrayList<TileElement> tiles=new ArrayList<>();
+	// a pozíció alapján történő hivatkozáshoz egyszerűbb ha ilyen formában tároljuk a pályát
+	TileElement[][] Tiles = new TileElement[15][20];
 	
+	/*
+	 * a LoadMap kezdetleges váza, a beolvasott fájl sorait kapja meg paraméternek, 
+	 * ebből az első 15 sor a pály maga, 
+	 * a maradék 3 pedig a csapda és a hozzá tartozó gomb koordinátája egymás mellett
+	 */
+	public void LoadMap(ArrayList<String> input) {
+		//pálya feltöltése
+		
+		//első 15 sor (avagy a teljes pálya)
+		for(int i=0; i<15; i++) {
+			// " "(space)-ek alapján feldarabolja a pályát, ezzel megkapjuk az aktuális sort egy String[]-ben
+			String[] Tiles = input.get(i).split(" ");
+			
+			//a feldolgozandó sor összes elemét berakjuk a Tiles tömb-be
+			for(int j=0; j<20; j++) {
+				// i magasságra, j szélességre berakunk egy épp beolvasott típusú mezőt
+				AddTile(i,j,Tiles[j]);
+			}
+		}
+		
+		// a szomszédokat be kell állítani a már kész kinézetű map-on
+		
+		
+		// a gombokat a hozzájuk tartozó csapdákhoz kell kötni, összesen 3 db gomb van
+		for(int i=0; i<3; i++) {
+			//ebben a tömbben a két koordináta lesz
+			String[] buttonTrap = input.get(i+15).split(" ");
+			
+			// String[]-be kiszedve a két koordináta
+			String[] buttonCoords = buttonTrap[0].split(",");
+			String[] trapCoords = buttonTrap[1].split(",");
+			
+			//integerré alakítása a két koordinátának, H=magasság, W=szélesség
+			int buttonH = Integer.parseInt(buttonCoords[0]);
+			int buttonW = Integer.parseInt(buttonCoords[1]);
+			int trapH = Integer.parseInt(trapCoords[0]);
+			int trapW = Integer.parseInt(trapCoords[1]);
+			
+			//a gomb csapdáját beállítjuk
+			((Button)this.getTile(buttonH, buttonW)).setTrap((Trap)this.getTile(trapH, trapW));
+		}
+	}
+	
+	// a paraméterben kapott koordinátákra berak egy mezőt, a berakott mezőt a type paraméter dönti el
+	private void AddTile(int height, int width, String type) {
+		/*
+		 * type lehetséges értékei:
+		 * 	t 	- Tile
+		 *  c 	- Coloumn
+		 *  ta	- Target
+		 *  tr	- Trap
+		 *  b	- Button
+		 *  h	- Hole
+		 */
+		
+		// típus és koordináták beállítása
+		switch(type){
+		case "t":
+			Tiles[height][width] = new Tile();
+			Tiles[height][width].setCoords(height, width);
+			break;
+		case "c":
+			Tiles[height][width] = new Coloumn();
+			Tiles[height][width].setCoords(height, width);
+			break;
+		case "ta":
+			Tiles[height][width] = new Target();
+			Tiles[height][width].setCoords(height, width);
+			break;
+		case "tr":
+			Tiles[height][width] = new Trap();
+			Tiles[height][width].setCoords(height, width);
+			break;
+		case "b":
+			Tiles[height][width] = new Button();
+			Tiles[height][width].setCoords(height, width);
+			break;
+		case "h":
+			Tiles[height][width] = new Hole();
+			Tiles[height][width].setCoords(height, width);
+			break;
+		}
+	}
+
+	private TileElement getTile(int height, int width) {
+		return Tiles[height][width];
+	}
+
 	public void AddTileElement(TileElement t)
 	{
         //hozzáad egy tileelement-et a tileshoz
