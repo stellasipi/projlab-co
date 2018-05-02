@@ -30,7 +30,11 @@ public class Map {
 		}
 		
 		// a szomszédokat be kell állítani a már kész kinézetű map-on
-		
+		for(TileElement[] line : Tiles) {
+			for(TileElement e : line) {
+				SetNeighbours(e);
+			}
+		}
 		
 		// a gombokat a hozzájuk tartozó csapdákhoz kell kötni, összesen 3 db gomb van
 		for(int i=0; i<3; i++) {
@@ -51,6 +55,27 @@ public class Map {
 			((Button)this.getTile(buttonH, buttonW)).setTrap((Trap)this.getTile(trapH, trapW));
 		}
 	}
+	
+	 private void SetNeighbours(TileElement t) {
+		    for(int i=0; i<15 ; i++) {
+		      for(int j=0; j<20; j++) {
+		        if(t==Tiles[i][j]) {
+		          if((i-1)!=-1 ) {
+		            t.setNeighbour(Tiles[i-1][j], Direction.UP );
+		          }
+		          if((i+1)!=15 ) {
+		            t.setNeighbour(Tiles[i+1][j], Direction.DOWN);
+		          }
+		          if((j-1)!=-1 ) {
+		            t.setNeighbour(Tiles[i][j-1], Direction.LEFT);
+		          }
+		          if((j+1)!=20 ) {
+		            t.setNeighbour(Tiles[i][j+1], Direction.RIGHT);
+		          }
+		        }
+		      }
+		    }
+		  }
 	
 	// a paraméterben kapott koordinátákra berak egy mezőt, a berakott mezőt a type paraméter dönti el
 	private void AddTile(int height, int width, String type) {
