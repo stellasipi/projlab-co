@@ -1,23 +1,30 @@
 ﻿package shokoban;
 
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.event.ActionEvent;
-
+import java.awt.*;
+import java.util.*;
 import javax.swing.*;
 
 public class GameView extends JFrame{
-	String jatekosok;
-	JLabel jatek = new JLabel();
+	private JPanel[][] tiles;
+	private JPanel scorePanel;
+	private JPanel mapPanel;
+	private JLabel[] scorelabels;
+	int playerNumber;
+	ArrayList<Drawable> drawables;
 	GameView(){
 		this.setVisible(true);
 		this.setTitle("Shokoban");
 		this.setSize(new Dimension(400,400));
 		this.setResizable(false);
 		this.setLayout(new FlowLayout());
-		this.add(jatek);
 	}
-	void setjatekosok(String a ) {
-		jatekosok=a;
+	void DrawAll() {}
+	void AddDrawables() {}
+	void RemoveDrawables() {}
+	public int getPlayerNumber() {
+		return playerNumber;
+	}
+	public void setPlayerNumber(int playerNumber) {
+		this.playerNumber = playerNumber;
 	}
 }

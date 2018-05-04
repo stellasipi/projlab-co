@@ -20,11 +20,11 @@ public class MenuView extends JFrame {
 		this.add(playerNumberTextfield);
 		this.add(newgame);
 		newgame.addActionListener((ActionEvent e)->{
-			GameStart(playerNumberTextfield.getText());});
+			GameStart(Integer.parseInt(playerNumberTextfield.getText()));});
 	}
-	void GameStart(String vm){
+	void GameStart(int vm){
 			GameView gamev = new GameView();
-			gamev.setjatekosok(vm);
+			gamev.setPlayerNumber(vm);
 	}
 	
 	
