@@ -1,7 +1,6 @@
 ﻿package shokoban;
 
 import java.awt.*;
-import java.awt.event.KeyListener;
 import java.util.*;
 import javax.swing.*;
 
@@ -46,7 +45,7 @@ public class GameView extends JFrame{
 	public JPanel getTiles(int x, int y) {
 		return tiles[x][y];
 	}
-	public void setTiles(int x, int y, JPanel vm) {
-		tiles[x][y]=vm;
+	public void setTiles(int x, int y, JLabel comp) {
+		tiles[x][y].add(comp);
 	}
 }
