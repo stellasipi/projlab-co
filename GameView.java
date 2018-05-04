@@ -18,16 +18,20 @@ public class GameView extends JFrame{
 		this.setVisible(true);
 		this.setTitle("Shokoban");
 		this.setSize(new Dimension(400,400));
-		this.setResizable(false);
+		this.setResizable(true);
 		this.setLayout(new FlowLayout());
+		mapPanel.setBackground(Color.red);
+		mapPanel.setSize(200,150);
 		mapPanel.setLayout(new GridLayout(20,15));
+		this.add(mapPanel);
 		for(int i=0; i<20; i++) {
 			for(int j=0; j<15; j++) {
 				tiles[i][j]=new JPanel();
 				mapPanel.add(tiles[i][j]);
+				tiles[i][j].setBackground(Color.blue);
+				tiles[i][j].setSize(1,1);
 			}
 		}
-		this.add(mapPanel);
 		this.add(proba);
 	}
 	void DrawAll() {}
