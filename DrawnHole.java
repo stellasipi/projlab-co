@@ -2,7 +2,8 @@
 
 import javax.swing.ImageIcon;
 
-public abstract class DrawnHole extends Drawable {
+public class DrawnHole extends Drawable {
+	private Hole h=new Hole();
 	
 	public DrawnHole() {
 		ImageIcon icon = new ImageIcon("pics/Hole.png"); //kép helye
@@ -13,9 +14,11 @@ public abstract class DrawnHole extends Drawable {
 	public void Draw() {
 		
 	}
-	
-	public void CompareTo() {
-		
+
+	@Override
+	public int compareTo(Drawable o) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 }

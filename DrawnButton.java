@@ -2,7 +2,8 @@
 
 import javax.swing.ImageIcon;
 
-public abstract class DrawnButton extends Drawable {
+public class DrawnButton extends Drawable {
+	private Button b=new Button();
 	
 	public DrawnButton() {
 		ImageIcon icon = new ImageIcon("pics/Button.png"); //kép helye
@@ -14,8 +15,11 @@ public abstract class DrawnButton extends Drawable {
 		
 	}
 	
-	public void CompareTo() {
-		
+
+	@Override
+	public int compareTo(Drawable arg0) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 }

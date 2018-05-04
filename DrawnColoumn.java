@@ -2,7 +2,8 @@
 
 import javax.swing.ImageIcon;
 
-public abstract class DrawnColoumn extends Drawable {
+public class DrawnColoumn extends Drawable {
+	private Coloumn c=new Coloumn();
 	
 	public DrawnColoumn() {
 		ImageIcon icon = new ImageIcon("pics/Coloumn.png"); //kép helye
@@ -13,9 +14,11 @@ public abstract class DrawnColoumn extends Drawable {
 	public void Draw() {
 		
 	}
-	
-	public void CompareTo() {
-		
+
+	@Override
+	public int compareTo(Drawable o) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 }

@@ -9,8 +9,6 @@ public abstract class Drawable implements Comparable<Drawable> {
 	private int y;
 	
 	public abstract void Draw();
-	
-	public abstract void CompareTo();
 
 	public Image getImg() {
 		return img;
