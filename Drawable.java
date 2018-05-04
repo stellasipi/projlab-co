@@ -2,13 +2,18 @@
 
 import java.awt.Image;
 
+import javax.swing.JLabel;
+
 public abstract class Drawable implements Comparable<Drawable> {
 	private Image img;
+	private JLabel img_label;
 	private int depth;
 	private int x;
 	private int y;
 	
-	public abstract void Draw();
+	public void Draw(GameView gw) {
+		gw.setTiles(getX(), getY(), getImg_label());
+	}
 
 	public Image getImg() {
 		return img;
@@ -40,5 +45,13 @@ public abstract class Drawable implements Comparable<Drawable> {
 
 	public void setY(int y) {
 		this.y = y;
+	}
+
+	public JLabel getImg_label() {
+		return img_label;
+	}
+
+	public void setImg_label(JLabel img_label) {
+		this.img_label = img_label;
 	}
 }

@@ -1,18 +1,20 @@
 ﻿package shokoban;
 
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 public class DrawnHole extends Drawable {
 	private Hole h=new Hole();
 	
-	public DrawnHole() {
-		ImageIcon icon = new ImageIcon("pics/Hole.png"); //kép helye
-		setImg(icon.getImage());
-		setDepth(1);
-	}
-	
-	public void Draw() {
+	public DrawnHole() throws IOException {
+		setImg(ImageIO.read(new File("pics/Hole.png"))); // kép beolvasása
+		setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
 		
+		setDepth(1);//mélység beállítása
 	}
 
 	@Override
