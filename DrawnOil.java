@@ -2,7 +2,8 @@
 
 import javax.swing.ImageIcon;
 
-public abstract class DrawnOil extends Drawable {
+public class DrawnOil extends Drawable {
+	private Tile t=new Tile();
 	
 	public DrawnOil() {
 		ImageIcon icon = new ImageIcon("pics/Oil.png"); //kép helye
@@ -13,9 +14,11 @@ public abstract class DrawnOil extends Drawable {
 	public void Draw() {
 		
 	}
-	
-	public void CompareTo() {
-		
+
+	@Override
+	public int compareTo(Drawable o) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 }

@@ -2,7 +2,8 @@
 
 import javax.swing.ImageIcon;
 
-public abstract class DrawnTarget extends Drawable {
+public class DrawnTarget extends Drawable {
+	private Target t=new Target();
 	
 	public DrawnTarget() {
 		ImageIcon icon = new ImageIcon("pics/Target.png"); //kép helye
@@ -13,9 +14,11 @@ public abstract class DrawnTarget extends Drawable {
 	public void Draw() {
 		
 	}
-	
-	public void CompareTo() {
-		
+
+	@Override
+	public int compareTo(Drawable o) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
-	
+		
 }
