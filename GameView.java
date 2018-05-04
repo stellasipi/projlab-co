@@ -43,4 +43,10 @@ public class GameView extends JFrame{
 	public void setPlayerNumber(int playerNumber) {
 		this.playerNumber = playerNumber;
 	}
+	public JPanel getTiles(int x, int y) {
+		return tiles[x][y];
+	}
+	public void setTiles(int x, int y, JPanel vm) {
+		tiles[x][y]=vm;
+	}
 }
