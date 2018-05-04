@@ -1,7 +1,6 @@
 ﻿package shokoban;
 
 import java.awt.*;
-import java.awt.event.KeyListener;
 import java.util.*;
 import javax.swing.*;
 
