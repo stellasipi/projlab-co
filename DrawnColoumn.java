@@ -21,7 +21,7 @@ public class DrawnColoumn extends Drawable {
 	
 	public void Draw(GameView gw) {
 		JLayeredPane a = gw.getTiles(c.getCoords()[0], c.getCoords()[1]);
-		a.add(getImg_label(),getDepth());
+		a.add(getImg_label(), new Integer(1));
 		gw.setTiles(c.getCoords()[0], c.getCoords()[1], a);	
 	}
 }

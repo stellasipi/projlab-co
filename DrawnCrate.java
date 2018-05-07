@@ -21,7 +21,7 @@ public class DrawnCrate extends Drawable {
 
 	public void Draw(GameView gw) {
 		JLayeredPane a = gw.getTiles(c.getTile().getCoords()[0], c.getTile().getCoords()[1]);
-		a.add(getImg_label(),getDepth());
+		a.add(getImg_label(),new Integer(3));
 		gw.setTiles(c.getTile().getCoords()[0], c.getTile().getCoords()[1], a);	
 	}
 }
