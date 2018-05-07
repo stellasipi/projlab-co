@@ -137,10 +137,9 @@ public class GameView extends JFrame{
 	public JLayeredPane getTiles(int x, int y) {
 		return tiles[x][y];
 	}
-	public void setTiles(int x, int y, Drawable d) {
-		tiles[x][y].setBounds(0, 0, 25, 25);
-		tiles[x][y].add(d.getImg_label(),d.getDepth());
-		System.out.println("x: "+x+" "+"y: "+y+" "+d.getClass().getSimpleName());
+	public void setTiles(int x, int y, JLayeredPane p) {
+		tiles[x][y] = p;
+		System.out.println("SetTiles fv vége");
 	}
 	public Game getGame() {
 		return game;
