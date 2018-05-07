@@ -206,6 +206,10 @@ import java.awt.event.KeyListener;
 				
 			case KeyEvent.VK_9:
 				break;
+				
+			case KeyEvent.VK_ESCAPE:
+				System.exit(0);
+				break;	
 			}
 			//Invalidate
 		}
