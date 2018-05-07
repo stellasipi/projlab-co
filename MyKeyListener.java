@@ -2,12 +2,10 @@ package shokoban;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.HashSet;
 	
 
 	public class MyKeyListener implements KeyListener {
 		private GameView gv;
-		private final HashSet<Integer> pressed = new HashSet<Integer>();
 		MyKeyListener(GameView gameview)
 		{
 			gv=gameview;
@@ -30,6 +28,7 @@ import java.util.HashSet;
 				if(s!=null) 
 				{
 				gv.getGame().Move(s, Direction.UP);
+				System.out.println(s+"UP");
 				}
 				gv.getGame();
 				break;
@@ -40,6 +39,7 @@ import java.util.HashSet;
 				if(s!=null) 
 				{
 				gv.getGame().Move(s, Direction.LEFT);
+				System.out.println(s+"LEFT");
 				}
 				break;
 				
@@ -49,6 +49,7 @@ import java.util.HashSet;
 				if(s!=null) 
 				{
 				gv.getGame().Move(s, Direction.DOWN);
+				System.out.println(s+"DOWN");
 				}
 				break;
 				
@@ -58,6 +59,7 @@ import java.util.HashSet;
 				if(s!=null) 
 				{
 				gv.getGame().Move(s, Direction.RIGHT);
+				System.out.println(s+"RIGHT");
 				}
 				break;
 				
@@ -73,16 +75,38 @@ import java.util.HashSet;
 				if(s!=null) 
 				{
 				gv.getGame().Move(s, Direction.UP);
+				System.out.println(s+"UP");
 				}
 				break;
 				
 			case KeyEvent.VK_J:
+				System.out.println(key);
+				s=gv.getGame().getWorker("w2");
+				if(s!=null) 
+				{
+				gv.getGame().Move(s, Direction.LEFT);
+				System.out.println(s+"LEFT");
+				}
 				break;
 				
 			case KeyEvent.VK_K:
+				System.out.println(key);
+				s=gv.getGame().getWorker("w2");
+				if(s!=null) 
+				{
+				gv.getGame().Move(s, Direction.DOWN);
+				System.out.println(s+"DOWN");
+				}
 				break;
 				
 			case KeyEvent.VK_L:
+				System.out.println(key);
+				s=gv.getGame().getWorker("w2");
+				if(s!=null) 
+				{
+				gv.getGame().Move(s, Direction.RIGHT);
+				System.out.println(s+"RIGHT");
+				}
 				break;
 				
 			case KeyEvent.VK_U:
@@ -92,15 +116,43 @@ import java.util.HashSet;
 				break;
 				
 			case KeyEvent.VK_UP:
+				System.out.println(key);
+				s=gv.getGame().getWorker("w4");
+				if(s!=null) 
+				{
+				gv.getGame().Move(s, Direction.UP);
+				System.out.println(s+"UP");
+				}
 				break;
 				
 			case KeyEvent.VK_LEFT:
+				System.out.println(key);
+				s=gv.getGame().getWorker("w4");
+				if(s!=null) 
+				{
+				gv.getGame().Move(s, Direction.LEFT);
+				System.out.println(s+"LEFT");
+				}
 				break;
 				
 			case KeyEvent.VK_RIGHT:
+				System.out.println(key);
+				s=gv.getGame().getWorker("w4");
+				if(s!=null) 
+				{
+				gv.getGame().Move(s, Direction.DOWN);
+				System.out.println(s+"DOWN");
+				}
 				break;
 				
 			case KeyEvent.VK_DOWN:
+				System.out.println(key);
+				s=gv.getGame().getWorker("w4");
+				if(s!=null) 
+				{
+				gv.getGame().Move(s, Direction.RIGHT);
+				System.out.println(s+"RIGHT");
+				}
 				break;
 				
 			case KeyEvent.VK_0:
@@ -110,15 +162,43 @@ import java.util.HashSet;
 				break;
 				
 			case KeyEvent.VK_8:
+				System.out.println(key);
+				s=gv.getGame().getWorker("w3");
+				if(s!=null) 
+				{
+				gv.getGame().Move(s, Direction.UP);
+				System.out.println(s+"UP");
+				}
 				break;
 				
 			case KeyEvent.VK_4:
+				System.out.println(key);
+				s=gv.getGame().getWorker("w3");
+				if(s!=null) 
+				{
+				gv.getGame().Move(s, Direction.LEFT);
+				System.out.println(s+"LEFT");
+				}
 				break;
 				
 			case KeyEvent.VK_5:
+				System.out.println(key);
+				s=gv.getGame().getWorker("w3");
+				if(s!=null) 
+				{
+				gv.getGame().Move(s, Direction.DOWN);
+				System.out.println(s+"DOWN");
+				}
 				break;
 				
 			case KeyEvent.VK_6:
+				System.out.println(key);
+				s=gv.getGame().getWorker("w3");
+				if(s!=null) 
+				{
+				gv.getGame().Move(s, Direction.RIGHT);
+				System.out.println(s+"RIGHT");
+				}
 				break;
 				
 			case KeyEvent.VK_7:
