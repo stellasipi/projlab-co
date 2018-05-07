@@ -15,7 +15,7 @@ import javax.swing.border.Border;
 
 
 public class GameView extends JFrame{
-	private JPanel[][] tiles =  new JPanel[20][15];
+	private JPanel[][] tiles =  new JPanel[15][20];
 	private JPanel scorePanel = new JPanel();
 	private JPanel mapPanel = new JPanel();
 	private JLabel[] scorelabels;
@@ -36,16 +36,16 @@ public class GameView extends JFrame{
 		
 		this.setLayout(new FlowLayout());
 		mapPanel.setBackground(Color.red);
-		mapPanel.setMaximumSize(new Dimension(500,375));
-		mapPanel.setMinimumSize(new Dimension(500,375));
-		mapPanel.setLayout(new GridLayout(20,15));
+		mapPanel.setMaximumSize(new Dimension(375,500));
+		mapPanel.setMinimumSize(new Dimension(375,500));
+		mapPanel.setLayout(new GridLayout(15,20));
 		this.add(mapPanel);
 		
 		FlowLayout fl=new FlowLayout();
 		fl.setHgap(0);
 		fl.setVgap(0);
-		for(int i=0; i<20; i++) {
-			for(int j=0; j<15; j++) {
+		for(int i=0; i<15; i++) {
+			for(int j=0; j<20; j++) {
 				tiles[i][j]=new JPanel();
 				mapPanel.add(tiles[i][j]);
 				tiles[i][j].setBackground(Color.blue);
