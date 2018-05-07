@@ -10,6 +10,7 @@ public class GameView extends JFrame{
 	private JPanel mapPanel = new JPanel();
 	private JLabel proba = new JLabel("Proba");
 	private JLabel[] scorelabels;
+	private JLabel keytest = new JLabel("");
 	int playerNumber;
 	ArrayList<Drawable> drawables;
 	GameView(){
@@ -32,6 +33,7 @@ public class GameView extends JFrame{
 			}
 		}
 		this.add(proba);
+		this.add(keytest);
 	}
 	void DrawAll() {}
 	void AddDrawables() {}
