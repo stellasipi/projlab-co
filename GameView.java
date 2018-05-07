@@ -46,6 +46,7 @@ public class GameView extends JFrame{
 		for(int i=0; i<15; i++) {
 			for(int j=0; j<20; j++) {
 				tiles[i][j]=new JLayeredPane();
+				tiles[i][j].setBackground(Color.red);
 				tiles[i][j].setPreferredSize(new Dimension(25,25));
 				tiles[i][j].setLayout(fl);
 				
@@ -139,6 +140,7 @@ public class GameView extends JFrame{
 	public void setTiles(int x, int y, Drawable d) {
 		tiles[x][y].setBounds(0, 0, 25, 25);
 		tiles[x][y].add(d.getImg_label(),d.getDepth());
+		System.out.println("x: "+x+" "+"y: "+y+" "+d.getClass().getSimpleName());
 	}
 	public Game getGame() {
 		return game;
