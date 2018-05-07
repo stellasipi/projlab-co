@@ -32,8 +32,7 @@ public class MenuView extends JFrame {
 			}});
 	}
 	void GameStart(int vm) throws IOException{
-			GameView gamev = new GameView();
-			gamev.setPlayerNumber(vm);
+			GameView gamev = new GameView(vm);
 			this.setVisible(false);
 	}	
 }

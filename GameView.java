@@ -22,10 +22,12 @@ public class GameView extends JFrame{
 	private JLabel[] scorelabels;
 	private JLabel keytest = new JLabel("");
 	private int playerNumber;
-	private Game game = new Game(playerNumber);
+	private Game game;
 	ArrayList<Drawable> drawables=new ArrayList<>();
 	
-	GameView() throws IOException{
+	GameView(int playerNumber) throws IOException{
+		this.playerNumber = playerNumber;
+		game = new Game(playerNumber);
 		KeyListener listener = new MyKeyListener(this);
 		this.addKeyListener(listener);
 		this.setVisible(true);
