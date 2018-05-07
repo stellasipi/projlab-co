@@ -260,6 +260,9 @@ import java.awt.event.KeyListener;
 				System.exit(0);
 				break;	
 			}
+			gv.revalidate();
+			gv.repaint();
+			gv.DrawAll();
 			//Invalidate
 		}
 
