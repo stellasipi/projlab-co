@@ -200,7 +200,7 @@ public class Map {
 		return cord;
 	}
 
-	private TileElement getTile(int height, int width) {
+	public TileElement getTile(int height, int width) {
 		return Tiles[height][width];
 	}
 

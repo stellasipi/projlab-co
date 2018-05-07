@@ -60,51 +60,49 @@ public class GameView extends JFrame{
             }
         });
 		
-		//Ide létrehozhatjáktok a minipályát
-		/*AddDrawables(new DrawnColoumn());
-		DrawAll();*/
-		Image img=ImageIO.read(new File("pics/Button.png"));
-		JLabel label=new JLabel(new ImageIcon(img));
-		label.setBackground(Color.red);
-		tiles[0][0].add(label);
+		// pályaelemek feltöltése
+		for(int i=0; i<15; i++) {
+			for(int j=0; j<20; j++) {
+				TileElement te = game.map.getTile(i, j);
+				String str = te.getClass().getSimpleName();
+				
+				switch(str) {
+				case "Button":
+					drawables.add(new DrawnButton((Button)te));
+					break;
+				case "Coloumn":
+					drawables.add(new DrawnColoumn((Coloumn)te));
+					break;
+
+				case "Hole":
+					drawables.add(new DrawnHole((Hole)te));
+					break;
+					
+				case "Target":
+					drawables.add(new DrawnTarget((Target)te));
+					break;
+					
+				case "Tile":
+					drawables.add(new DrawnTile((Tile)te));
+					break;
+					
+				case "Trap":
+					drawables.add(new DrawnTrap((Trap)te));
+					break;
+				}
+			}
+		}
 		
-		Image img1=ImageIO.read(new File("pics/Coloumn.png"));
-		JLabel label1=new JLabel(new ImageIcon(img1));
-		tiles[0][1].add(label1);
+		// munkások és ládák hozzáadása
+		for(Worker w : game.workers) {
+			drawables.add(new DrawnWorker(w));
+		}
+		for(Crate c : game.crates) {
+			drawables.add(new DrawnCrate(c));
+		}
 		
-		Image img2=ImageIO.read(new File("pics/Crate.png"));
-		JLabel label2=new JLabel(new ImageIcon(img2));
-		tiles[0][2].add(label2);
+		this.DrawAll();
 		
-		Image img3=ImageIO.read(new File("pics/Hole.png"));
-		JLabel label3=new JLabel(new ImageIcon(img3));
-		tiles[0][3].add(label3);
-		
-		Image img4=ImageIO.read(new File("pics/Honey.png"));
-		JLabel label4=new JLabel(new ImageIcon(img4));
-		tiles[0][4].add(label4);
-		
-		Image img5=ImageIO.read(new File("pics/Oil.png"));
-		JLabel label5=new JLabel(new ImageIcon(img5));
-		label5.setSize(25,25);
-		tiles[0][5].add(label5);
-		
-		Image img6=ImageIO.read(new File("pics/Target.png"));
-		JLabel label6=new JLabel(new ImageIcon(img6));
-		tiles[0][6].add(label6);
-		
-		Image img7=ImageIO.read(new File("pics/Tile.png"));
-		JLabel label7=new JLabel(new ImageIcon(img7));
-		tiles[0][7].add(label7);
-		
-		Image img8=ImageIO.read(new File("pics/Trap_closed.png"));
-		JLabel label8=new JLabel(new ImageIcon(img8));
-		label8.setSize(25,25);
-		tiles[0][8].add(label8);
-		
-		Image img9=ImageIO.read(new File("pics/Worker_1.png"));
-		JLabel label9=new JLabel(new ImageIcon(img9));
-		tiles[0][9].add(label9);
 		this.pack();//no border
 	}
 	void DrawAll() {
