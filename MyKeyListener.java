@@ -64,9 +64,22 @@ import java.awt.event.KeyListener;
 				break;
 				
 			case KeyEvent.VK_Q:
+				s=gv.getGame().getWorker("w1");
+				if(s!=null) 
+				{
+				s.PlaceHoney();
+				System.out.println("Honey w1");
+				}
+				
 				break;	
 				
 			case KeyEvent.VK_E:
+				s=gv.getGame().getWorker("w1");
+				if(s!=null) 
+				{
+				s.PlaceOil();
+				System.out.println("Oil w1");
+				}
 				break;
 				
 			case KeyEvent.VK_I:
@@ -110,9 +123,21 @@ import java.awt.event.KeyListener;
 				break;
 				
 			case KeyEvent.VK_U:
+				s=gv.getGame().getWorker("w2");
+				if(s!=null) 
+				{
+				s.PlaceHoney();
+				System.out.println("Honey w2");
+				}
 				break;	
 				
 			case KeyEvent.VK_P:
+				s=gv.getGame().getWorker("w2");
+				if(s!=null) 
+				{
+				s.PlaceOil();
+				System.out.println("Oil w2");
+				}
 				break;
 				
 			case KeyEvent.VK_UP:
@@ -156,9 +181,21 @@ import java.awt.event.KeyListener;
 				break;
 				
 			case KeyEvent.VK_0:
+				s=gv.getGame().getWorker("w4");
+				if(s!=null) 
+				{
+				s.PlaceHoney();
+				System.out.println("Honey w4");
+				}
 				break;	
 				
 			case KeyEvent.VK_1:
+				s=gv.getGame().getWorker("w4");
+				if(s!=null) 
+				{
+				s.PlaceOil();
+				System.out.println("Oil w4");
+				}
 				break;
 				
 			case KeyEvent.VK_8:
@@ -202,9 +239,21 @@ import java.awt.event.KeyListener;
 				break;
 				
 			case KeyEvent.VK_7:
+				s=gv.getGame().getWorker("w3");
+				if(s!=null) 
+				{
+				s.PlaceHoney();
+				System.out.println("Honey w3");
+				}
 				break;	
 				
 			case KeyEvent.VK_9:
+				s=gv.getGame().getWorker("w3");
+				if(s!=null) 
+				{
+				s.PlaceOil();
+				System.out.println("Oil w3");
+				}
 				break;
 				
 			case KeyEvent.VK_ESCAPE:
