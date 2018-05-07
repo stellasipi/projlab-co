@@ -37,7 +37,7 @@ public class DrawnWorker extends Drawable {
 			break;
 		}
 		
-		setDepth(3);//mélység beállítása
+		setDepth(new Integer(3));//mélység beállítása
 	}	
 	
 	@Override
