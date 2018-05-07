@@ -28,6 +28,6 @@ public class MenuView extends JFrame {
 			
 			//test
 			Game g=new Game();
-			
+			this.setVisible(false);
 	}	
 }

@@ -2,8 +2,11 @@
 
 import java.awt.*;
 import java.awt.event.KeyListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.*;
 import javax.swing.*;
+
 
 public class GameView extends JFrame{
 	private JPanel[][] tiles =  new JPanel[20][15];
@@ -36,6 +39,12 @@ public class GameView extends JFrame{
 		}
 		this.add(proba);
 		this.add(keytest);
+		
+		this.addWindowListener(new WindowAdapter(){
+            public void windowClosing(WindowEvent e) {
+            	new MenuView();
+            }
+        });
 	}
 	void DrawAll() {
 		for(int i=0;i<drawables.size();i++) {
@@ -44,8 +53,8 @@ public class GameView extends JFrame{
 	}
 	void AddDrawables(Drawable d) {
 		drawables.add(d);
-		Comparator<Drawable> cmp=new Drawable();
-		drawables.sort(cmp);
+		//Comparator<Drawable> cmp=new Drawable();
+		//drawables.sort(cmp);
 		
 	}
 	void RemoveDrawables(Drawable d) {
