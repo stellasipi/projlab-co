@@ -40,7 +40,7 @@ public class DrawnWorker extends Drawable {
 	
 	public void Draw(GameView gw) {
 		JLayeredPane a = gw.getTiles(w.getTile().getCoords()[0], w.getTile().getCoords()[1]);
-		a.add(getImg_label(),getDepth());
+		a.add(getImg_label(),new Integer(3));
 		gw.setTiles(w.getTile().getCoords()[0], w.getTile().getCoords()[1], a);	
 	}
 }

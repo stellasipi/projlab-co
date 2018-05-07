@@ -23,7 +23,7 @@ public class DrawnTarget extends Drawable {
 	@Override
 	public void Draw(GameView gw) {
 		JLayeredPane a = gw.getTiles(t.getCoords()[0], t.getCoords()[1]);
-		a.add(getImg_label(),getDepth());
+		a.add(getImg_label(),new Integer(1));
 		gw.setTiles(t.getCoords()[0], t.getCoords()[1], a);	
 		
 	}	
