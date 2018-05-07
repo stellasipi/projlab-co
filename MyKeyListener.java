@@ -31,6 +31,7 @@ import java.util.HashSet;
 				{
 				gv.getGame().Move(s, Direction.UP);
 				}
+				gv.getGame();
 				break;
 				
 			case KeyEvent.VK_A:
