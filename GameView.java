@@ -43,7 +43,6 @@ public class GameView extends JFrame{
 	void AddDrawables() {
 		
 	}
-	void AddDrawables() {}
 	void RemoveDrawables(Drawable d) {
 		drawables.remove(d);
 	}
