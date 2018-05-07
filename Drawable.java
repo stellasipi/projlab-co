@@ -7,12 +7,12 @@ import javax.swing.JLabel;
 public abstract class Drawable implements Comparable<Drawable> {
 	private Image img;
 	private JLabel img_label;
-	private int depth;
+	private Integer depth;
 	private int x;
 	private int y;
 	
 	public void Draw(GameView gw) {
-		gw.setTiles(getX(), getY(), getImg_label());
+		gw.setTiles(getX(), getY(), this);
 	}
 	
 	@Override
@@ -31,11 +31,11 @@ public abstract class Drawable implements Comparable<Drawable> {
 		this.img = img;
 	}
 
-	public int getDepth() {
+	public Integer getDepth() {
 		return depth;
 	}
 
-	public void setDepth(int depth) {
+	public void setDepth(Integer depth) {
 		this.depth = depth;
 	}
 

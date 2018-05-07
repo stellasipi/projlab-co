@@ -15,7 +15,9 @@ import javax.swing.border.Border;
 
 
 public class GameView extends JFrame{
-	private JPanel[][] tiles =  new JPanel[15][20];
+	//private JPanel[][] tiles =  new JPanel[15][20];
+	private JLayeredPane[][] tiles =  new JLayeredPane[15][20];
+	//private JLayeredPane[][] tiles;
 	private JPanel scorePanel = new JPanel();
 	private JPanel mapPanel = new JPanel();
 	private JLabel[] scorelabels;
@@ -35,21 +37,22 @@ public class GameView extends JFrame{
 		this.setResizable(true);
 		
 		this.setLayout(new FlowLayout());
-		mapPanel.setBackground(Color.red);
 		mapPanel.setMaximumSize(new Dimension(375,500));
 		mapPanel.setMinimumSize(new Dimension(375,500));
 		mapPanel.setLayout(new GridLayout(15,20));
 		this.add(mapPanel);
 		
 		FlowLayout fl=new FlowLayout();
-		fl.setHgap(0);
-		fl.setVgap(0);
+		fl.setHgap(0); //no border
+		fl.setVgap(0);//no border
 		for(int i=0; i<15; i++) {
 			for(int j=0; j<20; j++) {
-				tiles[i][j]=new JPanel();
+				//tiles[i][j]=new JLayeredPane();
 				mapPanel.add(tiles[i][j]);
+				tiles[i][j]=getLayeredPane();
 				tiles[i][j].setBackground(Color.blue);
 				tiles[i][j].setLayout(fl);
+				
 			}
 		}
 		this.add(keytest);
@@ -127,11 +130,12 @@ public class GameView extends JFrame{
 	public void setPlayerNumber(int playerNumber) {
 		this.playerNumber = playerNumber;
 	}
-	public JPanel getTiles(int x, int y) {
+	public JLayeredPane getTiles(int x, int y) {
 		return tiles[x][y];
 	}
-	public void setTiles(int x, int y, JLabel comp) {
-		tiles[x][y].add(comp);
+	public void setTiles(int x, int y, Drawable d) {
+		tiles[x][y].setBounds(0, 0, 25, 25);
+		tiles[x][y].add(d.getImg_label(),d.getDepth());
 	}
 	public Game getGame() {
 		return game;

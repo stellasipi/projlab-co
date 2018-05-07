@@ -45,6 +45,6 @@ public class DrawnWorker extends Drawable {
 		Integer[] coords = w.getTile().getCoords();
 		this.setX(coords[0]);
 		this.setY(coords[1]);
-		gv.setTiles(getX(), getY(), getImg_label());
+		gv.setTiles(getX(), getY(), this);
 	}
 }

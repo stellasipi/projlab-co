@@ -26,6 +26,6 @@ public class DrawnCrate extends Drawable {
 		Integer[] coords = c.getTile().getCoords();
 		this.setX(coords[0]);
 		this.setY(coords[1]);
-		gv.setTiles(getX(), getY(), getImg_label());
+		gv.setTiles(getX(), getY(), this);
 	}
 }
