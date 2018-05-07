@@ -15,9 +15,7 @@ import javax.swing.border.Border;
 
 
 public class GameView extends JFrame{
-	//private JPanel[][] tiles =  new JPanel[15][20];
 	private JLayeredPane[][] tiles =  new JLayeredPane[15][20];
-	//private JLayeredPane[][] tiles;
 	private JPanel scorePanel = new JPanel();
 	private JPanel mapPanel = new JPanel();
 	private JLabel[] scorelabels;
@@ -47,12 +45,15 @@ public class GameView extends JFrame{
 		fl.setVgap(0);//no border
 		for(int i=0; i<15; i++) {
 			for(int j=0; j<20; j++) {
-				//tiles[i][j]=new JLayeredPane();
-				mapPanel.add(tiles[i][j]);
-				tiles[i][j]=getLayeredPane();
-				tiles[i][j].setBackground(Color.blue);
+				tiles[i][j]=new JLayeredPane();
+				tiles[i][j].setPreferredSize(new Dimension(25,25));
 				tiles[i][j].setLayout(fl);
 				
+			}
+		}
+		for(int i=0; i<15; i++) {
+			for(int j=0; j<20; j++) {
+				mapPanel.add(tiles[i][j]);
 			}
 		}
 		this.add(keytest);
