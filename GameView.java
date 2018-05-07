@@ -11,6 +11,7 @@ import java.util.*;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.border.Border;
 
 
 public class GameView extends JFrame{
@@ -21,7 +22,7 @@ public class GameView extends JFrame{
 	private JLabel[] scorelabels;
 	private JLabel keytest = new JLabel("");
 	private int playerNumber;
-	private Game game = new Game();
+	private Game game = new Game(playerNumber);
 	ArrayList<Drawable> drawables=new ArrayList<>();
 	
 	GameView() throws IOException{
@@ -29,11 +30,12 @@ public class GameView extends JFrame{
 		this.addKeyListener(listener);
 		this.setVisible(true);
 		this.setTitle("Shokoban");
-		this.setSize(new Dimension(400,400));
+		this.setSize(new Dimension(1000,1000));
 		this.setResizable(true);
 		this.setLayout(new FlowLayout());
 		mapPanel.setBackground(Color.red);
-		mapPanel.setSize(200,150);
+		mapPanel.setMaximumSize(new Dimension(500,375));
+		mapPanel.setMinimumSize(new Dimension(500,375));
 		mapPanel.setLayout(new GridLayout(20,15));
 		this.add(mapPanel);
 		for(int i=0; i<20; i++) {
@@ -41,7 +43,8 @@ public class GameView extends JFrame{
 				tiles[i][j]=new JPanel();
 				mapPanel.add(tiles[i][j]);
 				tiles[i][j].setBackground(Color.blue);
-				tiles[i][j].setSize(1,1);
+				tiles[i][j].setMaximumSize(new Dimension(25,25));
+				tiles[i][j].setMinimumSize(new Dimension(25,25));
 			}
 		}
 		this.add(proba);
@@ -56,15 +59,54 @@ public class GameView extends JFrame{
 		//Ide létrehozhatjáktok a minipályát
 		/*AddDrawables(new DrawnColoumn());
 		DrawAll();*/
-		BufferedImage img=ImageIO.read(new File("pics/Coloumn.png"));
+		Image img=ImageIO.read(new File("pics/Button.png"));
 		JLabel label=new JLabel(new ImageIcon(img));
-		//tiles[0][0].add(label);
-		//tiles[0][0].setVisible(true);
-		//tiles[0][0].repaint();
+		label.setBackground(Color.red);
+		tiles[0][0].add(label);
 		
-		JPanel jp=new JPanel();
-		jp.setBackground(Color.red);
-		mapPanel.add(jp);
+		Image img1=ImageIO.read(new File("pics/Coloumn.png"));
+		JLabel label1=new JLabel(new ImageIcon(img1));
+		tiles[0][1].add(label1);
+		
+		Image img2=ImageIO.read(new File("pics/Crate.png"));
+		JLabel label2=new JLabel(new ImageIcon(img2));
+		label2.setSize(25,25);
+		tiles[0][2].add(label2);
+		
+		Image img3=ImageIO.read(new File("pics/Hole.png"));
+		JLabel label3=new JLabel(new ImageIcon(img3));
+		label3.setSize(25,25);
+		tiles[0][3].add(label3);
+		
+		Image img4=ImageIO.read(new File("pics/Honey.png"));
+		JLabel label4=new JLabel(new ImageIcon(img4));
+		label4.setSize(25,25);
+		tiles[0][4].add(label4);
+		
+		Image img5=ImageIO.read(new File("pics/Oil.png"));
+		JLabel label5=new JLabel(new ImageIcon(img5));
+		label5.setSize(25,25);
+		tiles[0][5].add(label5);
+		
+		Image img6=ImageIO.read(new File("pics/Target.png"));
+		JLabel label6=new JLabel(new ImageIcon(img6));
+		label6.setSize(25,25);
+		tiles[0][6].add(label6);
+		
+		Image img7=ImageIO.read(new File("pics/Tile.png"));
+		JLabel label7=new JLabel(new ImageIcon(img7));
+		label7.setSize(25,25);
+		tiles[0][7].add(label7);
+		
+		Image img8=ImageIO.read(new File("pics/Trap_closed.png"));
+		JLabel label8=new JLabel(new ImageIcon(img8));
+		label8.setSize(25,25);
+		tiles[0][8].add(label8);
+		
+		Image img9=ImageIO.read(new File("pics/Worker_1.png"));
+		JLabel label9=new JLabel(new ImageIcon(img9));
+		label9.setSize(25,25);
+		tiles[0][9].add(label9);
 		
 	}
 	void DrawAll() {
