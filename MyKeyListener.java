@@ -8,7 +8,7 @@ import java.util.HashSet;
 	public class MyKeyListener implements KeyListener {
 		private GameView gv;
 		private final HashSet<Integer> pressed = new HashSet<Integer>();
-		private MyKeyListener(GameView gameview)
+		MyKeyListener(GameView gameview)
 		{
 			gv=gameview;
 		}
@@ -21,18 +21,11 @@ import java.util.HashSet;
 
 		public void keyPressed(KeyEvent e) {
 			int key = e.getKeyCode();
-			/*if(key==e.VK_SPACE) {
-				pressed.add(e.getKeyCode());
-				System.out.println("keyPressed="+KeyEvent.getKeyText(e.getKeyCode()));
-			}
-			else if(key==e.VK_RIGHT) {
-				pressed.add(e.getKeyCode());
-				System.out.println("keyPressed="+KeyEvent.getKeyText(e.getKeyCode()));
-			}
-			else if(key==e.VK_LEFT) {*/
 			switch(key)
 			{
 			case KeyEvent.VK_W:
+				System.out.println(key);
+			gv.getGame
 				break;
 				
 			case KeyEvent.VK_A:
