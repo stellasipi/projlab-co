@@ -2,6 +2,7 @@
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.io.IOException;
 
 import javax.swing.*;
 
@@ -20,9 +21,17 @@ public class MenuView extends JFrame {
 		this.add(playerNumberTextfield);
 		this.add(newgame);
 		newgame.addActionListener((ActionEvent e)->{
-			GameStart(Integer.parseInt(playerNumberTextfield.getText()));});
+			try {
+				GameStart(Integer.parseInt(playerNumberTextfield.getText()));
+			} catch (NumberFormatException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}});
 	}
-	void GameStart(int vm){
+	void GameStart(int vm) throws IOException{
 			GameView gamev = new GameView();
 			gamev.setPlayerNumber(vm);
 			this.setVisible(false);

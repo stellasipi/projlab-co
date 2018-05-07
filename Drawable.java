@@ -3,6 +3,7 @@
 import java.awt.Image;
 import javax.swing.JLabel;
 
+
 public abstract class Drawable implements Comparable<Drawable> {
 	private Image img;
 	private JLabel img_label;

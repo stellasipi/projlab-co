@@ -4,7 +4,11 @@ import java.awt.*;
 import java.awt.event.KeyListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.File;
+import java.io.IOException;
 import java.util.*;
+
+import javax.imageio.ImageIO;
 import javax.swing.*;
 
 
@@ -18,7 +22,8 @@ public class GameView extends JFrame{
 	private int playerNumber;
 	private Game game = new Game();
 	ArrayList<Drawable> drawables=new ArrayList<>();
-	GameView(){
+	
+	GameView() throws IOException{
 		KeyListener listener = new MyKeyListener();
 		this.addKeyListener(listener);
 		this.setVisible(true);
@@ -47,8 +52,13 @@ public class GameView extends JFrame{
             }
         });
 		
-		
 		//Ide létrehozhatjáktok a minipályát
+		/*AddDrawables(new DrawnColoumn());
+		DrawAll();*/
+		Image img=ImageIO.read(new File("pics/Coloumn.png"));
+		JLabel label=new JLabel(new ImageIcon(img));
+		tiles[0][0].add(label);
+		tiles[0][0].repaint();
 	}
 	void DrawAll() {
 		for(int i=0;i<drawables.size();i++) {
@@ -77,5 +87,11 @@ public class GameView extends JFrame{
 	}
 	public void setTiles(int x, int y, JLabel comp) {
 		tiles[x][y].add(comp);
+	}
+	public Game getGame() {
+		return game;
+	}
+	public void setGame(Game game) {
+		this.game = game;
 	}
 }
