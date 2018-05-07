@@ -28,7 +28,7 @@ import java.awt.event.KeyListener;
 				if(s!=null) 
 				{
 				gv.getGame().Move(s, Direction.UP);
-				System.out.println(s+"UP");
+				System.out.println("w1"+"UP");
 				}
 				gv.getGame();
 				break;
@@ -39,7 +39,7 @@ import java.awt.event.KeyListener;
 				if(s!=null) 
 				{
 				gv.getGame().Move(s, Direction.LEFT);
-				System.out.println(s+"LEFT");
+				System.out.println("w1"+"LEFT");
 				}
 				break;
 				
@@ -49,7 +49,7 @@ import java.awt.event.KeyListener;
 				if(s!=null) 
 				{
 				gv.getGame().Move(s, Direction.DOWN);
-				System.out.println(s+"DOWN");
+				System.out.println("w1"+"DOWN");
 				}
 				break;
 				
@@ -59,7 +59,7 @@ import java.awt.event.KeyListener;
 				if(s!=null) 
 				{
 				gv.getGame().Move(s, Direction.RIGHT);
-				System.out.println(s+"RIGHT");
+				System.out.println("w1"+"RIGHT");
 				}
 				break;
 				
@@ -75,7 +75,7 @@ import java.awt.event.KeyListener;
 				if(s!=null) 
 				{
 				gv.getGame().Move(s, Direction.UP);
-				System.out.println(s+"UP");
+				System.out.println("w2"+"UP");
 				}
 				break;
 				
@@ -85,7 +85,7 @@ import java.awt.event.KeyListener;
 				if(s!=null) 
 				{
 				gv.getGame().Move(s, Direction.LEFT);
-				System.out.println(s+"LEFT");
+				System.out.println("w2"+"LEFT");
 				}
 				break;
 				
@@ -95,7 +95,7 @@ import java.awt.event.KeyListener;
 				if(s!=null) 
 				{
 				gv.getGame().Move(s, Direction.DOWN);
-				System.out.println(s+"DOWN");
+				System.out.println("w2"+"DOWN");
 				}
 				break;
 				
@@ -105,7 +105,7 @@ import java.awt.event.KeyListener;
 				if(s!=null) 
 				{
 				gv.getGame().Move(s, Direction.RIGHT);
-				System.out.println(s+"RIGHT");
+				System.out.println("w2"+"RIGHT");
 				}
 				break;
 				
@@ -121,7 +121,7 @@ import java.awt.event.KeyListener;
 				if(s!=null) 
 				{
 				gv.getGame().Move(s, Direction.UP);
-				System.out.println(s+"UP");
+				System.out.println("w4"+"UP");
 				}
 				break;
 				
@@ -131,7 +131,7 @@ import java.awt.event.KeyListener;
 				if(s!=null) 
 				{
 				gv.getGame().Move(s, Direction.LEFT);
-				System.out.println(s+"LEFT");
+				System.out.println("w4"+"LEFT");
 				}
 				break;
 				
@@ -141,7 +141,7 @@ import java.awt.event.KeyListener;
 				if(s!=null) 
 				{
 				gv.getGame().Move(s, Direction.DOWN);
-				System.out.println(s+"DOWN");
+				System.out.println("w4"+"DOWN");
 				}
 				break;
 				
@@ -151,7 +151,7 @@ import java.awt.event.KeyListener;
 				if(s!=null) 
 				{
 				gv.getGame().Move(s, Direction.RIGHT);
-				System.out.println(s+"RIGHT");
+				System.out.println("w4"+"RIGHT");
 				}
 				break;
 				
@@ -177,7 +177,7 @@ import java.awt.event.KeyListener;
 				if(s!=null) 
 				{
 				gv.getGame().Move(s, Direction.LEFT);
-				System.out.println(s+"LEFT");
+				System.out.println("w3"+"LEFT");
 				}
 				break;
 				
@@ -187,7 +187,7 @@ import java.awt.event.KeyListener;
 				if(s!=null) 
 				{
 				gv.getGame().Move(s, Direction.DOWN);
-				System.out.println(s+"DOWN");
+				System.out.println("w3"+"DOWN");
 				}
 				break;
 				
@@ -197,7 +197,7 @@ import java.awt.event.KeyListener;
 				if(s!=null) 
 				{
 				gv.getGame().Move(s, Direction.RIGHT);
-				System.out.println(s+"RIGHT");
+				System.out.println("w3"+"RIGHT");
 				}
 				break;
 				
