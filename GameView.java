@@ -1,6 +1,7 @@
 ﻿package shokoban;
 
 import java.awt.*;
+import java.awt.event.KeyListener;
 import java.util.*;
 import javax.swing.*;
 
@@ -14,7 +15,8 @@ public class GameView extends JFrame{
 	int playerNumber;
 	ArrayList<Drawable> drawables=new ArrayList<>();
 	GameView(){
-		//KeyListener listener = new MyKeyListener();
+		KeyListener listener = new MyKeyListener();
+		this.addKeyListener(listener);
 		this.setVisible(true);
 		this.setTitle("Shokoban");
 		this.setSize(new Dimension(400,400));
