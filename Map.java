@@ -130,10 +130,30 @@ public class Map {
 	public void PlaceWorker(Worker w) 
 	{
         //elhelyezi a workereket a pályán
+		int[] coords = getRandomCoords();
+		TileElement te = getTile(coords[0], coords[1]);
+		w.setTile(te);
+		te.setObject(w);
 	}
 	public void PlaceCrate(Crate c) 
 	{
         //elhelyezi a ládákat a pályán 
+		int[] coords = getRandomCoords();
+		TileElement te = getTile(coords[0], coords[1]);
+		c.setTile(te);
+		te.setObject(c);
+	}
+	
+	private int[] getRandomCoords() {
+		Random rando = new Random();
+		int[] cord = {rando.nextInt(13)+1, rando.nextInt(18)+1};
+		TileElement te = getTile(cord[0],cord[1]);
+		if(te.getClass().getName().equals(Tile.class.getName())) {
+			if(te.getObject().equals(null)) {
+				return cord;
+			}
+		}
+		return getRandomCoords();
 	}
 	
 	public void CreateMap() 
