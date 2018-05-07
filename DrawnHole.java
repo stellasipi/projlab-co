@@ -22,7 +22,7 @@ public class DrawnHole extends Drawable {
 	
 	public void Draw(GameView gw) {
 		JLayeredPane a = gw.getTiles(h.getCoords()[0], h.getCoords()[1]);
-		a.add(getImg_label(),getDepth());
+		a.add(getImg_label(),new Integer(1));
 		gw.setTiles(h.getCoords()[0], h.getCoords()[1], a);	
 	}
 	
