@@ -32,6 +32,7 @@ public class GameView extends JFrame{
 		this.setTitle("Shokoban");
 		this.setSize(new Dimension(1000,1000));
 		this.setResizable(true);
+		
 		this.setLayout(new FlowLayout());
 		mapPanel.setBackground(Color.red);
 		mapPanel.setMaximumSize(new Dimension(500,375));
@@ -45,6 +46,7 @@ public class GameView extends JFrame{
 				tiles[i][j].setBackground(Color.blue);
 				tiles[i][j].setMaximumSize(new Dimension(25,25));
 				tiles[i][j].setMinimumSize(new Dimension(25,25));
+				
 			}
 		}
 		this.add(proba);
@@ -70,17 +72,14 @@ public class GameView extends JFrame{
 		
 		Image img2=ImageIO.read(new File("pics/Crate.png"));
 		JLabel label2=new JLabel(new ImageIcon(img2));
-		label2.setSize(25,25);
 		tiles[0][2].add(label2);
 		
 		Image img3=ImageIO.read(new File("pics/Hole.png"));
 		JLabel label3=new JLabel(new ImageIcon(img3));
-		label3.setSize(25,25);
 		tiles[0][3].add(label3);
 		
 		Image img4=ImageIO.read(new File("pics/Honey.png"));
 		JLabel label4=new JLabel(new ImageIcon(img4));
-		label4.setSize(25,25);
 		tiles[0][4].add(label4);
 		
 		Image img5=ImageIO.read(new File("pics/Oil.png"));
@@ -90,12 +89,10 @@ public class GameView extends JFrame{
 		
 		Image img6=ImageIO.read(new File("pics/Target.png"));
 		JLabel label6=new JLabel(new ImageIcon(img6));
-		label6.setSize(25,25);
 		tiles[0][6].add(label6);
 		
 		Image img7=ImageIO.read(new File("pics/Tile.png"));
 		JLabel label7=new JLabel(new ImageIcon(img7));
-		label7.setSize(25,25);
 		tiles[0][7].add(label7);
 		
 		Image img8=ImageIO.read(new File("pics/Trap_closed.png"));
@@ -105,9 +102,8 @@ public class GameView extends JFrame{
 		
 		Image img9=ImageIO.read(new File("pics/Worker_1.png"));
 		JLabel label9=new JLabel(new ImageIcon(img9));
-		label9.setSize(25,25);
 		tiles[0][9].add(label9);
-		
+		this.pack();//no border
 	}
 	void DrawAll() {
 		for(int i=0;i<drawables.size();i++) {
