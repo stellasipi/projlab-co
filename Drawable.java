@@ -18,8 +18,10 @@ public abstract class Drawable implements Comparable<Drawable> {
 	
 	@Override
 	public int compareTo(Drawable d1) {
-		int i=d1.getDepth();
-        return this.getDepth()-i;
+		if (d1.getDepth()<this.getDepth())
+			return d1.getDepth();
+		else
+			return this.getDepth();
 	}
 
 	public Image getImg() {
