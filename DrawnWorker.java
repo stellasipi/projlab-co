@@ -12,6 +12,9 @@ public class DrawnWorker extends Drawable {
 	
 	public DrawnWorker(Worker w) throws IOException {
 		this.w = w;
+		Integer[] coords = w.getTile().getCoords();
+		this.setX(coords[0]);
+		this.setY(coords[1]);
 		
 		String ID = w.getId();
 		
@@ -36,4 +39,12 @@ public class DrawnWorker extends Drawable {
 		
 		setDepth(3);//mélység beállítása
 	}	
+	
+	@Override
+	public void Draw(GameView gv){
+		Integer[] coords = w.getTile().getCoords();
+		this.setX(coords[0]);
+		this.setY(coords[1]);
+		gv.setTiles(getX(), getY(), getImg_label());
+	}
 }

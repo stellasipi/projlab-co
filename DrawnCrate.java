@@ -12,6 +12,9 @@ public class DrawnCrate extends Drawable {
 	
 	public DrawnCrate(Crate cr) throws IOException {
 		c=cr;
+		Integer[] coords = c.getTile().getCoords();
+		this.setX(coords[0]);
+		this.setY(coords[1]);
 		setImg(ImageIO.read(new File("pics/Crate.png"))); // kép beolvasása
 		setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
 		
@@ -19,9 +22,10 @@ public class DrawnCrate extends Drawable {
 	}
 
 	@Override
-	public int compareTo(Drawable o) {
-		// TODO Auto-generated method stub
-		return 0;
+	public void Draw(GameView gv){
+		Integer[] coords = c.getTile().getCoords();
+		this.setX(coords[0]);
+		this.setY(coords[1]);
+		gv.setTiles(getX(), getY(), getImg_label());
 	}
-	
 }
