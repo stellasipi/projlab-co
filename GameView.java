@@ -15,7 +15,8 @@ public class GameView extends JFrame{
 	private JLabel proba = new JLabel("Proba");
 	private JLabel[] scorelabels;
 	private JLabel keytest = new JLabel("");
-	int playerNumber;
+	private int playerNumber;
+	private Game game = new Game();
 	ArrayList<Drawable> drawables=new ArrayList<>();
 	GameView(){
 		KeyListener listener = new MyKeyListener();
@@ -45,6 +46,9 @@ public class GameView extends JFrame{
             	new MenuView();
             }
         });
+		
+		
+		//Ide létrehozhatjáktok a minipályát
 	}
 	void DrawAll() {
 		for(int i=0;i<drawables.size();i++) {
