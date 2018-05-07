@@ -15,12 +15,5 @@ public class DrawnWorker extends Drawable {
 		setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
 		
 		setDepth(3);//mélység beállítása
-	}
-
-	@Override
-	public int compareTo(Drawable o) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	
+	}	
 }

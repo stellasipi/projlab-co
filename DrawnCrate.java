@@ -16,11 +16,4 @@ public class DrawnCrate extends Drawable {
 		
 		setDepth(3);//mélység beállítása
 	}
-
-	@Override
-	public int compareTo(Drawable o) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	
 }
