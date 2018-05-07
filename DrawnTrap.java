@@ -6,15 +6,13 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
 
 public class DrawnTrap extends Drawable {
 	private Trap t;
 	
 	public DrawnTrap(Trap tr) throws IOException {
 		this.t = tr;
-		Integer[] coords = t.getCoords();
-		this.setX(coords[0]);
-		this.setY(coords[1]);
 		
 		if(t.getActive()) {
 			setImg(ImageIO.read(new File("pics/Trap_opened.png"))); // kép beolvasása
@@ -25,5 +23,11 @@ public class DrawnTrap extends Drawable {
 		}
 		
 		setDepth(new Integer(1));//mélység beállítása
-	}	
+	}
+	
+	public void Draw(GameView gw) {
+		JLayeredPane a = gw.getTiles(t.getCoords()[0], t.getCoords()[1]);
+		a.add(getImg_label(),getDepth());
+		gw.setTiles(t.getCoords()[0], t.getCoords()[1], a);	
+	}
 }

@@ -6,15 +6,13 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
 
 public class DrawnWorker extends Drawable {
 	private Worker w;
 	
 	public DrawnWorker(Worker w) throws IOException {
 		this.w = w;
-		Integer[] coords = w.getTile().getCoords();
-		this.setX(coords[0]);
-		this.setY(coords[1]);
 		
 		String ID = w.getId();
 		
@@ -40,11 +38,9 @@ public class DrawnWorker extends Drawable {
 		setDepth(new Integer(3));//mélység beállítása
 	}	
 	
-	@Override
-	public void Draw(GameView gv){
-		Integer[] coords = w.getTile().getCoords();
-		this.setX(coords[0]);
-		this.setY(coords[1]);
-		gv.setTiles(getX(), getY(), this);
+	public void Draw(GameView gw) {
+		JLayeredPane a = gw.getTiles(w.getTile().getCoords()[0], w.getTile().getCoords()[1]);
+		a.add(getImg_label(),getDepth());
+		gw.setTiles(w.getTile().getCoords()[0], w.getTile().getCoords()[1], a);	
 	}
 }
