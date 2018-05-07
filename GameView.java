@@ -105,6 +105,8 @@ public class GameView extends JFrame{
 			drawables.add(new DrawnCrate(c));
 		}
 		
+		Collections.sort(drawables);
+		
 		this.DrawAll();
 		
 		this.pack();//no border
