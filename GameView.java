@@ -39,7 +39,12 @@ public class GameView extends JFrame{
 		mapPanel.setBackground(Color.red);
 		mapPanel.setMaximumSize(new Dimension(500,375));
 		mapPanel.setMinimumSize(new Dimension(500,375));
-		mapPanel.setLayout(new GridLayout(20,15));
+		GridLayout gl = new GridLayout(20,15);
+		/*gl.setHgap(1);
+		gl.setVgap(1);*/
+		Border border;
+		border = BorderFactory.createLineBorder(Color.cyan);
+		mapPanel.setLayout(gl);
 		this.add(mapPanel);
 		for(int i=0; i<20; i++) {
 			for(int j=0; j<15; j++) {
@@ -48,6 +53,7 @@ public class GameView extends JFrame{
 				tiles[i][j].setBackground(Color.blue);
 				tiles[i][j].setMaximumSize(new Dimension(25,25));
 				tiles[i][j].setMinimumSize(new Dimension(25,25));
+				//tiles[i][j].setBorder(border);
 				
 			}
 		}
