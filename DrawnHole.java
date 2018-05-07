@@ -8,9 +8,10 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 public class DrawnHole extends Drawable {
-	private Hole h=new Hole();
+	private Hole h;
 	
-	public DrawnHole() throws IOException {
+	public DrawnHole(Hole hole) throws IOException {
+		h=hole;
 		setImg(ImageIO.read(new File("pics/Hole.png"))); // kép beolvasása
 		setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
 		
