@@ -109,6 +109,15 @@ public class Game {
 	public void setMap(Map m) {
 		map = m;
 	}
+	
+	public Worker getWorker(String w_id) {
+		for(Worker w : workers) {
+			if(w.getId().equals(w_id)) {
+				return w;
+			}
+		}
+		return null;
+	}
 }
 
 
