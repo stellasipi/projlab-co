@@ -5,7 +5,7 @@ import java.util.Comparator;
 import javax.swing.JLabel;
 
 
-public abstract class Drawable implements Comparator<Drawable> {
+public abstract class Drawable implements Comparable<Drawable> {
 	private Image img;
 	private JLabel img_label;
 	private Integer depth;
@@ -17,8 +17,9 @@ public abstract class Drawable implements Comparator<Drawable> {
 	}
 	
 	@Override
-	public int compare(Drawable d1, Drawable d2) {
-		return d1.getDepth().compareTo(d2.getDepth());
+	public int compareTo(Drawable d1) {
+		int i=d1.getDepth();
+        return this.getDepth()-i;
 	}
 
 	public Image getImg() {
