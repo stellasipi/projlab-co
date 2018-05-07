@@ -18,7 +18,6 @@ public class GameView extends JFrame{
 	private JPanel[][] tiles =  new JPanel[20][15];
 	private JPanel scorePanel = new JPanel();
 	private JPanel mapPanel = new JPanel();
-	private JLabel proba = new JLabel("Proba");
 	private JLabel[] scorelabels;
 	private JLabel keytest = new JLabel("");
 	private int playerNumber;
@@ -53,7 +52,6 @@ public class GameView extends JFrame{
 				tiles[i][j].setLayout(fl);
 			}
 		}
-		this.add(proba);
 		this.add(keytest);
 		
 		this.addWindowListener(new WindowAdapter(){
