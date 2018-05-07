@@ -12,7 +12,7 @@ public class GameView extends JFrame{
 	private JLabel[] scorelabels;
 	private JLabel keytest = new JLabel("");
 	int playerNumber;
-	ArrayList<Drawable> drawables;
+	ArrayList<Drawable> drawables=new ArrayList<>();
 	GameView(){
 		//KeyListener listener = new MyKeyListener();
 		this.setVisible(true);
@@ -36,9 +36,13 @@ public class GameView extends JFrame{
 		this.add(keytest);
 	}
 	void DrawAll() {
+		for(int i=0;i<drawables.size();i++) {
+			drawables.get(i).Draw(this);
+		}
+	}
+	void AddDrawables() {
 		
 	}
-	void AddDrawables() {}
 	void RemoveDrawables() {}
 	public int getPlayerNumber() {
 		return playerNumber;
