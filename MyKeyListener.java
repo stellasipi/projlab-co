@@ -9,17 +9,17 @@ import javax.swing.*;
 
 
 @SuppressWarnings("serial")
-public class MyKeyListener extends JPanel {
+/* public class MyKeyListener extends JPanel {
 	
 	public MyKeyListener() {
 		KeyListener listener = new My();
 		addKeyListener(listener);
 		setFocusable(true);
-	}
+	}*/
 	
 	
 
-	public class My implements KeyListener {
+	public class MyKeyListener implements KeyListener {
 		
 		private final HashSet<Integer> pressed = new HashSet<Integer>();
 		
@@ -50,4 +50,4 @@ public class MyKeyListener extends JPanel {
 		public void keyReleased(KeyEvent e) {
 		}
 	}
-}
+//}
