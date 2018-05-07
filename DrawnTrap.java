@@ -12,6 +12,9 @@ public class DrawnTrap extends Drawable {
 	
 	public DrawnTrap(Trap tr) throws IOException {
 		this.t = tr;
+		Integer[] coords = t.getCoords();
+		this.setX(coords[0]);
+		this.setY(coords[1]);
 		
 		if(t.getActive()) {
 			setImg(ImageIO.read(new File("pics/Trap_opened.png"))); // kép beolvasása
