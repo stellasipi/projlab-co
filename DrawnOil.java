@@ -16,11 +16,4 @@ public class DrawnOil extends Drawable {
 		
 		setDepth(2);//mélység beállítása
 	}
-
-	@Override
-	public int compareTo(Drawable o) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	
 }

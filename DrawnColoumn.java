@@ -16,11 +16,4 @@ public class DrawnColoumn extends Drawable {
 		
 		setDepth(1);//mélység beállítása
 	}
-
-	@Override
-	public int compareTo(Drawable o) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	
 }
