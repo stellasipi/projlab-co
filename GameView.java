@@ -4,6 +4,7 @@ import java.awt.*;
 import java.awt.event.KeyListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
@@ -55,10 +56,16 @@ public class GameView extends JFrame{
 		//Ide létrehozhatjáktok a minipályát
 		/*AddDrawables(new DrawnColoumn());
 		DrawAll();*/
-		Image img=ImageIO.read(new File("/pics/Coloumn.png"));
+		BufferedImage img=ImageIO.read(new File("pics/Coloumn.png"));
 		JLabel label=new JLabel(new ImageIcon(img));
-		tiles[0][0].add(label);
-		tiles[0][0].repaint();
+		//tiles[0][0].add(label);
+		//tiles[0][0].setVisible(true);
+		//tiles[0][0].repaint();
+		
+		JPanel jp=new JPanel();
+		jp.setBackground(Color.red);
+		mapPanel.add(jp);
+		
 	}
 	void DrawAll() {
 		for(int i=0;i<drawables.size();i++) {
