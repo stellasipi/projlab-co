@@ -117,6 +117,88 @@ public class Map {
 			break;
 		}
 	}
+	
+	public void CreateMap2() {
+		int height = 15;
+		int width = 20;
+		
+		// oszlop és tile feltöltés
+		for(int i=0; i<height; i++) {
+			for(int j=0; j<width; j++) {
+				if(i==0 || i==14) {
+					Tiles[i][j] = new Coloumn();
+					Tiles[i][j].setCoords(i, j);
+				}else if(j==0 || j==19) {
+					Tiles[i][j] = new Coloumn();
+					Tiles[i][j].setCoords(i, j);
+				}else {
+					Tiles[i][j] = new Tile();
+					Tiles[i][j].setCoords(i, j);
+				}
+			}
+		}
+		
+		// extra elemek pozíciójának meghatározása
+		ArrayList<int[]> pos = new ArrayList<int[]>();
+		for(int i= 0; i<40; i++) {
+			int[] cord = getRando(pos);
+			pos.add(cord);
+		}
+		
+		// extra elemek elhelyezése
+		for(int i=0; i<40; i++) {
+			int[] coords = pos.get(i);
+			int h = coords[0];
+			int w = coords[1];
+			
+			if(i<20) {
+				Tiles[h][w] = new Coloumn();
+				Tiles[h][w].setCoords(h, w);
+			}else if(i<24) {
+				Tiles[h][w] = new Hole();
+				Tiles[h][w].setCoords(h, w);
+			}else if(i<34) {
+				Tiles[h][w] = new Target();
+				Tiles[h][w].setCoords(h, w);
+			}else if(i<37) {
+				Tiles[h][w] = new Trap();
+				Tiles[h][w].setCoords(h, w);
+			}else if(i<40) {
+				Tiles[h][w] = new Button();
+				Tiles[h][w].setCoords(h, w);
+			}
+		}
+		
+		// trap és button összehangolás
+		for(int i=0; i<3; i++) {
+			int[] trap = pos.get(i+34);
+			int[] button = pos.get(i+37);
+			int ht = trap[0];
+			int hb = button[0];
+			int wt = trap[1];
+			int wb = button[1];
+			
+			((Button)this.getTile(hb, wb)).setTrap((Trap)this.getTile(ht, wt));
+		}
+		
+		// szomszédok beállítása
+		for(TileElement[] line : Tiles) {
+			for(TileElement e : line) {
+				SetNeighbours(e);
+			}
+		}
+	}
+	
+	private int[] getRando(ArrayList<int[]> list) {
+		Random rando = new Random();
+		int[] cord = {rando.nextInt(13)+1, rando.nextInt(18)+1};
+		for(int[] asd : list) {
+			if(cord.equals(asd)) {
+				cord = getRando(list);
+			}
+		}
+		return cord;
+	}
 
 	private TileElement getTile(int height, int width) {
 		return Tiles[height][width];

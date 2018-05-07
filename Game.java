@@ -6,6 +6,14 @@ public class Game {
 	Map map=new Map();
 	ArrayList<Crate> crates= new ArrayList<>();
 	ArrayList<Worker> workers= new ArrayList<>();
+	private int PlayerNumber = 1;
+	
+	public Game(int n) {
+		PlayerNumber = n;
+		StartGame();
+	}
+	
+	public Game() {}
 	
 	public void EndGame()
 	{
@@ -15,14 +23,18 @@ public class Game {
 	public void StartGame()
 	{
         //Elindul a játék, létrejön a map és a objectek
-        map.CreateMap();
+        map.CreateMap2();
         for(int i=0; i<10; i++) {
         	Crate c=new Crate();
+        	String ID = "c" + (i+1);
+        	c.setId(ID);
         	map.PlaceCrate(c);
             AddCrate(c);
         }
-        for(int i=0; i<2; i++) {
+        for(int i=0; i<PlayerNumber; i++) {
         	Worker w = new Worker();
+        	String ID = "w" + (i+1);
+        	w.setId(ID);
             map.PlaceWorker(w);
             AddWorker(w);
         }
