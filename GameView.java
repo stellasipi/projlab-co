@@ -35,7 +35,9 @@ public class GameView extends JFrame{
 		this.add(proba);
 		this.add(keytest);
 	}
-	void DrawAll() {}
+	void DrawAll() {
+		
+	}
 	void AddDrawables() {}
 	void RemoveDrawables() {}
 	public int getPlayerNumber() {
