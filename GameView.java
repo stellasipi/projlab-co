@@ -42,7 +42,10 @@ public class GameView extends JFrame{
 			drawables.get(i).Draw(this);
 		}
 	}
-	void AddDrawables() {
+	void AddDrawables(Drawable d) {
+		drawables.add(d);
+		Comparator<Drawable> cmp=new Drawable();
+		drawables.sort(cmp);
 		
 	}
 	void RemoveDrawables(Drawable d) {
