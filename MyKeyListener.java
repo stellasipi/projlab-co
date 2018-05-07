@@ -3,25 +3,16 @@ package shokoban;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.HashSet;
-import javax.swing.*;
-
-
-
-
-@SuppressWarnings("serial")
-/* public class MyKeyListener extends JPanel {
-	
-	public MyKeyListener() {
-		KeyListener listener = new My();
-		addKeyListener(listener);
-		setFocusable(true);
-	}*/
-	
 	
 
 	public class MyKeyListener implements KeyListener {
-		
+		private GameView gv;
 		private final HashSet<Integer> pressed = new HashSet<Integer>();
+		private MyKeyListener(GameView gameview)
+		{
+			gv=gameview;
+		}
+		
 		
 		@Override
 		public void keyTyped(KeyEvent e) {
