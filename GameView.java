@@ -37,7 +37,9 @@ public class GameView extends JFrame{
 		
 	}
 	void AddDrawables() {}
-	void RemoveDrawables() {}
+	void RemoveDrawables(Drawable d) {
+		drawables.remove(d);
+	}
 	public int getPlayerNumber() {
 		return playerNumber;
 	}
