@@ -55,7 +55,7 @@ public class GameView extends JFrame{
 		//Ide létrehozhatjáktok a minipályát
 		/*AddDrawables(new DrawnColoumn());
 		DrawAll();*/
-		Image img=ImageIO.read(new File("pics/Coloumn.png"));
+		Image img=ImageIO.read(new File("/pics/Coloumn.png"));
 		JLabel label=new JLabel(new ImageIcon(img));
 		tiles[0][0].add(label);
 		tiles[0][0].repaint();
