@@ -24,7 +24,7 @@ public class GameView extends JFrame{
 	ArrayList<Drawable> drawables=new ArrayList<>();
 	
 	GameView() throws IOException{
-		KeyListener listener = new MyKeyListener();
+		KeyListener listener = new MyKeyListener(this);
 		this.addKeyListener(listener);
 		this.setVisible(true);
 		this.setTitle("Shokoban");
