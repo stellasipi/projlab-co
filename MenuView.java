@@ -25,9 +25,6 @@ public class MenuView extends JFrame {
 	void GameStart(int vm){
 			GameView gamev = new GameView();
 			gamev.setPlayerNumber(vm);
-			
-			//test
-			Game g=new Game();
 			this.setVisible(false);
 	}	
 }
