@@ -12,6 +12,9 @@ public class DrawnTarget extends Drawable {
 	
 	public DrawnTarget(Target ta) throws IOException {
 		this.t = ta;
+		Integer[] coords = t.getCoords();
+		this.setX(coords[0]);
+		this.setY(coords[1]);
 		setImg(ImageIO.read(new File("pics/Target.png"))); // kép beolvasása
 		setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
 		
