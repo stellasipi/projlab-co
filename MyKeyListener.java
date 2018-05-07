@@ -21,20 +21,43 @@ import java.util.HashSet;
 
 		public void keyPressed(KeyEvent e) {
 			int key = e.getKeyCode();
+			Worker s;
 			switch(key)
 			{
 			case KeyEvent.VK_W:
 				System.out.println(key);
-			gv.getGame
+				s=gv.getGame().getWorker("w1");
+				if(s!=null) 
+				{
+				gv.getGame().Move(s, Direction.UP);
+				}
 				break;
 				
 			case KeyEvent.VK_A:
+				System.out.println(key);
+				s=gv.getGame().getWorker("w1");
+				if(s!=null) 
+				{
+				gv.getGame().Move(s, Direction.LEFT);
+				}
 				break;
 				
 			case KeyEvent.VK_S:
+				System.out.println(key);
+				s=gv.getGame().getWorker("w1");
+				if(s!=null) 
+				{
+				gv.getGame().Move(s, Direction.DOWN);
+				}
 				break;
 				
 			case KeyEvent.VK_D:
+				System.out.println(key);
+				s=gv.getGame().getWorker("w1");
+				if(s!=null) 
+				{
+				gv.getGame().Move(s, Direction.RIGHT);
+				}
 				break;
 				
 			case KeyEvent.VK_Q:
@@ -44,6 +67,12 @@ import java.util.HashSet;
 				break;
 				
 			case KeyEvent.VK_I:
+				System.out.println(key);
+				s=gv.getGame().getWorker("w2");
+				if(s!=null) 
+				{
+				gv.getGame().Move(s, Direction.UP);
+				}
 				break;
 				
 			case KeyEvent.VK_J:
@@ -97,12 +126,7 @@ import java.util.HashSet;
 			case KeyEvent.VK_9:
 				break;
 			}
-			
-				pressed.add(e.getKeyCode());
-				System.out.println("keyPressed="+KeyEvent.getKeyText(e.getKeyCode()));
-			//}
-			
-
+			//Invalidate
 		}
 
 		@Override
