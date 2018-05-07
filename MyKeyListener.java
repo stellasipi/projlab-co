@@ -160,7 +160,7 @@ import java.awt.event.KeyListener;
 				}
 				break;
 				
-			case KeyEvent.VK_RIGHT:
+			case KeyEvent.VK_DOWN:
 				System.out.println(key);
 				s=gv.getGame().getWorker("w4");
 				if(s!=null) 
@@ -170,7 +170,7 @@ import java.awt.event.KeyListener;
 				}
 				break;
 				
-			case KeyEvent.VK_DOWN:
+			case KeyEvent.VK_RIGHT:
 				System.out.println(key);
 				s=gv.getGame().getWorker("w4");
 				if(s!=null) 
@@ -260,6 +260,9 @@ import java.awt.event.KeyListener;
 				System.exit(0);
 				break;	
 			}
+			gv.revalidate();
+			gv.repaint();
+			gv.DrawAll();
 			//Invalidate
 		}
 
