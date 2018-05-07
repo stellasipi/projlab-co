@@ -49,14 +49,10 @@ public class GameView extends JFrame{
 				tiles[i][j].setBackground(Color.red);
 				tiles[i][j].setPreferredSize(new Dimension(25,25));
 				tiles[i][j].setLayout(fl);
-				
-			}
-		}
-		for(int i=0; i<15; i++) {
-			for(int j=0; j<20; j++) {
 				mapPanel.add(tiles[i][j]);
 			}
 		}
+
 		this.add(keytest);
 		
 		this.addWindowListener(new WindowAdapter(){
