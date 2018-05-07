@@ -25,4 +25,5 @@ public class DrawnHole extends Drawable {
 		a.add(getImg_label(),getDepth());
 		gw.setTiles(h.getCoords()[0], h.getCoords()[1], a);	
 	}
+	
 }
