@@ -1,10 +1,10 @@
 ﻿package shokoban;
 
 import java.awt.Image;
-
 import javax.swing.JLabel;
 
-public abstract class Drawable implements Comparable<Drawable> {
+
+public abstract class Drawable {
 	private Image img;
 	private JLabel img_label;
 	private int depth;
