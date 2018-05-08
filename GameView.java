@@ -134,19 +134,22 @@ public class GameView extends JFrame{
 				if(hashmap.containsKey(2)) {
 				JLabel lab2 = new JLabel(new ImageIcon(hashmap.get(2)));
 					tiles[i][j].add(lab2, new Integer(2));
+					//tiles[i][j].add(lab2, JLayeredPane.PALETTE_LAYER);
 					tiles[i][j].setBounds(0, 0, 25, 25);
 				}
 				else {
 					JLabel lab2 = new JLabel(new ImageIcon("pics/Oil.png"));
 					lab2.setBackground(new Color(0,0,0,0));
 					tiles[i][j].add(lab2, new Integer(2));
+					//tiles[i][j].add(lab2, JLayeredPane.PALETTE_LAYER);
 					tiles[i][j].setBounds(0, 0, 25, 25);
 				}
 					
 				if(hashmap.containsKey(3)) {
 					JLabel lab3 = new JLabel(new ImageIcon("pics/Worker_2.png"));
 					//lab3 = new JLabel(new ImageIcon(hashmap.get(3)));
-					tiles[i][j].add(lab3, new Integer(3));
+					//tiles[i][j].add(lab3, new Integer(3));
+					tiles[i][j].add(lab3, JLayeredPane.MODAL_LAYER);
 					tiles[i][j].setBounds(0, 0, 25, 25);
 				}
 				tiles[i][j].setPreferredSize(new Dimension(25,25));
