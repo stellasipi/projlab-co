@@ -10,8 +10,6 @@ public class MenuView extends JFrame {
 	JButton newgame = new JButton("Új játék");
 	JLabel playerNumberLabel = new JLabel("Player number");
 	JTextField playerNumberTextfield = new JTextField(20);
-	GameView gamev;
-	
 	MenuView(){
 		this.setVisible(true);
 		this.setTitle("Shokoban");
@@ -34,7 +32,7 @@ public class MenuView extends JFrame {
 			}});
 	}
 	void GameStart(int vm) throws IOException{
-		gamev = new GameView(vm);
-		this.setVisible(false);
+			GameView gamev = new GameView(vm);
+			this.setVisible(false);
 	}	
 }

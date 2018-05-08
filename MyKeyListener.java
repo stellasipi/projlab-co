@@ -262,7 +262,7 @@ import java.awt.event.KeyListener;
 			}
 			gv.revalidate();
 			gv.repaint();
-			gv.DrawAll();
+			gv.DrawAll2();
 			//Invalidate
 		}
 
