@@ -9,7 +9,8 @@ import javax.swing.*;
 public class MenuView extends JFrame {
 	JButton newgame = new JButton("Új játék");
 	JLabel playerNumberLabel = new JLabel("Player number");
-	JTextField playerNumberTextfield = new JTextField(20);
+	//JTextField playerNumberTextfield = new JTextField(20);
+	JComboBox<String> comboPlayerNum = new JComboBox<String>();
 	MenuView(){
 		this.setVisible(true);
 		this.setTitle("Shokoban");
@@ -18,11 +19,17 @@ public class MenuView extends JFrame {
 		this.setResizable(false);
 		this.setLayout(new FlowLayout());
 		this.add(playerNumberLabel);
-		this.add(playerNumberTextfield);
+		this.add(comboPlayerNum);
+		
+		comboPlayerNum.addItem("1");
+		comboPlayerNum.addItem("2");
+		comboPlayerNum.addItem("3");
+		comboPlayerNum.addItem("4");
+		//this.add(playerNumberTextfield);
 		this.add(newgame);
 		newgame.addActionListener((ActionEvent e)->{
 			try {
-				GameStart(Integer.parseInt(playerNumberTextfield.getText()));
+				GameStart(Integer.parseInt((String) comboPlayerNum.getSelectedItem()));
 			} catch (NumberFormatException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
