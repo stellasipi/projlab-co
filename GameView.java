@@ -39,10 +39,9 @@ public class GameView extends JFrame{
 		mapPanel.setLayout(new GridLayout(15,20));
 		//mapPanel.setLayout(null);
 		this.add(mapPanel);
-<<<<<<< HEAD
-=======
+
 		
-		FlowLayout fl=new FlowLayout();
+		/*FlowLayout fl=new FlowLayout();
 		fl.setHgap(0); //no border
 		fl.setVgap(0);//no border
 		for(int i=0; i<15; i++) {
@@ -54,8 +53,7 @@ public class GameView extends JFrame{
 				tiles[i][j].setOpaque(false);
 				mapPanel.add(tiles[i][j]);
 			}
-		}
->>>>>>> refs/remotes/origin/rand
+		}*/
 
 		this.add(keytest);
 		
@@ -130,6 +128,7 @@ public class GameView extends JFrame{
 				//JLabel lab1 = new JLabel(new ImageIcon(hashmap.get(1)));
 				JLabel lab1 = new JLabel(new ImageIcon("pics/Tile.png"));
 				tiles[i][j].add(lab1, new Integer(1));
+				//tiles[i][j].add(lab1, JLayeredPane.DEFAULT_LAYER);
 				tiles[i][j].setBounds(0, 0, 25, 25);
 				}
 				if(hashmap.containsKey(2)) {
