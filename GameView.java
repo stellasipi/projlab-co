@@ -108,7 +108,9 @@ public class GameView extends JFrame{
 	void DrawAll() {
 		for(int i=0;i<drawables.size();i++) {
 			drawables.get(i).Draw(this);
+			
 		}
+		mapPanel.repaint();
 	}
 	void AddDrawables(Drawable d) {
 		drawables.add(d);
