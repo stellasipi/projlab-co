@@ -10,7 +10,7 @@ public abstract class Drawable implements Comparable<Drawable> {
 	private JLabel img_label;
 	private Integer depth;
 	
-	abstract public JLabel Draw(GameView gw);
+	abstract public void Draw(GameView gw);
 	
 	@Override
 	public int compareTo(Drawable d1) {

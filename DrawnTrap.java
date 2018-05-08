@@ -25,10 +25,9 @@ public class DrawnTrap extends Drawable {
 		setDepth(new Integer(1));//mélység beállítása
 	}
 	
-	public JLabel Draw(GameView gw) {
-		/*JLayeredPane a = gw.getTiles(t.getCoords()[0], t.getCoords()[1]);
+	public void Draw(GameView gw) {
+		JLayeredPane a = gw.getTiles(t.getCoords()[0], t.getCoords()[1]);
 		a.add(getImg_label(),new Integer(1));
-		gw.setTiles(t.getCoords()[0], t.getCoords()[1], a);	*/
-		return getImg_label();
+		gw.setTiles(t.getCoords()[0], t.getCoords()[1], a);
 	}
 }

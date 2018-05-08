@@ -19,10 +19,9 @@ public class DrawnCrate extends Drawable {
 		setDepth(new Integer(3));//mélység beállítása
 	}
 
-	public JLabel Draw(GameView gw) {
-		/*JLayeredPane a = gw.getTiles(c.getTile().getCoords()[0], c.getTile().getCoords()[1]);
+	public void Draw(GameView gw) {
+		JLayeredPane a = gw.getTiles(c.getTile().getCoords()[0], c.getTile().getCoords()[1]);
 		a.add(getImg_label(),new Integer(3));
-		gw.setTiles(c.getTile().getCoords()[0], c.getTile().getCoords()[1], a);	*/
-		return img_label;
+		gw.setTiles(c.getTile().getCoords()[0], c.getTile().getCoords()[1], a);
 	}
 }

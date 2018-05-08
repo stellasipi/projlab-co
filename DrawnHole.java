@@ -20,11 +20,10 @@ public class DrawnHole extends Drawable {
 		setDepth(new Integer(1));//mélység beállítása
 	}
 	
-	public JLabel Draw(GameView gw) {
-		/*JLayeredPane a = gw.getTiles(h.getCoords()[0], h.getCoords()[1]);
+	public void Draw(GameView gw) {
+		JLayeredPane a = gw.getTiles(h.getCoords()[0], h.getCoords()[1]);
 		a.add(getImg_label(),new Integer(1));
-		gw.setTiles(h.getCoords()[0], h.getCoords()[1], a);	*/
-		return getImg_label();
+		gw.setTiles(h.getCoords()[0], h.getCoords()[1], a);
 	}
 	
 }
