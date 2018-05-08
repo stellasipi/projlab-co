@@ -133,7 +133,6 @@ public class GameView extends JFrame{
 	}
 	public void setTiles(int x, int y, JPanel p) {
 		tiles[x][y].equals(p);
-		System.out.println("x: "+x+" "+"y: "+y+" és "+p.getComponentCount()+"db komponens van benne"); 
 	}
 	public Game getGame() {
 		return game;
