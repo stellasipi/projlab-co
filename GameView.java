@@ -13,6 +13,9 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.Border;
 
+import shokoban.Button;
+
+
 public class GameView extends JFrame{
 	private JPanel scorePanel = new JPanel();
 	private JPanel mapPanel;
@@ -27,14 +30,15 @@ public class GameView extends JFrame{
 		
 		// window properties
 		this.setResizable(false);
-		this.setSize(500,500);
+		this.setSize(516,514);
 		this.setVisible(true);
 		this.setTitle("Shokoban");
-		this.setLayout(new GridLayout(2,1));
 		
-		scorePanel.setSize(100,500);
+		
+		scorePanel.setSize(500,100);
 		scorePanel.setBackground(Color.green);
-		this.add(scorePanel);
+		scorePanel.setLocation(0, 0);
+		
 		// listeners
 		this.addKeyListener(new MyKeyListener(this));
 		this.addWindowListener(new WindowAdapter(){
@@ -48,6 +52,8 @@ public class GameView extends JFrame{
 		
 		// valahogy kirajzolunk
 		mapPanel = new MapPanel(this);
+		this.add(scorePanel);
+		mapPanel.setLocation(0,100);
 		this.add(mapPanel);
 		
 	}
@@ -61,6 +67,7 @@ public class GameView extends JFrame{
 		}
 		this.remove(mapPanel);
 		mapPanel = new MapPanel(this);
+		mapPanel.setLocation(0,100);
 		this.add(mapPanel);
 	}
 	void DrawAll() {
