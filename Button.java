@@ -1,7 +1,5 @@
 package shokoban;
 
-
-
 public class Button extends TileElement {
 	private Trap trap = new Trap();
 	
