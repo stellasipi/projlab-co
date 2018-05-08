@@ -13,7 +13,6 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.Border;
 
-
 public class GameView extends JFrame{
 	private JPanel[][] tiles =  new JPanel[15][20];
 	private JPanel scorePanel = new JPanel();
