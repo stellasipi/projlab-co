@@ -1,5 +1,6 @@
 package shokoban;
 
+import java.io.IOException;
 
 public class Worker extends Object {
 	private int sumscore;
@@ -75,7 +76,8 @@ public class Worker extends Object {
 	void PlaceOil() {
 			Grease g=new Grease();
 			g.setMu(g.getMu()*(-1)); //létrehozza az olajat, ami mínusz előjelű
-			this.getTileType().setGrease(g); //rápakoljuk az olajat	
+			this.getTileType().setGrease(g); //rápakoljuk az olajat
+			
 	}
 	
 	

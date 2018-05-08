@@ -7,6 +7,11 @@ public class Game {
 	ArrayList<Crate> crates= new ArrayList<>();
 	ArrayList<Worker> workers= new ArrayList<>();
 	private int PlayerNumber = 1;
+	private GameView gv;
+	
+	public GameView getGameView() {
+		return gv;
+	}
 	
 	public Game(int n) {
 		PlayerNumber = n;

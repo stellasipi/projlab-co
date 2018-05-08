@@ -228,7 +228,7 @@ public class Map {
 	
 	private int[] getRandomCoords() {
 		Random rando = new Random();
-		int[] cord = {rando.nextInt(13)+1, rando.nextInt(18)+1};
+		int[] cord = {rando.nextInt(12)+2, rando.nextInt(17)+2};
 		TileElement te = getTile(cord[0],cord[1]);
 		if(te.getClass().getName().equals(Tile.class.getName())) {
 			if(te.getObject()==null) {

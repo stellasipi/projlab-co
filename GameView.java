@@ -134,10 +134,6 @@ public class GameView extends JFrame{
 	}
 	void AddDrawables(Drawable d) {
 		drawables.add(d);
-		Collections.sort(drawables);
-		for(int i=0;i<drawables.size();i++) {
-			System.out.println(drawables.get(i).getDepth()+" "+drawables.get(i).getClass().getSimpleName());
-		}
 		
 	}
 	void RemoveDrawables(Drawable d) {
@@ -177,6 +173,11 @@ public class GameView extends JFrame{
 					
 				case "Tile":
 					drawables.add(new DrawnTile((Tile)te));
+					if(((Tile)te).SumGreaseMu()>0){
+						drawables.add(new DrawnHoney((Tile)te));
+					}else if(((Tile)te).SumGreaseMu()<0) {
+						drawables.add(new DrawnOil((Tile)te));
+					}
 					break;
 					
 				case "Trap":
@@ -194,6 +195,10 @@ public class GameView extends JFrame{
 			drawables.add(new DrawnCrate(c));
 		}
 		
+		SortDrawables();
+	}
+	
+	public void SortDrawables() {
 		Collections.sort(drawables, new Comparator<Drawable>() {
 
 			@Override
@@ -209,7 +214,6 @@ public class GameView extends JFrame{
 			
 		});
 	}
-	
 	
 	// get/set-ers
 	public Game getGame() {
