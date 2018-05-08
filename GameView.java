@@ -17,7 +17,7 @@ import javax.swing.border.Border;
 public class GameView extends JFrame{
 	private JLayeredPane[][] tiles =  new JLayeredPane[15][20];
 	private JPanel scorePanel = new JPanel();
-	private JPanel mapPanel = new JPanel();
+	private JPanel mapPanel=new JPanel();
 	private JLabel[] scorelabels;
 	private JLabel keytest = new JLabel("");
 	private int playerNumber;

@@ -7,7 +7,7 @@ import javax.swing.JLayeredPane;
 
 public abstract class Drawable implements Comparable<Drawable> {
 	private Image img;
-	private JLabel img_label;
+	private JLabel img_label=new JLabel();
 	private Integer depth;
 	
 	abstract public void Draw(GameView gw);
