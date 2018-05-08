@@ -19,9 +19,11 @@ public class DrawnButton extends Drawable {
 		setDepth(new Integer(1));//mélység beállítása
 	}
 	
-	public void Draw(GameView gw) {
-		JLayeredPane a = gw.getTiles(b.getCoords()[0], b.getCoords()[1]);
+	public JLabel Draw(GameView gw) {
+		/*JLayeredPane a = gw.getTiles(b.getCoords()[0], b.getCoords()[1]);
 		a.add(getImg_label(), new Integer(1));
-		gw.setTiles(b.getCoords()[0], b.getCoords()[1], a);	
+		gw.setTiles(b.getCoords()[0], b.getCoords()[1], a);*/
+		return img_label;
+		
 	}
 }
