@@ -27,54 +27,162 @@ public class DrawnTile extends Drawable {
 	
 	 public void CheckObjects() {
 		  if(t.getObject()==null) {
-			  try {
-				setImg(ImageIO.read(new File("pics/Tile.png")));// kép beolvasása
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			  setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
+			  if(t.AmountOfGrease()==0) {
+				  try {
+						setImg(ImageIO.read(new File("pics/Tile.png")));// kép beolvasása
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+					  setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
+			  }else {
+				  if(t.getGrease().getMu()==-1) {//olaj
+					  try {
+							setImg(ImageIO.read(new File("pics/Oil_on_Tile.png")));// kép beolvasása
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
+						  setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
+				  }else {//méz
+					  try {
+							setImg(ImageIO.read(new File("pics/Honey_on_Tile.png")));// kép beolvasása
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
+						  setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
+				  }
+			  }
 		  }
 		  else if(t.getObject().getClass().getSimpleName().equals("Crate")) {
-			  try {
-				setImg(ImageIO.read(new File("pics/Crate_on_Tile.png")));// kép beolvasása
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			  setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
+			  if(t.AmountOfGrease()==0) {
+				  try {
+						setImg(ImageIO.read(new File("pics/Crate_on_Tile.png")));// kép beolvasása
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+					  setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
+			  }else {
+				  if(t.getGrease().getMu()==-1) {//olaj
+					  try {
+							setImg(ImageIO.read(new File("pics/Crate_and_Oil_on_Tile.png")));// kép beolvasása
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
+						  setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
+				  }else {//méz
+					  try {
+							setImg(ImageIO.read(new File("pics/Crate_and_Honey_on_Tile.png")));// kép beolvasása
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
+						  setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
+				  }
+			  }
 		  }
 		  else if(t.getObject().getClass().getSimpleName().equals("Worker")) {
 			  switch(t.getObject().getId()) {
 			  case "w1":
-				  try {
-					setImg(ImageIO.read(new File("pics/Worker_1_on_Tile.png")));
-				} catch (IOException e) {
-					e.printStackTrace();
-				}// kép beolvasása
-				  setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
+				  if(t.AmountOfGrease()==0) {
+					  try {
+							setImg(ImageIO.read(new File("pics/Worker_1_on_Tile.png")));// kép beolvasása
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
+						  setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
+				  }else {
+					  if(t.getGrease().getMu()==-1) {//olaj
+						  try {
+								setImg(ImageIO.read(new File("pics/Worker_1_and_Oil_on_Tile.png")));// kép beolvasása
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
+							  setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
+					  }else {//méz
+						  try {
+								setImg(ImageIO.read(new File("pics/Worker_1_and_Honey_on_Tile.png")));// kép beolvasása
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
+							  setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
+					  }
+				  }
 				  break;
 			  case "w2":
-				  try {
-					setImg(ImageIO.read(new File("pics/Worker_2_on_Tile.png")));
-				} catch (IOException e) {
-					e.printStackTrace();
-				}// kép beolvasása
-				  setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
+				  if(t.AmountOfGrease()==0) {
+					  try {
+							setImg(ImageIO.read(new File("pics/Worker_2_on_Tile.png")));// kép beolvasása
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
+						  setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
+				  }else {
+					  if(t.getGrease().getMu()==-1) {//olaj
+						  try {
+								setImg(ImageIO.read(new File("pics/Worker_2_and_Oil_on_Tile.png")));// kép beolvasása
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
+							  setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
+					  }else {//méz
+						  try {
+								setImg(ImageIO.read(new File("pics/Worker_2_and_Honey_on_Tile.png")));// kép beolvasása
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
+							  setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
+					  }
+				  }
 				  break;
 			  case "w3":
-				  try {
-					setImg(ImageIO.read(new File("pics/Worker_3_on_Tile.png")));
-				} catch (IOException e) {
-					e.printStackTrace();
-				}// kép beolvasása
-				  setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
+				  if(t.AmountOfGrease()==0) {
+					  try {
+							setImg(ImageIO.read(new File("pics/Worker_3_on_Tile.png")));// kép beolvasása
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
+						  setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
+				  }else {
+					  if(t.getGrease().getMu()==-1) {//olaj
+						  try {
+								setImg(ImageIO.read(new File("pics/Worker_3_and_Oil_on_Tile.png")));// kép beolvasása
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
+							  setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
+					  }else {//méz
+						  try {
+								setImg(ImageIO.read(new File("pics/Worker_3_and_Honey_on_Tile.png")));// kép beolvasása
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
+							  setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
+					  }
+				  }
 				  break;
 			  case "w4":
-				  try {
-					setImg(ImageIO.read(new File("pics/Worker_4_on_Tile.png")));
-				} catch (IOException e) {
-					e.printStackTrace();
-				}// kép beolvasása
-				  setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
+				  if(t.AmountOfGrease()==0) {
+					  try {
+							setImg(ImageIO.read(new File("pics/Worker_4_on_Tile.png")));// kép beolvasása
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
+						  setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
+				  }else {
+					  if(t.getGrease().getMu()==-1) {//olaj
+						  try {
+								setImg(ImageIO.read(new File("pics/Worker_4_and_Oil_on_Tile.png")));// kép beolvasása
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
+							  setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
+					  }else {//méz
+						  try {
+								setImg(ImageIO.read(new File("pics/Worker_4_and_Honey_on_Tile.png")));// kép beolvasása
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
+							  setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
+					  }
+				  }
 				  break;
 			  }
 		  }
