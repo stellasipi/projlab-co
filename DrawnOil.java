@@ -18,11 +18,14 @@ public class DrawnOil extends Drawable {
 		setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
 		
 		setDepth(new Integer(2));//mélység beállítása
+		this.setXx(t.getCoords()[0]);
+		this.setYy(t.getCoords()[1]);
 	}
 
-	public void Draw(GameView gw) {
+	/*public void Draw(GameView gw) {
 		JLayeredPane a = gw.getTiles(t.getCoords()[0], t.getCoords()[1]);
 		a.add(getImg_label(),new Integer(2));
+		a.setBounds(0, 0, 25, 25);
 		gw.setTiles(t.getCoords()[0], t.getCoords()[1], a);	
-	}
+	}*/
 }

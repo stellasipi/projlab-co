@@ -15,7 +15,6 @@ import javax.swing.border.Border;
 
 
 public class GameView extends JFrame{
-	private JLayeredPane[][] tiles =  new JLayeredPane[15][20];
 	private JPanel scorePanel = new JPanel();
 	private JPanel mapPanel = new JPanel();
 	private JLabel[] scorelabels;
@@ -35,24 +34,11 @@ public class GameView extends JFrame{
 		this.setResizable(true);
 		
 		this.setLayout(new FlowLayout());
-		mapPanel.setMaximumSize(new Dimension(375,500));
-		mapPanel.setMinimumSize(new Dimension(375,500));
+		//mapPanel.setMaximumSize(new Dimension(375,500));
+		//mapPanel.setMinimumSize(new Dimension(375,500));
 		mapPanel.setLayout(new GridLayout(15,20));
 		//mapPanel.setLayout(null);
 		this.add(mapPanel);
-		
-		FlowLayout fl=new FlowLayout();
-		fl.setHgap(0); //no border
-		fl.setVgap(0);//no border
-		for(int i=0; i<15; i++) {
-			for(int j=0; j<20; j++) {
-				tiles[i][j]=new JLayeredPane();
-				//tiles[i][j].setBackground(Color.red);
-				tiles[i][j].setPreferredSize(new Dimension(25,25));
-				tiles[i][j].setLayout(fl);
-				mapPanel.add(tiles[i][j]);
-			}
-		}
 
 		this.add(keytest);
 		
@@ -110,9 +96,62 @@ public class GameView extends JFrame{
 		this.pack();//no border
 	}
 	void DrawAll() {
+		JLayeredPane[][] tiles =  new JLayeredPane[15][20];
+		FlowLayout fl=new FlowLayout();
+		fl.setHgap(0); //no border
+		fl.setVgap(0);//no border
+		for(int i=0; i<15; i++) {
+			for(int j=0; j<20; j++) {
+				LinkedHashMap<Integer, Image> hashmap = new LinkedHashMap<Integer, Image>();
+				for(int k=0; k<drawables.size(); k++) {
+					if((j==drawables.get(k).getYy())&(i==drawables.get(k).getXx())) {
+						hashmap.put( drawables.get(k).getDepth(), drawables.get(k).getImg());
+					}
+				}
+				tiles[i][j]=new JLayeredPane();
+				if(hashmap.containsKey(1)) {
+				//JLabel lab1 = new JLabel(new ImageIcon(hashmap.get(1)));
+				JLabel lab1 = new JLabel(new ImageIcon("pics/Tile.png"));
+				tiles[i][j].add(lab1, new Integer(1));
+				tiles[i][j].setBounds(0, 0, 25, 25);
+				}
+				if(hashmap.containsKey(2)) {
+				JLabel lab2 = new JLabel(new ImageIcon(hashmap.get(2)));
+					tiles[i][j].add(lab2, new Integer(2));
+					tiles[i][j].setBounds(0, 0, 25, 25);
+				}
+				else {
+					JLabel lab2 = new JLabel(new ImageIcon("pics/Oil.png"));
+					lab2.setBackground(new Color(0,0,0,0));
+					tiles[i][j].add(lab2, new Integer(2));
+					tiles[i][j].setBounds(0, 0, 25, 25);
+				}
+					
+				if(hashmap.containsKey(3)) {
+					JLabel lab3 = new JLabel(new ImageIcon("pics/Worker_2.png"));
+					//lab3 = new JLabel(new ImageIcon(hashmap.get(3)));
+					tiles[i][j].add(lab3, new Integer(3));
+					tiles[i][j].setBounds(0, 0, 25, 25);
+				}
+				tiles[i][j].setPreferredSize(new Dimension(25,25));
+				tiles[i][j].setLayout(fl);
+				mapPanel.add(tiles[i][j]);
+			}
+		}
+		/*for(int i=0; i<drawables.size(); i++) {
+			JLabel lab = new JLabel(new ImageIcon(drawables.get(i).getImg()));
+			for(int k=0; k<15; k++) {
+				for(int j=0; j<20; j++) {
+					if((k==drawables.get(i).getYy())&(j==drawables.get(i).getXx())) {
+						tiles[k][j].add(lab, drawables.get(i).getDepth());
+						tiles[k][j].setBounds(0, 0, 25, 25);
+					}
+				}
+			}
+		}
 		for(int i=0;i<drawables.size();i++) {
 			drawables.get(i).Draw(this);
-		}
+		}*/
 	}
 	void AddDrawables(Drawable d) {
 		drawables.add(d);
@@ -131,13 +170,12 @@ public class GameView extends JFrame{
 	public void setPlayerNumber(int playerNumber) {
 		this.playerNumber = playerNumber;
 	}
-	public JLayeredPane getTiles(int x, int y) {
+	/*public JLayeredPane getTiles(int x, int y) {
 		return tiles[x][y];
 	}
 	public void setTiles(int x, int y, JLayeredPane p) {
 		tiles[x][y] = p;
-		System.out.println("x: "+x+" "+"y: "+y+" és "+p.getComponentCount()+"db komponens van benne");
-	}
+	}*/
 	public Game getGame() {
 		return game;
 	}

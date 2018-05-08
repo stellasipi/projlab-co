@@ -36,11 +36,14 @@ public class DrawnWorker extends Drawable {
 		}
 		
 		setDepth(new Integer(3));//mélység beállítása
+		this.setXx(w.getTile().getCoords()[0]);
+		this.setYy(w.getTile().getCoords()[1]);
 	}	
 	
-	public void Draw(GameView gw) {
+	/*public void Draw(GameView gw) {
 		JLayeredPane a = gw.getTiles(w.getTile().getCoords()[0], w.getTile().getCoords()[1]);
 		a.add(getImg_label(),new Integer(3));
+		a.setBounds(0, 0, 25, 25);
 		gw.setTiles(w.getTile().getCoords()[0], w.getTile().getCoords()[1], a);	
-	}
+	}*/
 }

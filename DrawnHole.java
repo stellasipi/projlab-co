@@ -18,12 +18,16 @@ public class DrawnHole extends Drawable {
 		setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
 		
 		setDepth(new Integer(1));//mélység beállítása
+		
+		this.setXx(h.getCoords()[0]);
+		this.setYy(h.getCoords()[1]);
 	}
 	
-	public void Draw(GameView gw) {
+	/*public void Draw(GameView gw) {
 		JLayeredPane a = gw.getTiles(h.getCoords()[0], h.getCoords()[1]);
 		a.add(getImg_label(),new Integer(1));
+		a.setBounds(0, 0, 25, 25);
 		gw.setTiles(h.getCoords()[0], h.getCoords()[1], a);
-	}
+	}*/
 	
 }

@@ -17,11 +17,14 @@ public class DrawnCrate extends Drawable {
 		setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
 		
 		setDepth(new Integer(3));//mélység beállítása
+		this.setXx(c.getTile().getCoords()[0]);
+		this.setYy(c.getTile().getCoords()[1]);
 	}
 
-	public void Draw(GameView gw) {
+	/*public void Draw(GameView gw) {
 		JLayeredPane a = gw.getTiles(c.getTile().getCoords()[0], c.getTile().getCoords()[1]);
 		a.add(getImg_label(),new Integer(3));
+		a.setBounds(0, 0, 25, 25);
 		gw.setTiles(c.getTile().getCoords()[0], c.getTile().getCoords()[1], a);
-	}
+	}*/
 }
