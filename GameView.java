@@ -50,6 +50,7 @@ public class GameView extends JFrame{
 				//tiles[i][j].setBackground(Color.red);
 				tiles[i][j].setPreferredSize(new Dimension(25,25));
 				tiles[i][j].setLayout(fl);
+				tiles[i][j].setOpaque(false);
 				mapPanel.add(tiles[i][j]);
 			}
 		}
@@ -135,6 +136,7 @@ public class GameView extends JFrame{
 		return tiles[x][y];
 	}
 	public void setTiles(int x, int y, JLayeredPane p) {
+		tiles[x][y].setOpaque(false);
 		tiles[x][y] = p;
 		System.out.println("x: "+x+" "+"y: "+y+" és "+p.getComponentCount()+"db komponens van benne");
 	}
