@@ -16,7 +16,7 @@ import javax.swing.border.Border;
 
 public class GameView extends JFrame{
 	private JPanel scorePanel = new JPanel();
-	private JPanel mapPanel = new JPanel();
+	private JPanel mapPanel=new JPanel();
 	private JLabel[] scorelabels;
 	private JLabel keytest = new JLabel("");
 	private int playerNumber;
@@ -39,6 +39,23 @@ public class GameView extends JFrame{
 		mapPanel.setLayout(new GridLayout(15,20));
 		//mapPanel.setLayout(null);
 		this.add(mapPanel);
+<<<<<<< HEAD
+=======
+		
+		FlowLayout fl=new FlowLayout();
+		fl.setHgap(0); //no border
+		fl.setVgap(0);//no border
+		for(int i=0; i<15; i++) {
+			for(int j=0; j<20; j++) {
+				tiles[i][j]=new JLayeredPane();
+				//tiles[i][j].setBackground(Color.red);
+				tiles[i][j].setPreferredSize(new Dimension(25,25));
+				tiles[i][j].setLayout(fl);
+				tiles[i][j].setOpaque(false);
+				mapPanel.add(tiles[i][j]);
+			}
+		}
+>>>>>>> refs/remotes/origin/rand
 
 		this.add(keytest);
 		
@@ -174,6 +191,7 @@ public class GameView extends JFrame{
 		return tiles[x][y];
 	}
 	public void setTiles(int x, int y, JLayeredPane p) {
+		tiles[x][y].setOpaque(false);
 		tiles[x][y] = p;
 	}*/
 	public Game getGame() {

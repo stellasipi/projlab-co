@@ -15,7 +15,6 @@ public class DrawnCrate extends Drawable {
 		c=cr;
 		setImg(ImageIO.read(new File("pics/Crate.png"))); // kép beolvasása
 		setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
-		
 		setDepth(new Integer(3));//mélység beállítása
 		this.setXx(c.getTile().getCoords()[0]);
 		this.setYy(c.getTile().getCoords()[1]);

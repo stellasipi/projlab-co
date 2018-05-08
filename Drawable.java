@@ -7,7 +7,7 @@ import javax.swing.JLayeredPane;
 
 public abstract class Drawable implements Comparable<Drawable> {
 	private Image img;
-	private JLabel img_label;
+	private JLabel img_label=new JLabel();
 	private Integer depth;
 	private int xx = 0;
 	private int yy = 0;
