@@ -38,6 +38,7 @@ public class GameView extends JFrame{
 		mapPanel.setMaximumSize(new Dimension(375,500));
 		mapPanel.setMinimumSize(new Dimension(375,500));
 		mapPanel.setLayout(new GridLayout(15,20));
+		//mapPanel.setLayout(null);
 		this.add(mapPanel);
 		
 		FlowLayout fl=new FlowLayout();
@@ -46,7 +47,7 @@ public class GameView extends JFrame{
 		for(int i=0; i<15; i++) {
 			for(int j=0; j<20; j++) {
 				tiles[i][j]=new JLayeredPane();
-				tiles[i][j].setBackground(Color.red);
+				//tiles[i][j].setBackground(Color.red);
 				tiles[i][j].setPreferredSize(new Dimension(25,25));
 				tiles[i][j].setLayout(fl);
 				mapPanel.add(tiles[i][j]);
@@ -135,7 +136,7 @@ public class GameView extends JFrame{
 	}
 	public void setTiles(int x, int y, JLayeredPane p) {
 		tiles[x][y] = p;
-		System.out.println("SetTiles fv vége");
+		System.out.println("x: "+x+" "+"y: "+y+" és "+p.getComponentCount()+"db komponens van benne");
 	}
 	public Game getGame() {
 		return game;
