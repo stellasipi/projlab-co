@@ -13,12 +13,6 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.Border;
 
-<<<<<<< HEAD
-=======
-import shokoban.Button;
-
-
->>>>>>> rand
 public class GameView extends JFrame{
 	private JPanel scorePanel = new JPanel();
 	private JPanel mapPanel;
