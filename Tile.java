@@ -46,14 +46,6 @@ public class Tile extends TileElement {
 	public void setGrease(Grease g) {
 		grease.add(g);
 	}
-	
-	public Grease getGrease() {
-		return grease.get(grease.size()-1); //visszaadja az utolsó elemet
-	}
-	
-	public int AmountOfGrease() {
-		return grease.size();
-	}
 
 }
 

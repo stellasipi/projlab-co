@@ -1,4 +1,4 @@
-﻿/*package shokoban;
+﻿package shokoban;
 
 import java.io.File;
 import java.io.IOException;
@@ -7,7 +7,6 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
-import javax.swing.JPanel;
 
 public class DrawnWorker extends Drawable {
 	private Worker w;
@@ -37,12 +36,14 @@ public class DrawnWorker extends Drawable {
 		}
 		
 		setDepth(new Integer(3));//mélység beállítása
-
+		this.setXx(w.getTile().getCoords()[0]);
+		this.setYy(w.getTile().getCoords()[1]);
 	}	
 	
-	public void Draw(GameView gw) {
-		JPanel a = gw.getTiles(w.getTile().getCoords()[0], w.getTile().getCoords()[1]);
-		a.add(getImg_label());
+	/*public void Draw(GameView gw) {
+		JLayeredPane a = gw.getTiles(w.getTile().getCoords()[0], w.getTile().getCoords()[1]);
+		a.add(getImg_label(),new Integer(3));
+		a.setBounds(0, 0, 25, 25);
 		gw.setTiles(w.getTile().getCoords()[0], w.getTile().getCoords()[1], a);	
-	}
-}*/
+	}*/
+}
