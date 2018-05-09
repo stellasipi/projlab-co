@@ -103,6 +103,26 @@ public class Game {
 	public boolean CheckMoveableCrate()
 	{
         //Ellenőrzi, hogy van-e még mozgatható láda
+		for(int i=0;i<crates.size();i++)
+		{
+			Crate cr=crates.get(i);
+			String up= cr.getTile().getNeighbour(Direction.UP).getClass().getSimpleName();
+			String down= cr.getTile().getNeighbour(Direction.DOWN).getClass().getSimpleName();
+			String left= cr.getTile().getNeighbour(Direction.LEFT).getClass().getSimpleName();
+			String right= cr.getTile().getNeighbour(Direction.RIGHT).getClass().getSimpleName();
+			if((up.equals("Coloumn")||up.equals("Hole"))&&(right.equals("Coloumn")||right.equals("Hole")||left.equals("Coloumn")||left.equals("Hole")))
+			{
+				System.out.println("Movable");
+				return true;
+				
+			}
+			if((down.equals("Coloumn")||down.equals("Hole"))&&(right.equals("Coloumn")||right.equals("Hole")||left.equals("Coloumn")||left.equals("Hole")))
+			{
+				System.out.println("Movable");
+				return true;
+			}
+			
+		}
 		return false;
 	}
 	
