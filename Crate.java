@@ -17,8 +17,7 @@ public class Crate extends Object {
 			this.getTile().Remove(this);
 			this.setTile(target);
 			target.setObject(this);
-			this.getGame().CalculateScores();
-			//setPushedBy();
+			//this.getGame().CalculateScores();
 		}	
 	}
 	

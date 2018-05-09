@@ -53,6 +53,7 @@ public class Game {
         
         //Ellenőrzi a játék folytatásának feltételeit
         Check();
+        CalculateScores();
 	}
 	
 	public void Check()

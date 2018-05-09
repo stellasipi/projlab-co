@@ -21,6 +21,10 @@ public class GameView extends JFrame{
 	private JPanel mapPanel;
 	private int playerNumber;
 	private Game game;
+	private JLabel lab1 = new JLabel("Worker1 score: ");
+	private JLabel lab2 = new JLabel("Worker2 score: ");
+	private	JLabel lab3 = new JLabel("Worker3 score: ");
+	private JLabel lab4 = new JLabel("Worker4 score: ");
 	ArrayList<Drawable> drawables=new ArrayList<>();
 	
 	GameView(int pn) throws IOException{
@@ -44,18 +48,28 @@ public class GameView extends JFrame{
 		scorePanel.setLocation(0,375);		
 		scorePanel.setSize(500,100);
 		scorePanel.setBackground(new Color(236, 224, 194));
-		JLabel lab1 = new JLabel("Worker1 score: ");
 		lab1.setFont(new Font("Adobe Fan Heiti Std B", Font.BOLD, 16));
 		lab1.setForeground(new Color(88,62,24));
-		JLabel lab2 = new JLabel("Worker2 score: ");
 		lab2.setFont(new Font("Adobe Fan Heiti Std B", Font.BOLD, 16));
 		lab2.setForeground(new Color(88,62,24));
-		JLabel lab3 = new JLabel("Worker3 score: ");
 		lab3.setFont(new Font("Adobe Fan Heiti Std B", Font.BOLD, 16));
 		lab3.setForeground(new Color(88,62,24));
-		JLabel lab4 = new JLabel("Worker4 score: ");
 		lab4.setFont(new Font("Adobe Fan Heiti Std B", Font.BOLD, 16));
 		lab4.setForeground(new Color(88,62,24));
+		InitscorePanel();
+		
+		
+		// window properties
+		this.setResizable(false);
+		this.setSize(516,514);
+		this.setVisible(true);
+		this.setTitle("Shokoban");
+		this.add(scorePanel);
+		this.add(mapPanel);
+		
+	}
+	
+	public void InitscorePanel() {
 		switch(playerNumber) {
 		case 2:
 			scorePanel.setLayout(new GridLayout(1,2));
@@ -84,18 +98,9 @@ public class GameView extends JFrame{
 			lab3.setText("Worker3 score: " + game.getWorker("w3").getSumscore());
 			lab4.setText("Worker4 score: " + game.getWorker("w4").getSumscore());
 			break;
-			
-		}
-		
-		// window properties
-		this.setResizable(false);
-		this.setSize(516,514);
-		this.setVisible(true);
-		this.setTitle("Shokoban");
-		this.add(scorePanel);
-		this.add(mapPanel);
-		
+			}
 	}
+	
 	public void DrawAll() {
 		drawables = new ArrayList<Drawable>();
 		try {
@@ -107,6 +112,7 @@ public class GameView extends JFrame{
 		this.remove(mapPanel);
 		mapPanel = new MapPanel(this);
 		this.add(mapPanel);
+		InitscorePanel();
 	}
 	
 	void AddDrawables(Drawable d) {
