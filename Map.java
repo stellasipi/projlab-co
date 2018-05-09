@@ -9,6 +9,11 @@ public class Map {
 	// a pozíció alapján történő hivatkozáshoz egyszerűbb ha ilyen formában tároljuk a pályát
 	TileElement[][] Tiles = new TileElement[15][20];
 	
+	// default konstruktor, készít egy pályát
+	public Map() {
+		CreateMap2();
+	}
+	
 	/*
 	 * a LoadMap kezdetleges váza, a beolvasott fájl sorait kapja meg paraméternek, 
 	 * ebből az első 15 sor a pály maga, 

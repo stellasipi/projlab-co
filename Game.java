@@ -3,7 +3,7 @@ package shokoban;
 import java.util.ArrayList;
 
 public class Game {
-	Map map=new Map();
+	Map map;
 	ArrayList<Crate> crates= new ArrayList<>();
 	ArrayList<Worker> workers= new ArrayList<>();
 	private int PlayerNumber = 2;
@@ -29,7 +29,15 @@ public class Game {
 	public void StartGame()
 	{
         //Elindul a játék, létrejön a map és a objectek
-        map.CreateMap2();
+		map = null;
+		while(map == null) {
+			try {
+				map = new Map();
+			}catch(Exception e) {
+				map = null;
+			}
+		}
+        
         for(int i=0; i<10; i++) {
         	Crate c=new Crate();
         	String ID = "c" + (i+1);
