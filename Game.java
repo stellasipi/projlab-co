@@ -146,21 +146,14 @@ public class Game {
 						if(map.Tiles[i][j].getObject()!=null) {
 							//Ha láda van rajta
 							if(map.Tiles[i][j].getObject().getClass().getSimpleName().equals("Crate")) {
-								System.out.println("Crate-es if");
-								//innentől nem tetszik, néha működik, de inkábbb nem
+								//növeli a pontszámát a ládát odatoló játékosnak
 								Crate c=(Crate)map.Tiles[i][j].getObject();
-									System.out.println(c.getPushedBy().getId());
 									int test = c.getPushedBy().getSumscore();
-									System.out.println(test);
 									c.getPushedBy().setSumscore(test+10);
 							}
 						}
 					}
 		      }
-		}
-		
-		for(int i=0;i<workers.size();i++) {
-			System.out.println("w"+i+": "+workers.get(i).getSumscore()+" pont");
 		}
 	}
 	
