@@ -74,17 +74,21 @@ public class Worker extends Object {
 	}
 	
 	void PlaceOil() {
+		try {
 			Grease g=new Grease();
 			g.setMu(g.getMu()*(-1)); //létrehozza az olajat, ami mínusz előjelű
 			this.getTileType().setGrease(g); //rápakoljuk az olajat
-			
+    	}catch(NullPointerException npe) {
+    		
+    	}
 	}
-	
-	
-	
 	void PlaceHoney() {
-		Grease g=new Grease();
-		this.getTileType().setGrease(g); //rápakoljuk a mézet
+		try {
+			Grease g=new Grease();
+			this.getTileType().setGrease(g); //rápakoljuk a mézet
+    	}catch(NullPointerException npe) {
+    		
+    	}
 	}
 	
 	public int getSumscore() {
