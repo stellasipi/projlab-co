@@ -50,14 +50,15 @@ public class GameView extends JFrame{
 		// pályaelemek feltöltése
 		InitGame();
 		
-		// valahogy kirajzolunk
+		//kirajzolunk
 		mapPanel = new MapPanel(this);
+		scorePanel.setLocation(0,375);
+		
 		this.add(scorePanel);
-		mapPanel.setLocation(0,100);
 		this.add(mapPanel);
 		
 	}
-	public void DrawAll2() {
+	public void DrawAll() {
 		drawables = new ArrayList<Drawable>();
 		try {
 			FillDrawables();
@@ -67,71 +68,9 @@ public class GameView extends JFrame{
 		}
 		this.remove(mapPanel);
 		mapPanel = new MapPanel(this);
-		mapPanel.setLocation(0,100);
 		this.add(mapPanel);
 	}
-	void DrawAll() {
-		JLayeredPane[][] tiles =  new JLayeredPane[15][20];
-		FlowLayout fl=new FlowLayout();
-		fl.setHgap(0); //no border
-		fl.setVgap(0);//no border
-		for(int i=0; i<15; i++) {
-			for(int j=0; j<20; j++) {
-				LinkedHashMap<Integer, Image> hashmap = new LinkedHashMap<Integer, Image>();
-				for(int k=0; k<drawables.size(); k++) {
-					if((j==drawables.get(k).getYy())&(i==drawables.get(k).getXx())) {
-						hashmap.put( drawables.get(k).getDepth(), drawables.get(k).getImg());
-					}
-				}
-				tiles[i][j]=new JLayeredPane();
-				if(hashmap.containsKey(1)) {
-				//JLabel lab1 = new JLabel(new ImageIcon(hashmap.get(1)));
-				JLabel lab1 = new JLabel(new ImageIcon("pics/Tile.png"));
-				tiles[i][j].add(lab1, new Integer(1));
-				//tiles[i][j].add(lab1, JLayeredPane.DEFAULT_LAYER);
-				tiles[i][j].setBounds(0, 0, 25, 25);
-				}
-				if(hashmap.containsKey(2)) {
-				JLabel lab2 = new JLabel(new ImageIcon(hashmap.get(2)));
-					tiles[i][j].add(lab2, new Integer(2));
-					//tiles[i][j].add(lab2, JLayeredPane.PALETTE_LAYER);
-					tiles[i][j].setBounds(0, 0, 25, 25);
-				}
-				else {
-					JLabel lab2 = new JLabel(new ImageIcon("pics/Oil.png"));
-					lab2.setBackground(new Color(0,0,0,0));
-					tiles[i][j].add(lab2, new Integer(2));
-					//tiles[i][j].add(lab2, JLayeredPane.PALETTE_LAYER);
-					tiles[i][j].setBounds(0, 0, 25, 25);
-				}
-					
-				if(hashmap.containsKey(3)) {
-					JLabel lab3 = new JLabel(new ImageIcon("pics/Worker_2.png"));
-					//lab3 = new JLabel(new ImageIcon(hashmap.get(3)));
-					//tiles[i][j].add(lab3, new Integer(3));
-					tiles[i][j].add(lab3, JLayeredPane.MODAL_LAYER);
-					tiles[i][j].setBounds(0, 0, 25, 25);
-				}
-				tiles[i][j].setPreferredSize(new Dimension(25,25));
-				tiles[i][j].setLayout(fl);
-				mapPanel.add(tiles[i][j]);
-			}
-		}
-		/*for(int i=0; i<drawables.size(); i++) {
-			JLabel lab = new JLabel(new ImageIcon(drawables.get(i).getImg()));
-			for(int k=0; k<15; k++) {
-				for(int j=0; j<20; j++) {
-					if((k==drawables.get(i).getYy())&(j==drawables.get(i).getXx())) {
-						tiles[k][j].add(lab, drawables.get(i).getDepth());
-						tiles[k][j].setBounds(0, 0, 25, 25);
-					}
-				}
-			}
-		}
-		for(int i=0;i<drawables.size();i++) {
-			drawables.get(i).Draw(this);
-		}*/
-	}
+	
 	void AddDrawables(Drawable d) {
 		drawables.add(d);
 		
@@ -146,10 +85,10 @@ public class GameView extends JFrame{
 			FillDrawables();
 		} catch (IOException e) {
 			e.printStackTrace();
-			System.out.println("input fuckup");
+			System.out.println("Az inputbeolvasás nem működött helyesen.");
 		}
 	}
-	private void FillDrawables() throws IOException {
+	private void FillDrawables() throws IOException { //drawables adattag feltöltése a játék logikából
 		for(int i=0; i<15; i++) {
 			for(int j=0; j<20; j++) {
 				TileElement te = game.map.getTile(i, j);
@@ -198,7 +137,7 @@ public class GameView extends JFrame{
 		SortDrawables();
 	}
 	
-	public void SortDrawables() {
+	public void SortDrawables() {//mélység szerinti rendezés
 		Collections.sort(drawables, new Comparator<Drawable>() {
 
 			@Override
