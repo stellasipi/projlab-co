@@ -198,7 +198,7 @@ import java.awt.event.KeyListener;
 				}
 				break;
 				
-			case KeyEvent.VK_8:
+			case KeyEvent.VK_NUMPAD8:
 				System.out.println(key);
 				s=gv.getGame().getWorker("w3");
 				if(s!=null) 
@@ -208,7 +208,7 @@ import java.awt.event.KeyListener;
 				}
 				break;
 				
-			case KeyEvent.VK_4:
+			case KeyEvent.VK_NUMPAD4:
 				System.out.println(key);
 				s=gv.getGame().getWorker("w3");
 				if(s!=null) 
@@ -218,7 +218,7 @@ import java.awt.event.KeyListener;
 				}
 				break;
 				
-			case KeyEvent.VK_5:
+			case KeyEvent.VK_NUMPAD5:
 				System.out.println(key);
 				s=gv.getGame().getWorker("w3");
 				if(s!=null) 
@@ -228,7 +228,7 @@ import java.awt.event.KeyListener;
 				}
 				break;
 				
-			case KeyEvent.VK_6:
+			case KeyEvent.VK_NUMPAD6:
 				System.out.println(key);
 				s=gv.getGame().getWorker("w3");
 				if(s!=null) 
@@ -238,7 +238,7 @@ import java.awt.event.KeyListener;
 				}
 				break;
 				
-			case KeyEvent.VK_7:
+			case KeyEvent.VK_NUMPAD7:
 				s=gv.getGame().getWorker("w3");
 				if(s!=null) 
 				{
@@ -247,7 +247,7 @@ import java.awt.event.KeyListener;
 				}
 				break;	
 				
-			case KeyEvent.VK_9:
+			case KeyEvent.VK_NUMPAD9:
 				s=gv.getGame().getWorker("w3");
 				if(s!=null) 
 				{
