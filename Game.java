@@ -104,6 +104,7 @@ public class Game {
 	public boolean CheckMoveableCrate()
 	{
         //Ellenőrzi, hogy van-e még mozgatható láda
+		int count=0;
 		for(int i=0;i<crates.size();i++)
 		{
 			Crate cr=crates.get(i);
@@ -113,18 +114,19 @@ public class Game {
 			String right= cr.getTile().getNeighbour(Direction.RIGHT).getClass().getSimpleName();
 			if((up.equals("Coloumn")||up.equals("Hole"))&&(right.equals("Coloumn")||right.equals("Hole")||left.equals("Coloumn")||left.equals("Hole")))
 			{
-				System.out.println("Movable");
-				return true;
+				count++;
 				
 			}
-			if((down.equals("Coloumn")||down.equals("Hole"))&&(right.equals("Coloumn")||right.equals("Hole")||left.equals("Coloumn")||left.equals("Hole")))
+			else if((down.equals("Coloumn")||down.equals("Hole"))&&(right.equals("Coloumn")||right.equals("Hole")||left.equals("Coloumn")||left.equals("Hole")))
 			{
-				System.out.println("Movable");
-				return true;
+				count++;
 			}
 			
 		}
-		return false;
+		if (count==crates.size())
+			return true;
+		else
+			return false;
 	}
 	
 	public boolean CheckPushable()
