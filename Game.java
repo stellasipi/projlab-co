@@ -91,11 +91,12 @@ public class Game {
 	
 	public boolean CheckCrate()
 	{
-        //Ellenőrzi, hogy van-e még mozgatható láda
+        //Ellenőrzi, hogy van-e még mozgatható láda és hogy ami mozgatható target-en van-e
 		int count=0;
 		for(int i=0;i<crates.size();i++)
 		{
 			Crate cr=crates.get(i);
+			//végigmegyünk az összes ládán, és a szomszedok alapján ellenőrizzük hogy mozgatható-e oda, ha nem, növeljük a count-ot
 			String up= cr.getTile().getNeighbour(Direction.UP).getClass().getSimpleName();
 			String down= cr.getTile().getNeighbour(Direction.DOWN).getClass().getSimpleName();
 			String left= cr.getTile().getNeighbour(Direction.LEFT).getClass().getSimpleName();
@@ -109,21 +110,19 @@ public class Game {
 			{
 				count++;
 			}
+			//ha target-en van a láda növeljük a count-ot
 			else if((cr.getTile().getClass().getSimpleName().equals("Target")))
 					count++;
 		
 		}
+		//ha a count és a ládák száma egyezik akkor vége a játéknak
 		if (count==crates.size())
 			return true;
 		else
 			return false;
 	}
 	
-	public boolean CheckPushable()
-	{
-        //Ellenőrzi, hogy a mozgatható ládák elérhetőek-e a munkások számára
-		return false;
-	}
+	
 	
 	public void CalculateScores(){
 		for(int i=0; i<15 ; i++) {
