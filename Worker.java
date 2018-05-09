@@ -33,6 +33,7 @@ public class Worker extends Object {
 			this.getTile().Remove(this); //eltávolítja magát a másikról
 			t.setObject(this);	//beállítja magát az új mezőnek
 			this.setTile(t);	//beállítj az új mezőt magának
+			
 		}
 	}
 	
@@ -96,7 +97,7 @@ public class Worker extends Object {
 	}
 	
 	public void setSumscore(int s) {
-        sumscore = s;
+        sumscore=s;
 	}
 
 	public int getStrenght() {

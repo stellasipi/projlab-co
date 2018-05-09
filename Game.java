@@ -53,6 +53,7 @@ public class Game {
         
         //Ellenőrzi a játék folytatásának feltételeit
         Check();
+        CalculateScores();
 	}
 	
 	public void Check()
@@ -132,9 +133,32 @@ public class Game {
 		return false;
 	}
 	
-	public void CalculateScores()
-	{
-        //Összeszámolja a pontokat, az alapján, hogy hány láda van célon és ki tolta oda.
+	public void CalculateScores(){
+		for(int i=0; i<15 ; i++) {
+		      for(int j=0; j<20; j++) {
+					System.out.println("for");
+					
+					if(map.Tiles[i][j].getClass().getSimpleName().equals("Target")) {
+						System.out.println("Target-es if");
+						
+						if(map.Tiles[i][j].getObject()==null) {//ha nincs rajta object
+							System.out.println("semmi");
+							
+						}else {
+							if(map.Tiles[i][j].getObject().getClass().getSimpleName().equals("Crate")) {
+								System.out.println("Crate-es if");
+								
+								Crate c=(Crate)map.Tiles[i][j].getObject();
+								c.getPushedBy().setSumscore(); //a setSumScore hasába egy int kell
+							}
+						}
+					}
+		      }
+		}
+		
+		for(int i=0;i<workers.size();i++) {
+			System.out.println("w"+i+": "+workers.get(i).getSumscore()+" pont");
+		}
 	}
 	
 	public void Die(Worker w)
