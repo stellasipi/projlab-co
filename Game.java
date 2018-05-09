@@ -6,7 +6,7 @@ public class Game {
 	Map map=new Map();
 	ArrayList<Crate> crates= new ArrayList<>();
 	ArrayList<Worker> workers= new ArrayList<>();
-	private int PlayerNumber = 1;
+	private int PlayerNumber = 2;
 	private GameView gv;
 	
 	public GameView getGameView() {
@@ -23,6 +23,7 @@ public class Game {
 	public void EndGame()
 	{
         //Vége a játéknak
+		System.exit(0);
 	}
 	
 	public void StartGame()
@@ -81,12 +82,21 @@ public class Game {
 	public boolean CheckCrateOnTarget()
 	{
         //Ellenőrzi, hogy az összes láda a célon van-e
-		return false;
-	}
+		for(int i=0; i<crates.size();i++)
+		{
+			Crate cr=crates.get(i);
+			if(!(cr.getTile().getClass().getSimpleName().equals("Target")))
+				return false;
+		}
+		return true;
+			}
 	
 	public boolean CheckDeadWorker()
 	{
-        //Ellenőrzi, hogy az összes játékos meghalt-e
+		//Ha üres a workers vége a játéknak
+        if (workers.size()==0)
+        	return true;
+        else
 		return false;
 	}
 	
