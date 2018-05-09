@@ -75,17 +75,32 @@ public class GameView extends JFrame{
 			scorePanel.setLayout(new GridLayout(1,2));
 			scorePanel.add(lab1);
 			scorePanel.add(lab2);
-			lab1.setText("Worker1 score: " + game.getWorker("w1").getSumscore());
-			lab2.setText("Worker2 score: " + game.getWorker("w2").getSumscore());
+			if(game.getWorker("w1")!=null)
+				lab1.setText("Worker1 score: " + game.getWorker("w1").getSumscore());
+			else
+				lab1.setText("Worker1: died");
+			if(game.getWorker("w2")!=null)
+				lab2.setText("Worker2 score: " + game.getWorker("w2").getSumscore());
+			else
+				lab2.setText("Worker2: died");
 			break;
 		case 3:
 			scorePanel.setLayout(new GridLayout(2,2));
 			scorePanel.add(lab1);
 			scorePanel.add(lab2);
 			scorePanel.add(lab3);
-			lab1.setText("Worker1 score: " + game.getWorker("w1").getSumscore());
-			lab2.setText("Worker2 score: " + game.getWorker("w2").getSumscore());
-			lab3.setText("Worker3 score: " + game.getWorker("w3").getSumscore());
+			if(game.getWorker("w1")!=null)
+				lab1.setText("Worker1 score: " + game.getWorker("w1").getSumscore());
+			else
+				lab1.setText("Worker1: died");
+			if(game.getWorker("w2")!=null)
+				lab2.setText("Worker2 score: " + game.getWorker("w2").getSumscore());
+			else
+				lab2.setText("Worker2: died");
+			if(game.getWorker("w3")!=null)
+				lab3.setText("Worker3 score: " + game.getWorker("w3").getSumscore());
+			else
+				lab3.setText("Worker3: died");
 			break;
 		case 4:
 			scorePanel.setLayout(new GridLayout(2,2));
@@ -93,10 +108,22 @@ public class GameView extends JFrame{
 			scorePanel.add(lab2);
 			scorePanel.add(lab3);
 			scorePanel.add(lab4);
-			lab1.setText("Worker1 score: " + game.getWorker("w1").getSumscore());
-			lab2.setText("Worker2 score: " + game.getWorker("w2").getSumscore());
-			lab3.setText("Worker3 score: " + game.getWorker("w3").getSumscore());
-			lab4.setText("Worker4 score: " + game.getWorker("w4").getSumscore());
+			if(game.getWorker("w1")!=null)
+				lab1.setText("Worker1 score: " + game.getWorker("w1").getSumscore());
+			else
+				lab1.setText("Worker1: died");
+			if(game.getWorker("w2")!=null)
+				lab2.setText("Worker2 score: " + game.getWorker("w2").getSumscore());
+			else
+				lab2.setText("Worker2: died");
+			if(game.getWorker("w3")!=null)
+				lab3.setText("Worker3 score: " + game.getWorker("w3").getSumscore());
+			else
+				lab3.setText("Worker3: died");
+			if(game.getWorker("w4")!=null)
+				lab4.setText("Worker4 score: " + game.getWorker("w4").getSumscore());
+			else
+				lab4.setText("Worker4: died");
 			break;
 			}
 	}
