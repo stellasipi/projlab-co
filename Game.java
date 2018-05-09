@@ -59,7 +59,7 @@ public class Game {
 	public void Check()
 	{
         //Ellenőriz minden feltételt
-        if(CheckCrateOnTarget()||CheckDeadWorker()||CheckMoveableCrate()||CheckPushable())
+        if(CheckDeadWorker()||CheckCrate())
         	this.EndGame();
 	}
 	
@@ -80,18 +80,6 @@ public class Game {
         c.setGame(this);
 	}
 	
-	public boolean CheckCrateOnTarget()
-	{
-        //Ellenőrzi, hogy az összes láda a célon van-e
-		for(int i=0; i<crates.size();i++)
-		{
-			Crate cr=crates.get(i);
-			if(!(cr.getTile().getClass().getSimpleName().equals("Target")))
-				return false;
-		}
-		return true;
-			}
-	
 	public boolean CheckDeadWorker()
 	{
 		//Ha üres a workers vége a játéknak
@@ -101,7 +89,7 @@ public class Game {
 		return false;
 	}
 	
-	public boolean CheckMoveableCrate()
+	public boolean CheckCrate()
 	{
         //Ellenőrzi, hogy van-e még mozgatható láda
 		int count=0;
@@ -121,7 +109,9 @@ public class Game {
 			{
 				count++;
 			}
-			
+			else if((cr.getTile().getClass().getSimpleName().equals("Target")))
+					count++;
+		
 		}
 		if (count==crates.size())
 			return true;
@@ -151,7 +141,7 @@ public class Game {
 								System.out.println("Crate-es if");
 								
 								Crate c=(Crate)map.Tiles[i][j].getObject();
-								c.getPushedBy().setSumscore(); //a setSumScore hasába egy int kell
+							//	c.getPushedBy().setSumscore(); //a setSumScore hasába egy int kell
 							}
 						}
 					}
