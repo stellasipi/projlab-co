@@ -45,8 +45,18 @@ public class Button extends TileElement {
 	public void Switch(Trap t) {
 		
 		//Csapda állapotának változtatása, ha aktív -> inkatív, ha inaktív -> aktív
-		if(!t.getActive())
+		if(!t.getActive()) {
 			t.setActive(true); //aktívra állítjuk a csapdát
+			if(t.getObject()!=null) {//ha áll rajta object akkor meghal
+				if(t.getObject().getClass().getSimpleName().equals("Worker")) {//ha Worker
+					Worker w=(Worker)t.getObject();
+					t.getObject().getGame().Die(w);
+				}else {//ha Crate
+					Crate c=(Crate)t.getObject();
+					t.getObject().getGame().Die(c);
+				}				
+			}
+		}	
 		else
 			t.setActive(false); //inaktívra állítjuk a csapdát
 		
