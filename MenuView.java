@@ -26,7 +26,6 @@ public class MenuView extends JFrame {
 		comboPlayerNum.setFont(new Font("Adobe Fan Heiti Std B", Font.BOLD, 12));
 		comboPlayerNum.setForeground(new Color(88,62,24));
 		comboPlayerNum.setBackground(new Color(236, 224, 194));
-		//comboPlayerNum.set
 		comboPlayerNum.addItem("2");
 		comboPlayerNum.addItem("3");
 		comboPlayerNum.addItem("4");

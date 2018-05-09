@@ -19,25 +19,15 @@ import shokoban.Button;
 public class GameView extends JFrame{
 	private JPanel scorePanel = new JPanel();
 	private JPanel mapPanel;
-	private JLabel[] scorelabels;
-	private JLabel keytest = new JLabel("");
 	private int playerNumber;
 	private Game game;
 	ArrayList<Drawable> drawables=new ArrayList<>();
 	
-	GameView(int playerNumber) throws IOException{
-		this.playerNumber = playerNumber;
+	GameView(int pn) throws IOException{
 		
-		// window properties
-		this.setResizable(false);
-		this.setSize(516,514);
-		this.setVisible(true);
-		this.setTitle("Shokoban");
-		
-		
-		scorePanel.setSize(500,100);
-		scorePanel.setBackground(Color.green);
-		scorePanel.setLocation(0, 0);
+		//Alapbeállítások
+		this.playerNumber = pn;
+		InitGame(); // pályaelemek feltöltése
 		
 		// listeners
 		this.addKeyListener(new MyKeyListener(this));
@@ -47,13 +37,61 @@ public class GameView extends JFrame{
             }
         });
 		
-		// pályaelemek feltöltése
-		InitGame();
-		
-		//kirajzolunk
+		//mapPanel beállítása
 		mapPanel = new MapPanel(this);
-		scorePanel.setLocation(0,375);
 		
+		//scorePanel beállítása
+		scorePanel.setLocation(0,375);		
+		scorePanel.setSize(500,100);
+		scorePanel.setBackground(new Color(236, 224, 194));
+		JLabel lab1 = new JLabel("Worker1 score: ");
+		lab1.setFont(new Font("Adobe Fan Heiti Std B", Font.BOLD, 16));
+		lab1.setForeground(new Color(88,62,24));
+		JLabel lab2 = new JLabel("Worker2 score: ");
+		lab2.setFont(new Font("Adobe Fan Heiti Std B", Font.BOLD, 16));
+		lab2.setForeground(new Color(88,62,24));
+		JLabel lab3 = new JLabel("Worker3 score: ");
+		lab3.setFont(new Font("Adobe Fan Heiti Std B", Font.BOLD, 16));
+		lab3.setForeground(new Color(88,62,24));
+		JLabel lab4 = new JLabel("Worker4 score: ");
+		lab4.setFont(new Font("Adobe Fan Heiti Std B", Font.BOLD, 16));
+		lab4.setForeground(new Color(88,62,24));
+		switch(playerNumber) {
+		case 2:
+			scorePanel.setLayout(new GridLayout(1,2));
+			scorePanel.add(lab1);
+			scorePanel.add(lab2);
+			lab1.setText("Worker1 score: " + game.getWorker("w1").getSumscore());
+			lab2.setText("Worker2 score: " + game.getWorker("w2").getSumscore());
+			break;
+		case 3:
+			scorePanel.setLayout(new GridLayout(2,2));
+			scorePanel.add(lab1);
+			scorePanel.add(lab2);
+			scorePanel.add(lab3);
+			lab1.setText("Worker1 score: " + game.getWorker("w1").getSumscore());
+			lab2.setText("Worker2 score: " + game.getWorker("w2").getSumscore());
+			lab3.setText("Worker3 score: " + game.getWorker("w3").getSumscore());
+			break;
+		case 4:
+			scorePanel.setLayout(new GridLayout(2,2));
+			scorePanel.add(lab1);
+			scorePanel.add(lab2);
+			scorePanel.add(lab3);
+			scorePanel.add(lab4);
+			lab1.setText("Worker1 score: " + game.getWorker("w1").getSumscore());
+			lab2.setText("Worker2 score: " + game.getWorker("w2").getSumscore());
+			lab3.setText("Worker3 score: " + game.getWorker("w3").getSumscore());
+			lab4.setText("Worker4 score: " + game.getWorker("w4").getSumscore());
+			break;
+			
+		}
+		
+		// window properties
+		this.setResizable(false);
+		this.setSize(516,514);
+		this.setVisible(true);
+		this.setTitle("Shokoban");
 		this.add(scorePanel);
 		this.add(mapPanel);
 		
