@@ -53,7 +53,6 @@ public class Game {
         
         //Ellenőrzi a játék folytatásának feltételeit
         Check();
-        CalculateScores();
 	}
 	
 	public void Check()
@@ -125,22 +124,26 @@ public class Game {
 	
 	
 	public void CalculateScores(){
+		//Kinulázza a pontszámokat
+		for(int i=0;i<workers.size();i++) {
+			workers.get(i).setSumscore(0);
+		}
+		//Végig megy a pályán, ha ládákat akartuk megnézni, nem működött valószínűleg castolás miatt
 		for(int i=0; i<15 ; i++) {
 		      for(int j=0; j<20; j++) {
-					System.out.println("for");
-					
+		    	  //ha target
 					if(map.Tiles[i][j].getClass().getSimpleName().equals("Target")) {
-						System.out.println("Target-es if");
-						
-						if(map.Tiles[i][j].getObject()==null) {//ha nincs rajta object
-							System.out.println("semmi");
-							
-						}else {
+						//ha van rajta valami
+						if(map.Tiles[i][j].getObject()!=null) {
+							//Ha láda van rajta
 							if(map.Tiles[i][j].getObject().getClass().getSimpleName().equals("Crate")) {
 								System.out.println("Crate-es if");
-								
+								//innentől nem tetszik, néha működik, de inkábbb nem
 								Crate c=(Crate)map.Tiles[i][j].getObject();
-							//	c.getPushedBy().setSumscore(); //a setSumScore hasába egy int kell
+									System.out.println(c.getPushedBy().getId());
+									int test = c.getPushedBy().getSumscore();
+									System.out.println(test);
+									c.getPushedBy().setSumscore(test+10);
 							}
 						}
 					}
