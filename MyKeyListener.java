@@ -180,7 +180,7 @@ import java.awt.event.KeyListener;
 				}
 				break;
 				
-			case KeyEvent.VK_0:
+			case KeyEvent.VK_NUMPAD0:
 				s=gv.getGame().getWorker("w4");
 				if(s!=null) 
 				{
@@ -189,7 +189,7 @@ import java.awt.event.KeyListener;
 				}
 				break;	
 				
-			case KeyEvent.VK_1:
+			case KeyEvent.VK_NUMPAD1:
 				s=gv.getGame().getWorker("w4");
 				if(s!=null) 
 				{
