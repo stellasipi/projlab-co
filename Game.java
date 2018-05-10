@@ -61,7 +61,12 @@ public class Game {
         
         //Ellenőrzi a játék folytatásának feltételeit
         Check();
-        CalculateScores();
+        try {
+        	CalculateScores();
+        }catch(NullPointerException npe) {
+        	//System.out.println("CalculateScores nullptr exception adódott.");
+        }
+        
 	}
 	
 	public void Check()

@@ -15,7 +15,7 @@ public class MenuView extends JFrame {
 	MenuView(){
 		
 		//Title beállítása
-		titleLabel.setFont(new Font("Vineta BT", Font.PLAIN, 40));
+		titleLabel.setFont(new Font("Impact", Font.PLAIN, 40));
 		titleLabel.setForeground(new Color(150,4,4));
 		titleLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		titleLabel.setVerticalAlignment(SwingConstants.CENTER);
