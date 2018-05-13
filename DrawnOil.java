@@ -15,17 +15,19 @@ public class DrawnOil extends Drawable {
 		this.t = t;
 		
 		setImg(ImageIO.read(new File("pics/Oil.png"))); // kép beolvasása
-		setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
-		
+		//setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
+		this.setIcon(new ImageIcon(getImg()));
+
 		setDepth(new Integer(2));//mélység beállítása
-		this.setXx(t.getCoords()[0]);
-		this.setYy(t.getCoords()[1]);
+		
+		this.setX(t.getCoords()[0]);
+		this.setY(t.getCoords()[1]);
 	}
 
-	/*public void Draw(GameView gw) {
-		JLayeredPane a = gw.getTiles(t.getCoords()[0], t.getCoords()[1]);
-		a.add(getImg_label(),new Integer(2));
-		a.setBounds(0, 0, 25, 25);
-		gw.setTiles(t.getCoords()[0], t.getCoords()[1], a);	
-	}*/
+	@Override
+	public void refresh() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

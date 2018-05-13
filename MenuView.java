@@ -50,6 +50,7 @@ public class MenuView extends JFrame {
 		this.setVisible(true);
 		this.setSize(400, 400);
 		this.setResizable(false);
+		this.setLocationRelativeTo(null);
 		base.setBackground(new Color(216, 190, 126));
 		this.add(base);
 		base.setLayout(new GridBagLayout());

@@ -28,7 +28,6 @@ import java.awt.event.KeyListener;
 				{
 				gv.getGame().Move(s, Direction.UP);
 				}
-				gv.getGame();
 				break;
 				
 			case KeyEvent.VK_A:
@@ -220,10 +219,10 @@ import java.awt.event.KeyListener;
 				System.exit(0);
 				break;	
 			}
+			
 			gv.revalidate();
 			gv.repaint();
 			gv.DrawAll();
-			//Invalidate
 		}
 
 		@Override

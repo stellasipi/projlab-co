@@ -16,21 +16,36 @@ public class DrawnTrap extends Drawable {
 		
 		if(t.getActive()) {
 			setImg(ImageIO.read(new File("pics/Trap_opened.png"))); // kép beolvasása
-			setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
 		}else {
-			setImg(ImageIO.read(new File("pics/Trap_closed.png"))); // kép beolvasása
-			setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez			
+			setImg(ImageIO.read(new File("pics/Trap_closed.png"))); // kép beolvasása			
 		}
 		
+		this.setIcon(new ImageIcon(getImg()));
+		
 		setDepth(new Integer(1));//mélység beállítása
-		this.setXx(t.getCoords()[0]);
-		this.setYy(t.getCoords()[1]);
+		Integer[] temp = t.getCoords();
+		this.setX(temp[0]);
+		this.setY(temp[1]);
 	}
-	
-	/*public void Draw(GameView gw) {
-		JLayeredPane a = gw.getTiles(t.getCoords()[0], t.getCoords()[1]);
-		a.add(getImg_label(),new Integer(1));
-		a.setBounds(0, 0, 25, 25);
-		gw.setTiles(t.getCoords()[0], t.getCoords()[1], a);
-	}*/
+
+	@Override
+	public void refresh() {
+		Integer[] temp = t.getCoords();
+		this.setX(temp[0]);
+		this.setY(temp[1]);
+		if(t.getActive()) {
+			try {
+				setImg(ImageIO.read(new File("pics/Trap_opened.png")));
+			} catch (IOException e) {
+				e.printStackTrace();
+			} // kép beolvasása
+		}else {
+			try {
+				setImg(ImageIO.read(new File("pics/Trap_closed.png")));
+			} catch (IOException e) {
+				e.printStackTrace();
+			} // kép beolvasása			
+		}
+	}
+
 }

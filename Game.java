@@ -9,10 +9,6 @@ public class Game {
 	private int PlayerNumber = 2;
 	private GameView gv;
 	
-	public GameView getGameView() {
-		return gv;
-	}
-	
 	public Game(int n) {
 		PlayerNumber = n;
 		StartGame();
@@ -134,9 +130,7 @@ public class Game {
 		else
 			return false;
 	}
-	
-	
-	
+		
 	public void CalculateScores(){
 		//Kinulázza a pontszámokat
 		for(int i=0;i<workers.size();i++) {
@@ -166,12 +160,14 @@ public class Game {
 	{        
         //meghal a munkás, kivesszük a game-ből
         workers.remove(w);
+        gv.removeWorker(w);
 	}
 	
 	public void Die(Crate c)
 	{
         //meghal a láda , kivesszük a game-ből
 		crates.remove(c);
+		gv.removeCrate(c);
 	}
 	
 	public Map getMap() {
@@ -190,6 +186,24 @@ public class Game {
 		}
 		return null;
 	}
+	
+	public Crate getCrate(String c_id) {
+		for(Crate c : crates) {
+			if(c.getId().equals(c_id)) {
+				return c;
+			}
+		}
+		return null;
+	}
+	
+	public GameView getGameView() {
+		return gv;
+	}
+	
+	public void setGameView(GameView gv) {
+		this.gv=gv;
+	}
+	
 }
 
 

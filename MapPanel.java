@@ -17,9 +17,7 @@ public class MapPanel extends JPanel {
 		this.setLayout(null);
 		
 		//színezés
-		Draw();
-		
-		
+		Draw();		
 	}
 	
 	private void DrawAll() {
@@ -30,7 +28,7 @@ public class MapPanel extends JPanel {
 	
 	private void Draw() {
 		for(Drawable d : parent.drawables) {
-			JLabel temp = d.getImg_label();
+			JLabel temp = d;
 			temp.setSize(25, 25);
 			temp.setLocation(d.getYy()*25, d.getXx()*25);
 			temp.setVisible(true);

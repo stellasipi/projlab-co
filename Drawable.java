@@ -5,12 +5,13 @@ import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 
 
-public abstract class Drawable implements Comparable<Drawable> {
+public abstract class Drawable extends JLabel implements Comparable<Drawable> {
 	private Image img;
+	// pitencial delete
 	private JLabel img_label=new JLabel();
 	private Integer depth;
-	private int xx = 0;
-	private int yy = 0;
+	private int x = 0;
+	private int y = 0;
 	
 	//abstract public void Draw(GameView gw);
 	
@@ -47,18 +48,20 @@ public abstract class Drawable implements Comparable<Drawable> {
 	}
 
 	public int getXx() {
-		return xx;
+		return x;
 	}
 
-	public void setXx(int xx) {
-		this.xx = xx;
+	public void setX(int xx) {
+		this.x = xx;
 	}
 
 	public int getYy() {
-		return yy;
+		return y;
 	}
 
-	public void setYy(int yy) {
-		this.yy = yy;
+	public void setY(int yy) {
+		this.y = yy;
 	}
+
+	abstract public void refresh();
 }

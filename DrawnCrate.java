@@ -14,16 +14,23 @@ public class DrawnCrate extends Drawable {
 	public DrawnCrate(Crate cr) throws IOException {
 		c=cr;
 		setImg(ImageIO.read(new File("pics/Crate.png"))); // kép beolvasása
-		setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
+		//setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
+		this.setIcon(new ImageIcon(getImg()));
+		
 		setDepth(new Integer(3));//mélység beállítása
-		this.setXx(c.getTile().getCoords()[0]);
-		this.setYy(c.getTile().getCoords()[1]);
+		
+		this.setX(c.getTile().getCoords()[0]);
+		this.setY(c.getTile().getCoords()[1]);
 	}
 
-	/*public void Draw(GameView gw) {
-		JLayeredPane a = gw.getTiles(c.getTile().getCoords()[0], c.getTile().getCoords()[1]);
-		a.add(getImg_label(),new Integer(3));
-		a.setBounds(0, 0, 25, 25);
-		gw.setTiles(c.getTile().getCoords()[0], c.getTile().getCoords()[1], a);
-	}*/
+	@Override
+	public void refresh() {
+		Integer[] temp = c.getTile().getCoords();
+		this.setX(temp[0]);
+		this.setY(temp[1]);
+	}
+
+	public String getCrateId() {
+		return c.getId();
+	}
 }
