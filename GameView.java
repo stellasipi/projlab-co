@@ -264,7 +264,7 @@ public class GameView extends JFrame{
 				}catch(Exception e) {
 					
 				}
-				JOptionPane.showMessageDialog(null, "Vége a játéknak!", "Jatek vege", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, "The game has ended!", "Game end", JOptionPane.INFORMATION_MESSAGE);
 				dispose();
 				new MenuView();
 			}			
