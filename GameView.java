@@ -253,4 +253,21 @@ public class GameView extends JFrame{
 	public void setGame(Game game) {
 		this.game = game;
 	}
+
+	public void gameEnd() {
+		this.InitscorePanel();
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				try {
+					Thread.sleep(100);
+				}catch(Exception e) {
+					
+				}
+				JOptionPane.showMessageDialog(null, "Vége a játéknak!", "Jatek vege", JOptionPane.INFORMATION_MESSAGE);
+				dispose();
+				new MenuView();
+			}			
+		}).start();		
+	}
 }

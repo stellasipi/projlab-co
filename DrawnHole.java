@@ -15,7 +15,7 @@ public class DrawnHole extends Drawable {
 		h=hole;
 
 		setImg(ImageIO.read(new File("pics/Hole.png"))); // kép beolvasása
-		//setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
+
 		this.setIcon(new ImageIcon(getImg()));
 		
 		setDepth(new Integer(1));//mélység beállítása
@@ -24,10 +24,4 @@ public class DrawnHole extends Drawable {
 		this.setY(h.getCoords()[1]);
 	}
 
-	@Override
-	public void refresh() {
-		// TODO Auto-generated method stub
-		
-	}
-	
 }

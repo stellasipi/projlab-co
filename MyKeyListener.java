@@ -217,7 +217,8 @@ import java.awt.event.KeyListener;
 				break;
 				
 			case KeyEvent.VK_ESCAPE:
-				System.exit(0);
+				gv.dispose();
+				new MenuView();
 				break;	
 			}
 			}catch(Exception ex) {

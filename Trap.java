@@ -37,5 +37,6 @@ public class Trap extends Hole {
 
 	public void setActive(boolean active) {
 		this.active = active; //a paraméterként kapott logikai értékre állítja a csapda aktivitását
+		
 	}
 }

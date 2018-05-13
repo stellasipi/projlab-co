@@ -49,11 +49,13 @@ public class Button extends TileElement {
 			t.setActive(true); //aktívra állítjuk a csapdát
 			if(t.getObject()!=null) {//ha áll rajta object akkor meghal
 				if(t.getObject().getClass().getSimpleName().equals("Worker")) {//ha Worker
-					Worker w=(Worker)t.getObject();
+					Worker w=(Worker)t.getObject();					
 					t.getObject().getGame().Die(w);
+					t.Remove(w);
 				}else {//ha Crate
-					Crate c=(Crate)t.getObject();
+					Crate c=(Crate)t.getObject();					
 					t.getObject().getGame().Die(c);
+					t.Remove(c);
 				}				
 			}
 		}	

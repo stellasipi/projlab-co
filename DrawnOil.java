@@ -15,19 +15,13 @@ public class DrawnOil extends Drawable {
 		this.t = t;
 		
 		setImg(ImageIO.read(new File("pics/Oil.png"))); // kép beolvasása
-		//setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
+
 		this.setIcon(new ImageIcon(getImg()));
 
 		setDepth(new Integer(2));//mélység beállítása
 		
 		this.setX(t.getCoords()[0]);
 		this.setY(t.getCoords()[1]);
-	}
-
-	@Override
-	public void refresh() {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

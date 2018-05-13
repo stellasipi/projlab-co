@@ -19,7 +19,7 @@ public class Game {
 	public void EndGame()
 	{
         //Vége a játéknak
-		System.exit(0);
+		gv.gameEnd();
 	}
 	
 	public void StartGame()

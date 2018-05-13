@@ -15,8 +15,6 @@ public class DrawnButton extends Drawable {
 	public DrawnButton(Button button) throws IOException {
 		b=button;
 		setImg(ImageIO.read(new File("pics/Button.png"))); // kép beolvasása
-		
-		//setImg_label(new JLabel(new ImageIcon(getImg()))); // így már egy komponens és majd hozzá tudjuk adni a mapPanel-hez
 				
 		this.setIcon(new ImageIcon(getImg()));
 		
@@ -26,12 +24,4 @@ public class DrawnButton extends Drawable {
 		this.setY(b.getCoords()[1]);
 	}
 
-	@Override
-	public void refresh() {
-		/*
-		Integer[] temp = b.getCoords();
-		this.setX(temp[0]);
-		this.setY(temp[1]);
-		 */	
-	}
 }

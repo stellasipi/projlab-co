@@ -7,8 +7,7 @@ import javax.swing.JLayeredPane;
 
 public abstract class Drawable extends JLabel implements Comparable<Drawable> {
 	private Image img;
-	// pitencial delete
-	private JLabel img_label=new JLabel();
+	//private JLabel img_label=new JLabel();
 	private Integer depth;
 	private int x = 0;
 	private int y = 0;
@@ -39,14 +38,6 @@ public abstract class Drawable extends JLabel implements Comparable<Drawable> {
 		this.depth = depth;
 	}
 
-	public JLabel getImg_label() {
-		return img_label;
-	}
-
-	public void setImg_label(JLabel img_label) {
-		this.img_label = img_label;
-	}
-
 	public int getXx() {
 		return x;
 	}
@@ -62,6 +53,4 @@ public abstract class Drawable extends JLabel implements Comparable<Drawable> {
 	public void setY(int yy) {
 		this.y = yy;
 	}
-
-	abstract public void refresh();
 }
