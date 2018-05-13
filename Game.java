@@ -160,14 +160,12 @@ public class Game {
 	{        
         //meghal a munkás, kivesszük a game-ből
         workers.remove(w);
-        gv.removeWorker(w);
 	}
 	
 	public void Die(Crate c)
 	{
         //meghal a láda , kivesszük a game-ből
 		crates.remove(c);
-		gv.removeCrate(c);
 	}
 	
 	public Map getMap() {

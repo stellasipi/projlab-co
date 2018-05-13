@@ -68,6 +68,21 @@ public class GameView extends JFrame{
 		this.add(scorePanel);
 		this.add(mapPanel);
 		
+		new Thread(new Runnable() {
+
+			@Override
+			public void run() {
+				while(true) {
+					try {
+						Thread.sleep(17);
+						DrawAll();
+						//Thread.sleep(17);
+					}catch(Exception e){						
+					}
+				}				
+			}			
+		}).start();
+		
 	}
 	
 	public void InitscorePanel() {
@@ -140,19 +155,8 @@ public class GameView extends JFrame{
 		mapPanel = new MapPanel(this);
 		this.add(mapPanel);
 		InitscorePanel();
-	}
-	
-	public void DrawAll2() {
-		mapPanel.removeAll();
-		for(Drawable d : drawables) {
-			d.refresh();
-			JLabel temp = d;
-			temp.setSize(25, 25);
-			temp.setLocation(d.getYy()*25, d.getXx()*25);
-			temp.setVisible(true);
-			mapPanel.add(temp);
-		}
-		mapPanel.revalidate();
+		this.revalidate();
+		this.repaint();
 	}
 	
 	void AddDrawables(Drawable d) {
@@ -163,28 +167,6 @@ public class GameView extends JFrame{
 		drawables.remove(d);
 	}
 
-	public void removeWorker(Worker w) {
-		for(Drawable d : drawables) {
-			if(d.getClass().getSimpleName().equals("DrawnWorker")) {
-				if(((DrawnWorker)d).getWorkerId().equals(w.getId())) {
-					drawables.remove(d);
-					return;
-				}
-			}
-		}
-	}
-	
-	public void removeCrate(Crate c) {
-		for(Drawable d : drawables) {
-			if(d.getClass().getSimpleName().equals("DrawnCrate")) {
-				if(((DrawnCrate)d).getCrateId().equals(c.getId())) {
-					drawables.remove(d);
-					return;
-				}
-			}
-		}
-	}
-	
 	private void InitGame() {
 		this.game = new Game(this.playerNumber);
 		game.setGameView(this);
@@ -240,8 +222,11 @@ public class GameView extends JFrame{
 		for(Crate c : game.crates) {
 			drawables.add(new DrawnCrate(c));
 		}
-		
-		SortDrawables();
+		try {
+			SortDrawables();
+		} catch(Exception e) {
+			
+		}
 	}
 	
 	public void SortDrawables() {//mélység szerinti rendezés

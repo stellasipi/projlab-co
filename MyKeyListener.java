@@ -18,6 +18,7 @@ import java.awt.event.KeyListener;
 		}
 
 		public void keyPressed(KeyEvent e) {
+			try {
 			int key = e.getKeyCode();
 			Worker s;
 			switch(key)
@@ -111,7 +112,7 @@ import java.awt.event.KeyListener;
 				}
 				break;	
 				
-			case KeyEvent.VK_P:
+			case KeyEvent.VK_O:
 				s=gv.getGame().getWorker("w2");
 				if(s!=null) 
 				{
@@ -219,10 +220,9 @@ import java.awt.event.KeyListener;
 				System.exit(0);
 				break;	
 			}
-			
-			gv.revalidate();
-			gv.repaint();
-			gv.DrawAll();
+			}catch(Exception ex) {
+				
+			}
 		}
 
 		@Override

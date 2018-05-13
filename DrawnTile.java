@@ -23,6 +23,10 @@ public class DrawnTile extends Drawable {
 		this.setX(t.getCoords()[0]);
 		this.setY(t.getCoords()[1]);
 	}
+	
+	public Tile getTile() {
+		return t;
+	}
 
 	@Override
 	public void refresh() {

@@ -1,7 +1,5 @@
 package shokoban;
 
-import java.io.IOException;
-
 public class Worker extends Object {
 	private int sumscore;
 	private int strenght=15;
@@ -80,7 +78,6 @@ public class Worker extends Object {
 			g.setMu(g.getMu()*(-1)); //létrehozza az olajat, ami mínusz előjelű
 			this.getTileType().setGrease(g); //rápakoljuk az olajat
     	}catch(NullPointerException npe) {
-    		
     	}
 	}
 	void PlaceHoney() {
@@ -88,7 +85,6 @@ public class Worker extends Object {
 			Grease g=new Grease();
 			this.getTileType().setGrease(g); //rápakoljuk a mézet
     	}catch(NullPointerException npe) {
-    		
     	}
 	}
 	
